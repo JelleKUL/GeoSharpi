@@ -1,27 +1,28 @@
 {
-  "name": "com.3d-group.unity-package-template",
-  "displayName": "3D Group - Unity package template",
-  "version": "1.1.2",
-  "description": "Template for creating Unity game engine packages",
-  "dependencies": { },
+  "name": "geosharpi",
+  "version": "0.1.0",
+  "displayName": "GeoSharpi",
+  "description": "RDF Based XR data Collection and Management",
   "keywords": [
-    "unity",
-	"unity3d",
-	"upm",
-    "3d-group",
-    "utility"
+    "mesh",
+    "images",
+    "xr"
   ],
-  "homepage": "https://github.com/3d-group/unity-package-template.git",
-  "bugs": {
-    "url": "https://github.com/3d-group/unity-package-template/issues"
+  "author": {
+    "name": "Jelle Vermandere",
+    "email": "jelle.vermandere@kuleuven.be",
+    "url": "https://www.jellever.be"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/3d-group/unity-package-template.git"
+  "type": "tool",
+  "dependencies": {
+    "com.unity.xr.openxr": "1.2.8",
+    "com.unity.xr.arfoundation": "4.1.7"
   },
-  "license": "MIT",
-  "author": "3D Group (https://3d.fi/)",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  "samples": [
+    {
+      "displayName": "Working Sample scenes",
+      "description": "Shows how everything works in practice",
+      "path": "Samples~/SampleProject"
+    }
+  ]
 }
