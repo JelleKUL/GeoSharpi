@@ -8,7 +8,6 @@ using System.Linq;
 namespace GeoSharpi
 {
     /// <summary>
-    /// 
     /// The Base node object that provides data to a resource
     /// </summary>
     [System.Serializable]
@@ -20,15 +19,16 @@ namespace GeoSharpi
         public string graphPath;
         [Tooltip("The Identifier of the resource")]
         public string subject;
+        [Header("RDF Variables")]
         [Tooltip("The transform of the resource")]
         [RDFUri("v4d","https://w3id.org/v4d/core#")]
         public Matrix4x4 cartesianTransform = new Matrix4x4();
         [Tooltip("The path to the resource, saved on disk as relative, in memory as absolute")]
-        [RDFUri("v4d","https://w3id.org/v4d/core#")]
+        [RDFUri("v4d","https://w3id.org/v4d/core#", RDFModelEnums.RDFDatatypes.XSD_STRING)]
         public string path;
-
-        private RDFResource subjectResource;
-
+        [Tooltip("The moment the Asset was created")]
+        [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_DATETIME)]
+        public string dateTime = "";
 
 
         public Node(string _graphPath = "", string _subject = "")
@@ -39,8 +39,15 @@ namespace GeoSharpi
         protected void CreateNode(string _graphPath = "", string _subject = "")
         {
             graph = new RDFGraph();
+            dateTime = System.DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss");
             // add the subject Type
-            subject = _subject;
+            if (_subject != "") subject = _subject;
+            if (subject == null || subject == "")
+            {
+                Debug.LogWarning("No subject defined! Creating a new one");
+                subject = "Node-" + dateTime;
+            }
+            
             /*
             graph.AddTriple(new RDFTriple(
                 GetSubject(), 
@@ -52,14 +59,9 @@ namespace GeoSharpi
         }
 
          
-        public virtual RDFPlainLiteral GetClass()
+        RDFPlainLiteral GetClass()
         {
-            return new RDFPlainLiteral("v4d:Node");
-        }
-
-        void FromGraph(RDFGraph graph)
-        {
-
+            return new RDFPlainLiteral("v4d:" + this.GetType().Name);
         }
 
         RDFResource GetSubject()
@@ -71,16 +73,17 @@ namespace GeoSharpi
 
         public RDFGraph ToGraph()
         {
-            if (graph == null) CreateNode();
+            //if (graph == null) 
+            CreateNode();
 
             graph.AddTriple(new RDFTriple(
                 GetSubject(),
                 new RDFResource("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
-                new RDFPlainLiteral("v4d:node")
+                new RDFPlainLiteral("GeoSharpi:" + this.GetType().Name)
                 )
             );
 
-            foreach (var field in typeof(Node).GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
+            foreach (var field in this.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
             {
                 var att = field.GetCustomAttributes(typeof(RDFUriAttribute), true).FirstOrDefault() as RDFUriAttribute;
                 if (att == null)
@@ -90,7 +93,11 @@ namespace GeoSharpi
                 else
                 {
                     Debug.Log($"The field {field.Name} will be serialized with namespace: {att.uri}");
-                    RDFTriple newTriple = new RDFTriple(GetSubject(), new RDFResource(att.uri + field.Name), new RDFTypedLiteral(field.GetValue(this).ToString(), att.type));
+                    RDFTriple newTriple;
+                    if (att.type != RDFModelEnums.RDFDatatypes.RDFS_LITERAL)
+                        newTriple = new RDFTriple(GetSubject(), new RDFResource(att.uri + field.Name), new RDFTypedLiteral(field.GetValue(this).ToString(), att.type));
+                    else
+                        newTriple = new RDFTriple(GetSubject(), new RDFResource(att.uri + field.Name), new RDFPlainLiteral(field.GetValue(this).ToString()));
                     RDFNamespaceRegister.AddNamespace(new RDFNamespace(att.prefix, att.uri));
                     graph.AddTriple(newTriple);
                 }

@@ -13,7 +13,9 @@ namespace GeoSharpi
         [Tooltip("The url of the post request destination")]
         private string dataPostUrl = "";
         [SerializeField]
-        private List<Node> nodes = new List<Node>();
+        private ImageNode image;
+        [SerializeField]
+        private List<ImageNode> nodes = new List<ImageNode>();
 
         [ContextMenu("Check nodes")]
         public void checkNodes()
