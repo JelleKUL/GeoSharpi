@@ -17,6 +17,13 @@ namespace GeoSharpi
             CreateNode(_graphPath, _subject);
         }
 
+        public void AddSubject(Node node)
+        {
+            if (linkedSubjects.Contains(node.subject)) return;
+
+            linkedSubjects.Add(node.subject);
+        }
+
     }
 }
 

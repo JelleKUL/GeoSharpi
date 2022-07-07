@@ -1,0 +1,25 @@
+{
+    "name": "GeoSharpi.RuntimeTests",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a9420e37d7990b54abdef6688edbe313",
+        "GUID:92703082f92b41ba80f0d6912de66115",
+        "GUID:ab7550afa5b792946a5667d6daf62f2c",
+        "GUID:742e681d51cbedf4ba215fa12c5e0796",
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:0acc523941302664db1f4e527237feb3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

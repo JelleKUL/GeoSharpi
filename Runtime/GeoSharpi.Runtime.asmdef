@@ -1,5 +1,5 @@
 {
-    "name": "GeoSharpi",
+    "name": "GeoSharpi.Runtime",
     "rootNamespace": "",
     "references": [
         "GUID:a9420e37d7990b54abdef6688edbe313",

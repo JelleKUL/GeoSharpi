@@ -13,23 +13,28 @@ namespace GeoSharpi
     [System.Serializable]
     public class Node
     {
-        [Tooltip("The Graph Containing the resource")]
-        public RDFGraph graph;
-        [Tooltip("The path path of the desired Graph of the resource")]
-        public string graphPath;
         [Tooltip("The Identifier of the resource")]
         public string subject;
+        [Tooltip("The path path of the desired Graph of the resource")]
+        public string graphPath;
+
+
         [Header("RDF Variables")]
+
         [Tooltip("The transform of the resource")]
         [RDFUri("v4d","https://w3id.org/v4d/core#")]
         public Matrix4x4 cartesianTransform = new Matrix4x4();
+
         [Tooltip("The path to the resource, saved on disk as relative, in memory as absolute")]
         [RDFUri("v4d","https://w3id.org/v4d/core#", RDFModelEnums.RDFDatatypes.XSD_STRING)]
         public string path;
+
         [Tooltip("The moment the Asset was created")]
         [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_DATETIME)]
         public string dateTime = "";
 
+
+        private RDFGraph graph;
 
         public Node(string _graphPath = "", string _subject = "")
         {
@@ -109,13 +114,13 @@ namespace GeoSharpi
 
         }
 
-        [System.Serializable]
-        public struct RDFVar
+        public virtual GameObject GetResourceObject()
         {
-            public RDFResource predicate;
-            public string value;
-            public RDFModelEnums.RDFDatatypes dataType;
+            return null;
         }
+
+        
+
     }
 
 

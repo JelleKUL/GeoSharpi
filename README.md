@@ -8,9 +8,9 @@ Tools to collect sensory data from XR devices in the Unity engine
 
 ## ToDo
 
-- [ ] Solve wrong placement of image planes
-- [ ] Add server connectivity to send data
-- [ ] think of more todo's
+- [ ] import existing nodes
+- [ ] save nodes to single session
+- [ ] get example session
 
 ## Installation
 
@@ -31,6 +31,8 @@ Datacapture is managed by the `CaptureSessionManager`. This script contains the 
 ### Data Reconstruction
 
 An big part of this package is the ability to display RDF based Sessions and Nodes.
+
+All nodes can be visualised using the `NodeVisualizer()` 
 
 ## Server Connection
 
