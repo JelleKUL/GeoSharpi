@@ -15,30 +15,65 @@ namespace GeoSharpi
         [SerializeField]
         private ImageNode image;
         [SerializeField]
-        private List<ImageNode> nodes = new List<ImageNode>();
+        private List<Node> nodes = new List<Node>();
 
-        [ContextMenu("Check nodes")]
-        public void checkNodes()
+        [ContextMenu("Save Graph")]
+        public RDFGraph SaveGraph()
         {
+            if (nodes.Count == 0) return null;
+            
+            RDFGraph newGraph = new RDFGraph();
+            string graphName = nodes[0].GetName();
+
             foreach (var node in nodes)
             {
-                RDFGraph newGraph = node.ToGraph();
-                newGraph.ToFile(RDFModelEnums.RDFFormats.Turtle, "Assets/RDF/" + node.subject.Replace("http://", "") + ".ttl");
+                newGraph = newGraph.UnionWith(node.ToGraph());
+                Debug.Log("Node Name: " + node.GetName());
+                if (node.GetType() == typeof(SessionNode)) graphName = node.GetName();
+            }
+            newGraph.ToFile(RDFModelEnums.RDFFormats.Turtle, "Assets/RDF/" + graphName + ".ttl");
 
-                var triplesEnum = newGraph.TriplesEnumerator;
+            return newGraph;
 
-                while (triplesEnum.MoveNext())
-                {
-                    Debug.Log("Subject: " + triplesEnum.Current.Subject);
-
-                    string pred = triplesEnum.Current.Predicate.ToString();
- 
-                    Debug.Log("Predicate: " + pred);
-
-                    Debug.Log("Object: " + triplesEnum.Current.Object);
-                }
+         
+        }
+        [ContextMenu("Log & Save Graph")]
+        public void LogGraph()
+        {
+            var triplesEnum = SaveGraph().TriplesEnumerator;
+            while (triplesEnum.MoveNext())
+            {
+                Debug.Log("Subject: " + triplesEnum.Current.Subject);
+                string pred = triplesEnum.Current.Predicate.ToString();
+                Debug.Log("Predicate: " + pred);
+                Debug.Log("Object: " + triplesEnum.Current.Object);
             }
         }
+
+        public void AddNode(Node node)
+        {
+            nodes.Add(node);
+        }
+
+        [ContextMenu("Add Image Node")]
+        void AddImageNode()
+        {
+            AddNode(new ImageNode());
+        }
+
+        [ContextMenu("Add Geometry Node")]
+        void AddGeometryNode()
+        {
+            AddNode(new GeometryNode());
+        }
+
+        [ContextMenu("Add Session Node")]
+        void AddSessionNode()
+        {
+            AddNode(new SessionNode());
+        }
+
+
 
         /// <summary>
         /// Saves the Image to the current assetSession
