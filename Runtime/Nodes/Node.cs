@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Linq;
 using System;
 using System.IO;
+using System.Globalization;
 
 namespace GeoSharpi
 {
@@ -42,6 +43,11 @@ namespace GeoSharpi
         /// 1: A new Instance 
         /// 2: Parsed from a Graph
         /// 3: Parsed from a GraphPath
+        /// 
+
+        #region Constructors
+
+        public Node() { }
 
         public Node(string _graphPath = "", string _subject = "")
         {
@@ -51,16 +57,10 @@ namespace GeoSharpi
         //todo add more file formats
         protected void CreateNode(string _graphPath = "", string _subject = "")
         {
-            if(graphPath != "")
-            {
-                graph = RDFGraph.FromFile(RDFModelEnums.RDFFormats.Turtle,graphPath);
-            }
-
+            if(graphPath != "") graph = RDFGraph.FromFile(RDFModelEnums.RDFFormats.Turtle,graphPath);
             if (_subject != "") subject = _subject;
 
             CreateEmptyNode();
-
-
         }
 
         private void CreateEmptyNode()
@@ -75,9 +75,10 @@ namespace GeoSharpi
                 subject = this.GetType().Name + "_" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss-ff");
             }
         }
+        #endregion
 
-         
-        RDFPlainLiteral GetClass()
+
+        public RDFPlainLiteral GetClass()
         {
             return new RDFPlainLiteral("v4d:" + this.GetType().Name);
         }
@@ -104,10 +105,11 @@ namespace GeoSharpi
             
             return Path.GetFileNameWithoutExtension(sub);
         }
-         
-
+        
         public RDFGraph ToGraph()
         {
+            CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+
             //if (graph == null) 
             CreateNode();
 
@@ -130,7 +132,8 @@ namespace GeoSharpi
                     Debug.Log($"The field {field.Name} will be serialized with namespace: {att.uri}");
                     RDFTriple newTriple;
                     if (att.type != RDFModelEnums.RDFDatatypes.RDFS_LITERAL) {
-                        newTriple = new RDFTriple(GetSubject(), new RDFResource(att.uri + field.Name), new RDFTypedLiteral(field.GetValue(this).ToString(), att.type));
+                        string fieldVal = field.GetValue(this).ToString();
+                        newTriple = new RDFTriple(GetSubject(), new RDFResource(att.uri + field.Name), new RDFTypedLiteral(fieldVal, att.type));
                     }
                     else
                         newTriple = new RDFTriple(GetSubject(), new RDFResource(att.uri + field.Name), new RDFPlainLiteral(field.GetValue(this).ToString()));
@@ -148,7 +151,18 @@ namespace GeoSharpi
 
         public virtual GameObject GetResourceObject()
         {
+            Debug.LogWarning("GetResource() called on base Node, Classed should override this fuction");
             return null;
+        }
+
+        public virtual void LoadResource(string path)
+        {
+            Debug.LogWarning("LoadResource() called on base Node, Classed should override this fuction");
+        }
+
+        public virtual void SaveResource(string path)
+        {
+            Debug.LogWarning("SaveResource() called on base Node, Classed should override this fuction");
         }
 
         

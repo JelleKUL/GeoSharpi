@@ -18,7 +18,7 @@ This can be imported as a UnityPackage in any existing Unity project through the
 
 ## Structure
 
-All resources are stored as a `Node()`, containing its metadata.
+All resources are stored as an abstract dataclass `Node()`, containing its metadata and resource (image, mesh,...).
 
 ### Data Capture
 

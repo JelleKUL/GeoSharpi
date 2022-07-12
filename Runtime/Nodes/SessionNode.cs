@@ -12,6 +12,8 @@ namespace GeoSharpi
         [RDFUri("v4d", "https://w3id.org/v4d/core#")]
         public List<string> linkedSubjects = new List<string>();
 
+        public SessionNode() { }
+        
         public SessionNode(string _graphPath = "", string _subject = "")
         {
             CreateNode(_graphPath, _subject);

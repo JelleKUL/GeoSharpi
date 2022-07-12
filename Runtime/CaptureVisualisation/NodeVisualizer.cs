@@ -6,11 +6,13 @@ namespace GeoSharpi
 {
     public class NodeVisualizer : MonoBehaviour
     {
+        [SerializeReference]
         public Node node;
 
-        public void SetUpNode(Node _node, Transform parentTransform)
+        public void SetUpNode(Node _node, Transform parentTransform = null)
         {
             node = _node;
+            name = node.GetName();
             GameObject nodeResource = node.GetResourceObject(); //add the resource as a child of this gameobject
             nodeResource.transform.SetParent(transform); // set the parent of the resource to match this relative transform
             transform.SetParent(parentTransform); // Parent this transform to the parenttransform
@@ -23,6 +25,12 @@ namespace GeoSharpi
                 transform.localRotation = transformMatrix.ExtractRotation();
                 transform.localScale    = transformMatrix.ExtractScale();
             }
+        }
+
+        [ContextMenu("Reset Node")]
+        public void ResetNode()
+        {
+            node = new Node();
         }
 
         

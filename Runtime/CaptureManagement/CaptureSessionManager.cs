@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RDFSharp.Model;
+using System.Linq;
+using System;
+using System.Reflection;
 
 namespace GeoSharpi
 {
@@ -10,91 +13,41 @@ namespace GeoSharpi
     {
         private CaptureSession assetSession;
         [SerializeField]
+        private string savePath = "";
+        [SerializeField]
         [Tooltip("The url of the post request destination")]
         private string dataPostUrl = "";
-        [SerializeField]
-        private ImageNode image;
-        [SerializeField]
-        private List<Node> nodes = new List<Node>();
 
         [ContextMenu("Save Graph")]
         public RDFGraph SaveGraph()
         {
-            if (nodes.Count == 0) return null;
-            
-            RDFGraph newGraph = new RDFGraph();
-            string graphName = nodes[0].GetName();
-
-            foreach (var node in nodes)
-            {
-                newGraph = newGraph.UnionWith(node.ToGraph());
-                Debug.Log("Node Name: " + node.GetName());
-                if (node.GetType() == typeof(SessionNode)) graphName = node.GetName();
-            }
-            newGraph.ToFile(RDFModelEnums.RDFFormats.Turtle, "Assets/RDF/" + graphName + ".ttl");
-
-            return newGraph;
-
-         
+            return assetSession.UpdateGraph();
         }
-        [ContextMenu("Log & Save Graph")]
-        public void LogGraph()
+
+        [ContextMenu("Log All Node Types")]
+        public void GetAllNodeTypes()
         {
-            var triplesEnum = SaveGraph().TriplesEnumerator;
-            while (triplesEnum.MoveNext())
-            {
-                Debug.Log("Subject: " + triplesEnum.Current.Subject);
-                string pred = triplesEnum.Current.Predicate.ToString();
-                Debug.Log("Predicate: " + pred);
-                Debug.Log("Object: " + triplesEnum.Current.Object);
-            }
-        }
+            
+            IEnumerable<Node> exporters = 
+                Assembly.GetAssembly(typeof(Node)).GetTypes()
+                .Where(t => t.IsSubclassOf(typeof(Node)) && !t.IsAbstract)
+                .Select(t => (Node)Activator.CreateInstance(t));
 
+            foreach (var item in exporters)
+            {
+                Debug.Log(item);
+            }
+           
+        }
+        
+        /// <summary>
+        /// Adds a node to the current Session
+        /// </summary>
+        /// <param name="node"></param>
         public void AddNode(Node node)
         {
-            nodes.Add(node);
-        }
-
-        [ContextMenu("Add Image Node")]
-        void AddImageNode()
-        {
-            AddNode(new ImageNode());
-        }
-
-        [ContextMenu("Add Geometry Node")]
-        void AddGeometryNode()
-        {
-            AddNode(new GeometryNode());
-        }
-
-        [ContextMenu("Add Session Node")]
-        void AddSessionNode()
-        {
-            AddNode(new SessionNode());
-        }
-
-
-
-        /// <summary>
-        /// Saves the Image to the current assetSession
-        /// </summary>
-        /// <param name="simpleTransform">The transform of the image</param>
-        /// <param name="imageTexture">The 2D captured camera texture</param>
-        /// <param name="quality">The quality of the Jpeg compression</param>
-        public void SaveImage(Node node, Texture2D imageTexture, int quality = 75)
-        {
             CheckSession();
-            //assetSession.SaveImage(simpleTransform, imageTexture, quality);
-        }
-
-        /// <summary>
-        /// Saves the mesh to the current assetSession
-        /// </summary>
-        /// <param name="mesh">the mesh to save</param>
-        public void SaveMesh(Node node, Mesh mesh)
-        {
-            CheckSession();
-            assetSession.SaveMesh(mesh);
+            assetSession.AddNode(node);
         }
 
         /// <summary>
@@ -102,9 +55,22 @@ namespace GeoSharpi
         /// </summary>
         public void CreateNewSession()
         {
-            assetSession = new CaptureSession();
+            assetSession = new CaptureSession(savePath, Matrix4x4.identity);
+        }
 
-            Matrix4x4 mat = transform.localToWorldMatrix;
+        /// <summary>
+        /// Checks if there is an existing session. If not, creates a new session
+        /// </summary>
+        void CheckSession()
+        {
+            Debug.Log("Checking session");
+            if (assetSession == null) CreateNewSession();
+        }
+
+        //Load a session from an rdf path
+        public void LoadSession(string path)
+        {
+
         }
 
         /// <summary>
@@ -144,19 +110,7 @@ namespace GeoSharpi
 
         }
         */
-        /// <summary>
-        /// Checks if there is an existing session. If not, creates a new session
-        /// </summary>
-        void CheckSession()
-        {
-            Debug.Log("Checking session");
 
-            if (assetSession == null)
-            {
-                assetSession = new CaptureSession();
-
-            }
-        }
     }
 
 }
