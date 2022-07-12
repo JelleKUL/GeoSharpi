@@ -9,8 +9,8 @@ Tools to collect sensory data from XR devices in the Unity engine
 ## ToDo
 
 - [ ] import existing nodes
-- [ ] save nodes to single session
-- [ ] get example session
+- [x] save nodes to single session
+- [x] get example session
 
 ## Installation
 
