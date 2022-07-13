@@ -11,12 +11,16 @@ namespace GeoSharpi
 
     public class CaptureSessionManager : MonoBehaviour
     {
-        private CaptureSession assetSession;
+        public CaptureSession assetSession;
         [SerializeField]
         private string savePath = "";
         [SerializeField]
         [Tooltip("The url of the post request destination")]
         private string dataPostUrl = "";
+
+        public string graphLoadPath = "";
+
+        public List<Node> differentNodes = new List<Node>();
 
         [ContextMenu("Save Graph")]
         public RDFGraph SaveGraph()
@@ -27,17 +31,77 @@ namespace GeoSharpi
         [ContextMenu("Log All Node Types")]
         public void GetAllNodeTypes()
         {
-            
-            IEnumerable<Node> exporters = 
-                Assembly.GetAssembly(typeof(Node)).GetTypes()
+
+            foreach (var ass in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                
+                IEnumerable<Node> exporters =
+                ass.GetTypes()
+                //ass.GetAssembly(typeof(Node)).GetTypes()
                 .Where(t => t.IsSubclassOf(typeof(Node)) && !t.IsAbstract)
                 .Select(t => (Node)Activator.CreateInstance(t));
 
-            foreach (var item in exporters)
-            {
-                Debug.Log(item);
+                foreach (var item in exporters)
+                {
+                    Debug.Log(item.GetType().Name);
+
+                    differentNodes.Add(item);
+                }
             }
-           
+        }
+
+        [ContextMenu("Find types in graph")]
+        public void LogAllGraphTypes()
+        {
+            RDFGraph graph = RDFGraph.FromFile(RDFModelEnums.RDFFormats.Turtle, graphLoadPath);
+
+            RDFGraph predicateGraph = graph.SelectTriplesByPredicate(new RDFResource("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"));
+
+            List<RDFTriple> predicateTriples = new List<RDFTriple>();
+
+            var triplesEnum = predicateGraph.TriplesEnumerator;
+            while (triplesEnum.MoveNext())
+            {
+                string type = triplesEnum.Current.Object.ToString();
+
+                bool found = false;
+
+                foreach (var ass in AppDomain.CurrentDomain.GetAssemblies())
+                {
+                    IEnumerable<Node> exporters =
+                    ass.GetTypes()
+                    .Where(t => t.IsSubclassOf(typeof(Node)) && !t.IsAbstract)
+                    .Select(t => (Node)Activator.CreateInstance(t));
+
+                    foreach (var item in exporters)
+                    {
+                        if (type.Contains(item.GetType().Name))
+                        {
+                            Debug.Log(triplesEnum.Current.Subject + " is of type: " + item.GetType());
+                            Node newNode = (Node)Activator.CreateInstance(item.GetType());
+                            differentNodes.Add(newNode);
+                            newNode.FromGraph(graph, new RDFResource(triplesEnum.Current.Subject.ToString()));
+                            found = true;
+                        }
+                    }
+                }
+
+                if (!found)
+                {
+                    if (type.Contains("Node"))
+                    {
+                        Debug.Log(triplesEnum.Current.Subject + " is a custom type or generic Node, will be parsed as a Node");
+                        Node newNode = new Node();
+                        differentNodes.Add(newNode);
+                        newNode.FromGraph(graph, new RDFResource(triplesEnum.Current.Subject.ToString()));
+                        found = true;
+                    }
+                    
+                }
+
+            }
+
+            
         }
         
         /// <summary>

@@ -15,7 +15,7 @@ namespace GeoSharpi
         public float displayDistance = 1;
         public Shader meshShader;
 
-        public GeometryNode() { }
+        public GeometryNode() { CreateEmptyNode(); }
 
         public GeometryNode(string _graphPath = "", string _subject = "")
         {

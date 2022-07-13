@@ -41,6 +41,59 @@ namespace GeoSharpi
                 .Select(t => (Node)Activator.CreateInstance(t));
         }
 
+        public Node ParseRDFNode(string subject, RDFGraph graph)
+        {
+            //step 1: get the type of the subject
+
+            RDFGraph predicateGraph = graph.SelectTriplesByPredicate(new RDFResource("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"));
+
+            List<RDFTriple> predicateTriples = new List<RDFTriple>();
+
+            var triplesEnum = predicateGraph.TriplesEnumerator;
+            while (triplesEnum.MoveNext())
+            {
+                string type = triplesEnum.Current.Object.ToString();
+
+            }
+
+            foreach (var ass in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                IEnumerable<Node> exporters =
+                ass.GetTypes()
+                .Where(t => t.IsSubclassOf(typeof(Node)) && !t.IsAbstract)
+                .Select(t => (Node)Activator.CreateInstance(t));
+
+                foreach (var item in exporters)
+                {
+                    Debug.Log(item);
+                    //item.GetType().Name;
+                }
+            }
+
+
+
+            return null;
+        }
+
+        public void GetAllNodeTypes()
+        {
+
+            foreach (var ass in AppDomain.CurrentDomain.GetAssemblies())
+            {
+
+                IEnumerable<Node> exporters =
+                ass.GetTypes()
+                //ass.GetAssembly(typeof(Node)).GetTypes()
+                .Where(t => t.IsSubclassOf(typeof(Node)) && !t.IsAbstract)
+                .Select(t => (Node)Activator.CreateInstance(t));
+
+                foreach (var item in exporters)
+                {
+                    Debug.Log(item);
+                }
+            }
+        }
+
         public void AddNode(Node node)
         {
             nodes.Add(node);

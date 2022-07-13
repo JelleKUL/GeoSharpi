@@ -22,7 +22,7 @@ namespace GeoSharpi
         [HideInInspector]
         public int saveQuality = 75;
 
-        public ImageNode() { }
+        public ImageNode() { CreateEmptyNode(); }
 
         public ImageNode(string _graphPath = "", string _subject = "")
         {

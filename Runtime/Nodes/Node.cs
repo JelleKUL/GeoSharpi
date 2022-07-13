@@ -21,7 +21,7 @@ namespace GeoSharpi
         [Tooltip("The path path of the desired Graph of the resource")]
         public string graphPath = "";
 
-
+        
         [Header("RDF Variables")]
 
         [Tooltip("The transform of the resource")]
@@ -47,7 +47,7 @@ namespace GeoSharpi
 
         #region Constructors
 
-        public Node() { }
+        public Node() { CreateEmptyNode(); }
 
         public Node(string _graphPath = "", string _subject = "")
         {
@@ -63,7 +63,7 @@ namespace GeoSharpi
             CreateEmptyNode();
         }
 
-        private void CreateEmptyNode()
+        protected void CreateEmptyNode()
         {
             graph = new RDFGraph();
             dateTime = System.DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss");
@@ -71,8 +71,9 @@ namespace GeoSharpi
             
             if (subject == null || subject == "")
             {
-                Debug.LogWarning("No subject defined! Creating a new one");
+                //Debug.LogWarning("No subject defined! Creating a new one");
                 subject = this.GetType().Name + "_" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss-ff");
+                //Debug.Log(subject);
             }
         }
         #endregion
@@ -100,10 +101,61 @@ namespace GeoSharpi
 
         public string GetName()
         {
+            //todo if name exists keep it that way
             string sub = GetSubject().ToString();
             if (sub.EndsWith("/")) sub = sub.Remove(sub.Length - 1);
             
             return Path.GetFileNameWithoutExtension(sub);
+        }
+
+        // parses a graph and assigns all the variables
+        public void FromGraph(RDFGraph rdfGraph, RDFResource subject)
+        {
+            CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+
+            RDFGraph subGraph = rdfGraph.SelectTriplesBySubject(subject);
+
+            foreach (var field in this.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
+            {
+                var att = field.GetCustomAttributes(typeof(RDFUriAttribute), true).FirstOrDefault() as RDFUriAttribute;
+                if(att != null)
+                {
+                    var triplesEnum = subGraph.TriplesEnumerator;
+                    while (triplesEnum.MoveNext())
+                    {
+                        //Debug.Log("checking: " + new RDFResource(att.uri + field.Name) + " against " + triplesEnum.Current.Predicate);
+
+                        if (new RDFResource(att.uri + field.Name).ToString() == triplesEnum.Current.Predicate.ToString())
+                        {
+                            Debug.Log("Found a matching variable: " + field.Name + " With type: " + field.FieldType);
+
+                            string val = triplesEnum.Current.Object.ToString();
+
+                            if (triplesEnum.Current.Object.ToString().Contains("^^"))
+                            {
+                                val = triplesEnum.Current.Object.ToString().Substring(0, triplesEnum.Current.Object.ToString().IndexOf("^^"));
+                            }
+                           
+                            Debug.Log("the matching variable will have a value of:" + val);
+
+                            object newValue = null;
+
+                            
+                            /*
+                            MethodInfo m = field.FieldType.GetMethod("Parse", new Type[] { typeof(string) });
+                            if (m != null) newValue = m.Invoke(null, new object[] { val });
+                            */
+                            
+
+                            //newValue = SetValueTypeFromString(val, field.FieldType.ToString());
+
+                            field.SetValue(this, newValue);
+                            Debug.Log("Set the variable: " + field.Name + " to: " + field.GetValue(this));
+                        }
+                    }
+                }
+            }
+
         }
         
         public RDFGraph ToGraph()
@@ -163,6 +215,30 @@ namespace GeoSharpi
         public virtual void SaveResource(string path)
         {
             Debug.LogWarning("SaveResource() called on base Node, Classed should override this fuction");
+        }
+
+        private object SetValueTypeFromString(string value, string type)
+        {
+            switch (type)
+            {
+                case "string":
+                    return value;
+
+                case "int":
+                    return int.Parse(value);
+
+                case "System.Single":
+                    return float.Parse(value);
+
+                case "UnityEngine.Matrix4x4":
+                    return new Matrix4x4().Parse(value);
+
+                case "System.Collections.Generic.List`1[System.String]":
+                    return null;
+                
+                default:
+                    return value.ToString();
+            }
         }
 
         

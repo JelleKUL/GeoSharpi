@@ -36,5 +36,17 @@ namespace GeoSharpi
             scale.z = new Vector4(matrix.m02, matrix.m12, matrix.m22, matrix.m32).magnitude;
             return scale;
         }
+
+        public static Matrix4x4 Parse(this Matrix4x4 matrix, string value)
+        {
+            string[] chars = value.Split(new char[3] { ' ', '\t', '\n'});
+
+            for (int i = 0; i < 16; i++)
+            {
+                matrix[i] = float.Parse(chars[i]);
+            }
+            
+            return matrix;
+        }
     }
 }
