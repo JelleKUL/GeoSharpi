@@ -47,6 +47,7 @@ namespace GeoSharpi
 
             if (!imageTexture)
             {
+                imageTexture = ImageIO.LoadImage(path);
                 Debug.LogWarning("No ImageTexture is provided, skipping Placement");
                 return imageChild;
             }
@@ -72,14 +73,15 @@ namespace GeoSharpi
             return imageChild;
         }
 
-        public override void LoadResource(string path)
+        public override void LoadResource(string folderPath)
         {
-            imageTexture = ImageIO.LoadImage(path);
+            Debug.Log("Looking for image at:" + Path.Combine(folderPath, path));
+            imageTexture = ImageIO.LoadImage(Path.Combine(folderPath,path));
         }
 
         public override void SaveResource(string rootFolder = "")
         {
-            if (rootFolder == "") rootFolder = Application.persistentDataPath;
+            if (rootFolder == "" || rootFolder == null) rootFolder = Application.persistentDataPath;
             string relativePath = GetName() + ".jpg";
             string savepath = Path.Combine(rootFolder, relativePath);
             ImageIO.SaveImage(imageTexture, savepath);

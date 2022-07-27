@@ -19,12 +19,18 @@ namespace GeoSharpi
 
             // Set the local transform to match the Node
             Matrix4x4 transformMatrix = node.cartesianTransform;
+            if (!transformMatrix.ValidTRS())
+            {
+                if (transformMatrix.transpose.ValidTRS()) transformMatrix = transformMatrix.transpose;
+            }
+
             if (transformMatrix.ValidTRS())
             {
                 transform.localPosition = transformMatrix.ExtractPosition();
                 transform.localRotation = transformMatrix.ExtractRotation();
-                transform.localScale    = transformMatrix.ExtractScale();
+                transform.localScale = transformMatrix.ExtractScale();
             }
+            else Debug.Log("No valid TRS");
         }
 
         [ContextMenu("Reset Node")]

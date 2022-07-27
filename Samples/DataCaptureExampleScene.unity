@@ -389,94 +389,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8c53e1e65fc604c9c6665f83e046d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  assetSession:
+    sessionNode:
+      subject: SessionNode_2022-07-27_11-13-21-88
+      graphPath: 
+      cartesianTransform:
+        e00: 0
+        e01: 0
+        e02: 0
+        e03: 0
+        e10: 0
+        e11: 0
+        e12: 0
+        e13: 0
+        e20: 0
+        e21: 0
+        e22: 0
+        e23: 0
+        e30: 0
+        e31: 0
+        e32: 0
+        e33: 0
+      path: 
+      dateTime: 2022-07-27T11:13:21
+      linkedSubjects: []
+    nodes: []
+    imageQuality: 75
   savePath: 
   dataPostUrl: 
-  graphLoadPath: C:\Users\u0146408\AppData\LocalLow\DefaultCompany\DataCollectionProject\sessionnode_2022-07-13_10-04-53-55\sessionnode_2022-07-13_10-04-53-55.ttl
-  differentNodes:
-  - subject: TestNode_2022-07-13_11-52-35-16
-    graphPath: 
-    cartesianTransform:
-      e00: 0
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 0
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 0
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 0
-    path: 
-    dateTime: 2022-07-13T11:52:35
-  - subject: GeometryNode_2022-07-13_11-52-35-16
-    graphPath: 
-    cartesianTransform:
-      e00: 0
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 0
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 0
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 0
-    path: 
-    dateTime: 2022-07-13T11:52:35
-  - subject: ImageNode_2022-07-13_11-52-35-16
-    graphPath: 
-    cartesianTransform:
-      e00: 0
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 0
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 0
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 0
-    path: 
-    dateTime: 2022-07-13T11:52:35
-  - subject: SessionNode_2022-07-13_11-52-35-16
-    graphPath: 
-    cartesianTransform:
-      e00: 0
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 0
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 0
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 0
-    path: 
-    dateTime: 2022-07-13T11:52:35
+  graphLoadPath: C:\Users\u0146408\AppData\LocalLow\DefaultCompany\DataCollectionProject\sessionnode_2022-07-27_11-58-04-38\sessionnode_2022-07-27_11-58-04-38.ttl
+  differentNodes: []
 --- !u!4 &417319523
 Transform:
   m_ObjectHideFlags: 0

@@ -21,9 +21,9 @@ namespace GeoSharpi
 
         public void AddSubject(Node node)
         {
-            if (linkedSubjects.Contains(node.subject)) return;
+            if (linkedSubjects.Contains(node.GetSubject().ToString())) return;
 
-            linkedSubjects.Add(node.subject);
+            linkedSubjects.Add(node.GetSubject().ToString());
         }
 
     }

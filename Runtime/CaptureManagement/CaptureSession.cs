@@ -10,12 +10,12 @@ namespace GeoSharpi
     [System.Serializable]
     public class CaptureSession
     {
-        public SessionNode sessionNode;
+        public SessionNode sessionNode = null;
         public List<Node> nodes = new List<Node>();
 
         public int imageQuality = 75;
 
-        private string sessionPath = "";
+        public string sessionPath = "";
 
         /// <summary>
         /// The instantiator for a new session
@@ -24,7 +24,8 @@ namespace GeoSharpi
         public CaptureSession(string path, Matrix4x4 origin)
         {
             sessionNode = new SessionNode();
-            if (path == "") path = Application.persistentDataPath;
+            sessionNode.cartesianTransform = origin;
+            if (path == "" || path == null) path = Application.persistentDataPath;
             sessionPath = Path.Combine(path, sessionNode.GetName() + Path.DirectorySeparatorChar);
             Directory.CreateDirectory(sessionPath);
             Debug.Log("Created a new Session @ " + sessionPath);
@@ -97,6 +98,7 @@ namespace GeoSharpi
         public void AddNode(Node node)
         {
             nodes.Add(node);
+            sessionNode.AddSubject(node);
             node.SaveResource(sessionPath);
             UpdateGraph();
         }
