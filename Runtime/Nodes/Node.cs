@@ -38,7 +38,7 @@ namespace GeoSharpi
         [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_DATETIME)]
         public string dateTime = "";
 
-
+        [Tooltip("the rdf graph object containing the original data")] 
         private RDFGraph graph;
 
         /// Node can be created in 3 different ways:
@@ -56,7 +56,11 @@ namespace GeoSharpi
             CreateNode(_graphPath, _subject);
         }
 
-        //todo add more file formats
+        /// <summary>
+        /// Function to create a basic node from an option graphpath and subject
+        /// </summary>
+        /// <param name="_graphPath">the path to the graph to parse</param>
+        /// <param name="_subject">the name of the node in the graph</param>
         protected void CreateNode(string _graphPath = "", string _subject = "")
         {
             if (graphPath != "") graph = RDFGraph.FromFile(RDFModelEnums.RDFFormats.Turtle, graphPath);

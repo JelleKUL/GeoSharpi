@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &93306753
 Transform:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &312158681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,10 +415,11 @@ MonoBehaviour:
       linkedSubjects: []
     nodes: []
     imageQuality: 75
+    sessionPath: 
   savePath: 
   dataPostUrl: 
-  graphLoadPath: C:\Users\u0146408\AppData\LocalLow\DefaultCompany\DataCollectionProject\sessionnode_2022-07-27_11-58-04-38\sessionnode_2022-07-27_11-58-04-38.ttl
-  differentNodes: []
+  graphLoadPath: C:\Users\u0146408\AppData\LocalLow\JelleKUL\DataCollectionProject\sessionnode_2022-10-03_14-54-43-09\sessionnode_2022-10-03_14-54-43-09.ttl
+  useLinkedSubjects: 1
 --- !u!4 &417319523
 Transform:
   m_ObjectHideFlags: 0

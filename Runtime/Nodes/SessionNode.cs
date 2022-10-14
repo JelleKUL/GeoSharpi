@@ -26,6 +26,11 @@ namespace GeoSharpi
             linkedSubjects.Add(node.GetSubject().ToString());
         }
 
+        public override GameObject GetResourceObject()
+        {
+            return null;
+        }
+
     }
 }
 

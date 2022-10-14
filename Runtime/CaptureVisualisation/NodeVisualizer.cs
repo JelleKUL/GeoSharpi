@@ -14,7 +14,9 @@ namespace GeoSharpi
             node = _node;
             name = node.GetName();
             GameObject nodeResource = node.GetResourceObject(); //add the resource as a child of this gameobject
-            nodeResource.transform.SetParent(transform); // set the parent of the resource to match this relative transform
+            if (nodeResource)
+                nodeResource.transform.SetParent(transform); // set the parent of the resource to match this relative transform
+            else Debug.Log("No object found for " + name + "...");
             transform.SetParent(parentTransform); // Parent this transform to the parenttransform
 
             // Set the local transform to match the Node
@@ -30,7 +32,7 @@ namespace GeoSharpi
                 transform.localRotation = transformMatrix.ExtractRotation();
                 transform.localScale = transformMatrix.ExtractScale();
             }
-            else Debug.Log("No valid TRS");
+            else Debug.Log("No valid TRS" + transformMatrix);
         }
 
         [ContextMenu("Reset Node")]

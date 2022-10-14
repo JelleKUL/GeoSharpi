@@ -47,9 +47,12 @@ namespace GeoSharpi
 
             if (!imageTexture)
             {
-                imageTexture = ImageIO.LoadImage(path);
-                Debug.LogWarning("No ImageTexture is provided, skipping Placement");
-                return imageChild;
+                LoadResource(path);
+                if (!imageTexture)
+                {
+                    Debug.LogWarning("No ImageTexture is provided, skipping Placement");
+                    return imageChild;
+                }
             }
 
             float sensor35mmDiagonal = Mathf.Sqrt(36 * 36 + 24 * 24); // the actual diagonal of a 35mm sensor

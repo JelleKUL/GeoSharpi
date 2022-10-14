@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RDFSharp.Model;
 using System.IO;
+using MeshImporter;
 
 namespace GeoSharpi
 {
@@ -32,7 +33,20 @@ namespace GeoSharpi
 
         public override GameObject GetResourceObject()
         {
+            return MeshImporter.MeshImporter.Load(path);
+            /*
             GameObject GeometryChild = new GameObject();
+
+            if (!mesh)
+            {
+                LoadResource(path);
+                if (!mesh)
+                {
+                    Debug.LogWarning("No ImageTexture is provided, skipping Placement");
+                    return GeometryChild;
+                }
+                
+            }
 
             GeometryChild.AddComponent<MeshFilter>();
             GeometryChild.AddComponent<MeshRenderer>();
@@ -44,9 +58,18 @@ namespace GeoSharpi
             MeshRenderer meshRenderer = GeometryChild.GetComponent<MeshRenderer>();
             if (!meshShader) meshShader = Shader.Find("Standard"); //uses the default shader
             meshRenderer.material = new Material(meshShader);
-
+            
             return GeometryChild;
+            */
         }
+        public override void LoadResource(string folderPath)
+        {
+            Debug.Log("Looking for Mesh at:" + Path.Combine(folderPath, path));
+            path = Path.Combine(folderPath, path);
+            //mesh = MeshImporter.Load(Path.Combine(folderPath, path)).;
+            //mesh = null;
+        }
+
 
         public override void SaveResource(string rootFolder = "")
         {

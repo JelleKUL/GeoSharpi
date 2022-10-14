@@ -1,6 +1,6 @@
 {
-  "name": "geosharpi",
-  "version": "0.1.0",
+  "name": "com.jellekul.geosharpi",
+  "version": "0.2.0",
   "displayName": "GeoSharpi",
   "description": "RDF Based XR data Collection and Management",
   "keywords": [

@@ -30,7 +30,8 @@ namespace GeoSharpi
 
         private void Start()
         {
-            CreateNewSession();
+            //CreateNewSession();
+            assetSession = null;
         }
 
         [ContextMenu("Save Graph")]
