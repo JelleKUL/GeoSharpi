@@ -21,7 +21,7 @@
     "build": {
         "globalMetadata": {
             "_appTitle": "GeoSharpi",
-            "_appFooter": "GeoSharpi Documentation",
+            "_appFooter": "GeoSharpi by Jelle Vermandere",
             "_enableSearch": true
         },
         "content": [
@@ -64,7 +64,7 @@
             }
         ],
         "sitemap": {
-            "baseUrl": "https://jellekul.github.io/geosharpi",
+            "baseUrl": "https://jellekul.github.io/GeoSharpi",
             "changefreq": "weekly",
             "fileOptions": {
                 "api/*": {
