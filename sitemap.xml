@@ -2,139 +2,139 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.BaseCameraCapture.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.BaseMeshingController.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.CameraExtensions.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.CaptureSession.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.CaptureSessionManager.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.GeometryNode.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.GeometryNodeNodeEvent.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.ImageIO.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.ImageNode.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.ImageNodeEvent.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.IntEvent.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.MatrixExtensions.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.MeshIO.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.Node.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.NodeEvent.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.NodeVisualizer.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.RDFManager.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.RDFUriAttribute.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.SessionNode.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.StringEvent.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.TransformExtensions.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/api/GeoSharpi.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://jellekul.github.io/geosharpi/index.html</loc>
-    <lastmod>2022-10-19T02:22:43+00:00</lastmod>
+    <lastmod>2022-10-19T02:35:55+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
