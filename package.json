@@ -24,5 +24,6 @@
       "description": "Shows how everything works in practice",
       "path": "Samples~/SampleProject"
     }
-  ]
+  ],
+  "documentationUrl": "https://jellekul.github.io/geosharpi"
 }

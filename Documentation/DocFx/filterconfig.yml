@@ -1,0 +1,8 @@
+# DocFX Filtering Rules
+apiRules:
+- include: # The namespaces to generate
+    uidRegex: ^GeoSharpi
+    type: Namespace
+- exclude:
+    uidRegex: .* # Every other namespaces are ignored
+    type: Namespace
