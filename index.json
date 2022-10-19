@@ -1,0 +1,117 @@
+{
+  "api/GeoSharpi.BaseCameraCapture.html": {
+    "href": "api/GeoSharpi.BaseCameraCapture.html",
+    "title": "Class BaseCameraCapture | GeoSharpi",
+    "keywords": "Class BaseCameraCapture Inheritance Object BaseCameraCapture Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax public class BaseCameraCapture : MonoBehaviour Fields cameraTexture Declaration protected Texture2D cameraTexture Field Value Type Description Texture2D OnCaptureTaken Declaration public ImageNodeEvent OnCaptureTaken Field Value Type Description ImageNodeEvent spawnInScene Declaration public bool spawnInScene Field Value Type Description Boolean Methods CreateNode(Transform, Single) Declaration public void CreateNode(Transform pos = null, float focalLength = 0F) Parameters Type Name Description Transform pos Single focalLength TakeCameraImage() Declaration public virtual void TakeCameraImage()"
+  },
+  "api/GeoSharpi.BaseMeshingController.html": {
+    "href": "api/GeoSharpi.BaseMeshingController.html",
+    "title": "Class BaseMeshingController | GeoSharpi",
+    "keywords": "Class BaseMeshingController Inheritance Object BaseMeshingController Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax public class BaseMeshingController : MonoBehaviour Fields OnMeshCaptured Declaration public NodeEvent OnMeshCaptured Field Value Type Description NodeEvent Methods CreateNode(Transform) Declaration public void CreateNode(Transform pos = null) Parameters Type Name Description Transform pos GetCurrentMesh() Get the current mesh belonging to this object Declaration public Mesh GetCurrentMesh() Returns Type Description Mesh SaveMesh() Declaration public void SaveMesh()"
+  },
+  "api/GeoSharpi.CameraExtensions.html": {
+    "href": "api/GeoSharpi.CameraExtensions.html",
+    "title": "Class CameraExtensions | GeoSharpi",
+    "keywords": "Class CameraExtensions Inheritance Object CameraExtensions Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax public static class CameraExtensions Methods Get35MillimeterFocalLength(Camera) Declaration public static float Get35MillimeterFocalLength(this Camera camera) Parameters Type Name Description Camera camera Returns Type Description Single"
+  },
+  "api/GeoSharpi.CaptureSession.html": {
+    "href": "api/GeoSharpi.CaptureSession.html",
+    "title": "Class CaptureSession | GeoSharpi",
+    "keywords": "Class CaptureSession Inheritance Object CaptureSession Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax [Serializable] public class CaptureSession Constructors CaptureSession(String) Declaration public CaptureSession(string RDFPath) Parameters Type Name Description String RDFPath CaptureSession(String, Matrix4x4) The instantiator for a new session automatically creates a new folder with the current timestamp. Declaration public CaptureSession(string path, Matrix4x4 origin) Parameters Type Name Description String path Matrix4x4 origin Fields imageQuality Declaration public int imageQuality Field Value Type Description Int32 nodes Declaration public List<Node> nodes Field Value Type Description List < Node > sessionNode Declaration public SessionNode sessionNode Field Value Type Description SessionNode sessionPath Declaration public string sessionPath Field Value Type Description String Methods AddNode(Node) Declaration public void AddNode(Node node) Parameters Type Name Description Node node GetAllNodeTypes() Declaration public void GetAllNodeTypes() LogGraph() Declaration public void LogGraph() ParseRDFNode(String, RDFGraph) Declaration public Node ParseRDFNode(string subject, RDFGraph graph) Parameters Type Name Description String subject RDFGraph graph Returns Type Description Node UpdateGraph() Declaration public RDFGraph UpdateGraph() Returns Type Description RDFGraph"
+  },
+  "api/GeoSharpi.CaptureSessionManager.html": {
+    "href": "api/GeoSharpi.CaptureSessionManager.html",
+    "title": "Class CaptureSessionManager | GeoSharpi",
+    "keywords": "Class CaptureSessionManager Inheritance Object CaptureSessionManager Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax public class CaptureSessionManager : MonoBehaviour Fields assetSession Declaration public CaptureSession assetSession Field Value Type Description CaptureSession graphLoadPath Declaration public string graphLoadPath Field Value Type Description String useLinkedSubjects Declaration public bool useLinkedSubjects Field Value Type Description Boolean Methods AddNode(Node) Adds a node to the current Session Declaration public void AddNode(Node node) Parameters Type Name Description Node node CreateNewSession() Creates a new session to store the data Declaration public void CreateNewSession() GetAllNodeTypes() Declaration public void GetAllNodeTypes() LoadGraph() Declaration public void LoadGraph() LoadSession(String) Declaration public void LoadSession(string path) Parameters Type Name Description String path SaveGraph() Declaration public RDFGraph SaveGraph() Returns Type Description RDFGraph SendSessionToServer() Sends the current session to the specified server Declaration public void SendSessionToServer() VisualiseSession() Declaration public void VisualiseSession()"
+  },
+  "api/GeoSharpi.GeometryNode.html": {
+    "href": "api/GeoSharpi.GeometryNode.html",
+    "title": "Class GeometryNode | GeoSharpi",
+    "keywords": "Class GeometryNode Inheritance Object Node GeometryNode Inherited Members Node.subject Node.graphPath Node.cartesianTransform Node.path Node.dateTime Node.CreateNode(String, String) Node.CreateEmptyNode() Node.GetClass() Node.GetSubject() Node.GetName() Node.FromGraph(RDFGraph, RDFResource) Node.ToGraph() Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax [Serializable] public class GeometryNode : Node Constructors GeometryNode() Declaration public GeometryNode() GeometryNode(Mesh, Matrix4x4) Declaration public GeometryNode(Mesh geometryMesh, Matrix4x4 origin) Parameters Type Name Description Mesh geometryMesh Matrix4x4 origin GeometryNode(String, String) Declaration public GeometryNode(string _graphPath = \"\", string _subject = \"\") Parameters Type Name Description String _graphPath String _subject Fields displayDistance Declaration public float displayDistance Field Value Type Description Single mesh Declaration public Mesh mesh Field Value Type Description Mesh meshShader Declaration public Shader meshShader Field Value Type Description Shader Methods GetResourceObject() Declaration public override GameObject GetResourceObject() Returns Type Description GameObject Overrides Node.GetResourceObject() LoadResource(String) Declaration public override void LoadResource(string folderPath) Parameters Type Name Description String folderPath Overrides Node.LoadResource(String) SaveResource(String) Declaration public override void SaveResource(string rootFolder = \"\") Parameters Type Name Description String rootFolder Overrides Node.SaveResource(String)"
+  },
+  "api/GeoSharpi.GeometryNodeNodeEvent.html": {
+    "href": "api/GeoSharpi.GeometryNodeNodeEvent.html",
+    "title": "Class GeometryNodeNodeEvent | GeoSharpi",
+    "keywords": "Class GeometryNodeNodeEvent Inheritance Object GeometryNodeNodeEvent Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax [Serializable] public class GeometryNodeNodeEvent : UnityEvent<GeometryNode>"
+  },
+  "api/GeoSharpi.html": {
+    "href": "api/GeoSharpi.html",
+    "title": "Namespace GeoSharpi | GeoSharpi",
+    "keywords": "Namespace GeoSharpi Classes BaseCameraCapture BaseMeshingController CameraExtensions CaptureSession CaptureSessionManager GeometryNode GeometryNodeNodeEvent ImageIO Methods to save and load jpegs ImageNode ImageNodeEvent IntEvent MatrixExtensions MeshIO Node The Base node object that provides data to a resource NodeEvent NodeVisualizer RDFManager RDFUriAttribute A Custom property to add to variables in a script, this enables them to be serialised to RDF and contain the Correct namespace SessionNode StringEvent TransformExtensions"
+  },
+  "api/GeoSharpi.ImageIO.html": {
+    "href": "api/GeoSharpi.ImageIO.html",
+    "title": "Class ImageIO | GeoSharpi",
+    "keywords": "Class ImageIO Methods to save and load jpegs Inheritance Object ImageIO Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax public class ImageIO Methods LoadImage(String) Load an image from the specified path Declaration public static Texture2D LoadImage(string imagePath) Parameters Type Name Description String imagePath the path of the file, include the file name and extension Returns Type Description Texture2D the texture2D to display in the scene SaveImage(Texture2D, String, Int32) Save a texture2D to a file Declaration public static bool SaveImage(Texture2D imageTexture, string imagePath, int quality = 75) Parameters Type Name Description Texture2D imageTexture the texture to be saved String imagePath the path of the file, include the file name and extension starting from the persistant datapath Int32 quality the quality of the jpeg Returns Type Description Boolean the succes of the save"
+  },
+  "api/GeoSharpi.ImageNode.html": {
+    "href": "api/GeoSharpi.ImageNode.html",
+    "title": "Class ImageNode | GeoSharpi",
+    "keywords": "Class ImageNode Inheritance Object Node ImageNode Inherited Members Node.subject Node.graphPath Node.cartesianTransform Node.path Node.dateTime Node.CreateNode(String, String) Node.CreateEmptyNode() Node.GetClass() Node.GetSubject() Node.GetName() Node.FromGraph(RDFGraph, RDFResource) Node.ToGraph() Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax [Serializable] public class ImageNode : Node Constructors ImageNode() Declaration public ImageNode() ImageNode(String, String) Declaration public ImageNode(string _graphPath = \"\", string _subject = \"\") Parameters Type Name Description String _graphPath String _subject ImageNode(Texture2D, Matrix4x4, Single) Declaration public ImageNode(Texture2D cameraTexture, Matrix4x4 cameraTransform, float focalLength35mm) Parameters Type Name Description Texture2D cameraTexture Matrix4x4 cameraTransform Single focalLength35mm Fields displayDistance Declaration public float displayDistance Field Value Type Description Single focalLengthIn35mmFilm Declaration public float focalLengthIn35mmFilm Field Value Type Description Single imageTexture Declaration public Texture2D imageTexture Field Value Type Description Texture2D saveQuality Declaration public int saveQuality Field Value Type Description Int32 textureShader Declaration public Shader textureShader Field Value Type Description Shader Methods GetResourceObject() Declaration public override GameObject GetResourceObject() Returns Type Description GameObject Overrides Node.GetResourceObject() LoadResource(String) Declaration public override void LoadResource(string folderPath) Parameters Type Name Description String folderPath Overrides Node.LoadResource(String) SaveResource(String) Declaration public override void SaveResource(string rootFolder = \"\") Parameters Type Name Description String rootFolder Overrides Node.SaveResource(String)"
+  },
+  "api/GeoSharpi.ImageNodeEvent.html": {
+    "href": "api/GeoSharpi.ImageNodeEvent.html",
+    "title": "Class ImageNodeEvent | GeoSharpi",
+    "keywords": "Class ImageNodeEvent Inheritance Object ImageNodeEvent Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax [Serializable] public class ImageNodeEvent : UnityEvent<ImageNode>"
+  },
+  "api/GeoSharpi.IntEvent.html": {
+    "href": "api/GeoSharpi.IntEvent.html",
+    "title": "Class IntEvent | GeoSharpi",
+    "keywords": "Class IntEvent Inheritance Object IntEvent Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax [Serializable] public class IntEvent : UnityEvent<int>"
+  },
+  "api/GeoSharpi.MatrixExtensions.html": {
+    "href": "api/GeoSharpi.MatrixExtensions.html",
+    "title": "Class MatrixExtensions | GeoSharpi",
+    "keywords": "Class MatrixExtensions Inheritance Object MatrixExtensions Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax public static class MatrixExtensions Methods ExtractPosition(Matrix4x4) Declaration public static Vector3 ExtractPosition(this Matrix4x4 matrix) Parameters Type Name Description Matrix4x4 matrix Returns Type Description Vector3 ExtractRotation(Matrix4x4) Declaration public static Quaternion ExtractRotation(this Matrix4x4 matrix) Parameters Type Name Description Matrix4x4 matrix Returns Type Description Quaternion ExtractScale(Matrix4x4) Declaration public static Vector3 ExtractScale(this Matrix4x4 matrix) Parameters Type Name Description Matrix4x4 matrix Returns Type Description Vector3 Parse(Matrix4x4, String) Declaration public static Matrix4x4 Parse(this Matrix4x4 matrix, string value) Parameters Type Name Description Matrix4x4 matrix String value Returns Type Description Matrix4x4"
+  },
+  "api/GeoSharpi.MeshIO.html": {
+    "href": "api/GeoSharpi.MeshIO.html",
+    "title": "Class MeshIO | GeoSharpi",
+    "keywords": "Class MeshIO Inheritance Object MeshIO Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax public class MeshIO Methods MeshToFile(Mesh, String) Declaration public static void MeshToFile(Mesh m, string filename) Parameters Type Name Description Mesh m String filename MeshToFile(Vector3[], Int32[], String) Declaration public static void MeshToFile(Vector3[] vertices, int[] triangles, string filename) Parameters Type Name Description Vector3 [] vertices Int32 [] triangles String filename MeshToString(Mesh) Declaration public static string MeshToString(Mesh m) Parameters Type Name Description Mesh m Returns Type Description String MeshToString(Vector3[], Int32[]) Declaration public static string MeshToString(Vector3[] vertices, int[] triangles) Parameters Type Name Description Vector3 [] vertices Int32 [] triangles Returns Type Description String"
+  },
+  "api/GeoSharpi.Node.html": {
+    "href": "api/GeoSharpi.Node.html",
+    "title": "Class Node | GeoSharpi",
+    "keywords": "Class Node The Base node object that provides data to a resource Inheritance Object Node GeometryNode ImageNode SessionNode Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax [Serializable] public class Node Constructors Node() Declaration public Node() Node(String, String) Declaration public Node(string _graphPath = \"\", string _subject = \"\") Parameters Type Name Description String _graphPath String _subject Fields cartesianTransform Declaration public Matrix4x4 cartesianTransform Field Value Type Description Matrix4x4 dateTime Declaration public string dateTime Field Value Type Description String graphPath Declaration public string graphPath Field Value Type Description String path Declaration public string path Field Value Type Description String subject Declaration public string subject Field Value Type Description String Methods CreateEmptyNode() Declaration protected void CreateEmptyNode() CreateNode(String, String) Function to create a basic node from an option graphpath and subject Declaration protected void CreateNode(string _graphPath = \"\", string _subject = \"\") Parameters Type Name Description String _graphPath the path to the graph to parse String _subject the name of the node in the graph FromGraph(RDFGraph, RDFResource) Declaration public void FromGraph(RDFGraph rdfGraph, RDFResource RDFSubject) Parameters Type Name Description RDFGraph rdfGraph RDFResource RDFSubject GetClass() Declaration public RDFPlainLiteral GetClass() Returns Type Description RDFPlainLiteral GetName() Declaration public string GetName() Returns Type Description String GetResourceObject() Declaration public virtual GameObject GetResourceObject() Returns Type Description GameObject GetSubject() Declaration public RDFResource GetSubject() Returns Type Description RDFResource LoadResource(String) Declaration public virtual void LoadResource(string path) Parameters Type Name Description String path SaveResource(String) Declaration public virtual void SaveResource(string path) Parameters Type Name Description String path ToGraph() Declaration public RDFGraph ToGraph() Returns Type Description RDFGraph"
+  },
+  "api/GeoSharpi.NodeEvent.html": {
+    "href": "api/GeoSharpi.NodeEvent.html",
+    "title": "Class NodeEvent | GeoSharpi",
+    "keywords": "Class NodeEvent Inheritance Object NodeEvent Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax [Serializable] public class NodeEvent : UnityEvent<Node>"
+  },
+  "api/GeoSharpi.NodeVisualizer.html": {
+    "href": "api/GeoSharpi.NodeVisualizer.html",
+    "title": "Class NodeVisualizer | GeoSharpi",
+    "keywords": "Class NodeVisualizer Inheritance Object NodeVisualizer Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax public class NodeVisualizer : MonoBehaviour Fields node Declaration public Node node Field Value Type Description Node Methods ResetNode() Declaration public void ResetNode() SetUpNode(Node, Transform) Declaration public void SetUpNode(Node _node, Transform parentTransform = null) Parameters Type Name Description Node _node Transform parentTransform"
+  },
+  "api/GeoSharpi.RDFManager.html": {
+    "href": "api/GeoSharpi.RDFManager.html",
+    "title": "Class RDFManager | GeoSharpi",
+    "keywords": "Class RDFManager Inheritance Object RDFManager Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax public class RDFManager : MonoBehaviour Methods GetSubjectGraphs(RDFGraph) Declaration public List<RDFGraph> GetSubjectGraphs(RDFGraph mainGraph) Parameters Type Name Description RDFGraph mainGraph Returns Type Description List < RDFGraph > ReadCurrentRDF() Declaration public void ReadCurrentRDF() ReadRDF(String) Declaration public RDFGraph ReadRDF(string path) Parameters Type Name Description String path Returns Type Description RDFGraph"
+  },
+  "api/GeoSharpi.RDFUriAttribute.html": {
+    "href": "api/GeoSharpi.RDFUriAttribute.html",
+    "title": "Class RDFUriAttribute | GeoSharpi",
+    "keywords": "Class RDFUriAttribute A Custom property to add to variables in a script, this enables them to be serialised to RDF and contain the Correct namespace Inheritance Object RDFUriAttribute Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax [Serializable] public class RDFUriAttribute : PropertyAttribute Constructors RDFUriAttribute(String, String, RDFModelEnums.RDFDatatypes) A Custom Attribute to enable RDF Serialisation and Namespace definition Declaration public RDFUriAttribute(string _prefix, string _uri, RDFModelEnums.RDFDatatypes _type = null) Parameters Type Name Description String _prefix the short name for the uri String _uri the full Namespace uri RDFModelEnums.RDFDatatypes _type The type of variable, defaults to plain untyped literal Fields prefix Declaration public string prefix Field Value Type Description String type Declaration public RDFModelEnums.RDFDatatypes type Field Value Type Description RDFModelEnums.RDFDatatypes uri Declaration public string uri Field Value Type Description String"
+  },
+  "api/GeoSharpi.SessionNode.html": {
+    "href": "api/GeoSharpi.SessionNode.html",
+    "title": "Class SessionNode | GeoSharpi",
+    "keywords": "Class SessionNode Inheritance Object Node SessionNode Inherited Members Node.subject Node.graphPath Node.cartesianTransform Node.path Node.dateTime Node.CreateNode(String, String) Node.CreateEmptyNode() Node.GetClass() Node.GetSubject() Node.GetName() Node.FromGraph(RDFGraph, RDFResource) Node.ToGraph() Node.LoadResource(String) Node.SaveResource(String) Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax [Serializable] public class SessionNode : Node Constructors SessionNode() Declaration public SessionNode() SessionNode(String, String) Declaration public SessionNode(string _graphPath = \"\", string _subject = \"\") Parameters Type Name Description String _graphPath String _subject Fields linkedSubjects Declaration public List<string> linkedSubjects Field Value Type Description List < String > Methods AddSubject(Node) Declaration public void AddSubject(Node node) Parameters Type Name Description Node node GetResourceObject() Declaration public override GameObject GetResourceObject() Returns Type Description GameObject Overrides Node.GetResourceObject()"
+  },
+  "api/GeoSharpi.StringEvent.html": {
+    "href": "api/GeoSharpi.StringEvent.html",
+    "title": "Class StringEvent | GeoSharpi",
+    "keywords": "Class StringEvent Inheritance Object StringEvent Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax [Serializable] public class StringEvent : UnityEvent<string>"
+  },
+  "api/GeoSharpi.TransformExtensions.html": {
+    "href": "api/GeoSharpi.TransformExtensions.html",
+    "title": "Class TransformExtensions | GeoSharpi",
+    "keywords": "Class TransformExtensions Inheritance Object TransformExtensions Namespace : GeoSharpi Assembly : cs.temp.dll.dll Syntax public static class TransformExtensions Methods FromMatrix(Transform, Matrix4x4) Declaration public static void FromMatrix(this Transform transform, Matrix4x4 matrix) Parameters Type Name Description Transform transform Matrix4x4 matrix"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "GeoSharpi | GeoSharpi",
+    "keywords": "GeoSharpi Tools to collect sensory data from XR devices in the Unity engine This is still under active development and future versions might introduce breaking changes namespace GeoSharpi ToDo [ ] import existing nodes [x] save nodes to single session [x] get example session Installation This can be imported as a UnityPackage in any existing Unity project through the Package manager with the Git url. Structure All resources are stored as an abstract dataclass Node() , containing its metadata and resource (image, mesh,...). Data Capture This package contains functions to capture and save Images and meshes from either in game, or real life using XR devices. Capture Session Datacapture is managed by the CaptureSessionManager . This script contains the nescecary functions to save and store different resources. Data Reconstruction An big part of this package is the ability to display RDF based Sessions and Nodes. All nodes can be visualised using the NodeVisualizer() Classes Node CaptureSession BaseCameraCapture Server Connection The whole CaptureSession can be send to a webserver using a post request. It is up to the server to interpret the data. If the server responds with a calculated location, the App will store it as a reference. Extension Node Extension Custom Nodes can be created by inheriting from Node . Serialising Variables Extra variables that should be serialised should be decorated with [RDFUri(prefix,uri,dataType)] Example using GeoSharpi; [System.Serializable] public class CustomNode : Node { [RDFUri(prefix,uri,dataType)] public var newVar; // The constructor can contain extra custom logic, but should use the base constructor. public CustomNode(string _graphPath = \"\", string _subject = \"\") { CreateNode(_graphPath, _subject); } } Licensing The code in this project is licensed under MIT license."
+  }
+}
