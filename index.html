@@ -47,6 +47,9 @@
                 
                 <ul class="nav level1 navbar-nav">
                       <li>
+                          <a href="manual.md" title="Manual">Manual</a>
+                      </li>
+                      <li>
                           <a href="api/GeoSharpi.html" title="Scripting API">Scripting API</a>
                       </li>
                 </ul>    </div>
@@ -78,54 +81,12 @@
 <h1 id="geosharpi">GeoSharpi</h1>
 
 <p>Tools to collect sensory data from XR devices in the Unity engine</p>
-<blockquote><p>This is still under active development and future versions might introduce breaking changes</p>
-</blockquote>
 <pre><code class="lang-cs"> namespace GeoSharpi
-</code></pre><h2 id="todo">ToDo</h2>
-<ul>
-<li>[ ] import existing nodes</li>
-<li>[x] save nodes to single session</li>
-<li>[x] get example session</li>
-</ul>
-<h2 id="installation">Installation</h2>
+</code></pre><h2 id="installation">Installation</h2>
 <p>This can be imported as a UnityPackage in any existing Unity project through the <a href="https://docs.unity3d.com/Manual/Packages.html">Package manager</a> with the Git url.</p>
-<h2 id="structure">Structure</h2>
-<p>All resources are stored as an abstract dataclass <code>Node()</code>, containing its metadata and resource (image, mesh,...).</p>
-<h3 id="data-capture">Data Capture</h3>
-<p>This package contains functions to capture and save Images and meshes from either in game, or real life using XR devices.</p>
-<h4 id="capture-session">Capture Session</h4>
-<p>Datacapture is managed by the <code>CaptureSessionManager</code>. This script contains the nescecary functions to save and store different resources.</p>
-<h3 id="data-reconstruction">Data Reconstruction</h3>
-<p>An big part of this package is the ability to display RDF based Sessions and Nodes.</p>
-<p>All nodes can be visualised using the <code>NodeVisualizer()</code> </p>
-<h3 id="classes">Classes</h3>
-<h4 id="node"><code>Node</code></h4>
-<h4 id="capturesession"><code>CaptureSession</code></h4>
-<h4 id="basecameracapture"><code>BaseCameraCapture</code></h4>
-<h2 id="server-connection">Server Connection</h2>
-<p>The whole <code>CaptureSession</code> can be send to a webserver using a post request. It is up to the server to interpret the data.
-If the server responds with a calculated location, the App will store it as a reference.</p>
-<h2 id="extension">Extension</h2>
-<h3 id="node-extension">Node Extension</h3>
-<p>Custom Nodes can be created by inheriting from <code>Node</code>.</p>
-<h3 id="serialising-variables">Serialising Variables</h3>
-<p>Extra variables that should be serialised should be decorated with <code>[RDFUri(prefix,uri,dataType)]</code></p>
-<h3 id="example">Example</h3>
-<pre><code class="lang-cs">using GeoSharpi;
-
-[System.Serializable]
-public class CustomNode : Node
-{
-    [RDFUri(prefix,uri,dataType)]
-    public var newVar;
-
-    // The constructor can contain extra custom logic, but should use the base constructor.
-    public CustomNode(string _graphPath = &quot;&quot;, string _subject = &quot;&quot;)
-    {
-        CreateNode(_graphPath, _subject);
-    }
-}
-</code></pre><h2 id="licensing">Licensing</h2>
+<h2 id="documentation">Documentation</h2>
+<p>You can find the full API references here: <a href="https://jellekul.github.io/GeoSharpi/">jellekul.github.io/GeoSharpi</a></p>
+<h2 id="licensing">Licensing</h2>
 <p>The code in this project is licensed under MIT license.</p>
 </article>
           </div>
