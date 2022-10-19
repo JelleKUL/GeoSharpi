@@ -91,7 +91,7 @@ jobs:
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/git
-          branch: master
+          branch: main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -169,7 +169,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-          scope: "@OnTheHill-Studios"
+          scope: "@JelleKUL"
 
       # Actually performs the publish operation
       - name: Publish to GitHub Registry
