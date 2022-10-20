@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using RDFSharp.Model;
 using System.IO;
+using GeoSharpi.Utils;
 
-namespace GeoSharpi
+namespace GeoSharpi.Nodes
 {
+    /// <summary>
+    /// The Node Class for an Image
+    /// </summary>
     [System.Serializable]
     public class ImageNode : Node
     {

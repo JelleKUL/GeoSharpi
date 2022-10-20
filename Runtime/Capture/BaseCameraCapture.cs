@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GeoSharpi.Nodes;
+using GeoSharpi.Utils.Events;
+using GeoSharpi.Utils;
+using GeoSharpi.Visualisation;
 
-
-namespace GeoSharpi
+namespace GeoSharpi.Capture
 {
     public class BaseCameraCapture : MonoBehaviour
     {

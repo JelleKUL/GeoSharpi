@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GeoSharpi
+namespace GeoSharpi.Utils
 {
     /// <summary>
     /// Methods to save and load jpegs
@@ -14,7 +14,7 @@ namespace GeoSharpi
         /// Save a texture2D to a file
         /// </summary>
         /// <param name="imageTexture">the texture to be saved</param>
-        /// <param name="imagePath">the path of the file, include the file name and extension starting from the persistant datapath</param>
+        /// <param name="imagePath">the path of the file, include the file name and extension</param>
         /// <param name="quality">the quality of the jpeg</param>
         /// /// <returns>the succes of the save</returns>
         public static bool SaveImage(Texture2D imageTexture, string imagePath, int quality = 75)

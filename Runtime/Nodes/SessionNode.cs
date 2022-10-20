@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RDFSharp.Model;
+using GeoSharpi.Utils;
 
-namespace GeoSharpi
+namespace GeoSharpi.Nodes
 {
+    // The Node Class for a Session
     [System.Serializable]
     public class SessionNode : Node
     {
@@ -19,6 +21,10 @@ namespace GeoSharpi
             CreateNode(_graphPath, _subject);
         }
 
+        /// <summary>
+        /// Add a Node to the Current Session
+        /// </summary>
+        /// <param name="node"></param>
         public void AddSubject(Node node)
         {
             if (linkedSubjects.Contains(node.GetSubject().ToString())) return;

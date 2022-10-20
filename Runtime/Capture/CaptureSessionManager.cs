@@ -6,10 +6,15 @@ using System.Linq;
 using System;
 using System.Reflection;
 using System.IO;
+using GeoSharpi.Nodes;
+using GeoSharpi.Visualisation;
+using UnityEngine.Networking;
 
-namespace GeoSharpi
+namespace GeoSharpi.Capture
 {
-
+    /// <summary>
+    /// Manages the creation of CaptureSessions
+    /// </summary>
     public class CaptureSessionManager : MonoBehaviour
     {
         public CaptureSession assetSession = null;
@@ -34,12 +39,19 @@ namespace GeoSharpi
             assetSession = null;
         }
 
+        /// <summary>
+        /// Saves the Graph
+        /// </summary>
+        /// <returns>The Updated RDF Graph</returns>
         [ContextMenu("Save Graph")]
         public RDFGraph SaveGraph()
         {
             return assetSession.UpdateGraph();
         }
 
+        /// <summary>
+        /// Logs all the Node types, including the Extended ones
+        /// </summary>
         [ContextMenu("Log All Node Types")]
         public void GetAllNodeTypes()
         {
@@ -58,7 +70,9 @@ namespace GeoSharpi
             }
         }
 
-
+        /// <summary>
+        /// Load a graph from the graphloadPath
+        /// </summary>
         [ContextMenu("Parse RDF Graph from LoadPath")]
         public void LoadGraph()
         {
@@ -69,7 +83,7 @@ namespace GeoSharpi
         /// <summary>
         /// Adds a node to the current Session
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">The Node to add</param>
         public void AddNode(Node node)
         {
             CheckSession();
@@ -93,7 +107,10 @@ namespace GeoSharpi
             if (assetSession == null) CreateNewSession();
         }
 
-        //Load a session from an rdf path
+        /// <summary>
+        /// Load a session from an rdf path
+        /// </summary>
+        /// <param name="path">The Path to load from</param>
         public void LoadSession(string path)
         {
             RDFGraph graph = RDFGraph.FromFile(RDFModelEnums.RDFFormats.Turtle, path);
@@ -139,6 +156,7 @@ namespace GeoSharpi
                         newNode.FromGraph(graph, new RDFResource(triplesEnum.Current.Subject.ToString()));
                         found = true;
                     }
+                    else Debug.Log(triplesEnum.Current.Subject + " is a not a Node type and will be skipped");
 
                 }
 
@@ -154,7 +172,9 @@ namespace GeoSharpi
             else assetSession.nodes = newNodes;
         }
 
-        // spawn the current Capturesession in the scene
+        /// <summary>
+        /// spawn the current Capturesession in the scene
+        /// </summary>
         [ContextMenu("Visualise session")]
         public void VisualiseSession()
         {
@@ -182,16 +202,16 @@ namespace GeoSharpi
             }
 
             // create a datastream to send the data to the server
-            //StartCoroutine(UploadSession());
+            StartCoroutine(UploadSession());
         }
-        /*
+        
         IEnumerator UploadSession()
         {
             // todo compress the folder to send all the data at once
             // for now we will send the json file as a test
 
             List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
-            formData.Add(new MultipartFormDataSection(assetSession.GetJsonString()));
+            //formData.Add(new MultipartFormDataSection(assetSession.GetJsonString()));
 
             UnityWebRequest www = UnityWebRequest.Post(dataPostUrl, formData);
             yield return www.SendWebRequest();
@@ -206,7 +226,7 @@ namespace GeoSharpi
             }
 
         }
-        */
+        
 
     }
 

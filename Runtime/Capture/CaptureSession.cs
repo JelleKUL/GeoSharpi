@@ -4,9 +4,13 @@ using UnityEngine;
 using RDFSharp.Model;
 using System.IO;
 using System.Linq;
+using GeoSharpi.Nodes;
 
-namespace GeoSharpi
+namespace GeoSharpi.Capture
 {
+    /// <summary>
+    /// A class to store all the nodes from a single session
+    /// </summary>
     [System.Serializable]
     public class CaptureSession
     {
@@ -21,6 +25,8 @@ namespace GeoSharpi
         /// The instantiator for a new session
         /// automatically creates a new folder with the current timestamp.
         /// </summary>
+        /// <param name="path">the desired path to save the sesison to, defaults to persistant datapath</param>
+        /// <param name="origin">The origin transform as a Matrix4x4</param>
         public CaptureSession(string path, Matrix4x4 origin)
         {
             sessionNode = new SessionNode();
@@ -32,7 +38,12 @@ namespace GeoSharpi
 
         }
 
-        public CaptureSession(string RDFPath)
+        /// <summary>
+        /// Creates a new Session from an RDF file
+        /// </summary>
+        /// <param name="RDFPath">the path to the RDF File</param>
+        /// <remarks>Needs proper implementation</remarks>
+        private CaptureSession(string RDFPath)
         {
             RDFGraph graph = new RDFGraph();
 
@@ -42,7 +53,8 @@ namespace GeoSharpi
                 .Select(t => (Node)Activator.CreateInstance(t));
         }
 
-        public Node ParseRDFNode(string subject, RDFGraph graph)
+
+        private Node ParseRDFNode(string subject, RDFGraph graph)
         {
             //step 1: get the type of the subject
 
@@ -76,7 +88,7 @@ namespace GeoSharpi
             return null;
         }
 
-        public void GetAllNodeTypes()
+        private void GetAllNodeTypes()
         {
 
             foreach (var ass in AppDomain.CurrentDomain.GetAssemblies())
@@ -95,6 +107,10 @@ namespace GeoSharpi
             }
         }
 
+        /// <summary>
+        /// Adds a Node to the Session
+        /// </summary>
+        /// <param name="node">The Node to add</param>
         public void AddNode(Node node)
         {
             nodes.Add(node);
@@ -104,7 +120,10 @@ namespace GeoSharpi
         }
 
 
-
+        /// <summary>
+        /// Updates and saves the Session to a Graph
+        /// </summary>
+        /// <returns>The RDF Graph</returns>
         public RDFGraph UpdateGraph()
         {
             if (nodes.Count == 0) return null;
@@ -124,6 +143,9 @@ namespace GeoSharpi
             return newGraph;
         }
 
+        /// <summary>
+        /// Log's and saves the Current Graph
+        /// </summary>
         [ContextMenu("Log & Save Graph")]
         public void LogGraph()
         {

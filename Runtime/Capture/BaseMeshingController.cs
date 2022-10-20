@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using GeoSharpi.Utils;
+using GeoSharpi.Utils.Events;
+using GeoSharpi.Nodes;
+using GeoSharpi.Visualisation;
 
-namespace GeoSharpi
+namespace GeoSharpi.Capture
 {
     public class BaseMeshingController : MonoBehaviour
     {

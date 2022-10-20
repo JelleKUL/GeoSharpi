@@ -9,8 +9,9 @@ using System.IO;
 using System.Globalization;
 using System.ComponentModel;
 using System.Text;
+using GeoSharpi.Utils;
 
-namespace GeoSharpi
+namespace GeoSharpi.Nodes
 {
     /// <summary>
     /// The Base node object that provides data to a resource
@@ -41,16 +42,18 @@ namespace GeoSharpi
         [Tooltip("the rdf graph object containing the original data")] 
         private RDFGraph graph;
 
-        /// Node can be created in 3 different ways:
-        /// 1: A new Instance 
-        /// 2: Parsed from a Graph
-        /// 3: Parsed from a GraphPath
-        /// 
-
         #region Constructors
 
+        /// <summary>
+        /// Creates a new Empty Node
+        /// </summary>
         public Node() { CreateEmptyNode(); }
 
+        /// <summary>
+        /// Creates a new Node with a path and subject
+        /// </summary>
+        /// <param name="_graphPath">The path to create the node from</param>
+        /// <param name="_subject">The subject to parse the graph with</param>
         public Node(string _graphPath = "", string _subject = "")
         {
             CreateNode(_graphPath, _subject);
@@ -69,6 +72,9 @@ namespace GeoSharpi
             CreateEmptyNode();
         }
 
+        /// <summary>
+        /// Creates an empty node
+        /// </summary>
         protected void CreateEmptyNode()
         {
             graph = new RDFGraph();
@@ -84,12 +90,19 @@ namespace GeoSharpi
         }
         #endregion
 
-
+        /// <summary>
+        /// Returns the Class of this Node
+        /// </summary>
+        /// <returns>The Specific Class</returns>
         public RDFPlainLiteral GetClass()
         {
             return new RDFPlainLiteral("v4d:" + this.GetType().Name);
         }
 
+        /// <summary>
+        /// Returns the Subject of this node
+        /// </summary>
+        /// <returns>The Url foratted subject</returns>
         public RDFResource GetSubject()
         {
             Uri uriResult;
@@ -105,6 +118,10 @@ namespace GeoSharpi
             return res;
         }
 
+        /// <summary>
+        /// Returns the name of the Node
+        /// </summary>
+        /// <returns>The name of the node without the extension</returns>
         public string GetName()
         {
             //todo if name exists keep it that way
@@ -114,7 +131,11 @@ namespace GeoSharpi
             return Path.GetFileNameWithoutExtension(sub);
         }
 
-        // parses a graph and assigns all the variables
+        /// <summary>
+        /// parses a graph and assigns all the variables
+        /// </summary>
+        /// <param name="rdfGraph">The graph to parse from</param>
+        /// <param name="RDFSubject">The subject to filter</param>
         public void FromGraph(RDFGraph rdfGraph, RDFResource RDFSubject)
         {
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
@@ -169,6 +190,10 @@ namespace GeoSharpi
 
         }
 
+        /// <summary>
+        /// Convert the Node to a RDFGrapf
+        /// </summary>
+        /// <returns>the Seriialised node as a RDFGraph</returns>
         public RDFGraph ToGraph()
         {
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
@@ -218,6 +243,12 @@ namespace GeoSharpi
 
         }
 
+        /// <summary>
+        /// Add a attrubute to the Graph
+        /// </summary>
+        /// <param name="att">the attrubute to add</param>
+        /// <param name="fieldName"> the name of the variable</param>
+        /// <param name="fieldValue"> the value og the variable</param>
         void AddToGraph(RDFUriAttribute att, string fieldName, string fieldValue)
         {
             Debug.Log($"The field {fieldName} will be serialized with namespace: {att.uri}");
@@ -234,6 +265,12 @@ namespace GeoSharpi
             Debug.Log("Added Tripple: " + fieldName);
         }
 
+        /// <summary>
+        /// Set the value of a field from a string
+        /// </summary>
+        /// <param name="value">the string value</param>
+        /// <param name="type">the type of the field</param>
+        /// <returns>The converted value</returns>
         private object SetValueTypeFromString(string value, Type type)
         {
             try
@@ -276,17 +313,29 @@ namespace GeoSharpi
             }
         }
 
+        /// <summary>
+        /// Returns the GameObject from the resource
+        /// </summary>
+        /// <returns>the GameObject</returns>
         public virtual GameObject GetResourceObject()
         {
             Debug.LogWarning("GetResource() called on base Node, Classed should override this fuction");
             return new GameObject();
         }
 
+        /// <summary>
+        /// Loads the resource from the path
+        /// </summary>
+        /// <param name="path">the path of the resource</param>
         public virtual void LoadResource(string path)
         {
             Debug.LogWarning("LoadResource() called on base Node, Classed should override this fuction");
         }
 
+        /// <summary>
+        /// Saves the resource to a path
+        /// </summary>
+        /// <param name="path">The path to save to</param>
         public virtual void SaveResource(string path)
         {
             Debug.LogWarning("SaveResource() called on base Node, Classed should override this fuction");

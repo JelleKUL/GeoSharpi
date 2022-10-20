@@ -1,9 +1,17 @@
 using UnityEngine;
 
-namespace GeoSharpi
+namespace GeoSharpi.Utils
 {
+    /// <summary>
+    /// Extensions to add functionalities to Matrix 4x4's
+    /// </summary>
     public static class MatrixExtensions
     {
+        /// <summary>
+        /// Extracts the rotation quaternion from a matrix
+        /// </summary>
+        /// <param name="matrix">the input matrix</param>
+        /// <returns> The rotation as a quaternion</returns>
         public static Quaternion ExtractRotation(this Matrix4x4 matrix)
         {
             Vector3 forward;
@@ -19,6 +27,11 @@ namespace GeoSharpi
             return Quaternion.LookRotation(forward, upwards);
         }
 
+        /// <summary>
+        /// Extracts the position from a matrix
+        /// </summary>
+        /// <param name="matrix">the input matrix></param>
+        /// <returns>the position as a Vector3</returns>
         public static Vector3 ExtractPosition(this Matrix4x4 matrix)
         {
             Vector3 position;
@@ -28,6 +41,11 @@ namespace GeoSharpi
             return position;
         }
 
+        /// <summary>
+        /// Extracts the scale from the matrix
+        /// </summary>
+        /// <param name="matrix">the input matrix</param>
+        /// <returns>the scale as a Vector3</returns>
         public static Vector3 ExtractScale(this Matrix4x4 matrix)
         {
             Vector3 scale;
@@ -37,6 +55,12 @@ namespace GeoSharpi
             return scale;
         }
 
+        /// <summary>
+        /// Parses a string formatted matrix into a Matrix4x4
+        /// </summary>
+        /// <param name="matrix">the returned matrix</param>
+        /// <param name="value">the string value of the matrix, split with newlines and spaces</param>
+        /// <returns>a Matrix4x4</returns>
         public static Matrix4x4 Parse(this Matrix4x4 matrix, string value)
         {
             string[] chars = value.Split(new char[3] { ' ', '\t', '\n'});

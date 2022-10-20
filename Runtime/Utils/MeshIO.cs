@@ -3,18 +3,47 @@ using System.Collections;
 using System.IO;
 using System.Text;
 
-namespace GeoSharpi
+namespace GeoSharpi.Utils
 {
-
-	/** Obj mesh exporter.
-	 * This class is a modified version of the one found at the UnifyCommunity wiki.
-	 * It provides utilities for exporting a mesh to a .obj file
-	 * \author KeliHlodversson (see http://unifycommunity.com/wiki/index.php?title=ObjExporter)
-	 */
+	/// <summary>
+	/// Methods for saving and loading obj Meshes
+	/// </summary>
 	public class MeshIO
 	{
+		/// <summary>
+		/// Save a mesh to a file
+		/// </summary>
+		/// <param name="mesh">the mesh to save</param>
+		/// <param name="meshPath">the path of the file, include the file name and extension</param>
+		/// <returns>the succes of the save</returns>
+		public static bool SaveMesh(Mesh mesh, string meshPath)
+        {
+			using (StreamWriter sw = new StreamWriter(meshPath))
+			{
+				sw.Write(MeshToString(mesh));
+			}
+			return true;
+		}
 
-		/** Generates an obj file from supplied Mesh object */
+		/// <summary>
+		/// Loads a mesh as a gameobject from a file
+		/// </summary>
+		/// <param name="path">the location of the mesh as an absolute path</param>
+		/// <returns>the Textured mesh as a GameObject</returns>
+		public static GameObject LoadMesh(string path)
+        {
+			return MeshImporter.MeshImporter.Load(path);
+        }
+
+
+		/// <summary>
+		/// Generates an obj string from a mesh
+		/// This class is a modified version of the one found at the UnifyCommunity wiki.
+		/// It provides utilities for exporting a mesh to a.obj file
+		/// author KeliHlodversson(see http://unifycommunity.com/wiki/index.php?title=ObjExporter)
+		/// </summary>
+		/// <param name="m">the mesh</param>
+		/// <returns>a obj formatted as a string</returns>
 		public static string MeshToString(Mesh m)
 		{
 
@@ -47,44 +76,6 @@ namespace GeoSharpi
 				}
 			}
 			return sb.ToString();
-		}
-
-		/** Generates an obj file from supplied vertices and triangles arrays */
-		public static string MeshToString(Vector3[] vertices, int[] triangles)
-		{
-
-			StringBuilder sb = new StringBuilder();
-
-			for (int i = 0; i < vertices.Length; i++)
-			{
-				Vector3 v = vertices[i];
-				sb.Append(string.Format("v {0} {1} {2}\n", v.x, v.y, v.z));
-			}
-
-			for (int i = 0; i < triangles.Length; i += 3)
-			{
-				sb.Append(string.Format("f {0} {1} {2}\n",
-					triangles[i] + 1, triangles[i + 1] + 1, triangles[i + 2] + 1));
-			}
-			return sb.ToString();
-		}
-
-		/** Saves a Mesh to file as an .obj file */
-		public static void MeshToFile(Mesh m, string filename)
-		{
-			using (StreamWriter sw = new StreamWriter(filename))
-			{
-				sw.Write(MeshToString(m));
-			}
-		}
-
-		/** Saves mesh data to file as an .obj file */
-		public static void MeshToFile(Vector3[] vertices, int[] triangles, string filename)
-		{
-			using (StreamWriter sw = new StreamWriter(filename))
-			{
-				sw.Write(MeshToString(vertices, triangles));
-			}
 		}
 	}
 }

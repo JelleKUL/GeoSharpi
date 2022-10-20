@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RDFSharp.Model;
 
-namespace GeoSharpi
+namespace GeoSharpi.Utils
 {
     /// <summary>
     /// A Custom property to add to variables in a script, this enables them to be serialised to RDF and contain the Correct namespace
@@ -11,9 +11,18 @@ namespace GeoSharpi
     [System.Serializable]
     public class RDFUriAttribute : PropertyAttribute
     {
-        public string uri; // The full namespace URI
-        public string prefix; // the short prefix to shorten the Uri
-        public RDFModelEnums.RDFDatatypes type; // the type of the object, default to untyped plain literal
+        /// <summary>
+        /// The full namespace URI
+        /// </summary>
+        public string uri;
+        /// <summary>
+        ///  the short prefix to shorten the Uri
+        /// </summary>
+        public string prefix;
+        /// <summary>
+        /// the type of the object, default to untyped plain literal
+        /// </summary>
+        public RDFModelEnums.RDFDatatypes type;
 
         /// <summary>
         /// A Custom Attribute to enable RDF Serialisation and Namespace definition

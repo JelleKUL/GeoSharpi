@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using RDFSharp.Model;
 using System.IO;
-using MeshImporter;
+using GeoSharpi.Utils;
 
-namespace GeoSharpi
+namespace GeoSharpi.Nodes
 {
+    /// <summary>
+    /// The Node Class for a Geometry (Mesh)
+    /// </summary>
     [System.Serializable]
     public class GeometryNode : Node
     {
@@ -33,7 +36,7 @@ namespace GeoSharpi
 
         public override GameObject GetResourceObject()
         {
-            return MeshImporter.MeshImporter.Load(path);
+            return MeshIO.LoadMesh(path);
             /*
             GameObject GeometryChild = new GameObject();
 
@@ -76,7 +79,7 @@ namespace GeoSharpi
             if (rootFolder == "") rootFolder = Application.persistentDataPath;
             string relativePath = GetName() + ".obj";
             string savepath = Path.Combine(rootFolder, relativePath);
-            MeshIO.MeshToFile(mesh, savepath);
+            MeshIO.SaveMesh(mesh, savepath);
             path = relativePath;
         }
     }
