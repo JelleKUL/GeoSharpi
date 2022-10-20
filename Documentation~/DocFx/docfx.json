@@ -22,6 +22,7 @@
         "globalMetadata": {
             "_appTitle": "GeoSharpi",
             "_appFooter": "GeoSharpi by Jelle Vermandere",
+            "_appLogoPath": "logo.svg", 
             "_enableSearch": true
         },
         "content": [

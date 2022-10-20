@@ -6,7 +6,9 @@ using GeoSharpi.Utils;
 
 namespace GeoSharpi.Nodes
 {
-    // The Node Class for a Session
+    /// <summary>
+    /// The Node Class for a Session
+    /// </summary>
     [System.Serializable]
     public class SessionNode : Node
     {
