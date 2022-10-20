@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>GeoSharpi | GeoSharpi </title>
+    <title>QuickStart | GeoSharpi </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="GeoSharpi | GeoSharpi ">
+    <meta name="title" content="QuickStart | GeoSharpi ">
     <meta name="generator" content="docfx 2.59.4.0">
     
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles/docfx.vendor.css">
-    <link rel="stylesheet" href="styles/docfx.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <meta property="docfx:navrel" content="toc">
-    <meta property="docfx:tocrel" content="toc">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc">
+    <meta property="docfx:tocrel" content="../toc">
     
-    <meta property="docfx:rel" content="">
+    <meta property="docfx:rel" content="../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -34,8 +34,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="index.html">
-                <img id="logo" class="svg" src="logo.svg" alt="">
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -47,10 +47,10 @@
                 
                 <ul class="nav level1 navbar-nav">
                       <li>
-                          <a href="articles/gettingstarted.html" title="Getting Started">Getting Started</a>
+                          <a href="../../articles/gettingstarted.html" title="Getting Started">Getting Started</a>
                       </li>
                       <li>
-                          <a href="api/GeoSharpi.html" title="Scripting API">Scripting API</a>
+                          <a href="../../api/GeoSharpi.html" title="Scripting API">Scripting API</a>
                       </li>
                 </ul>    </div>
           </div>
@@ -78,17 +78,41 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="geosharpi">GeoSharpi</h1>
+<h1 id="quickstart">QuickStart</h1>
 
-<p>Tools to collect sensory data from XR devices in the Unity engine</p>
-<pre><code class="lang-cs"> namespace GeoSharpi
-</code></pre><h2 id="installation">Installation</h2>
-<p>This can be imported as a UnityPackage in any existing Unity project through the <a href="https://docs.unity3d.com/Manual/Packages.html">Package manager</a> with the Git url.</p>
-<h2 id="documentation">Documentation</h2>
-<p>You can find the full API references here: <a href="https://jellekul.github.io/GeoSharpi/">jellekul.github.io/GeoSharpi</a></p>
-<h2 id="licensing">Licensing</h2>
-<p>The code in this project is licensed under MIT license.</p>
-</article>
+<h2 id="functionality">Functionality</h2>
+<p>All resources are stored as an abstract dataclass <code>Node()</code>, containing its metadata and resource (image, mesh,...).</p>
+<h3 id="data-capture">Data Capture</h3>
+<p>This package contains functions to capture and save Images and meshes from either in game, or real life using XR devices.</p>
+<h4 id="capture-session">Capture Session</h4>
+<p>Datacapture is managed by the <code>CaptureSessionManager</code>. This script contains the nescecary functions to save and store different resources.</p>
+<h3 id="data-reconstruction">Data Reconstruction</h3>
+<p>An big part of this package is the ability to display RDF based Sessions and Nodes.</p>
+<p>All nodes can be visualised using the <code>NodeVisualizer()</code> </p>
+<h3 id="server-connection">Server Connection</h3>
+<p>The whole <code>CaptureSession</code> can be send to a webserver using a post request. It is up to the server to interpret the data.
+If the server responds with a calculated location, the App will store it as a reference.</p>
+<h2 id="extension">Extension</h2>
+<h3 id="node-extension">Node Extension</h3>
+<p>Custom Nodes can be created by inheriting from <code>Node</code>.</p>
+<h3 id="serialising-variables">Serialising Variables</h3>
+<p>Extra variables that should be serialised should be decorated with <code>[RDFUri(prefix,uri,dataType)]</code></p>
+<h3 id="example">Example</h3>
+<pre><code class="lang-cs">using GeoSharpi;
+
+[System.Serializable]
+public class CustomNode : Node
+{
+    [RDFUri(prefix,uri,dataType)]
+    public var newVar;
+
+    // The constructor can contain extra custom logic, but should use the base constructor.
+    public CustomNode(string _graphPath = &quot;&quot;, string _subject = &quot;&quot;)
+    {
+        CreateNode(_graphPath, _subject);
+    }
+}
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
@@ -96,7 +120,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/JelleKUL/GeoSharpi/blob/main/Documentation~/DocFx/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/JelleKUL/GeoSharpi/blob/main/Documentation~/DocFx/articles/gettingstarted.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -123,8 +147,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="styles/docfx.js"></script>
-    <script type="text/javascript" src="styles/main.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
   </body>
 </html>
