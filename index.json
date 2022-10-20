@@ -32,7 +32,7 @@
   "api/GeoSharpi.Nodes.html": {
     "href": "api/GeoSharpi.Nodes.html",
     "title": "Namespace GeoSharpi.Nodes | GeoSharpi",
-    "keywords": "Namespace GeoSharpi.Nodes Classes GeometryNode The Node Class for a Geometry (Mesh) ImageNode The Node Class for an Image Node The Base node object that provides data to a resource SessionNode"
+    "keywords": "Namespace GeoSharpi.Nodes Classes GeometryNode The Node Class for a Geometry (Mesh) ImageNode The Node Class for an Image Node The Base node object that provides data to a resource SessionNode The Node Class for a Session"
   },
   "api/GeoSharpi.Nodes.ImageNode.html": {
     "href": "api/GeoSharpi.Nodes.ImageNode.html",
@@ -47,7 +47,7 @@
   "api/GeoSharpi.Nodes.SessionNode.html": {
     "href": "api/GeoSharpi.Nodes.SessionNode.html",
     "title": "Class SessionNode | GeoSharpi",
-    "keywords": "Class SessionNode Inheritance Object Node SessionNode Inherited Members Node.subject Node.graphPath Node.cartesianTransform Node.path Node.dateTime Node.CreateNode(String, String) Node.CreateEmptyNode() Node.GetClass() Node.GetSubject() Node.GetName() Node.FromGraph(RDFGraph, RDFResource) Node.ToGraph() Node.LoadResource(String) Node.SaveResource(String) Namespace : GeoSharpi.Nodes Assembly : cs.temp.dll.dll Syntax [Serializable] public class SessionNode : Node Constructors SessionNode() Declaration public SessionNode() SessionNode(String, String) Declaration public SessionNode(string _graphPath = \"\", string _subject = \"\") Parameters Type Name Description String _graphPath String _subject Fields linkedSubjects Declaration public List<string> linkedSubjects Field Value Type Description List < String > Methods AddSubject(Node) Add a Node to the Current Session Declaration public void AddSubject(Node node) Parameters Type Name Description Node node GetResourceObject() Declaration public override GameObject GetResourceObject() Returns Type Description GameObject Overrides Node.GetResourceObject()"
+    "keywords": "Class SessionNode The Node Class for a Session Inheritance Object Node SessionNode Inherited Members Node.subject Node.graphPath Node.cartesianTransform Node.path Node.dateTime Node.CreateNode(String, String) Node.CreateEmptyNode() Node.GetClass() Node.GetSubject() Node.GetName() Node.FromGraph(RDFGraph, RDFResource) Node.ToGraph() Node.LoadResource(String) Node.SaveResource(String) Namespace : GeoSharpi.Nodes Assembly : cs.temp.dll.dll Syntax [Serializable] public class SessionNode : Node Constructors SessionNode() Declaration public SessionNode() SessionNode(String, String) Declaration public SessionNode(string _graphPath = \"\", string _subject = \"\") Parameters Type Name Description String _graphPath String _subject Fields linkedSubjects Declaration public List<string> linkedSubjects Field Value Type Description List < String > Methods AddSubject(Node) Add a Node to the Current Session Declaration public void AddSubject(Node node) Parameters Type Name Description Node node GetResourceObject() Declaration public override GameObject GetResourceObject() Returns Type Description GameObject Overrides Node.GetResourceObject()"
   },
   "api/GeoSharpi.Utils.CameraExtensions.html": {
     "href": "api/GeoSharpi.Utils.CameraExtensions.html",
