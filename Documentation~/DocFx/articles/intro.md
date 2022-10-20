@@ -1,4 +1,4 @@
-# QuickStart
+# Getting Started
 
 ## Functionality
 
