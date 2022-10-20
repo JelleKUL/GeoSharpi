@@ -1,5 +1,5 @@
 # Table of Contents
-- name: Manual
-  href: articles/manual.md
+- name: Getting Started
+  href: articles/gettingstarted.md
 - name: Scripting API
   href: api/

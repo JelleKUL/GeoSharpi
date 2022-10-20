@@ -45,6 +45,9 @@
                     "*.md"
                 ],
                 "dest": "manual"
+            },
+            {
+                "files": "articles/**"
             }
         ],
         "overwrite": [
