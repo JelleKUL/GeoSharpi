@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CaptureSessionManager
+   | GeoSharpi </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CaptureSessionManager
+   | GeoSharpi ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc">
+    <meta property="docfx:tocrel" content="toc">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+                
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../articles/intro.html" title="Getting Started">Getting Started</a>
+                      </li>
+                      <li>
+                          <a href="../api/GeoSharpi.Capture.html" title="Scripting API">Scripting API</a>
+                      </li>
+                </ul>    </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="GeoSharpi.Capture.html" title="GeoSharpi.Capture" class="">GeoSharpi.Capture</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="GeoSharpi.Capture.BaseCameraCapture.html" title="BaseCameraCapture" class="">BaseCameraCapture</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Capture.BaseMeshingController.html" title="BaseMeshingController" class="">BaseMeshingController</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Capture.CaptureSession.html" title="CaptureSession" class="">CaptureSession</a>
+                          </li>
+                          <li class="active">
+                            <a href="GeoSharpi.Capture.CaptureSessionManager.html" title="CaptureSessionManager" class="active">CaptureSessionManager</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="GeoSharpi.Nodes.html" title="GeoSharpi.Nodes" class="">GeoSharpi.Nodes</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="GeoSharpi.Nodes.GeometryNode.html" title="GeometryNode" class="">GeometryNode</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Nodes.ImageNode.html" title="ImageNode" class="">ImageNode</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Nodes.Node.html" title="Node" class="">Node</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Nodes.SessionNode.html" title="SessionNode" class="">SessionNode</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="GeoSharpi.Utils.html" title="GeoSharpi.Utils" class="">GeoSharpi.Utils</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="GeoSharpi.Utils.CameraExtensions.html" title="CameraExtensions" class="">CameraExtensions</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Utils.ImageIO.html" title="ImageIO" class="">ImageIO</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Utils.MatrixExtensions.html" title="MatrixExtensions" class="">MatrixExtensions</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Utils.MeshIO.html" title="MeshIO" class="">MeshIO</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Utils.RDFUriAttribute.html" title="RDFUriAttribute" class="">RDFUriAttribute</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Utils.ReflectiveEnumerator.html" title="ReflectiveEnumerator" class="">ReflectiveEnumerator</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Utils.TransformExtensions.html" title="TransformExtensions" class="">TransformExtensions</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="GeoSharpi.Utils.Events.html" title="GeoSharpi.Utils.Events" class="">GeoSharpi.Utils.Events</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="GeoSharpi.Utils.Events.GeometryNodeEvent.html" title="GeometryNodeEvent" class="">GeometryNodeEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Utils.Events.ImageNodeEvent.html" title="ImageNodeEvent" class="">ImageNodeEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Utils.Events.NodeEvent.html" title="NodeEvent" class="">NodeEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="GeoSharpi.Utils.Events.SessionNodeEvent.html" title="SessionNodeEvent" class="">SessionNodeEvent</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="GeoSharpi.Visualisation.html" title="GeoSharpi.Visualisation" class="">GeoSharpi.Visualisation</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="GeoSharpi.Visualisation.NodeVisualizer.html" title="NodeVisualizer" class="">NodeVisualizer</a>
+                          </li>
+                        </ul>  </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GeoSharpi.Capture.CaptureSessionManager">
+  
+  
+  <h1 id="GeoSharpi_Capture_CaptureSessionManager" data-uid="GeoSharpi.Capture.CaptureSessionManager" class="text-break">Class CaptureSessionManager
+  </h1>
+  <div class="markdown level0 summary"><p>Manages the creation of CaptureSessions</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">CaptureSessionManager</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GeoSharpi.Capture.html">GeoSharpi.Capture</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="GeoSharpi_Capture_CaptureSessionManager_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CaptureSessionManager : MonoBehaviour</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="GeoSharpi_Capture_CaptureSessionManager_assetSession" data-uid="GeoSharpi.Capture.CaptureSessionManager.assetSession">assetSession</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CaptureSession assetSession</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GeoSharpi.Capture.CaptureSession.html">CaptureSession</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="GeoSharpi_Capture_CaptureSessionManager_graphLoadPath" data-uid="GeoSharpi.Capture.CaptureSessionManager.graphLoadPath">graphLoadPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string graphLoadPath</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="GeoSharpi_Capture_CaptureSessionManager_useLinkedSubjects" data-uid="GeoSharpi.Capture.CaptureSessionManager.useLinkedSubjects">useLinkedSubjects</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool useLinkedSubjects</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="GeoSharpi_Capture_CaptureSessionManager_AddNode_" data-uid="GeoSharpi.Capture.CaptureSessionManager.AddNode*"></a>
+  <h4 id="GeoSharpi_Capture_CaptureSessionManager_AddNode_GeoSharpi_Nodes_Node_" data-uid="GeoSharpi.Capture.CaptureSessionManager.AddNode(GeoSharpi.Nodes.Node)">AddNode(Node)</h4>
+  <div class="markdown level1 summary"><p>Adds a node to the current Session</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddNode(Node node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GeoSharpi.Nodes.Node.html">Node</a></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>The Node to add</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="GeoSharpi_Capture_CaptureSessionManager_CreateNewSession_" data-uid="GeoSharpi.Capture.CaptureSessionManager.CreateNewSession*"></a>
+  <h4 id="GeoSharpi_Capture_CaptureSessionManager_CreateNewSession" data-uid="GeoSharpi.Capture.CaptureSessionManager.CreateNewSession">CreateNewSession()</h4>
+  <div class="markdown level1 summary"><p>Creates a new session to store the data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CreateNewSession()</code></pre>
+  </div>
+  
+  
+  <a id="GeoSharpi_Capture_CaptureSessionManager_GetAllNodeTypes_" data-uid="GeoSharpi.Capture.CaptureSessionManager.GetAllNodeTypes*"></a>
+  <h4 id="GeoSharpi_Capture_CaptureSessionManager_GetAllNodeTypes" data-uid="GeoSharpi.Capture.CaptureSessionManager.GetAllNodeTypes">GetAllNodeTypes()</h4>
+  <div class="markdown level1 summary"><p>Logs all the Node types, including the Extended ones</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void GetAllNodeTypes()</code></pre>
+  </div>
+  
+  
+  <a id="GeoSharpi_Capture_CaptureSessionManager_LoadGraph_" data-uid="GeoSharpi.Capture.CaptureSessionManager.LoadGraph*"></a>
+  <h4 id="GeoSharpi_Capture_CaptureSessionManager_LoadGraph" data-uid="GeoSharpi.Capture.CaptureSessionManager.LoadGraph">LoadGraph()</h4>
+  <div class="markdown level1 summary"><p>Load a graph from the graphloadPath</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LoadGraph()</code></pre>
+  </div>
+  
+  
+  <a id="GeoSharpi_Capture_CaptureSessionManager_LoadSession_" data-uid="GeoSharpi.Capture.CaptureSessionManager.LoadSession*"></a>
+  <h4 id="GeoSharpi_Capture_CaptureSessionManager_LoadSession_System_String_" data-uid="GeoSharpi.Capture.CaptureSessionManager.LoadSession(System.String)">LoadSession(String)</h4>
+  <div class="markdown level1 summary"><p>Load a session from an rdf path</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LoadSession(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The Path to load from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="GeoSharpi_Capture_CaptureSessionManager_SaveGraph_" data-uid="GeoSharpi.Capture.CaptureSessionManager.SaveGraph*"></a>
+  <h4 id="GeoSharpi_Capture_CaptureSessionManager_SaveGraph" data-uid="GeoSharpi.Capture.CaptureSessionManager.SaveGraph">SaveGraph()</h4>
+  <div class="markdown level1 summary"><p>Saves the Graph</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RDFGraph SaveGraph()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">RDFGraph</span></td>
+        <td><p>The Updated RDF Graph</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="GeoSharpi_Capture_CaptureSessionManager_SendSessionToServer_" data-uid="GeoSharpi.Capture.CaptureSessionManager.SendSessionToServer*"></a>
+  <h4 id="GeoSharpi_Capture_CaptureSessionManager_SendSessionToServer" data-uid="GeoSharpi.Capture.CaptureSessionManager.SendSessionToServer">SendSessionToServer()</h4>
+  <div class="markdown level1 summary"><p>Sends the current session to the specified server</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendSessionToServer()</code></pre>
+  </div>
+  
+  
+  <a id="GeoSharpi_Capture_CaptureSessionManager_VisualiseSession_" data-uid="GeoSharpi.Capture.CaptureSessionManager.VisualiseSession*"></a>
+  <h4 id="GeoSharpi_Capture_CaptureSessionManager_VisualiseSession" data-uid="GeoSharpi.Capture.CaptureSessionManager.VisualiseSession">VisualiseSession()</h4>
+  <div class="markdown level1 summary"><p>spawn the current Capturesession in the scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void VisualiseSession()</code></pre>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            GeoSharpi by Jelle Vermandere
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

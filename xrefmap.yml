@@ -1,1110 +1,1084 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
-- uid: GeoSharpi
-  name: GeoSharpi
-  href: api/GeoSharpi.html
-  commentId: N:GeoSharpi
-  fullName: GeoSharpi
-  nameWithType: GeoSharpi
-- uid: GeoSharpi.BaseCameraCapture
+- uid: GeoSharpi.Capture
+  name: GeoSharpi.Capture
+  href: api/GeoSharpi.Capture.html
+  commentId: N:GeoSharpi.Capture
+  fullName: GeoSharpi.Capture
+  nameWithType: GeoSharpi.Capture
+- uid: GeoSharpi.Capture.BaseCameraCapture
   name: BaseCameraCapture
-  href: api/GeoSharpi.BaseCameraCapture.html
-  commentId: T:GeoSharpi.BaseCameraCapture
-  fullName: GeoSharpi.BaseCameraCapture
+  href: api/GeoSharpi.Capture.BaseCameraCapture.html
+  commentId: T:GeoSharpi.Capture.BaseCameraCapture
+  fullName: GeoSharpi.Capture.BaseCameraCapture
   nameWithType: BaseCameraCapture
-- uid: GeoSharpi.BaseCameraCapture.cameraTexture
+- uid: GeoSharpi.Capture.BaseCameraCapture.cameraTexture
   name: cameraTexture
-  href: api/GeoSharpi.BaseCameraCapture.html#GeoSharpi_BaseCameraCapture_cameraTexture
-  commentId: F:GeoSharpi.BaseCameraCapture.cameraTexture
-  fullName: GeoSharpi.BaseCameraCapture.cameraTexture
+  href: api/GeoSharpi.Capture.BaseCameraCapture.html#GeoSharpi_Capture_BaseCameraCapture_cameraTexture
+  commentId: F:GeoSharpi.Capture.BaseCameraCapture.cameraTexture
+  fullName: GeoSharpi.Capture.BaseCameraCapture.cameraTexture
   nameWithType: BaseCameraCapture.cameraTexture
-- uid: GeoSharpi.BaseCameraCapture.CreateNode(Transform,System.Single)
+- uid: GeoSharpi.Capture.BaseCameraCapture.CreateNode(Transform,System.Single)
   name: CreateNode(Transform, Single)
-  href: api/GeoSharpi.BaseCameraCapture.html#GeoSharpi_BaseCameraCapture_CreateNode_Transform_System_Single_
-  commentId: M:GeoSharpi.BaseCameraCapture.CreateNode(Transform,System.Single)
-  fullName: GeoSharpi.BaseCameraCapture.CreateNode(Transform, System.Single)
+  href: api/GeoSharpi.Capture.BaseCameraCapture.html#GeoSharpi_Capture_BaseCameraCapture_CreateNode_Transform_System_Single_
+  commentId: M:GeoSharpi.Capture.BaseCameraCapture.CreateNode(Transform,System.Single)
+  fullName: GeoSharpi.Capture.BaseCameraCapture.CreateNode(Transform, System.Single)
   nameWithType: BaseCameraCapture.CreateNode(Transform, Single)
-- uid: GeoSharpi.BaseCameraCapture.CreateNode*
+- uid: GeoSharpi.Capture.BaseCameraCapture.CreateNode*
   name: CreateNode
-  href: api/GeoSharpi.BaseCameraCapture.html#GeoSharpi_BaseCameraCapture_CreateNode_
-  commentId: Overload:GeoSharpi.BaseCameraCapture.CreateNode
+  href: api/GeoSharpi.Capture.BaseCameraCapture.html#GeoSharpi_Capture_BaseCameraCapture_CreateNode_
+  commentId: Overload:GeoSharpi.Capture.BaseCameraCapture.CreateNode
   isSpec: "True"
-  fullName: GeoSharpi.BaseCameraCapture.CreateNode
+  fullName: GeoSharpi.Capture.BaseCameraCapture.CreateNode
   nameWithType: BaseCameraCapture.CreateNode
-- uid: GeoSharpi.BaseCameraCapture.OnCaptureTaken
+- uid: GeoSharpi.Capture.BaseCameraCapture.OnCaptureTaken
   name: OnCaptureTaken
-  href: api/GeoSharpi.BaseCameraCapture.html#GeoSharpi_BaseCameraCapture_OnCaptureTaken
-  commentId: F:GeoSharpi.BaseCameraCapture.OnCaptureTaken
-  fullName: GeoSharpi.BaseCameraCapture.OnCaptureTaken
+  href: api/GeoSharpi.Capture.BaseCameraCapture.html#GeoSharpi_Capture_BaseCameraCapture_OnCaptureTaken
+  commentId: F:GeoSharpi.Capture.BaseCameraCapture.OnCaptureTaken
+  fullName: GeoSharpi.Capture.BaseCameraCapture.OnCaptureTaken
   nameWithType: BaseCameraCapture.OnCaptureTaken
-- uid: GeoSharpi.BaseCameraCapture.spawnInScene
+- uid: GeoSharpi.Capture.BaseCameraCapture.spawnInScene
   name: spawnInScene
-  href: api/GeoSharpi.BaseCameraCapture.html#GeoSharpi_BaseCameraCapture_spawnInScene
-  commentId: F:GeoSharpi.BaseCameraCapture.spawnInScene
-  fullName: GeoSharpi.BaseCameraCapture.spawnInScene
+  href: api/GeoSharpi.Capture.BaseCameraCapture.html#GeoSharpi_Capture_BaseCameraCapture_spawnInScene
+  commentId: F:GeoSharpi.Capture.BaseCameraCapture.spawnInScene
+  fullName: GeoSharpi.Capture.BaseCameraCapture.spawnInScene
   nameWithType: BaseCameraCapture.spawnInScene
-- uid: GeoSharpi.BaseCameraCapture.TakeCameraImage
+- uid: GeoSharpi.Capture.BaseCameraCapture.TakeCameraImage
   name: TakeCameraImage()
-  href: api/GeoSharpi.BaseCameraCapture.html#GeoSharpi_BaseCameraCapture_TakeCameraImage
-  commentId: M:GeoSharpi.BaseCameraCapture.TakeCameraImage
-  fullName: GeoSharpi.BaseCameraCapture.TakeCameraImage()
+  href: api/GeoSharpi.Capture.BaseCameraCapture.html#GeoSharpi_Capture_BaseCameraCapture_TakeCameraImage
+  commentId: M:GeoSharpi.Capture.BaseCameraCapture.TakeCameraImage
+  fullName: GeoSharpi.Capture.BaseCameraCapture.TakeCameraImage()
   nameWithType: BaseCameraCapture.TakeCameraImage()
-- uid: GeoSharpi.BaseCameraCapture.TakeCameraImage*
+- uid: GeoSharpi.Capture.BaseCameraCapture.TakeCameraImage*
   name: TakeCameraImage
-  href: api/GeoSharpi.BaseCameraCapture.html#GeoSharpi_BaseCameraCapture_TakeCameraImage_
-  commentId: Overload:GeoSharpi.BaseCameraCapture.TakeCameraImage
+  href: api/GeoSharpi.Capture.BaseCameraCapture.html#GeoSharpi_Capture_BaseCameraCapture_TakeCameraImage_
+  commentId: Overload:GeoSharpi.Capture.BaseCameraCapture.TakeCameraImage
   isSpec: "True"
-  fullName: GeoSharpi.BaseCameraCapture.TakeCameraImage
+  fullName: GeoSharpi.Capture.BaseCameraCapture.TakeCameraImage
   nameWithType: BaseCameraCapture.TakeCameraImage
-- uid: GeoSharpi.BaseMeshingController
+- uid: GeoSharpi.Capture.BaseMeshingController
   name: BaseMeshingController
-  href: api/GeoSharpi.BaseMeshingController.html
-  commentId: T:GeoSharpi.BaseMeshingController
-  fullName: GeoSharpi.BaseMeshingController
+  href: api/GeoSharpi.Capture.BaseMeshingController.html
+  commentId: T:GeoSharpi.Capture.BaseMeshingController
+  fullName: GeoSharpi.Capture.BaseMeshingController
   nameWithType: BaseMeshingController
-- uid: GeoSharpi.BaseMeshingController.CreateNode(Transform)
+- uid: GeoSharpi.Capture.BaseMeshingController.CreateNode(Transform)
   name: CreateNode(Transform)
-  href: api/GeoSharpi.BaseMeshingController.html#GeoSharpi_BaseMeshingController_CreateNode_Transform_
-  commentId: M:GeoSharpi.BaseMeshingController.CreateNode(Transform)
-  fullName: GeoSharpi.BaseMeshingController.CreateNode(Transform)
+  href: api/GeoSharpi.Capture.BaseMeshingController.html#GeoSharpi_Capture_BaseMeshingController_CreateNode_Transform_
+  commentId: M:GeoSharpi.Capture.BaseMeshingController.CreateNode(Transform)
+  fullName: GeoSharpi.Capture.BaseMeshingController.CreateNode(Transform)
   nameWithType: BaseMeshingController.CreateNode(Transform)
-- uid: GeoSharpi.BaseMeshingController.CreateNode*
+- uid: GeoSharpi.Capture.BaseMeshingController.CreateNode*
   name: CreateNode
-  href: api/GeoSharpi.BaseMeshingController.html#GeoSharpi_BaseMeshingController_CreateNode_
-  commentId: Overload:GeoSharpi.BaseMeshingController.CreateNode
+  href: api/GeoSharpi.Capture.BaseMeshingController.html#GeoSharpi_Capture_BaseMeshingController_CreateNode_
+  commentId: Overload:GeoSharpi.Capture.BaseMeshingController.CreateNode
   isSpec: "True"
-  fullName: GeoSharpi.BaseMeshingController.CreateNode
+  fullName: GeoSharpi.Capture.BaseMeshingController.CreateNode
   nameWithType: BaseMeshingController.CreateNode
-- uid: GeoSharpi.BaseMeshingController.GetCurrentMesh
+- uid: GeoSharpi.Capture.BaseMeshingController.GetCurrentMesh
   name: GetCurrentMesh()
-  href: api/GeoSharpi.BaseMeshingController.html#GeoSharpi_BaseMeshingController_GetCurrentMesh
-  commentId: M:GeoSharpi.BaseMeshingController.GetCurrentMesh
-  fullName: GeoSharpi.BaseMeshingController.GetCurrentMesh()
+  href: api/GeoSharpi.Capture.BaseMeshingController.html#GeoSharpi_Capture_BaseMeshingController_GetCurrentMesh
+  commentId: M:GeoSharpi.Capture.BaseMeshingController.GetCurrentMesh
+  fullName: GeoSharpi.Capture.BaseMeshingController.GetCurrentMesh()
   nameWithType: BaseMeshingController.GetCurrentMesh()
-- uid: GeoSharpi.BaseMeshingController.GetCurrentMesh*
+- uid: GeoSharpi.Capture.BaseMeshingController.GetCurrentMesh*
   name: GetCurrentMesh
-  href: api/GeoSharpi.BaseMeshingController.html#GeoSharpi_BaseMeshingController_GetCurrentMesh_
-  commentId: Overload:GeoSharpi.BaseMeshingController.GetCurrentMesh
+  href: api/GeoSharpi.Capture.BaseMeshingController.html#GeoSharpi_Capture_BaseMeshingController_GetCurrentMesh_
+  commentId: Overload:GeoSharpi.Capture.BaseMeshingController.GetCurrentMesh
   isSpec: "True"
-  fullName: GeoSharpi.BaseMeshingController.GetCurrentMesh
+  fullName: GeoSharpi.Capture.BaseMeshingController.GetCurrentMesh
   nameWithType: BaseMeshingController.GetCurrentMesh
-- uid: GeoSharpi.BaseMeshingController.OnMeshCaptured
+- uid: GeoSharpi.Capture.BaseMeshingController.OnMeshCaptured
   name: OnMeshCaptured
-  href: api/GeoSharpi.BaseMeshingController.html#GeoSharpi_BaseMeshingController_OnMeshCaptured
-  commentId: F:GeoSharpi.BaseMeshingController.OnMeshCaptured
-  fullName: GeoSharpi.BaseMeshingController.OnMeshCaptured
+  href: api/GeoSharpi.Capture.BaseMeshingController.html#GeoSharpi_Capture_BaseMeshingController_OnMeshCaptured
+  commentId: F:GeoSharpi.Capture.BaseMeshingController.OnMeshCaptured
+  fullName: GeoSharpi.Capture.BaseMeshingController.OnMeshCaptured
   nameWithType: BaseMeshingController.OnMeshCaptured
-- uid: GeoSharpi.BaseMeshingController.SaveMesh
+- uid: GeoSharpi.Capture.BaseMeshingController.SaveMesh
   name: SaveMesh()
-  href: api/GeoSharpi.BaseMeshingController.html#GeoSharpi_BaseMeshingController_SaveMesh
-  commentId: M:GeoSharpi.BaseMeshingController.SaveMesh
-  fullName: GeoSharpi.BaseMeshingController.SaveMesh()
+  href: api/GeoSharpi.Capture.BaseMeshingController.html#GeoSharpi_Capture_BaseMeshingController_SaveMesh
+  commentId: M:GeoSharpi.Capture.BaseMeshingController.SaveMesh
+  fullName: GeoSharpi.Capture.BaseMeshingController.SaveMesh()
   nameWithType: BaseMeshingController.SaveMesh()
-- uid: GeoSharpi.BaseMeshingController.SaveMesh*
+- uid: GeoSharpi.Capture.BaseMeshingController.SaveMesh*
   name: SaveMesh
-  href: api/GeoSharpi.BaseMeshingController.html#GeoSharpi_BaseMeshingController_SaveMesh_
-  commentId: Overload:GeoSharpi.BaseMeshingController.SaveMesh
+  href: api/GeoSharpi.Capture.BaseMeshingController.html#GeoSharpi_Capture_BaseMeshingController_SaveMesh_
+  commentId: Overload:GeoSharpi.Capture.BaseMeshingController.SaveMesh
   isSpec: "True"
-  fullName: GeoSharpi.BaseMeshingController.SaveMesh
+  fullName: GeoSharpi.Capture.BaseMeshingController.SaveMesh
   nameWithType: BaseMeshingController.SaveMesh
-- uid: GeoSharpi.CameraExtensions
-  name: CameraExtensions
-  href: api/GeoSharpi.CameraExtensions.html
-  commentId: T:GeoSharpi.CameraExtensions
-  fullName: GeoSharpi.CameraExtensions
-  nameWithType: CameraExtensions
-- uid: GeoSharpi.CameraExtensions.Get35MillimeterFocalLength(Camera)
-  name: Get35MillimeterFocalLength(Camera)
-  href: api/GeoSharpi.CameraExtensions.html#GeoSharpi_CameraExtensions_Get35MillimeterFocalLength_Camera_
-  commentId: M:GeoSharpi.CameraExtensions.Get35MillimeterFocalLength(Camera)
-  fullName: GeoSharpi.CameraExtensions.Get35MillimeterFocalLength(Camera)
-  nameWithType: CameraExtensions.Get35MillimeterFocalLength(Camera)
-- uid: GeoSharpi.CameraExtensions.Get35MillimeterFocalLength*
-  name: Get35MillimeterFocalLength
-  href: api/GeoSharpi.CameraExtensions.html#GeoSharpi_CameraExtensions_Get35MillimeterFocalLength_
-  commentId: Overload:GeoSharpi.CameraExtensions.Get35MillimeterFocalLength
-  isSpec: "True"
-  fullName: GeoSharpi.CameraExtensions.Get35MillimeterFocalLength
-  nameWithType: CameraExtensions.Get35MillimeterFocalLength
-- uid: GeoSharpi.CaptureSession
+- uid: GeoSharpi.Capture.CaptureSession
   name: CaptureSession
-  href: api/GeoSharpi.CaptureSession.html
-  commentId: T:GeoSharpi.CaptureSession
-  fullName: GeoSharpi.CaptureSession
+  href: api/GeoSharpi.Capture.CaptureSession.html
+  commentId: T:GeoSharpi.Capture.CaptureSession
+  fullName: GeoSharpi.Capture.CaptureSession
   nameWithType: CaptureSession
-- uid: GeoSharpi.CaptureSession.#ctor(System.String)
-  name: CaptureSession(String)
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession__ctor_System_String_
-  commentId: M:GeoSharpi.CaptureSession.#ctor(System.String)
-  fullName: GeoSharpi.CaptureSession.CaptureSession(System.String)
-  nameWithType: CaptureSession.CaptureSession(String)
-- uid: GeoSharpi.CaptureSession.#ctor(System.String,Matrix4x4)
+- uid: GeoSharpi.Capture.CaptureSession.#ctor(System.String,Matrix4x4)
   name: CaptureSession(String, Matrix4x4)
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession__ctor_System_String_Matrix4x4_
-  commentId: M:GeoSharpi.CaptureSession.#ctor(System.String,Matrix4x4)
-  fullName: GeoSharpi.CaptureSession.CaptureSession(System.String, Matrix4x4)
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession__ctor_System_String_Matrix4x4_
+  commentId: M:GeoSharpi.Capture.CaptureSession.#ctor(System.String,Matrix4x4)
+  fullName: GeoSharpi.Capture.CaptureSession.CaptureSession(System.String, Matrix4x4)
   nameWithType: CaptureSession.CaptureSession(String, Matrix4x4)
-- uid: GeoSharpi.CaptureSession.#ctor*
+- uid: GeoSharpi.Capture.CaptureSession.#ctor*
   name: CaptureSession
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession__ctor_
-  commentId: Overload:GeoSharpi.CaptureSession.#ctor
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession__ctor_
+  commentId: Overload:GeoSharpi.Capture.CaptureSession.#ctor
   isSpec: "True"
-  fullName: GeoSharpi.CaptureSession.CaptureSession
+  fullName: GeoSharpi.Capture.CaptureSession.CaptureSession
   nameWithType: CaptureSession.CaptureSession
-- uid: GeoSharpi.CaptureSession.AddNode(GeoSharpi.Node)
+- uid: GeoSharpi.Capture.CaptureSession.AddNode(GeoSharpi.Nodes.Node)
   name: AddNode(Node)
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_AddNode_GeoSharpi_Node_
-  commentId: M:GeoSharpi.CaptureSession.AddNode(GeoSharpi.Node)
-  fullName: GeoSharpi.CaptureSession.AddNode(GeoSharpi.Node)
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession_AddNode_GeoSharpi_Nodes_Node_
+  commentId: M:GeoSharpi.Capture.CaptureSession.AddNode(GeoSharpi.Nodes.Node)
+  fullName: GeoSharpi.Capture.CaptureSession.AddNode(GeoSharpi.Nodes.Node)
   nameWithType: CaptureSession.AddNode(Node)
-- uid: GeoSharpi.CaptureSession.AddNode*
+- uid: GeoSharpi.Capture.CaptureSession.AddNode*
   name: AddNode
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_AddNode_
-  commentId: Overload:GeoSharpi.CaptureSession.AddNode
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession_AddNode_
+  commentId: Overload:GeoSharpi.Capture.CaptureSession.AddNode
   isSpec: "True"
-  fullName: GeoSharpi.CaptureSession.AddNode
+  fullName: GeoSharpi.Capture.CaptureSession.AddNode
   nameWithType: CaptureSession.AddNode
-- uid: GeoSharpi.CaptureSession.GetAllNodeTypes
-  name: GetAllNodeTypes()
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_GetAllNodeTypes
-  commentId: M:GeoSharpi.CaptureSession.GetAllNodeTypes
-  fullName: GeoSharpi.CaptureSession.GetAllNodeTypes()
-  nameWithType: CaptureSession.GetAllNodeTypes()
-- uid: GeoSharpi.CaptureSession.GetAllNodeTypes*
-  name: GetAllNodeTypes
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_GetAllNodeTypes_
-  commentId: Overload:GeoSharpi.CaptureSession.GetAllNodeTypes
-  isSpec: "True"
-  fullName: GeoSharpi.CaptureSession.GetAllNodeTypes
-  nameWithType: CaptureSession.GetAllNodeTypes
-- uid: GeoSharpi.CaptureSession.imageQuality
+- uid: GeoSharpi.Capture.CaptureSession.imageQuality
   name: imageQuality
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_imageQuality
-  commentId: F:GeoSharpi.CaptureSession.imageQuality
-  fullName: GeoSharpi.CaptureSession.imageQuality
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession_imageQuality
+  commentId: F:GeoSharpi.Capture.CaptureSession.imageQuality
+  fullName: GeoSharpi.Capture.CaptureSession.imageQuality
   nameWithType: CaptureSession.imageQuality
-- uid: GeoSharpi.CaptureSession.LogGraph
+- uid: GeoSharpi.Capture.CaptureSession.LogGraph
   name: LogGraph()
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_LogGraph
-  commentId: M:GeoSharpi.CaptureSession.LogGraph
-  fullName: GeoSharpi.CaptureSession.LogGraph()
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession_LogGraph
+  commentId: M:GeoSharpi.Capture.CaptureSession.LogGraph
+  fullName: GeoSharpi.Capture.CaptureSession.LogGraph()
   nameWithType: CaptureSession.LogGraph()
-- uid: GeoSharpi.CaptureSession.LogGraph*
+- uid: GeoSharpi.Capture.CaptureSession.LogGraph*
   name: LogGraph
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_LogGraph_
-  commentId: Overload:GeoSharpi.CaptureSession.LogGraph
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession_LogGraph_
+  commentId: Overload:GeoSharpi.Capture.CaptureSession.LogGraph
   isSpec: "True"
-  fullName: GeoSharpi.CaptureSession.LogGraph
+  fullName: GeoSharpi.Capture.CaptureSession.LogGraph
   nameWithType: CaptureSession.LogGraph
-- uid: GeoSharpi.CaptureSession.nodes
+- uid: GeoSharpi.Capture.CaptureSession.nodes
   name: nodes
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_nodes
-  commentId: F:GeoSharpi.CaptureSession.nodes
-  fullName: GeoSharpi.CaptureSession.nodes
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession_nodes
+  commentId: F:GeoSharpi.Capture.CaptureSession.nodes
+  fullName: GeoSharpi.Capture.CaptureSession.nodes
   nameWithType: CaptureSession.nodes
-- uid: GeoSharpi.CaptureSession.ParseRDFNode(System.String,RDFGraph)
-  name: ParseRDFNode(String, RDFGraph)
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_ParseRDFNode_System_String_RDFGraph_
-  commentId: M:GeoSharpi.CaptureSession.ParseRDFNode(System.String,RDFGraph)
-  fullName: GeoSharpi.CaptureSession.ParseRDFNode(System.String, RDFGraph)
-  nameWithType: CaptureSession.ParseRDFNode(String, RDFGraph)
-- uid: GeoSharpi.CaptureSession.ParseRDFNode*
-  name: ParseRDFNode
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_ParseRDFNode_
-  commentId: Overload:GeoSharpi.CaptureSession.ParseRDFNode
-  isSpec: "True"
-  fullName: GeoSharpi.CaptureSession.ParseRDFNode
-  nameWithType: CaptureSession.ParseRDFNode
-- uid: GeoSharpi.CaptureSession.sessionNode
+- uid: GeoSharpi.Capture.CaptureSession.sessionNode
   name: sessionNode
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_sessionNode
-  commentId: F:GeoSharpi.CaptureSession.sessionNode
-  fullName: GeoSharpi.CaptureSession.sessionNode
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession_sessionNode
+  commentId: F:GeoSharpi.Capture.CaptureSession.sessionNode
+  fullName: GeoSharpi.Capture.CaptureSession.sessionNode
   nameWithType: CaptureSession.sessionNode
-- uid: GeoSharpi.CaptureSession.sessionPath
+- uid: GeoSharpi.Capture.CaptureSession.sessionPath
   name: sessionPath
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_sessionPath
-  commentId: F:GeoSharpi.CaptureSession.sessionPath
-  fullName: GeoSharpi.CaptureSession.sessionPath
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession_sessionPath
+  commentId: F:GeoSharpi.Capture.CaptureSession.sessionPath
+  fullName: GeoSharpi.Capture.CaptureSession.sessionPath
   nameWithType: CaptureSession.sessionPath
-- uid: GeoSharpi.CaptureSession.UpdateGraph
+- uid: GeoSharpi.Capture.CaptureSession.UpdateGraph
   name: UpdateGraph()
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_UpdateGraph
-  commentId: M:GeoSharpi.CaptureSession.UpdateGraph
-  fullName: GeoSharpi.CaptureSession.UpdateGraph()
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession_UpdateGraph
+  commentId: M:GeoSharpi.Capture.CaptureSession.UpdateGraph
+  fullName: GeoSharpi.Capture.CaptureSession.UpdateGraph()
   nameWithType: CaptureSession.UpdateGraph()
-- uid: GeoSharpi.CaptureSession.UpdateGraph*
+- uid: GeoSharpi.Capture.CaptureSession.UpdateGraph*
   name: UpdateGraph
-  href: api/GeoSharpi.CaptureSession.html#GeoSharpi_CaptureSession_UpdateGraph_
-  commentId: Overload:GeoSharpi.CaptureSession.UpdateGraph
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession_UpdateGraph_
+  commentId: Overload:GeoSharpi.Capture.CaptureSession.UpdateGraph
   isSpec: "True"
-  fullName: GeoSharpi.CaptureSession.UpdateGraph
+  fullName: GeoSharpi.Capture.CaptureSession.UpdateGraph
   nameWithType: CaptureSession.UpdateGraph
-- uid: GeoSharpi.CaptureSessionManager
+- uid: GeoSharpi.Capture.CaptureSessionManager
   name: CaptureSessionManager
-  href: api/GeoSharpi.CaptureSessionManager.html
-  commentId: T:GeoSharpi.CaptureSessionManager
-  fullName: GeoSharpi.CaptureSessionManager
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html
+  commentId: T:GeoSharpi.Capture.CaptureSessionManager
+  fullName: GeoSharpi.Capture.CaptureSessionManager
   nameWithType: CaptureSessionManager
-- uid: GeoSharpi.CaptureSessionManager.AddNode(GeoSharpi.Node)
+- uid: GeoSharpi.Capture.CaptureSessionManager.AddNode(GeoSharpi.Nodes.Node)
   name: AddNode(Node)
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_AddNode_GeoSharpi_Node_
-  commentId: M:GeoSharpi.CaptureSessionManager.AddNode(GeoSharpi.Node)
-  fullName: GeoSharpi.CaptureSessionManager.AddNode(GeoSharpi.Node)
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_AddNode_GeoSharpi_Nodes_Node_
+  commentId: M:GeoSharpi.Capture.CaptureSessionManager.AddNode(GeoSharpi.Nodes.Node)
+  fullName: GeoSharpi.Capture.CaptureSessionManager.AddNode(GeoSharpi.Nodes.Node)
   nameWithType: CaptureSessionManager.AddNode(Node)
-- uid: GeoSharpi.CaptureSessionManager.AddNode*
+- uid: GeoSharpi.Capture.CaptureSessionManager.AddNode*
   name: AddNode
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_AddNode_
-  commentId: Overload:GeoSharpi.CaptureSessionManager.AddNode
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_AddNode_
+  commentId: Overload:GeoSharpi.Capture.CaptureSessionManager.AddNode
   isSpec: "True"
-  fullName: GeoSharpi.CaptureSessionManager.AddNode
+  fullName: GeoSharpi.Capture.CaptureSessionManager.AddNode
   nameWithType: CaptureSessionManager.AddNode
-- uid: GeoSharpi.CaptureSessionManager.assetSession
+- uid: GeoSharpi.Capture.CaptureSessionManager.assetSession
   name: assetSession
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_assetSession
-  commentId: F:GeoSharpi.CaptureSessionManager.assetSession
-  fullName: GeoSharpi.CaptureSessionManager.assetSession
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_assetSession
+  commentId: F:GeoSharpi.Capture.CaptureSessionManager.assetSession
+  fullName: GeoSharpi.Capture.CaptureSessionManager.assetSession
   nameWithType: CaptureSessionManager.assetSession
-- uid: GeoSharpi.CaptureSessionManager.CreateNewSession
+- uid: GeoSharpi.Capture.CaptureSessionManager.CreateNewSession
   name: CreateNewSession()
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_CreateNewSession
-  commentId: M:GeoSharpi.CaptureSessionManager.CreateNewSession
-  fullName: GeoSharpi.CaptureSessionManager.CreateNewSession()
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_CreateNewSession
+  commentId: M:GeoSharpi.Capture.CaptureSessionManager.CreateNewSession
+  fullName: GeoSharpi.Capture.CaptureSessionManager.CreateNewSession()
   nameWithType: CaptureSessionManager.CreateNewSession()
-- uid: GeoSharpi.CaptureSessionManager.CreateNewSession*
+- uid: GeoSharpi.Capture.CaptureSessionManager.CreateNewSession*
   name: CreateNewSession
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_CreateNewSession_
-  commentId: Overload:GeoSharpi.CaptureSessionManager.CreateNewSession
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_CreateNewSession_
+  commentId: Overload:GeoSharpi.Capture.CaptureSessionManager.CreateNewSession
   isSpec: "True"
-  fullName: GeoSharpi.CaptureSessionManager.CreateNewSession
+  fullName: GeoSharpi.Capture.CaptureSessionManager.CreateNewSession
   nameWithType: CaptureSessionManager.CreateNewSession
-- uid: GeoSharpi.CaptureSessionManager.GetAllNodeTypes
+- uid: GeoSharpi.Capture.CaptureSessionManager.GetAllNodeTypes
   name: GetAllNodeTypes()
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_GetAllNodeTypes
-  commentId: M:GeoSharpi.CaptureSessionManager.GetAllNodeTypes
-  fullName: GeoSharpi.CaptureSessionManager.GetAllNodeTypes()
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_GetAllNodeTypes
+  commentId: M:GeoSharpi.Capture.CaptureSessionManager.GetAllNodeTypes
+  fullName: GeoSharpi.Capture.CaptureSessionManager.GetAllNodeTypes()
   nameWithType: CaptureSessionManager.GetAllNodeTypes()
-- uid: GeoSharpi.CaptureSessionManager.GetAllNodeTypes*
+- uid: GeoSharpi.Capture.CaptureSessionManager.GetAllNodeTypes*
   name: GetAllNodeTypes
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_GetAllNodeTypes_
-  commentId: Overload:GeoSharpi.CaptureSessionManager.GetAllNodeTypes
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_GetAllNodeTypes_
+  commentId: Overload:GeoSharpi.Capture.CaptureSessionManager.GetAllNodeTypes
   isSpec: "True"
-  fullName: GeoSharpi.CaptureSessionManager.GetAllNodeTypes
+  fullName: GeoSharpi.Capture.CaptureSessionManager.GetAllNodeTypes
   nameWithType: CaptureSessionManager.GetAllNodeTypes
-- uid: GeoSharpi.CaptureSessionManager.graphLoadPath
+- uid: GeoSharpi.Capture.CaptureSessionManager.graphLoadPath
   name: graphLoadPath
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_graphLoadPath
-  commentId: F:GeoSharpi.CaptureSessionManager.graphLoadPath
-  fullName: GeoSharpi.CaptureSessionManager.graphLoadPath
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_graphLoadPath
+  commentId: F:GeoSharpi.Capture.CaptureSessionManager.graphLoadPath
+  fullName: GeoSharpi.Capture.CaptureSessionManager.graphLoadPath
   nameWithType: CaptureSessionManager.graphLoadPath
-- uid: GeoSharpi.CaptureSessionManager.LoadGraph
+- uid: GeoSharpi.Capture.CaptureSessionManager.LoadGraph
   name: LoadGraph()
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_LoadGraph
-  commentId: M:GeoSharpi.CaptureSessionManager.LoadGraph
-  fullName: GeoSharpi.CaptureSessionManager.LoadGraph()
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_LoadGraph
+  commentId: M:GeoSharpi.Capture.CaptureSessionManager.LoadGraph
+  fullName: GeoSharpi.Capture.CaptureSessionManager.LoadGraph()
   nameWithType: CaptureSessionManager.LoadGraph()
-- uid: GeoSharpi.CaptureSessionManager.LoadGraph*
+- uid: GeoSharpi.Capture.CaptureSessionManager.LoadGraph*
   name: LoadGraph
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_LoadGraph_
-  commentId: Overload:GeoSharpi.CaptureSessionManager.LoadGraph
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_LoadGraph_
+  commentId: Overload:GeoSharpi.Capture.CaptureSessionManager.LoadGraph
   isSpec: "True"
-  fullName: GeoSharpi.CaptureSessionManager.LoadGraph
+  fullName: GeoSharpi.Capture.CaptureSessionManager.LoadGraph
   nameWithType: CaptureSessionManager.LoadGraph
-- uid: GeoSharpi.CaptureSessionManager.LoadSession(System.String)
+- uid: GeoSharpi.Capture.CaptureSessionManager.LoadSession(System.String)
   name: LoadSession(String)
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_LoadSession_System_String_
-  commentId: M:GeoSharpi.CaptureSessionManager.LoadSession(System.String)
-  fullName: GeoSharpi.CaptureSessionManager.LoadSession(System.String)
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_LoadSession_System_String_
+  commentId: M:GeoSharpi.Capture.CaptureSessionManager.LoadSession(System.String)
+  fullName: GeoSharpi.Capture.CaptureSessionManager.LoadSession(System.String)
   nameWithType: CaptureSessionManager.LoadSession(String)
-- uid: GeoSharpi.CaptureSessionManager.LoadSession*
+- uid: GeoSharpi.Capture.CaptureSessionManager.LoadSession*
   name: LoadSession
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_LoadSession_
-  commentId: Overload:GeoSharpi.CaptureSessionManager.LoadSession
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_LoadSession_
+  commentId: Overload:GeoSharpi.Capture.CaptureSessionManager.LoadSession
   isSpec: "True"
-  fullName: GeoSharpi.CaptureSessionManager.LoadSession
+  fullName: GeoSharpi.Capture.CaptureSessionManager.LoadSession
   nameWithType: CaptureSessionManager.LoadSession
-- uid: GeoSharpi.CaptureSessionManager.SaveGraph
+- uid: GeoSharpi.Capture.CaptureSessionManager.SaveGraph
   name: SaveGraph()
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_SaveGraph
-  commentId: M:GeoSharpi.CaptureSessionManager.SaveGraph
-  fullName: GeoSharpi.CaptureSessionManager.SaveGraph()
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_SaveGraph
+  commentId: M:GeoSharpi.Capture.CaptureSessionManager.SaveGraph
+  fullName: GeoSharpi.Capture.CaptureSessionManager.SaveGraph()
   nameWithType: CaptureSessionManager.SaveGraph()
-- uid: GeoSharpi.CaptureSessionManager.SaveGraph*
+- uid: GeoSharpi.Capture.CaptureSessionManager.SaveGraph*
   name: SaveGraph
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_SaveGraph_
-  commentId: Overload:GeoSharpi.CaptureSessionManager.SaveGraph
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_SaveGraph_
+  commentId: Overload:GeoSharpi.Capture.CaptureSessionManager.SaveGraph
   isSpec: "True"
-  fullName: GeoSharpi.CaptureSessionManager.SaveGraph
+  fullName: GeoSharpi.Capture.CaptureSessionManager.SaveGraph
   nameWithType: CaptureSessionManager.SaveGraph
-- uid: GeoSharpi.CaptureSessionManager.SendSessionToServer
+- uid: GeoSharpi.Capture.CaptureSessionManager.SendSessionToServer
   name: SendSessionToServer()
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_SendSessionToServer
-  commentId: M:GeoSharpi.CaptureSessionManager.SendSessionToServer
-  fullName: GeoSharpi.CaptureSessionManager.SendSessionToServer()
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_SendSessionToServer
+  commentId: M:GeoSharpi.Capture.CaptureSessionManager.SendSessionToServer
+  fullName: GeoSharpi.Capture.CaptureSessionManager.SendSessionToServer()
   nameWithType: CaptureSessionManager.SendSessionToServer()
-- uid: GeoSharpi.CaptureSessionManager.SendSessionToServer*
+- uid: GeoSharpi.Capture.CaptureSessionManager.SendSessionToServer*
   name: SendSessionToServer
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_SendSessionToServer_
-  commentId: Overload:GeoSharpi.CaptureSessionManager.SendSessionToServer
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_SendSessionToServer_
+  commentId: Overload:GeoSharpi.Capture.CaptureSessionManager.SendSessionToServer
   isSpec: "True"
-  fullName: GeoSharpi.CaptureSessionManager.SendSessionToServer
+  fullName: GeoSharpi.Capture.CaptureSessionManager.SendSessionToServer
   nameWithType: CaptureSessionManager.SendSessionToServer
-- uid: GeoSharpi.CaptureSessionManager.useLinkedSubjects
+- uid: GeoSharpi.Capture.CaptureSessionManager.useLinkedSubjects
   name: useLinkedSubjects
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_useLinkedSubjects
-  commentId: F:GeoSharpi.CaptureSessionManager.useLinkedSubjects
-  fullName: GeoSharpi.CaptureSessionManager.useLinkedSubjects
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_useLinkedSubjects
+  commentId: F:GeoSharpi.Capture.CaptureSessionManager.useLinkedSubjects
+  fullName: GeoSharpi.Capture.CaptureSessionManager.useLinkedSubjects
   nameWithType: CaptureSessionManager.useLinkedSubjects
-- uid: GeoSharpi.CaptureSessionManager.VisualiseSession
+- uid: GeoSharpi.Capture.CaptureSessionManager.VisualiseSession
   name: VisualiseSession()
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_VisualiseSession
-  commentId: M:GeoSharpi.CaptureSessionManager.VisualiseSession
-  fullName: GeoSharpi.CaptureSessionManager.VisualiseSession()
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_VisualiseSession
+  commentId: M:GeoSharpi.Capture.CaptureSessionManager.VisualiseSession
+  fullName: GeoSharpi.Capture.CaptureSessionManager.VisualiseSession()
   nameWithType: CaptureSessionManager.VisualiseSession()
-- uid: GeoSharpi.CaptureSessionManager.VisualiseSession*
+- uid: GeoSharpi.Capture.CaptureSessionManager.VisualiseSession*
   name: VisualiseSession
-  href: api/GeoSharpi.CaptureSessionManager.html#GeoSharpi_CaptureSessionManager_VisualiseSession_
-  commentId: Overload:GeoSharpi.CaptureSessionManager.VisualiseSession
+  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_VisualiseSession_
+  commentId: Overload:GeoSharpi.Capture.CaptureSessionManager.VisualiseSession
   isSpec: "True"
-  fullName: GeoSharpi.CaptureSessionManager.VisualiseSession
+  fullName: GeoSharpi.Capture.CaptureSessionManager.VisualiseSession
   nameWithType: CaptureSessionManager.VisualiseSession
-- uid: GeoSharpi.GeometryNode
+- uid: GeoSharpi.Nodes
+  name: GeoSharpi.Nodes
+  href: api/GeoSharpi.Nodes.html
+  commentId: N:GeoSharpi.Nodes
+  fullName: GeoSharpi.Nodes
+  nameWithType: GeoSharpi.Nodes
+- uid: GeoSharpi.Nodes.GeometryNode
   name: GeometryNode
-  href: api/GeoSharpi.GeometryNode.html
-  commentId: T:GeoSharpi.GeometryNode
-  fullName: GeoSharpi.GeometryNode
+  href: api/GeoSharpi.Nodes.GeometryNode.html
+  commentId: T:GeoSharpi.Nodes.GeometryNode
+  fullName: GeoSharpi.Nodes.GeometryNode
   nameWithType: GeometryNode
-- uid: GeoSharpi.GeometryNode.#ctor
+- uid: GeoSharpi.Nodes.GeometryNode.#ctor
   name: GeometryNode()
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode__ctor
-  commentId: M:GeoSharpi.GeometryNode.#ctor
-  fullName: GeoSharpi.GeometryNode.GeometryNode()
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode__ctor
+  commentId: M:GeoSharpi.Nodes.GeometryNode.#ctor
+  fullName: GeoSharpi.Nodes.GeometryNode.GeometryNode()
   nameWithType: GeometryNode.GeometryNode()
-- uid: GeoSharpi.GeometryNode.#ctor(Mesh,Matrix4x4)
+- uid: GeoSharpi.Nodes.GeometryNode.#ctor(Mesh,Matrix4x4)
   name: GeometryNode(Mesh, Matrix4x4)
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode__ctor_Mesh_Matrix4x4_
-  commentId: M:GeoSharpi.GeometryNode.#ctor(Mesh,Matrix4x4)
-  fullName: GeoSharpi.GeometryNode.GeometryNode(Mesh, Matrix4x4)
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode__ctor_Mesh_Matrix4x4_
+  commentId: M:GeoSharpi.Nodes.GeometryNode.#ctor(Mesh,Matrix4x4)
+  fullName: GeoSharpi.Nodes.GeometryNode.GeometryNode(Mesh, Matrix4x4)
   nameWithType: GeometryNode.GeometryNode(Mesh, Matrix4x4)
-- uid: GeoSharpi.GeometryNode.#ctor(System.String,System.String)
+- uid: GeoSharpi.Nodes.GeometryNode.#ctor(System.String,System.String)
   name: GeometryNode(String, String)
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode__ctor_System_String_System_String_
-  commentId: M:GeoSharpi.GeometryNode.#ctor(System.String,System.String)
-  fullName: GeoSharpi.GeometryNode.GeometryNode(System.String, System.String)
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode__ctor_System_String_System_String_
+  commentId: M:GeoSharpi.Nodes.GeometryNode.#ctor(System.String,System.String)
+  fullName: GeoSharpi.Nodes.GeometryNode.GeometryNode(System.String, System.String)
   nameWithType: GeometryNode.GeometryNode(String, String)
-- uid: GeoSharpi.GeometryNode.#ctor*
+- uid: GeoSharpi.Nodes.GeometryNode.#ctor*
   name: GeometryNode
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode__ctor_
-  commentId: Overload:GeoSharpi.GeometryNode.#ctor
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode__ctor_
+  commentId: Overload:GeoSharpi.Nodes.GeometryNode.#ctor
   isSpec: "True"
-  fullName: GeoSharpi.GeometryNode.GeometryNode
+  fullName: GeoSharpi.Nodes.GeometryNode.GeometryNode
   nameWithType: GeometryNode.GeometryNode
-- uid: GeoSharpi.GeometryNode.displayDistance
+- uid: GeoSharpi.Nodes.GeometryNode.displayDistance
   name: displayDistance
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode_displayDistance
-  commentId: F:GeoSharpi.GeometryNode.displayDistance
-  fullName: GeoSharpi.GeometryNode.displayDistance
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode_displayDistance
+  commentId: F:GeoSharpi.Nodes.GeometryNode.displayDistance
+  fullName: GeoSharpi.Nodes.GeometryNode.displayDistance
   nameWithType: GeometryNode.displayDistance
-- uid: GeoSharpi.GeometryNode.GetResourceObject
+- uid: GeoSharpi.Nodes.GeometryNode.GetResourceObject
   name: GetResourceObject()
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode_GetResourceObject
-  commentId: M:GeoSharpi.GeometryNode.GetResourceObject
-  fullName: GeoSharpi.GeometryNode.GetResourceObject()
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode_GetResourceObject
+  commentId: M:GeoSharpi.Nodes.GeometryNode.GetResourceObject
+  fullName: GeoSharpi.Nodes.GeometryNode.GetResourceObject()
   nameWithType: GeometryNode.GetResourceObject()
-- uid: GeoSharpi.GeometryNode.GetResourceObject*
+- uid: GeoSharpi.Nodes.GeometryNode.GetResourceObject*
   name: GetResourceObject
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode_GetResourceObject_
-  commentId: Overload:GeoSharpi.GeometryNode.GetResourceObject
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode_GetResourceObject_
+  commentId: Overload:GeoSharpi.Nodes.GeometryNode.GetResourceObject
   isSpec: "True"
-  fullName: GeoSharpi.GeometryNode.GetResourceObject
+  fullName: GeoSharpi.Nodes.GeometryNode.GetResourceObject
   nameWithType: GeometryNode.GetResourceObject
-- uid: GeoSharpi.GeometryNode.LoadResource(System.String)
+- uid: GeoSharpi.Nodes.GeometryNode.LoadResource(System.String)
   name: LoadResource(String)
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode_LoadResource_System_String_
-  commentId: M:GeoSharpi.GeometryNode.LoadResource(System.String)
-  fullName: GeoSharpi.GeometryNode.LoadResource(System.String)
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode_LoadResource_System_String_
+  commentId: M:GeoSharpi.Nodes.GeometryNode.LoadResource(System.String)
+  fullName: GeoSharpi.Nodes.GeometryNode.LoadResource(System.String)
   nameWithType: GeometryNode.LoadResource(String)
-- uid: GeoSharpi.GeometryNode.LoadResource*
+- uid: GeoSharpi.Nodes.GeometryNode.LoadResource*
   name: LoadResource
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode_LoadResource_
-  commentId: Overload:GeoSharpi.GeometryNode.LoadResource
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode_LoadResource_
+  commentId: Overload:GeoSharpi.Nodes.GeometryNode.LoadResource
   isSpec: "True"
-  fullName: GeoSharpi.GeometryNode.LoadResource
+  fullName: GeoSharpi.Nodes.GeometryNode.LoadResource
   nameWithType: GeometryNode.LoadResource
-- uid: GeoSharpi.GeometryNode.mesh
+- uid: GeoSharpi.Nodes.GeometryNode.mesh
   name: mesh
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode_mesh
-  commentId: F:GeoSharpi.GeometryNode.mesh
-  fullName: GeoSharpi.GeometryNode.mesh
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode_mesh
+  commentId: F:GeoSharpi.Nodes.GeometryNode.mesh
+  fullName: GeoSharpi.Nodes.GeometryNode.mesh
   nameWithType: GeometryNode.mesh
-- uid: GeoSharpi.GeometryNode.meshShader
+- uid: GeoSharpi.Nodes.GeometryNode.meshShader
   name: meshShader
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode_meshShader
-  commentId: F:GeoSharpi.GeometryNode.meshShader
-  fullName: GeoSharpi.GeometryNode.meshShader
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode_meshShader
+  commentId: F:GeoSharpi.Nodes.GeometryNode.meshShader
+  fullName: GeoSharpi.Nodes.GeometryNode.meshShader
   nameWithType: GeometryNode.meshShader
-- uid: GeoSharpi.GeometryNode.SaveResource(System.String)
+- uid: GeoSharpi.Nodes.GeometryNode.SaveResource(System.String)
   name: SaveResource(String)
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode_SaveResource_System_String_
-  commentId: M:GeoSharpi.GeometryNode.SaveResource(System.String)
-  fullName: GeoSharpi.GeometryNode.SaveResource(System.String)
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode_SaveResource_System_String_
+  commentId: M:GeoSharpi.Nodes.GeometryNode.SaveResource(System.String)
+  fullName: GeoSharpi.Nodes.GeometryNode.SaveResource(System.String)
   nameWithType: GeometryNode.SaveResource(String)
-- uid: GeoSharpi.GeometryNode.SaveResource*
+- uid: GeoSharpi.Nodes.GeometryNode.SaveResource*
   name: SaveResource
-  href: api/GeoSharpi.GeometryNode.html#GeoSharpi_GeometryNode_SaveResource_
-  commentId: Overload:GeoSharpi.GeometryNode.SaveResource
+  href: api/GeoSharpi.Nodes.GeometryNode.html#GeoSharpi_Nodes_GeometryNode_SaveResource_
+  commentId: Overload:GeoSharpi.Nodes.GeometryNode.SaveResource
   isSpec: "True"
-  fullName: GeoSharpi.GeometryNode.SaveResource
+  fullName: GeoSharpi.Nodes.GeometryNode.SaveResource
   nameWithType: GeometryNode.SaveResource
-- uid: GeoSharpi.GeometryNodeNodeEvent
-  name: GeometryNodeNodeEvent
-  href: api/GeoSharpi.GeometryNodeNodeEvent.html
-  commentId: T:GeoSharpi.GeometryNodeNodeEvent
-  fullName: GeoSharpi.GeometryNodeNodeEvent
-  nameWithType: GeometryNodeNodeEvent
-- uid: GeoSharpi.ImageIO
-  name: ImageIO
-  href: api/GeoSharpi.ImageIO.html
-  commentId: T:GeoSharpi.ImageIO
-  fullName: GeoSharpi.ImageIO
-  nameWithType: ImageIO
-- uid: GeoSharpi.ImageIO.LoadImage(System.String)
-  name: LoadImage(String)
-  href: api/GeoSharpi.ImageIO.html#GeoSharpi_ImageIO_LoadImage_System_String_
-  commentId: M:GeoSharpi.ImageIO.LoadImage(System.String)
-  fullName: GeoSharpi.ImageIO.LoadImage(System.String)
-  nameWithType: ImageIO.LoadImage(String)
-- uid: GeoSharpi.ImageIO.LoadImage*
-  name: LoadImage
-  href: api/GeoSharpi.ImageIO.html#GeoSharpi_ImageIO_LoadImage_
-  commentId: Overload:GeoSharpi.ImageIO.LoadImage
-  isSpec: "True"
-  fullName: GeoSharpi.ImageIO.LoadImage
-  nameWithType: ImageIO.LoadImage
-- uid: GeoSharpi.ImageIO.SaveImage(Texture2D,System.String,System.Int32)
-  name: SaveImage(Texture2D, String, Int32)
-  href: api/GeoSharpi.ImageIO.html#GeoSharpi_ImageIO_SaveImage_Texture2D_System_String_System_Int32_
-  commentId: M:GeoSharpi.ImageIO.SaveImage(Texture2D,System.String,System.Int32)
-  fullName: GeoSharpi.ImageIO.SaveImage(Texture2D, System.String, System.Int32)
-  nameWithType: ImageIO.SaveImage(Texture2D, String, Int32)
-- uid: GeoSharpi.ImageIO.SaveImage*
-  name: SaveImage
-  href: api/GeoSharpi.ImageIO.html#GeoSharpi_ImageIO_SaveImage_
-  commentId: Overload:GeoSharpi.ImageIO.SaveImage
-  isSpec: "True"
-  fullName: GeoSharpi.ImageIO.SaveImage
-  nameWithType: ImageIO.SaveImage
-- uid: GeoSharpi.ImageNode
+- uid: GeoSharpi.Nodes.ImageNode
   name: ImageNode
-  href: api/GeoSharpi.ImageNode.html
-  commentId: T:GeoSharpi.ImageNode
-  fullName: GeoSharpi.ImageNode
+  href: api/GeoSharpi.Nodes.ImageNode.html
+  commentId: T:GeoSharpi.Nodes.ImageNode
+  fullName: GeoSharpi.Nodes.ImageNode
   nameWithType: ImageNode
-- uid: GeoSharpi.ImageNode.#ctor
+- uid: GeoSharpi.Nodes.ImageNode.#ctor
   name: ImageNode()
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode__ctor
-  commentId: M:GeoSharpi.ImageNode.#ctor
-  fullName: GeoSharpi.ImageNode.ImageNode()
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode__ctor
+  commentId: M:GeoSharpi.Nodes.ImageNode.#ctor
+  fullName: GeoSharpi.Nodes.ImageNode.ImageNode()
   nameWithType: ImageNode.ImageNode()
-- uid: GeoSharpi.ImageNode.#ctor(System.String,System.String)
+- uid: GeoSharpi.Nodes.ImageNode.#ctor(System.String,System.String)
   name: ImageNode(String, String)
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode__ctor_System_String_System_String_
-  commentId: M:GeoSharpi.ImageNode.#ctor(System.String,System.String)
-  fullName: GeoSharpi.ImageNode.ImageNode(System.String, System.String)
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode__ctor_System_String_System_String_
+  commentId: M:GeoSharpi.Nodes.ImageNode.#ctor(System.String,System.String)
+  fullName: GeoSharpi.Nodes.ImageNode.ImageNode(System.String, System.String)
   nameWithType: ImageNode.ImageNode(String, String)
-- uid: GeoSharpi.ImageNode.#ctor(Texture2D,Matrix4x4,System.Single)
+- uid: GeoSharpi.Nodes.ImageNode.#ctor(Texture2D,Matrix4x4,System.Single)
   name: ImageNode(Texture2D, Matrix4x4, Single)
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode__ctor_Texture2D_Matrix4x4_System_Single_
-  commentId: M:GeoSharpi.ImageNode.#ctor(Texture2D,Matrix4x4,System.Single)
-  fullName: GeoSharpi.ImageNode.ImageNode(Texture2D, Matrix4x4, System.Single)
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode__ctor_Texture2D_Matrix4x4_System_Single_
+  commentId: M:GeoSharpi.Nodes.ImageNode.#ctor(Texture2D,Matrix4x4,System.Single)
+  fullName: GeoSharpi.Nodes.ImageNode.ImageNode(Texture2D, Matrix4x4, System.Single)
   nameWithType: ImageNode.ImageNode(Texture2D, Matrix4x4, Single)
-- uid: GeoSharpi.ImageNode.#ctor*
+- uid: GeoSharpi.Nodes.ImageNode.#ctor*
   name: ImageNode
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode__ctor_
-  commentId: Overload:GeoSharpi.ImageNode.#ctor
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode__ctor_
+  commentId: Overload:GeoSharpi.Nodes.ImageNode.#ctor
   isSpec: "True"
-  fullName: GeoSharpi.ImageNode.ImageNode
+  fullName: GeoSharpi.Nodes.ImageNode.ImageNode
   nameWithType: ImageNode.ImageNode
-- uid: GeoSharpi.ImageNode.displayDistance
+- uid: GeoSharpi.Nodes.ImageNode.displayDistance
   name: displayDistance
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode_displayDistance
-  commentId: F:GeoSharpi.ImageNode.displayDistance
-  fullName: GeoSharpi.ImageNode.displayDistance
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_displayDistance
+  commentId: F:GeoSharpi.Nodes.ImageNode.displayDistance
+  fullName: GeoSharpi.Nodes.ImageNode.displayDistance
   nameWithType: ImageNode.displayDistance
-- uid: GeoSharpi.ImageNode.focalLengthIn35mmFilm
+- uid: GeoSharpi.Nodes.ImageNode.focalLengthIn35mmFilm
   name: focalLengthIn35mmFilm
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode_focalLengthIn35mmFilm
-  commentId: F:GeoSharpi.ImageNode.focalLengthIn35mmFilm
-  fullName: GeoSharpi.ImageNode.focalLengthIn35mmFilm
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_focalLengthIn35mmFilm
+  commentId: F:GeoSharpi.Nodes.ImageNode.focalLengthIn35mmFilm
+  fullName: GeoSharpi.Nodes.ImageNode.focalLengthIn35mmFilm
   nameWithType: ImageNode.focalLengthIn35mmFilm
-- uid: GeoSharpi.ImageNode.GetResourceObject
+- uid: GeoSharpi.Nodes.ImageNode.GetResourceObject
   name: GetResourceObject()
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode_GetResourceObject
-  commentId: M:GeoSharpi.ImageNode.GetResourceObject
-  fullName: GeoSharpi.ImageNode.GetResourceObject()
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_GetResourceObject
+  commentId: M:GeoSharpi.Nodes.ImageNode.GetResourceObject
+  fullName: GeoSharpi.Nodes.ImageNode.GetResourceObject()
   nameWithType: ImageNode.GetResourceObject()
-- uid: GeoSharpi.ImageNode.GetResourceObject*
+- uid: GeoSharpi.Nodes.ImageNode.GetResourceObject*
   name: GetResourceObject
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode_GetResourceObject_
-  commentId: Overload:GeoSharpi.ImageNode.GetResourceObject
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_GetResourceObject_
+  commentId: Overload:GeoSharpi.Nodes.ImageNode.GetResourceObject
   isSpec: "True"
-  fullName: GeoSharpi.ImageNode.GetResourceObject
+  fullName: GeoSharpi.Nodes.ImageNode.GetResourceObject
   nameWithType: ImageNode.GetResourceObject
-- uid: GeoSharpi.ImageNode.imageTexture
+- uid: GeoSharpi.Nodes.ImageNode.imageTexture
   name: imageTexture
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode_imageTexture
-  commentId: F:GeoSharpi.ImageNode.imageTexture
-  fullName: GeoSharpi.ImageNode.imageTexture
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_imageTexture
+  commentId: F:GeoSharpi.Nodes.ImageNode.imageTexture
+  fullName: GeoSharpi.Nodes.ImageNode.imageTexture
   nameWithType: ImageNode.imageTexture
-- uid: GeoSharpi.ImageNode.LoadResource(System.String)
+- uid: GeoSharpi.Nodes.ImageNode.LoadResource(System.String)
   name: LoadResource(String)
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode_LoadResource_System_String_
-  commentId: M:GeoSharpi.ImageNode.LoadResource(System.String)
-  fullName: GeoSharpi.ImageNode.LoadResource(System.String)
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_LoadResource_System_String_
+  commentId: M:GeoSharpi.Nodes.ImageNode.LoadResource(System.String)
+  fullName: GeoSharpi.Nodes.ImageNode.LoadResource(System.String)
   nameWithType: ImageNode.LoadResource(String)
-- uid: GeoSharpi.ImageNode.LoadResource*
+- uid: GeoSharpi.Nodes.ImageNode.LoadResource*
   name: LoadResource
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode_LoadResource_
-  commentId: Overload:GeoSharpi.ImageNode.LoadResource
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_LoadResource_
+  commentId: Overload:GeoSharpi.Nodes.ImageNode.LoadResource
   isSpec: "True"
-  fullName: GeoSharpi.ImageNode.LoadResource
+  fullName: GeoSharpi.Nodes.ImageNode.LoadResource
   nameWithType: ImageNode.LoadResource
-- uid: GeoSharpi.ImageNode.saveQuality
+- uid: GeoSharpi.Nodes.ImageNode.saveQuality
   name: saveQuality
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode_saveQuality
-  commentId: F:GeoSharpi.ImageNode.saveQuality
-  fullName: GeoSharpi.ImageNode.saveQuality
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_saveQuality
+  commentId: F:GeoSharpi.Nodes.ImageNode.saveQuality
+  fullName: GeoSharpi.Nodes.ImageNode.saveQuality
   nameWithType: ImageNode.saveQuality
-- uid: GeoSharpi.ImageNode.SaveResource(System.String)
+- uid: GeoSharpi.Nodes.ImageNode.SaveResource(System.String)
   name: SaveResource(String)
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode_SaveResource_System_String_
-  commentId: M:GeoSharpi.ImageNode.SaveResource(System.String)
-  fullName: GeoSharpi.ImageNode.SaveResource(System.String)
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_SaveResource_System_String_
+  commentId: M:GeoSharpi.Nodes.ImageNode.SaveResource(System.String)
+  fullName: GeoSharpi.Nodes.ImageNode.SaveResource(System.String)
   nameWithType: ImageNode.SaveResource(String)
-- uid: GeoSharpi.ImageNode.SaveResource*
+- uid: GeoSharpi.Nodes.ImageNode.SaveResource*
   name: SaveResource
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode_SaveResource_
-  commentId: Overload:GeoSharpi.ImageNode.SaveResource
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_SaveResource_
+  commentId: Overload:GeoSharpi.Nodes.ImageNode.SaveResource
   isSpec: "True"
-  fullName: GeoSharpi.ImageNode.SaveResource
+  fullName: GeoSharpi.Nodes.ImageNode.SaveResource
   nameWithType: ImageNode.SaveResource
-- uid: GeoSharpi.ImageNode.textureShader
+- uid: GeoSharpi.Nodes.ImageNode.textureShader
   name: textureShader
-  href: api/GeoSharpi.ImageNode.html#GeoSharpi_ImageNode_textureShader
-  commentId: F:GeoSharpi.ImageNode.textureShader
-  fullName: GeoSharpi.ImageNode.textureShader
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_textureShader
+  commentId: F:GeoSharpi.Nodes.ImageNode.textureShader
+  fullName: GeoSharpi.Nodes.ImageNode.textureShader
   nameWithType: ImageNode.textureShader
-- uid: GeoSharpi.ImageNodeEvent
-  name: ImageNodeEvent
-  href: api/GeoSharpi.ImageNodeEvent.html
-  commentId: T:GeoSharpi.ImageNodeEvent
-  fullName: GeoSharpi.ImageNodeEvent
-  nameWithType: ImageNodeEvent
-- uid: GeoSharpi.IntEvent
-  name: IntEvent
-  href: api/GeoSharpi.IntEvent.html
-  commentId: T:GeoSharpi.IntEvent
-  fullName: GeoSharpi.IntEvent
-  nameWithType: IntEvent
-- uid: GeoSharpi.MatrixExtensions
-  name: MatrixExtensions
-  href: api/GeoSharpi.MatrixExtensions.html
-  commentId: T:GeoSharpi.MatrixExtensions
-  fullName: GeoSharpi.MatrixExtensions
-  nameWithType: MatrixExtensions
-- uid: GeoSharpi.MatrixExtensions.ExtractPosition(Matrix4x4)
-  name: ExtractPosition(Matrix4x4)
-  href: api/GeoSharpi.MatrixExtensions.html#GeoSharpi_MatrixExtensions_ExtractPosition_Matrix4x4_
-  commentId: M:GeoSharpi.MatrixExtensions.ExtractPosition(Matrix4x4)
-  fullName: GeoSharpi.MatrixExtensions.ExtractPosition(Matrix4x4)
-  nameWithType: MatrixExtensions.ExtractPosition(Matrix4x4)
-- uid: GeoSharpi.MatrixExtensions.ExtractPosition*
-  name: ExtractPosition
-  href: api/GeoSharpi.MatrixExtensions.html#GeoSharpi_MatrixExtensions_ExtractPosition_
-  commentId: Overload:GeoSharpi.MatrixExtensions.ExtractPosition
-  isSpec: "True"
-  fullName: GeoSharpi.MatrixExtensions.ExtractPosition
-  nameWithType: MatrixExtensions.ExtractPosition
-- uid: GeoSharpi.MatrixExtensions.ExtractRotation(Matrix4x4)
-  name: ExtractRotation(Matrix4x4)
-  href: api/GeoSharpi.MatrixExtensions.html#GeoSharpi_MatrixExtensions_ExtractRotation_Matrix4x4_
-  commentId: M:GeoSharpi.MatrixExtensions.ExtractRotation(Matrix4x4)
-  fullName: GeoSharpi.MatrixExtensions.ExtractRotation(Matrix4x4)
-  nameWithType: MatrixExtensions.ExtractRotation(Matrix4x4)
-- uid: GeoSharpi.MatrixExtensions.ExtractRotation*
-  name: ExtractRotation
-  href: api/GeoSharpi.MatrixExtensions.html#GeoSharpi_MatrixExtensions_ExtractRotation_
-  commentId: Overload:GeoSharpi.MatrixExtensions.ExtractRotation
-  isSpec: "True"
-  fullName: GeoSharpi.MatrixExtensions.ExtractRotation
-  nameWithType: MatrixExtensions.ExtractRotation
-- uid: GeoSharpi.MatrixExtensions.ExtractScale(Matrix4x4)
-  name: ExtractScale(Matrix4x4)
-  href: api/GeoSharpi.MatrixExtensions.html#GeoSharpi_MatrixExtensions_ExtractScale_Matrix4x4_
-  commentId: M:GeoSharpi.MatrixExtensions.ExtractScale(Matrix4x4)
-  fullName: GeoSharpi.MatrixExtensions.ExtractScale(Matrix4x4)
-  nameWithType: MatrixExtensions.ExtractScale(Matrix4x4)
-- uid: GeoSharpi.MatrixExtensions.ExtractScale*
-  name: ExtractScale
-  href: api/GeoSharpi.MatrixExtensions.html#GeoSharpi_MatrixExtensions_ExtractScale_
-  commentId: Overload:GeoSharpi.MatrixExtensions.ExtractScale
-  isSpec: "True"
-  fullName: GeoSharpi.MatrixExtensions.ExtractScale
-  nameWithType: MatrixExtensions.ExtractScale
-- uid: GeoSharpi.MatrixExtensions.Parse(Matrix4x4,System.String)
-  name: Parse(Matrix4x4, String)
-  href: api/GeoSharpi.MatrixExtensions.html#GeoSharpi_MatrixExtensions_Parse_Matrix4x4_System_String_
-  commentId: M:GeoSharpi.MatrixExtensions.Parse(Matrix4x4,System.String)
-  fullName: GeoSharpi.MatrixExtensions.Parse(Matrix4x4, System.String)
-  nameWithType: MatrixExtensions.Parse(Matrix4x4, String)
-- uid: GeoSharpi.MatrixExtensions.Parse*
-  name: Parse
-  href: api/GeoSharpi.MatrixExtensions.html#GeoSharpi_MatrixExtensions_Parse_
-  commentId: Overload:GeoSharpi.MatrixExtensions.Parse
-  isSpec: "True"
-  fullName: GeoSharpi.MatrixExtensions.Parse
-  nameWithType: MatrixExtensions.Parse
-- uid: GeoSharpi.MeshIO
-  name: MeshIO
-  href: api/GeoSharpi.MeshIO.html
-  commentId: T:GeoSharpi.MeshIO
-  fullName: GeoSharpi.MeshIO
-  nameWithType: MeshIO
-- uid: GeoSharpi.MeshIO.MeshToFile(Mesh,System.String)
-  name: MeshToFile(Mesh, String)
-  href: api/GeoSharpi.MeshIO.html#GeoSharpi_MeshIO_MeshToFile_Mesh_System_String_
-  commentId: M:GeoSharpi.MeshIO.MeshToFile(Mesh,System.String)
-  fullName: GeoSharpi.MeshIO.MeshToFile(Mesh, System.String)
-  nameWithType: MeshIO.MeshToFile(Mesh, String)
-- uid: GeoSharpi.MeshIO.MeshToFile(Vector3[],System.Int32[],System.String)
-  name: MeshToFile(Vector3[], Int32[], String)
-  href: api/GeoSharpi.MeshIO.html#GeoSharpi_MeshIO_MeshToFile_Vector3___System_Int32___System_String_
-  commentId: M:GeoSharpi.MeshIO.MeshToFile(Vector3[],System.Int32[],System.String)
-  name.vb: MeshToFile(Vector3(), Int32(), String)
-  fullName: GeoSharpi.MeshIO.MeshToFile(Vector3[], System.Int32[], System.String)
-  fullName.vb: GeoSharpi.MeshIO.MeshToFile(Vector3(), System.Int32(), System.String)
-  nameWithType: MeshIO.MeshToFile(Vector3[], Int32[], String)
-  nameWithType.vb: MeshIO.MeshToFile(Vector3(), Int32(), String)
-- uid: GeoSharpi.MeshIO.MeshToFile*
-  name: MeshToFile
-  href: api/GeoSharpi.MeshIO.html#GeoSharpi_MeshIO_MeshToFile_
-  commentId: Overload:GeoSharpi.MeshIO.MeshToFile
-  isSpec: "True"
-  fullName: GeoSharpi.MeshIO.MeshToFile
-  nameWithType: MeshIO.MeshToFile
-- uid: GeoSharpi.MeshIO.MeshToString(Mesh)
-  name: MeshToString(Mesh)
-  href: api/GeoSharpi.MeshIO.html#GeoSharpi_MeshIO_MeshToString_Mesh_
-  commentId: M:GeoSharpi.MeshIO.MeshToString(Mesh)
-  fullName: GeoSharpi.MeshIO.MeshToString(Mesh)
-  nameWithType: MeshIO.MeshToString(Mesh)
-- uid: GeoSharpi.MeshIO.MeshToString(Vector3[],System.Int32[])
-  name: MeshToString(Vector3[], Int32[])
-  href: api/GeoSharpi.MeshIO.html#GeoSharpi_MeshIO_MeshToString_Vector3___System_Int32___
-  commentId: M:GeoSharpi.MeshIO.MeshToString(Vector3[],System.Int32[])
-  name.vb: MeshToString(Vector3(), Int32())
-  fullName: GeoSharpi.MeshIO.MeshToString(Vector3[], System.Int32[])
-  fullName.vb: GeoSharpi.MeshIO.MeshToString(Vector3(), System.Int32())
-  nameWithType: MeshIO.MeshToString(Vector3[], Int32[])
-  nameWithType.vb: MeshIO.MeshToString(Vector3(), Int32())
-- uid: GeoSharpi.MeshIO.MeshToString*
-  name: MeshToString
-  href: api/GeoSharpi.MeshIO.html#GeoSharpi_MeshIO_MeshToString_
-  commentId: Overload:GeoSharpi.MeshIO.MeshToString
-  isSpec: "True"
-  fullName: GeoSharpi.MeshIO.MeshToString
-  nameWithType: MeshIO.MeshToString
-- uid: GeoSharpi.Node
+- uid: GeoSharpi.Nodes.Node
   name: Node
-  href: api/GeoSharpi.Node.html
-  commentId: T:GeoSharpi.Node
-  fullName: GeoSharpi.Node
+  href: api/GeoSharpi.Nodes.Node.html
+  commentId: T:GeoSharpi.Nodes.Node
+  fullName: GeoSharpi.Nodes.Node
   nameWithType: Node
-- uid: GeoSharpi.Node.#ctor
+- uid: GeoSharpi.Nodes.Node.#ctor
   name: Node()
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node__ctor
-  commentId: M:GeoSharpi.Node.#ctor
-  fullName: GeoSharpi.Node.Node()
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node__ctor
+  commentId: M:GeoSharpi.Nodes.Node.#ctor
+  fullName: GeoSharpi.Nodes.Node.Node()
   nameWithType: Node.Node()
-- uid: GeoSharpi.Node.#ctor(System.String,System.String)
+- uid: GeoSharpi.Nodes.Node.#ctor(System.String,System.String)
   name: Node(String, String)
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node__ctor_System_String_System_String_
-  commentId: M:GeoSharpi.Node.#ctor(System.String,System.String)
-  fullName: GeoSharpi.Node.Node(System.String, System.String)
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node__ctor_System_String_System_String_
+  commentId: M:GeoSharpi.Nodes.Node.#ctor(System.String,System.String)
+  fullName: GeoSharpi.Nodes.Node.Node(System.String, System.String)
   nameWithType: Node.Node(String, String)
-- uid: GeoSharpi.Node.#ctor*
+- uid: GeoSharpi.Nodes.Node.#ctor*
   name: Node
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node__ctor_
-  commentId: Overload:GeoSharpi.Node.#ctor
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node__ctor_
+  commentId: Overload:GeoSharpi.Nodes.Node.#ctor
   isSpec: "True"
-  fullName: GeoSharpi.Node.Node
+  fullName: GeoSharpi.Nodes.Node.Node
   nameWithType: Node.Node
-- uid: GeoSharpi.Node.cartesianTransform
+- uid: GeoSharpi.Nodes.Node.cartesianTransform
   name: cartesianTransform
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_cartesianTransform
-  commentId: F:GeoSharpi.Node.cartesianTransform
-  fullName: GeoSharpi.Node.cartesianTransform
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_cartesianTransform
+  commentId: F:GeoSharpi.Nodes.Node.cartesianTransform
+  fullName: GeoSharpi.Nodes.Node.cartesianTransform
   nameWithType: Node.cartesianTransform
-- uid: GeoSharpi.Node.CreateEmptyNode
+- uid: GeoSharpi.Nodes.Node.CreateEmptyNode
   name: CreateEmptyNode()
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_CreateEmptyNode
-  commentId: M:GeoSharpi.Node.CreateEmptyNode
-  fullName: GeoSharpi.Node.CreateEmptyNode()
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_CreateEmptyNode
+  commentId: M:GeoSharpi.Nodes.Node.CreateEmptyNode
+  fullName: GeoSharpi.Nodes.Node.CreateEmptyNode()
   nameWithType: Node.CreateEmptyNode()
-- uid: GeoSharpi.Node.CreateEmptyNode*
+- uid: GeoSharpi.Nodes.Node.CreateEmptyNode*
   name: CreateEmptyNode
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_CreateEmptyNode_
-  commentId: Overload:GeoSharpi.Node.CreateEmptyNode
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_CreateEmptyNode_
+  commentId: Overload:GeoSharpi.Nodes.Node.CreateEmptyNode
   isSpec: "True"
-  fullName: GeoSharpi.Node.CreateEmptyNode
+  fullName: GeoSharpi.Nodes.Node.CreateEmptyNode
   nameWithType: Node.CreateEmptyNode
-- uid: GeoSharpi.Node.CreateNode(System.String,System.String)
+- uid: GeoSharpi.Nodes.Node.CreateNode(System.String,System.String)
   name: CreateNode(String, String)
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_CreateNode_System_String_System_String_
-  commentId: M:GeoSharpi.Node.CreateNode(System.String,System.String)
-  fullName: GeoSharpi.Node.CreateNode(System.String, System.String)
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_CreateNode_System_String_System_String_
+  commentId: M:GeoSharpi.Nodes.Node.CreateNode(System.String,System.String)
+  fullName: GeoSharpi.Nodes.Node.CreateNode(System.String, System.String)
   nameWithType: Node.CreateNode(String, String)
-- uid: GeoSharpi.Node.CreateNode*
+- uid: GeoSharpi.Nodes.Node.CreateNode*
   name: CreateNode
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_CreateNode_
-  commentId: Overload:GeoSharpi.Node.CreateNode
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_CreateNode_
+  commentId: Overload:GeoSharpi.Nodes.Node.CreateNode
   isSpec: "True"
-  fullName: GeoSharpi.Node.CreateNode
+  fullName: GeoSharpi.Nodes.Node.CreateNode
   nameWithType: Node.CreateNode
-- uid: GeoSharpi.Node.dateTime
+- uid: GeoSharpi.Nodes.Node.dateTime
   name: dateTime
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_dateTime
-  commentId: F:GeoSharpi.Node.dateTime
-  fullName: GeoSharpi.Node.dateTime
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_dateTime
+  commentId: F:GeoSharpi.Nodes.Node.dateTime
+  fullName: GeoSharpi.Nodes.Node.dateTime
   nameWithType: Node.dateTime
-- uid: GeoSharpi.Node.FromGraph(RDFGraph,RDFResource)
+- uid: GeoSharpi.Nodes.Node.FromGraph(RDFGraph,RDFResource)
   name: FromGraph(RDFGraph, RDFResource)
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_FromGraph_RDFGraph_RDFResource_
-  commentId: M:GeoSharpi.Node.FromGraph(RDFGraph,RDFResource)
-  fullName: GeoSharpi.Node.FromGraph(RDFGraph, RDFResource)
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_FromGraph_RDFGraph_RDFResource_
+  commentId: M:GeoSharpi.Nodes.Node.FromGraph(RDFGraph,RDFResource)
+  fullName: GeoSharpi.Nodes.Node.FromGraph(RDFGraph, RDFResource)
   nameWithType: Node.FromGraph(RDFGraph, RDFResource)
-- uid: GeoSharpi.Node.FromGraph*
+- uid: GeoSharpi.Nodes.Node.FromGraph*
   name: FromGraph
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_FromGraph_
-  commentId: Overload:GeoSharpi.Node.FromGraph
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_FromGraph_
+  commentId: Overload:GeoSharpi.Nodes.Node.FromGraph
   isSpec: "True"
-  fullName: GeoSharpi.Node.FromGraph
+  fullName: GeoSharpi.Nodes.Node.FromGraph
   nameWithType: Node.FromGraph
-- uid: GeoSharpi.Node.GetClass
+- uid: GeoSharpi.Nodes.Node.GetClass
   name: GetClass()
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_GetClass
-  commentId: M:GeoSharpi.Node.GetClass
-  fullName: GeoSharpi.Node.GetClass()
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_GetClass
+  commentId: M:GeoSharpi.Nodes.Node.GetClass
+  fullName: GeoSharpi.Nodes.Node.GetClass()
   nameWithType: Node.GetClass()
-- uid: GeoSharpi.Node.GetClass*
+- uid: GeoSharpi.Nodes.Node.GetClass*
   name: GetClass
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_GetClass_
-  commentId: Overload:GeoSharpi.Node.GetClass
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_GetClass_
+  commentId: Overload:GeoSharpi.Nodes.Node.GetClass
   isSpec: "True"
-  fullName: GeoSharpi.Node.GetClass
+  fullName: GeoSharpi.Nodes.Node.GetClass
   nameWithType: Node.GetClass
-- uid: GeoSharpi.Node.GetName
+- uid: GeoSharpi.Nodes.Node.GetName
   name: GetName()
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_GetName
-  commentId: M:GeoSharpi.Node.GetName
-  fullName: GeoSharpi.Node.GetName()
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_GetName
+  commentId: M:GeoSharpi.Nodes.Node.GetName
+  fullName: GeoSharpi.Nodes.Node.GetName()
   nameWithType: Node.GetName()
-- uid: GeoSharpi.Node.GetName*
+- uid: GeoSharpi.Nodes.Node.GetName*
   name: GetName
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_GetName_
-  commentId: Overload:GeoSharpi.Node.GetName
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_GetName_
+  commentId: Overload:GeoSharpi.Nodes.Node.GetName
   isSpec: "True"
-  fullName: GeoSharpi.Node.GetName
+  fullName: GeoSharpi.Nodes.Node.GetName
   nameWithType: Node.GetName
-- uid: GeoSharpi.Node.GetResourceObject
+- uid: GeoSharpi.Nodes.Node.GetResourceObject
   name: GetResourceObject()
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_GetResourceObject
-  commentId: M:GeoSharpi.Node.GetResourceObject
-  fullName: GeoSharpi.Node.GetResourceObject()
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_GetResourceObject
+  commentId: M:GeoSharpi.Nodes.Node.GetResourceObject
+  fullName: GeoSharpi.Nodes.Node.GetResourceObject()
   nameWithType: Node.GetResourceObject()
-- uid: GeoSharpi.Node.GetResourceObject*
+- uid: GeoSharpi.Nodes.Node.GetResourceObject*
   name: GetResourceObject
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_GetResourceObject_
-  commentId: Overload:GeoSharpi.Node.GetResourceObject
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_GetResourceObject_
+  commentId: Overload:GeoSharpi.Nodes.Node.GetResourceObject
   isSpec: "True"
-  fullName: GeoSharpi.Node.GetResourceObject
+  fullName: GeoSharpi.Nodes.Node.GetResourceObject
   nameWithType: Node.GetResourceObject
-- uid: GeoSharpi.Node.GetSubject
+- uid: GeoSharpi.Nodes.Node.GetSubject
   name: GetSubject()
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_GetSubject
-  commentId: M:GeoSharpi.Node.GetSubject
-  fullName: GeoSharpi.Node.GetSubject()
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_GetSubject
+  commentId: M:GeoSharpi.Nodes.Node.GetSubject
+  fullName: GeoSharpi.Nodes.Node.GetSubject()
   nameWithType: Node.GetSubject()
-- uid: GeoSharpi.Node.GetSubject*
+- uid: GeoSharpi.Nodes.Node.GetSubject*
   name: GetSubject
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_GetSubject_
-  commentId: Overload:GeoSharpi.Node.GetSubject
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_GetSubject_
+  commentId: Overload:GeoSharpi.Nodes.Node.GetSubject
   isSpec: "True"
-  fullName: GeoSharpi.Node.GetSubject
+  fullName: GeoSharpi.Nodes.Node.GetSubject
   nameWithType: Node.GetSubject
-- uid: GeoSharpi.Node.graphPath
+- uid: GeoSharpi.Nodes.Node.graphPath
   name: graphPath
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_graphPath
-  commentId: F:GeoSharpi.Node.graphPath
-  fullName: GeoSharpi.Node.graphPath
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_graphPath
+  commentId: F:GeoSharpi.Nodes.Node.graphPath
+  fullName: GeoSharpi.Nodes.Node.graphPath
   nameWithType: Node.graphPath
-- uid: GeoSharpi.Node.LoadResource(System.String)
+- uid: GeoSharpi.Nodes.Node.LoadResource(System.String)
   name: LoadResource(String)
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_LoadResource_System_String_
-  commentId: M:GeoSharpi.Node.LoadResource(System.String)
-  fullName: GeoSharpi.Node.LoadResource(System.String)
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_LoadResource_System_String_
+  commentId: M:GeoSharpi.Nodes.Node.LoadResource(System.String)
+  fullName: GeoSharpi.Nodes.Node.LoadResource(System.String)
   nameWithType: Node.LoadResource(String)
-- uid: GeoSharpi.Node.LoadResource*
+- uid: GeoSharpi.Nodes.Node.LoadResource*
   name: LoadResource
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_LoadResource_
-  commentId: Overload:GeoSharpi.Node.LoadResource
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_LoadResource_
+  commentId: Overload:GeoSharpi.Nodes.Node.LoadResource
   isSpec: "True"
-  fullName: GeoSharpi.Node.LoadResource
+  fullName: GeoSharpi.Nodes.Node.LoadResource
   nameWithType: Node.LoadResource
-- uid: GeoSharpi.Node.path
+- uid: GeoSharpi.Nodes.Node.path
   name: path
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_path
-  commentId: F:GeoSharpi.Node.path
-  fullName: GeoSharpi.Node.path
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_path
+  commentId: F:GeoSharpi.Nodes.Node.path
+  fullName: GeoSharpi.Nodes.Node.path
   nameWithType: Node.path
-- uid: GeoSharpi.Node.SaveResource(System.String)
+- uid: GeoSharpi.Nodes.Node.SaveResource(System.String)
   name: SaveResource(String)
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_SaveResource_System_String_
-  commentId: M:GeoSharpi.Node.SaveResource(System.String)
-  fullName: GeoSharpi.Node.SaveResource(System.String)
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_SaveResource_System_String_
+  commentId: M:GeoSharpi.Nodes.Node.SaveResource(System.String)
+  fullName: GeoSharpi.Nodes.Node.SaveResource(System.String)
   nameWithType: Node.SaveResource(String)
-- uid: GeoSharpi.Node.SaveResource*
+- uid: GeoSharpi.Nodes.Node.SaveResource*
   name: SaveResource
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_SaveResource_
-  commentId: Overload:GeoSharpi.Node.SaveResource
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_SaveResource_
+  commentId: Overload:GeoSharpi.Nodes.Node.SaveResource
   isSpec: "True"
-  fullName: GeoSharpi.Node.SaveResource
+  fullName: GeoSharpi.Nodes.Node.SaveResource
   nameWithType: Node.SaveResource
-- uid: GeoSharpi.Node.subject
+- uid: GeoSharpi.Nodes.Node.subject
   name: subject
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_subject
-  commentId: F:GeoSharpi.Node.subject
-  fullName: GeoSharpi.Node.subject
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_subject
+  commentId: F:GeoSharpi.Nodes.Node.subject
+  fullName: GeoSharpi.Nodes.Node.subject
   nameWithType: Node.subject
-- uid: GeoSharpi.Node.ToGraph
+- uid: GeoSharpi.Nodes.Node.ToGraph
   name: ToGraph()
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_ToGraph
-  commentId: M:GeoSharpi.Node.ToGraph
-  fullName: GeoSharpi.Node.ToGraph()
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_ToGraph
+  commentId: M:GeoSharpi.Nodes.Node.ToGraph
+  fullName: GeoSharpi.Nodes.Node.ToGraph()
   nameWithType: Node.ToGraph()
-- uid: GeoSharpi.Node.ToGraph*
+- uid: GeoSharpi.Nodes.Node.ToGraph*
   name: ToGraph
-  href: api/GeoSharpi.Node.html#GeoSharpi_Node_ToGraph_
-  commentId: Overload:GeoSharpi.Node.ToGraph
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_ToGraph_
+  commentId: Overload:GeoSharpi.Nodes.Node.ToGraph
   isSpec: "True"
-  fullName: GeoSharpi.Node.ToGraph
+  fullName: GeoSharpi.Nodes.Node.ToGraph
   nameWithType: Node.ToGraph
-- uid: GeoSharpi.NodeEvent
-  name: NodeEvent
-  href: api/GeoSharpi.NodeEvent.html
-  commentId: T:GeoSharpi.NodeEvent
-  fullName: GeoSharpi.NodeEvent
-  nameWithType: NodeEvent
-- uid: GeoSharpi.NodeVisualizer
-  name: NodeVisualizer
-  href: api/GeoSharpi.NodeVisualizer.html
-  commentId: T:GeoSharpi.NodeVisualizer
-  fullName: GeoSharpi.NodeVisualizer
-  nameWithType: NodeVisualizer
-- uid: GeoSharpi.NodeVisualizer.node
-  name: node
-  href: api/GeoSharpi.NodeVisualizer.html#GeoSharpi_NodeVisualizer_node
-  commentId: F:GeoSharpi.NodeVisualizer.node
-  fullName: GeoSharpi.NodeVisualizer.node
-  nameWithType: NodeVisualizer.node
-- uid: GeoSharpi.NodeVisualizer.ResetNode
-  name: ResetNode()
-  href: api/GeoSharpi.NodeVisualizer.html#GeoSharpi_NodeVisualizer_ResetNode
-  commentId: M:GeoSharpi.NodeVisualizer.ResetNode
-  fullName: GeoSharpi.NodeVisualizer.ResetNode()
-  nameWithType: NodeVisualizer.ResetNode()
-- uid: GeoSharpi.NodeVisualizer.ResetNode*
-  name: ResetNode
-  href: api/GeoSharpi.NodeVisualizer.html#GeoSharpi_NodeVisualizer_ResetNode_
-  commentId: Overload:GeoSharpi.NodeVisualizer.ResetNode
-  isSpec: "True"
-  fullName: GeoSharpi.NodeVisualizer.ResetNode
-  nameWithType: NodeVisualizer.ResetNode
-- uid: GeoSharpi.NodeVisualizer.SetUpNode(GeoSharpi.Node,Transform)
-  name: SetUpNode(Node, Transform)
-  href: api/GeoSharpi.NodeVisualizer.html#GeoSharpi_NodeVisualizer_SetUpNode_GeoSharpi_Node_Transform_
-  commentId: M:GeoSharpi.NodeVisualizer.SetUpNode(GeoSharpi.Node,Transform)
-  fullName: GeoSharpi.NodeVisualizer.SetUpNode(GeoSharpi.Node, Transform)
-  nameWithType: NodeVisualizer.SetUpNode(Node, Transform)
-- uid: GeoSharpi.NodeVisualizer.SetUpNode*
-  name: SetUpNode
-  href: api/GeoSharpi.NodeVisualizer.html#GeoSharpi_NodeVisualizer_SetUpNode_
-  commentId: Overload:GeoSharpi.NodeVisualizer.SetUpNode
-  isSpec: "True"
-  fullName: GeoSharpi.NodeVisualizer.SetUpNode
-  nameWithType: NodeVisualizer.SetUpNode
-- uid: GeoSharpi.RDFManager
-  name: RDFManager
-  href: api/GeoSharpi.RDFManager.html
-  commentId: T:GeoSharpi.RDFManager
-  fullName: GeoSharpi.RDFManager
-  nameWithType: RDFManager
-- uid: GeoSharpi.RDFManager.GetSubjectGraphs(RDFGraph)
-  name: GetSubjectGraphs(RDFGraph)
-  href: api/GeoSharpi.RDFManager.html#GeoSharpi_RDFManager_GetSubjectGraphs_RDFGraph_
-  commentId: M:GeoSharpi.RDFManager.GetSubjectGraphs(RDFGraph)
-  fullName: GeoSharpi.RDFManager.GetSubjectGraphs(RDFGraph)
-  nameWithType: RDFManager.GetSubjectGraphs(RDFGraph)
-- uid: GeoSharpi.RDFManager.GetSubjectGraphs*
-  name: GetSubjectGraphs
-  href: api/GeoSharpi.RDFManager.html#GeoSharpi_RDFManager_GetSubjectGraphs_
-  commentId: Overload:GeoSharpi.RDFManager.GetSubjectGraphs
-  isSpec: "True"
-  fullName: GeoSharpi.RDFManager.GetSubjectGraphs
-  nameWithType: RDFManager.GetSubjectGraphs
-- uid: GeoSharpi.RDFManager.ReadCurrentRDF
-  name: ReadCurrentRDF()
-  href: api/GeoSharpi.RDFManager.html#GeoSharpi_RDFManager_ReadCurrentRDF
-  commentId: M:GeoSharpi.RDFManager.ReadCurrentRDF
-  fullName: GeoSharpi.RDFManager.ReadCurrentRDF()
-  nameWithType: RDFManager.ReadCurrentRDF()
-- uid: GeoSharpi.RDFManager.ReadCurrentRDF*
-  name: ReadCurrentRDF
-  href: api/GeoSharpi.RDFManager.html#GeoSharpi_RDFManager_ReadCurrentRDF_
-  commentId: Overload:GeoSharpi.RDFManager.ReadCurrentRDF
-  isSpec: "True"
-  fullName: GeoSharpi.RDFManager.ReadCurrentRDF
-  nameWithType: RDFManager.ReadCurrentRDF
-- uid: GeoSharpi.RDFManager.ReadRDF(System.String)
-  name: ReadRDF(String)
-  href: api/GeoSharpi.RDFManager.html#GeoSharpi_RDFManager_ReadRDF_System_String_
-  commentId: M:GeoSharpi.RDFManager.ReadRDF(System.String)
-  fullName: GeoSharpi.RDFManager.ReadRDF(System.String)
-  nameWithType: RDFManager.ReadRDF(String)
-- uid: GeoSharpi.RDFManager.ReadRDF*
-  name: ReadRDF
-  href: api/GeoSharpi.RDFManager.html#GeoSharpi_RDFManager_ReadRDF_
-  commentId: Overload:GeoSharpi.RDFManager.ReadRDF
-  isSpec: "True"
-  fullName: GeoSharpi.RDFManager.ReadRDF
-  nameWithType: RDFManager.ReadRDF
-- uid: GeoSharpi.RDFUriAttribute
-  name: RDFUriAttribute
-  href: api/GeoSharpi.RDFUriAttribute.html
-  commentId: T:GeoSharpi.RDFUriAttribute
-  fullName: GeoSharpi.RDFUriAttribute
-  nameWithType: RDFUriAttribute
-- uid: GeoSharpi.RDFUriAttribute.#ctor(System.String,System.String,RDFModelEnums.RDFDatatypes)
-  name: RDFUriAttribute(String, String, RDFModelEnums.RDFDatatypes)
-  href: api/GeoSharpi.RDFUriAttribute.html#GeoSharpi_RDFUriAttribute__ctor_System_String_System_String_RDFModelEnums_RDFDatatypes_
-  commentId: M:GeoSharpi.RDFUriAttribute.#ctor(System.String,System.String,RDFModelEnums.RDFDatatypes)
-  fullName: GeoSharpi.RDFUriAttribute.RDFUriAttribute(System.String, System.String, RDFModelEnums.RDFDatatypes)
-  nameWithType: RDFUriAttribute.RDFUriAttribute(String, String, RDFModelEnums.RDFDatatypes)
-- uid: GeoSharpi.RDFUriAttribute.#ctor*
-  name: RDFUriAttribute
-  href: api/GeoSharpi.RDFUriAttribute.html#GeoSharpi_RDFUriAttribute__ctor_
-  commentId: Overload:GeoSharpi.RDFUriAttribute.#ctor
-  isSpec: "True"
-  fullName: GeoSharpi.RDFUriAttribute.RDFUriAttribute
-  nameWithType: RDFUriAttribute.RDFUriAttribute
-- uid: GeoSharpi.RDFUriAttribute.prefix
-  name: prefix
-  href: api/GeoSharpi.RDFUriAttribute.html#GeoSharpi_RDFUriAttribute_prefix
-  commentId: F:GeoSharpi.RDFUriAttribute.prefix
-  fullName: GeoSharpi.RDFUriAttribute.prefix
-  nameWithType: RDFUriAttribute.prefix
-- uid: GeoSharpi.RDFUriAttribute.type
-  name: type
-  href: api/GeoSharpi.RDFUriAttribute.html#GeoSharpi_RDFUriAttribute_type
-  commentId: F:GeoSharpi.RDFUriAttribute.type
-  fullName: GeoSharpi.RDFUriAttribute.type
-  nameWithType: RDFUriAttribute.type
-- uid: GeoSharpi.RDFUriAttribute.uri
-  name: uri
-  href: api/GeoSharpi.RDFUriAttribute.html#GeoSharpi_RDFUriAttribute_uri
-  commentId: F:GeoSharpi.RDFUriAttribute.uri
-  fullName: GeoSharpi.RDFUriAttribute.uri
-  nameWithType: RDFUriAttribute.uri
-- uid: GeoSharpi.SessionNode
+- uid: GeoSharpi.Nodes.SessionNode
   name: SessionNode
-  href: api/GeoSharpi.SessionNode.html
-  commentId: T:GeoSharpi.SessionNode
-  fullName: GeoSharpi.SessionNode
+  href: api/GeoSharpi.Nodes.SessionNode.html
+  commentId: T:GeoSharpi.Nodes.SessionNode
+  fullName: GeoSharpi.Nodes.SessionNode
   nameWithType: SessionNode
-- uid: GeoSharpi.SessionNode.#ctor
+- uid: GeoSharpi.Nodes.SessionNode.#ctor
   name: SessionNode()
-  href: api/GeoSharpi.SessionNode.html#GeoSharpi_SessionNode__ctor
-  commentId: M:GeoSharpi.SessionNode.#ctor
-  fullName: GeoSharpi.SessionNode.SessionNode()
+  href: api/GeoSharpi.Nodes.SessionNode.html#GeoSharpi_Nodes_SessionNode__ctor
+  commentId: M:GeoSharpi.Nodes.SessionNode.#ctor
+  fullName: GeoSharpi.Nodes.SessionNode.SessionNode()
   nameWithType: SessionNode.SessionNode()
-- uid: GeoSharpi.SessionNode.#ctor(System.String,System.String)
+- uid: GeoSharpi.Nodes.SessionNode.#ctor(System.String,System.String)
   name: SessionNode(String, String)
-  href: api/GeoSharpi.SessionNode.html#GeoSharpi_SessionNode__ctor_System_String_System_String_
-  commentId: M:GeoSharpi.SessionNode.#ctor(System.String,System.String)
-  fullName: GeoSharpi.SessionNode.SessionNode(System.String, System.String)
+  href: api/GeoSharpi.Nodes.SessionNode.html#GeoSharpi_Nodes_SessionNode__ctor_System_String_System_String_
+  commentId: M:GeoSharpi.Nodes.SessionNode.#ctor(System.String,System.String)
+  fullName: GeoSharpi.Nodes.SessionNode.SessionNode(System.String, System.String)
   nameWithType: SessionNode.SessionNode(String, String)
-- uid: GeoSharpi.SessionNode.#ctor*
+- uid: GeoSharpi.Nodes.SessionNode.#ctor*
   name: SessionNode
-  href: api/GeoSharpi.SessionNode.html#GeoSharpi_SessionNode__ctor_
-  commentId: Overload:GeoSharpi.SessionNode.#ctor
+  href: api/GeoSharpi.Nodes.SessionNode.html#GeoSharpi_Nodes_SessionNode__ctor_
+  commentId: Overload:GeoSharpi.Nodes.SessionNode.#ctor
   isSpec: "True"
-  fullName: GeoSharpi.SessionNode.SessionNode
+  fullName: GeoSharpi.Nodes.SessionNode.SessionNode
   nameWithType: SessionNode.SessionNode
-- uid: GeoSharpi.SessionNode.AddSubject(GeoSharpi.Node)
+- uid: GeoSharpi.Nodes.SessionNode.AddSubject(GeoSharpi.Nodes.Node)
   name: AddSubject(Node)
-  href: api/GeoSharpi.SessionNode.html#GeoSharpi_SessionNode_AddSubject_GeoSharpi_Node_
-  commentId: M:GeoSharpi.SessionNode.AddSubject(GeoSharpi.Node)
-  fullName: GeoSharpi.SessionNode.AddSubject(GeoSharpi.Node)
+  href: api/GeoSharpi.Nodes.SessionNode.html#GeoSharpi_Nodes_SessionNode_AddSubject_GeoSharpi_Nodes_Node_
+  commentId: M:GeoSharpi.Nodes.SessionNode.AddSubject(GeoSharpi.Nodes.Node)
+  fullName: GeoSharpi.Nodes.SessionNode.AddSubject(GeoSharpi.Nodes.Node)
   nameWithType: SessionNode.AddSubject(Node)
-- uid: GeoSharpi.SessionNode.AddSubject*
+- uid: GeoSharpi.Nodes.SessionNode.AddSubject*
   name: AddSubject
-  href: api/GeoSharpi.SessionNode.html#GeoSharpi_SessionNode_AddSubject_
-  commentId: Overload:GeoSharpi.SessionNode.AddSubject
+  href: api/GeoSharpi.Nodes.SessionNode.html#GeoSharpi_Nodes_SessionNode_AddSubject_
+  commentId: Overload:GeoSharpi.Nodes.SessionNode.AddSubject
   isSpec: "True"
-  fullName: GeoSharpi.SessionNode.AddSubject
+  fullName: GeoSharpi.Nodes.SessionNode.AddSubject
   nameWithType: SessionNode.AddSubject
-- uid: GeoSharpi.SessionNode.GetResourceObject
+- uid: GeoSharpi.Nodes.SessionNode.GetResourceObject
   name: GetResourceObject()
-  href: api/GeoSharpi.SessionNode.html#GeoSharpi_SessionNode_GetResourceObject
-  commentId: M:GeoSharpi.SessionNode.GetResourceObject
-  fullName: GeoSharpi.SessionNode.GetResourceObject()
+  href: api/GeoSharpi.Nodes.SessionNode.html#GeoSharpi_Nodes_SessionNode_GetResourceObject
+  commentId: M:GeoSharpi.Nodes.SessionNode.GetResourceObject
+  fullName: GeoSharpi.Nodes.SessionNode.GetResourceObject()
   nameWithType: SessionNode.GetResourceObject()
-- uid: GeoSharpi.SessionNode.GetResourceObject*
+- uid: GeoSharpi.Nodes.SessionNode.GetResourceObject*
   name: GetResourceObject
-  href: api/GeoSharpi.SessionNode.html#GeoSharpi_SessionNode_GetResourceObject_
-  commentId: Overload:GeoSharpi.SessionNode.GetResourceObject
+  href: api/GeoSharpi.Nodes.SessionNode.html#GeoSharpi_Nodes_SessionNode_GetResourceObject_
+  commentId: Overload:GeoSharpi.Nodes.SessionNode.GetResourceObject
   isSpec: "True"
-  fullName: GeoSharpi.SessionNode.GetResourceObject
+  fullName: GeoSharpi.Nodes.SessionNode.GetResourceObject
   nameWithType: SessionNode.GetResourceObject
-- uid: GeoSharpi.SessionNode.linkedSubjects
+- uid: GeoSharpi.Nodes.SessionNode.linkedSubjects
   name: linkedSubjects
-  href: api/GeoSharpi.SessionNode.html#GeoSharpi_SessionNode_linkedSubjects
-  commentId: F:GeoSharpi.SessionNode.linkedSubjects
-  fullName: GeoSharpi.SessionNode.linkedSubjects
+  href: api/GeoSharpi.Nodes.SessionNode.html#GeoSharpi_Nodes_SessionNode_linkedSubjects
+  commentId: F:GeoSharpi.Nodes.SessionNode.linkedSubjects
+  fullName: GeoSharpi.Nodes.SessionNode.linkedSubjects
   nameWithType: SessionNode.linkedSubjects
-- uid: GeoSharpi.StringEvent
-  name: StringEvent
-  href: api/GeoSharpi.StringEvent.html
-  commentId: T:GeoSharpi.StringEvent
-  fullName: GeoSharpi.StringEvent
-  nameWithType: StringEvent
-- uid: GeoSharpi.TransformExtensions
-  name: TransformExtensions
-  href: api/GeoSharpi.TransformExtensions.html
-  commentId: T:GeoSharpi.TransformExtensions
-  fullName: GeoSharpi.TransformExtensions
-  nameWithType: TransformExtensions
-- uid: GeoSharpi.TransformExtensions.FromMatrix(Transform,Matrix4x4)
-  name: FromMatrix(Transform, Matrix4x4)
-  href: api/GeoSharpi.TransformExtensions.html#GeoSharpi_TransformExtensions_FromMatrix_Transform_Matrix4x4_
-  commentId: M:GeoSharpi.TransformExtensions.FromMatrix(Transform,Matrix4x4)
-  fullName: GeoSharpi.TransformExtensions.FromMatrix(Transform, Matrix4x4)
-  nameWithType: TransformExtensions.FromMatrix(Transform, Matrix4x4)
-- uid: GeoSharpi.TransformExtensions.FromMatrix*
-  name: FromMatrix
-  href: api/GeoSharpi.TransformExtensions.html#GeoSharpi_TransformExtensions_FromMatrix_
-  commentId: Overload:GeoSharpi.TransformExtensions.FromMatrix
+- uid: GeoSharpi.Utils
+  name: GeoSharpi.Utils
+  href: api/GeoSharpi.Utils.html
+  commentId: N:GeoSharpi.Utils
+  fullName: GeoSharpi.Utils
+  nameWithType: GeoSharpi.Utils
+- uid: GeoSharpi.Utils.CameraExtensions
+  name: CameraExtensions
+  href: api/GeoSharpi.Utils.CameraExtensions.html
+  commentId: T:GeoSharpi.Utils.CameraExtensions
+  fullName: GeoSharpi.Utils.CameraExtensions
+  nameWithType: CameraExtensions
+- uid: GeoSharpi.Utils.CameraExtensions.Get35MillimeterFocalLength(Camera)
+  name: Get35MillimeterFocalLength(Camera)
+  href: api/GeoSharpi.Utils.CameraExtensions.html#GeoSharpi_Utils_CameraExtensions_Get35MillimeterFocalLength_Camera_
+  commentId: M:GeoSharpi.Utils.CameraExtensions.Get35MillimeterFocalLength(Camera)
+  fullName: GeoSharpi.Utils.CameraExtensions.Get35MillimeterFocalLength(Camera)
+  nameWithType: CameraExtensions.Get35MillimeterFocalLength(Camera)
+- uid: GeoSharpi.Utils.CameraExtensions.Get35MillimeterFocalLength*
+  name: Get35MillimeterFocalLength
+  href: api/GeoSharpi.Utils.CameraExtensions.html#GeoSharpi_Utils_CameraExtensions_Get35MillimeterFocalLength_
+  commentId: Overload:GeoSharpi.Utils.CameraExtensions.Get35MillimeterFocalLength
   isSpec: "True"
-  fullName: GeoSharpi.TransformExtensions.FromMatrix
+  fullName: GeoSharpi.Utils.CameraExtensions.Get35MillimeterFocalLength
+  nameWithType: CameraExtensions.Get35MillimeterFocalLength
+- uid: GeoSharpi.Utils.Events
+  name: GeoSharpi.Utils.Events
+  href: api/GeoSharpi.Utils.Events.html
+  commentId: N:GeoSharpi.Utils.Events
+  fullName: GeoSharpi.Utils.Events
+  nameWithType: GeoSharpi.Utils.Events
+- uid: GeoSharpi.Utils.Events.GeometryNodeEvent
+  name: GeometryNodeEvent
+  href: api/GeoSharpi.Utils.Events.GeometryNodeEvent.html
+  commentId: T:GeoSharpi.Utils.Events.GeometryNodeEvent
+  fullName: GeoSharpi.Utils.Events.GeometryNodeEvent
+  nameWithType: GeometryNodeEvent
+- uid: GeoSharpi.Utils.Events.ImageNodeEvent
+  name: ImageNodeEvent
+  href: api/GeoSharpi.Utils.Events.ImageNodeEvent.html
+  commentId: T:GeoSharpi.Utils.Events.ImageNodeEvent
+  fullName: GeoSharpi.Utils.Events.ImageNodeEvent
+  nameWithType: ImageNodeEvent
+- uid: GeoSharpi.Utils.Events.NodeEvent
+  name: NodeEvent
+  href: api/GeoSharpi.Utils.Events.NodeEvent.html
+  commentId: T:GeoSharpi.Utils.Events.NodeEvent
+  fullName: GeoSharpi.Utils.Events.NodeEvent
+  nameWithType: NodeEvent
+- uid: GeoSharpi.Utils.Events.SessionNodeEvent
+  name: SessionNodeEvent
+  href: api/GeoSharpi.Utils.Events.SessionNodeEvent.html
+  commentId: T:GeoSharpi.Utils.Events.SessionNodeEvent
+  fullName: GeoSharpi.Utils.Events.SessionNodeEvent
+  nameWithType: SessionNodeEvent
+- uid: GeoSharpi.Utils.ImageIO
+  name: ImageIO
+  href: api/GeoSharpi.Utils.ImageIO.html
+  commentId: T:GeoSharpi.Utils.ImageIO
+  fullName: GeoSharpi.Utils.ImageIO
+  nameWithType: ImageIO
+- uid: GeoSharpi.Utils.ImageIO.LoadImage(System.String)
+  name: LoadImage(String)
+  href: api/GeoSharpi.Utils.ImageIO.html#GeoSharpi_Utils_ImageIO_LoadImage_System_String_
+  commentId: M:GeoSharpi.Utils.ImageIO.LoadImage(System.String)
+  fullName: GeoSharpi.Utils.ImageIO.LoadImage(System.String)
+  nameWithType: ImageIO.LoadImage(String)
+- uid: GeoSharpi.Utils.ImageIO.LoadImage*
+  name: LoadImage
+  href: api/GeoSharpi.Utils.ImageIO.html#GeoSharpi_Utils_ImageIO_LoadImage_
+  commentId: Overload:GeoSharpi.Utils.ImageIO.LoadImage
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.ImageIO.LoadImage
+  nameWithType: ImageIO.LoadImage
+- uid: GeoSharpi.Utils.ImageIO.SaveImage(Texture2D,System.String,System.Int32)
+  name: SaveImage(Texture2D, String, Int32)
+  href: api/GeoSharpi.Utils.ImageIO.html#GeoSharpi_Utils_ImageIO_SaveImage_Texture2D_System_String_System_Int32_
+  commentId: M:GeoSharpi.Utils.ImageIO.SaveImage(Texture2D,System.String,System.Int32)
+  fullName: GeoSharpi.Utils.ImageIO.SaveImage(Texture2D, System.String, System.Int32)
+  nameWithType: ImageIO.SaveImage(Texture2D, String, Int32)
+- uid: GeoSharpi.Utils.ImageIO.SaveImage*
+  name: SaveImage
+  href: api/GeoSharpi.Utils.ImageIO.html#GeoSharpi_Utils_ImageIO_SaveImage_
+  commentId: Overload:GeoSharpi.Utils.ImageIO.SaveImage
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.ImageIO.SaveImage
+  nameWithType: ImageIO.SaveImage
+- uid: GeoSharpi.Utils.MatrixExtensions
+  name: MatrixExtensions
+  href: api/GeoSharpi.Utils.MatrixExtensions.html
+  commentId: T:GeoSharpi.Utils.MatrixExtensions
+  fullName: GeoSharpi.Utils.MatrixExtensions
+  nameWithType: MatrixExtensions
+- uid: GeoSharpi.Utils.MatrixExtensions.ExtractPosition(Matrix4x4)
+  name: ExtractPosition(Matrix4x4)
+  href: api/GeoSharpi.Utils.MatrixExtensions.html#GeoSharpi_Utils_MatrixExtensions_ExtractPosition_Matrix4x4_
+  commentId: M:GeoSharpi.Utils.MatrixExtensions.ExtractPosition(Matrix4x4)
+  fullName: GeoSharpi.Utils.MatrixExtensions.ExtractPosition(Matrix4x4)
+  nameWithType: MatrixExtensions.ExtractPosition(Matrix4x4)
+- uid: GeoSharpi.Utils.MatrixExtensions.ExtractPosition*
+  name: ExtractPosition
+  href: api/GeoSharpi.Utils.MatrixExtensions.html#GeoSharpi_Utils_MatrixExtensions_ExtractPosition_
+  commentId: Overload:GeoSharpi.Utils.MatrixExtensions.ExtractPosition
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.MatrixExtensions.ExtractPosition
+  nameWithType: MatrixExtensions.ExtractPosition
+- uid: GeoSharpi.Utils.MatrixExtensions.ExtractRotation(Matrix4x4)
+  name: ExtractRotation(Matrix4x4)
+  href: api/GeoSharpi.Utils.MatrixExtensions.html#GeoSharpi_Utils_MatrixExtensions_ExtractRotation_Matrix4x4_
+  commentId: M:GeoSharpi.Utils.MatrixExtensions.ExtractRotation(Matrix4x4)
+  fullName: GeoSharpi.Utils.MatrixExtensions.ExtractRotation(Matrix4x4)
+  nameWithType: MatrixExtensions.ExtractRotation(Matrix4x4)
+- uid: GeoSharpi.Utils.MatrixExtensions.ExtractRotation*
+  name: ExtractRotation
+  href: api/GeoSharpi.Utils.MatrixExtensions.html#GeoSharpi_Utils_MatrixExtensions_ExtractRotation_
+  commentId: Overload:GeoSharpi.Utils.MatrixExtensions.ExtractRotation
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.MatrixExtensions.ExtractRotation
+  nameWithType: MatrixExtensions.ExtractRotation
+- uid: GeoSharpi.Utils.MatrixExtensions.ExtractScale(Matrix4x4)
+  name: ExtractScale(Matrix4x4)
+  href: api/GeoSharpi.Utils.MatrixExtensions.html#GeoSharpi_Utils_MatrixExtensions_ExtractScale_Matrix4x4_
+  commentId: M:GeoSharpi.Utils.MatrixExtensions.ExtractScale(Matrix4x4)
+  fullName: GeoSharpi.Utils.MatrixExtensions.ExtractScale(Matrix4x4)
+  nameWithType: MatrixExtensions.ExtractScale(Matrix4x4)
+- uid: GeoSharpi.Utils.MatrixExtensions.ExtractScale*
+  name: ExtractScale
+  href: api/GeoSharpi.Utils.MatrixExtensions.html#GeoSharpi_Utils_MatrixExtensions_ExtractScale_
+  commentId: Overload:GeoSharpi.Utils.MatrixExtensions.ExtractScale
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.MatrixExtensions.ExtractScale
+  nameWithType: MatrixExtensions.ExtractScale
+- uid: GeoSharpi.Utils.MatrixExtensions.Parse(Matrix4x4,System.String)
+  name: Parse(Matrix4x4, String)
+  href: api/GeoSharpi.Utils.MatrixExtensions.html#GeoSharpi_Utils_MatrixExtensions_Parse_Matrix4x4_System_String_
+  commentId: M:GeoSharpi.Utils.MatrixExtensions.Parse(Matrix4x4,System.String)
+  fullName: GeoSharpi.Utils.MatrixExtensions.Parse(Matrix4x4, System.String)
+  nameWithType: MatrixExtensions.Parse(Matrix4x4, String)
+- uid: GeoSharpi.Utils.MatrixExtensions.Parse*
+  name: Parse
+  href: api/GeoSharpi.Utils.MatrixExtensions.html#GeoSharpi_Utils_MatrixExtensions_Parse_
+  commentId: Overload:GeoSharpi.Utils.MatrixExtensions.Parse
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.MatrixExtensions.Parse
+  nameWithType: MatrixExtensions.Parse
+- uid: GeoSharpi.Utils.MeshIO
+  name: MeshIO
+  href: api/GeoSharpi.Utils.MeshIO.html
+  commentId: T:GeoSharpi.Utils.MeshIO
+  fullName: GeoSharpi.Utils.MeshIO
+  nameWithType: MeshIO
+- uid: GeoSharpi.Utils.MeshIO.LoadMesh(System.String)
+  name: LoadMesh(String)
+  href: api/GeoSharpi.Utils.MeshIO.html#GeoSharpi_Utils_MeshIO_LoadMesh_System_String_
+  commentId: M:GeoSharpi.Utils.MeshIO.LoadMesh(System.String)
+  fullName: GeoSharpi.Utils.MeshIO.LoadMesh(System.String)
+  nameWithType: MeshIO.LoadMesh(String)
+- uid: GeoSharpi.Utils.MeshIO.LoadMesh*
+  name: LoadMesh
+  href: api/GeoSharpi.Utils.MeshIO.html#GeoSharpi_Utils_MeshIO_LoadMesh_
+  commentId: Overload:GeoSharpi.Utils.MeshIO.LoadMesh
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.MeshIO.LoadMesh
+  nameWithType: MeshIO.LoadMesh
+- uid: GeoSharpi.Utils.MeshIO.MeshToString(Mesh)
+  name: MeshToString(Mesh)
+  href: api/GeoSharpi.Utils.MeshIO.html#GeoSharpi_Utils_MeshIO_MeshToString_Mesh_
+  commentId: M:GeoSharpi.Utils.MeshIO.MeshToString(Mesh)
+  fullName: GeoSharpi.Utils.MeshIO.MeshToString(Mesh)
+  nameWithType: MeshIO.MeshToString(Mesh)
+- uid: GeoSharpi.Utils.MeshIO.MeshToString*
+  name: MeshToString
+  href: api/GeoSharpi.Utils.MeshIO.html#GeoSharpi_Utils_MeshIO_MeshToString_
+  commentId: Overload:GeoSharpi.Utils.MeshIO.MeshToString
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.MeshIO.MeshToString
+  nameWithType: MeshIO.MeshToString
+- uid: GeoSharpi.Utils.MeshIO.SaveMesh(Mesh,System.String)
+  name: SaveMesh(Mesh, String)
+  href: api/GeoSharpi.Utils.MeshIO.html#GeoSharpi_Utils_MeshIO_SaveMesh_Mesh_System_String_
+  commentId: M:GeoSharpi.Utils.MeshIO.SaveMesh(Mesh,System.String)
+  fullName: GeoSharpi.Utils.MeshIO.SaveMesh(Mesh, System.String)
+  nameWithType: MeshIO.SaveMesh(Mesh, String)
+- uid: GeoSharpi.Utils.MeshIO.SaveMesh*
+  name: SaveMesh
+  href: api/GeoSharpi.Utils.MeshIO.html#GeoSharpi_Utils_MeshIO_SaveMesh_
+  commentId: Overload:GeoSharpi.Utils.MeshIO.SaveMesh
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.MeshIO.SaveMesh
+  nameWithType: MeshIO.SaveMesh
+- uid: GeoSharpi.Utils.RDFUriAttribute
+  name: RDFUriAttribute
+  href: api/GeoSharpi.Utils.RDFUriAttribute.html
+  commentId: T:GeoSharpi.Utils.RDFUriAttribute
+  fullName: GeoSharpi.Utils.RDFUriAttribute
+  nameWithType: RDFUriAttribute
+- uid: GeoSharpi.Utils.RDFUriAttribute.#ctor(System.String,System.String,RDFModelEnums.RDFDatatypes)
+  name: RDFUriAttribute(String, String, RDFModelEnums.RDFDatatypes)
+  href: api/GeoSharpi.Utils.RDFUriAttribute.html#GeoSharpi_Utils_RDFUriAttribute__ctor_System_String_System_String_RDFModelEnums_RDFDatatypes_
+  commentId: M:GeoSharpi.Utils.RDFUriAttribute.#ctor(System.String,System.String,RDFModelEnums.RDFDatatypes)
+  fullName: GeoSharpi.Utils.RDFUriAttribute.RDFUriAttribute(System.String, System.String, RDFModelEnums.RDFDatatypes)
+  nameWithType: RDFUriAttribute.RDFUriAttribute(String, String, RDFModelEnums.RDFDatatypes)
+- uid: GeoSharpi.Utils.RDFUriAttribute.#ctor*
+  name: RDFUriAttribute
+  href: api/GeoSharpi.Utils.RDFUriAttribute.html#GeoSharpi_Utils_RDFUriAttribute__ctor_
+  commentId: Overload:GeoSharpi.Utils.RDFUriAttribute.#ctor
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.RDFUriAttribute.RDFUriAttribute
+  nameWithType: RDFUriAttribute.RDFUriAttribute
+- uid: GeoSharpi.Utils.RDFUriAttribute.prefix
+  name: prefix
+  href: api/GeoSharpi.Utils.RDFUriAttribute.html#GeoSharpi_Utils_RDFUriAttribute_prefix
+  commentId: F:GeoSharpi.Utils.RDFUriAttribute.prefix
+  fullName: GeoSharpi.Utils.RDFUriAttribute.prefix
+  nameWithType: RDFUriAttribute.prefix
+- uid: GeoSharpi.Utils.RDFUriAttribute.type
+  name: type
+  href: api/GeoSharpi.Utils.RDFUriAttribute.html#GeoSharpi_Utils_RDFUriAttribute_type
+  commentId: F:GeoSharpi.Utils.RDFUriAttribute.type
+  fullName: GeoSharpi.Utils.RDFUriAttribute.type
+  nameWithType: RDFUriAttribute.type
+- uid: GeoSharpi.Utils.RDFUriAttribute.uri
+  name: uri
+  href: api/GeoSharpi.Utils.RDFUriAttribute.html#GeoSharpi_Utils_RDFUriAttribute_uri
+  commentId: F:GeoSharpi.Utils.RDFUriAttribute.uri
+  fullName: GeoSharpi.Utils.RDFUriAttribute.uri
+  nameWithType: RDFUriAttribute.uri
+- uid: GeoSharpi.Utils.ReflectiveEnumerator
+  name: ReflectiveEnumerator
+  href: api/GeoSharpi.Utils.ReflectiveEnumerator.html
+  commentId: T:GeoSharpi.Utils.ReflectiveEnumerator
+  fullName: GeoSharpi.Utils.ReflectiveEnumerator
+  nameWithType: ReflectiveEnumerator
+- uid: GeoSharpi.Utils.ReflectiveEnumerator.GetEnumerableOfType*
+  name: GetEnumerableOfType
+  href: api/GeoSharpi.Utils.ReflectiveEnumerator.html#GeoSharpi_Utils_ReflectiveEnumerator_GetEnumerableOfType_
+  commentId: Overload:GeoSharpi.Utils.ReflectiveEnumerator.GetEnumerableOfType
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.ReflectiveEnumerator.GetEnumerableOfType
+  nameWithType: ReflectiveEnumerator.GetEnumerableOfType
+- uid: GeoSharpi.Utils.ReflectiveEnumerator.GetEnumerableOfType``1(System.Object[])
+  name: GetEnumerableOfType<T>(Object[])
+  href: api/GeoSharpi.Utils.ReflectiveEnumerator.html#GeoSharpi_Utils_ReflectiveEnumerator_GetEnumerableOfType__1_System_Object___
+  commentId: M:GeoSharpi.Utils.ReflectiveEnumerator.GetEnumerableOfType``1(System.Object[])
+  name.vb: GetEnumerableOfType(Of T)(Object())
+  fullName: GeoSharpi.Utils.ReflectiveEnumerator.GetEnumerableOfType<T>(System.Object[])
+  fullName.vb: GeoSharpi.Utils.ReflectiveEnumerator.GetEnumerableOfType(Of T)(System.Object())
+  nameWithType: ReflectiveEnumerator.GetEnumerableOfType<T>(Object[])
+  nameWithType.vb: ReflectiveEnumerator.GetEnumerableOfType(Of T)(Object())
+- uid: GeoSharpi.Utils.ReflectiveEnumerator.ToStringList*
+  name: ToStringList
+  href: api/GeoSharpi.Utils.ReflectiveEnumerator.html#GeoSharpi_Utils_ReflectiveEnumerator_ToStringList_
+  commentId: Overload:GeoSharpi.Utils.ReflectiveEnumerator.ToStringList
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.ReflectiveEnumerator.ToStringList
+  nameWithType: ReflectiveEnumerator.ToStringList
+- uid: GeoSharpi.Utils.ReflectiveEnumerator.ToStringList``1(System.Collections.Generic.ICollection{``0})
+  name: ToStringList<T>(ICollection<T>)
+  href: api/GeoSharpi.Utils.ReflectiveEnumerator.html#GeoSharpi_Utils_ReflectiveEnumerator_ToStringList__1_System_Collections_Generic_ICollection___0__
+  commentId: M:GeoSharpi.Utils.ReflectiveEnumerator.ToStringList``1(System.Collections.Generic.ICollection{``0})
+  name.vb: ToStringList(Of T)(ICollection(Of T))
+  fullName: GeoSharpi.Utils.ReflectiveEnumerator.ToStringList<T>(System.Collections.Generic.ICollection<T>)
+  fullName.vb: GeoSharpi.Utils.ReflectiveEnumerator.ToStringList(Of T)(System.Collections.Generic.ICollection(Of T))
+  nameWithType: ReflectiveEnumerator.ToStringList<T>(ICollection<T>)
+  nameWithType.vb: ReflectiveEnumerator.ToStringList(Of T)(ICollection(Of T))
+- uid: GeoSharpi.Utils.TransformExtensions
+  name: TransformExtensions
+  href: api/GeoSharpi.Utils.TransformExtensions.html
+  commentId: T:GeoSharpi.Utils.TransformExtensions
+  fullName: GeoSharpi.Utils.TransformExtensions
+  nameWithType: TransformExtensions
+- uid: GeoSharpi.Utils.TransformExtensions.FromMatrix(Transform,Matrix4x4)
+  name: FromMatrix(Transform, Matrix4x4)
+  href: api/GeoSharpi.Utils.TransformExtensions.html#GeoSharpi_Utils_TransformExtensions_FromMatrix_Transform_Matrix4x4_
+  commentId: M:GeoSharpi.Utils.TransformExtensions.FromMatrix(Transform,Matrix4x4)
+  fullName: GeoSharpi.Utils.TransformExtensions.FromMatrix(Transform, Matrix4x4)
+  nameWithType: TransformExtensions.FromMatrix(Transform, Matrix4x4)
+- uid: GeoSharpi.Utils.TransformExtensions.FromMatrix*
+  name: FromMatrix
+  href: api/GeoSharpi.Utils.TransformExtensions.html#GeoSharpi_Utils_TransformExtensions_FromMatrix_
+  commentId: Overload:GeoSharpi.Utils.TransformExtensions.FromMatrix
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.TransformExtensions.FromMatrix
   nameWithType: TransformExtensions.FromMatrix
+- uid: GeoSharpi.Visualisation
+  name: GeoSharpi.Visualisation
+  href: api/GeoSharpi.Visualisation.html
+  commentId: N:GeoSharpi.Visualisation
+  fullName: GeoSharpi.Visualisation
+  nameWithType: GeoSharpi.Visualisation
+- uid: GeoSharpi.Visualisation.NodeVisualizer
+  name: NodeVisualizer
+  href: api/GeoSharpi.Visualisation.NodeVisualizer.html
+  commentId: T:GeoSharpi.Visualisation.NodeVisualizer
+  fullName: GeoSharpi.Visualisation.NodeVisualizer
+  nameWithType: NodeVisualizer
+- uid: GeoSharpi.Visualisation.NodeVisualizer.node
+  name: node
+  href: api/GeoSharpi.Visualisation.NodeVisualizer.html#GeoSharpi_Visualisation_NodeVisualizer_node
+  commentId: F:GeoSharpi.Visualisation.NodeVisualizer.node
+  fullName: GeoSharpi.Visualisation.NodeVisualizer.node
+  nameWithType: NodeVisualizer.node
+- uid: GeoSharpi.Visualisation.NodeVisualizer.ResetNode
+  name: ResetNode()
+  href: api/GeoSharpi.Visualisation.NodeVisualizer.html#GeoSharpi_Visualisation_NodeVisualizer_ResetNode
+  commentId: M:GeoSharpi.Visualisation.NodeVisualizer.ResetNode
+  fullName: GeoSharpi.Visualisation.NodeVisualizer.ResetNode()
+  nameWithType: NodeVisualizer.ResetNode()
+- uid: GeoSharpi.Visualisation.NodeVisualizer.ResetNode*
+  name: ResetNode
+  href: api/GeoSharpi.Visualisation.NodeVisualizer.html#GeoSharpi_Visualisation_NodeVisualizer_ResetNode_
+  commentId: Overload:GeoSharpi.Visualisation.NodeVisualizer.ResetNode
+  isSpec: "True"
+  fullName: GeoSharpi.Visualisation.NodeVisualizer.ResetNode
+  nameWithType: NodeVisualizer.ResetNode
+- uid: GeoSharpi.Visualisation.NodeVisualizer.SetUpNode(GeoSharpi.Nodes.Node,Transform)
+  name: SetUpNode(Node, Transform)
+  href: api/GeoSharpi.Visualisation.NodeVisualizer.html#GeoSharpi_Visualisation_NodeVisualizer_SetUpNode_GeoSharpi_Nodes_Node_Transform_
+  commentId: M:GeoSharpi.Visualisation.NodeVisualizer.SetUpNode(GeoSharpi.Nodes.Node,Transform)
+  fullName: GeoSharpi.Visualisation.NodeVisualizer.SetUpNode(GeoSharpi.Nodes.Node, Transform)
+  nameWithType: NodeVisualizer.SetUpNode(Node, Transform)
+- uid: GeoSharpi.Visualisation.NodeVisualizer.SetUpNode*
+  name: SetUpNode
+  href: api/GeoSharpi.Visualisation.NodeVisualizer.html#GeoSharpi_Visualisation_NodeVisualizer_SetUpNode_
+  commentId: Overload:GeoSharpi.Visualisation.NodeVisualizer.SetUpNode
+  isSpec: "True"
+  fullName: GeoSharpi.Visualisation.NodeVisualizer.SetUpNode
+  nameWithType: NodeVisualizer.SetUpNode
