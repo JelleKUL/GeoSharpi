@@ -39,6 +39,9 @@ namespace GeoSharpi.Nodes
         [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_DATETIME)]
         public string dateTime = "";
 
+        [Tooltip("A dictionary with the undefined properties")]
+        public SerializableDictionary<string, string> properties = new SerializableDictionary<string, string>();
+
         [Tooltip("the rdf graph object containing the original data")] 
         private RDFGraph graph;
 
@@ -144,15 +147,19 @@ namespace GeoSharpi.Nodes
 
             subject = RDFSubject.ToString();
 
-            foreach (var field in this.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
+            // loop over all the triples
+            var triplesEnum = subGraph.TriplesEnumerator;
+            while (triplesEnum.MoveNext())
             {
-
-                var att = field.GetCustomAttributes(typeof(RDFUriAttribute), true).FirstOrDefault() as RDFUriAttribute;
-                if (att != null)
+                bool found = false;
+                
+                // loop over all the properties defined in this class
+                foreach (var field in this.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
                 {
-                    var triplesEnum = subGraph.TriplesEnumerator;
-                    while (triplesEnum.MoveNext())
+                    var att = field.GetCustomAttributes(typeof(RDFUriAttribute), true).FirstOrDefault() as RDFUriAttribute;
+                    if (att != null)
                     {
+                    
                         //Debug.Log("checking: " + new RDFResource(att.uri + field.Name) + " against " + triplesEnum.Current.Predicate);
 
                         if (new RDFResource(att.uri + field.Name).ToString() == triplesEnum.Current.Predicate.ToString())
@@ -183,8 +190,22 @@ namespace GeoSharpi.Nodes
 
                             field.SetValue(this, newValue);
                             Debug.Log("Set the variable: " + field.Name + " to: " + field.GetValue(this));
+                            found = true;
                         }
+                        
                     }
+                }
+                if (!found)
+                {
+                    string val = triplesEnum.Current.Object.ToString();
+                    if (triplesEnum.Current.Object.ToString().Contains("^^"))
+                    {
+                        val = triplesEnum.Current.Object.ToString().Substring(0, triplesEnum.Current.Object.ToString().IndexOf("^^"));
+                    }
+
+                    properties.Add(triplesEnum.Current.Predicate.ToString(), val);
+                    Debug.Log(val + " was not found, putting it in the dictionary");
+
                 }
             }
 
