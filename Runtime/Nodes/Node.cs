@@ -19,13 +19,10 @@ namespace GeoSharpi.Nodes
     [System.Serializable]
     public class Node
     {
-        /// <summary>
-        /// the Main identifier for the Node, used for serialisation
-        /// </summary>
+        /// <value>the Main identifier for the Node, used for serialisation</value>
         [Tooltip("The Identifier of the resource")]
         public string subject = "";
-        //[Tooltip("The path of the desired Graph of the resource")]
-        /// <summary>Gets or sets the default value.</summary>
+        [Tooltip("The path of the desired Graph of the resource")]
         /// <value>The default value.</value>
         public string graphPath = "";
 
