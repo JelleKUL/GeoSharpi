@@ -20,7 +20,7 @@ namespace GeoSharpi.Nodes
     public class Node
     {
         [Tooltip("The Identifier of the resource")]
-        // <summary> the Main identifier for the Node, used for serialisation </summary>
+        /// <summary> the Main identifier for the Node, used for serialisation </summary>
         public string subject = "";
         [Tooltip("The path path of the desired Graph of the resource")]
         public string graphPath = "";
@@ -30,25 +30,25 @@ namespace GeoSharpi.Nodes
 
         [Tooltip("The transform of the resource")]
         [RDFUri("e57", "http://libe57.org#")]
-        //<summary> The 4x4 matrix that describes the resource's transform in space. using the e57 standard </summary>
+        ///<summary> The 4x4 matrix that describes the resource's transform in space. using the e57 standard </summary>
         public Matrix4x4 cartesianTransform = new Matrix4x4();
 
         [Tooltip("The path to the resource, saved on disk as relative, in memory as absolute")]
         [RDFUri("v4d", "https://w3id.org/v4d/core#", RDFModelEnums.RDFDatatypes.XSD_STRING)]
-        //<summary> The path to the resource, saved on disk as relative, in memory as absolute </summary>
+        ///<summary> The path to the resource, saved on disk as relative, in memory as absolute </summary>
         public string path = "";
 
         [Tooltip("The moment the Asset was created")]
         [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_DATETIME)]
-        //<summary> The  moment the Asset was created, using the exif:datatime standard : "YYYY:MM:DD HH:MM:SS" </summary>
+        ///<summary> The  moment the Asset was created, using the exif:datatime standard : "YYYY:MM:DD HH:MM:SS" </summary>
         public string dateTime = "";
 
         [Tooltip("A dictionary with the undefined properties")]
-        //<summary> The remaining properties that have no predefined key in the classes. Formatted as a key, value pair. </summary>
+        ///<summary> The remaining properties that have no predefined key in the classes. Formatted as a key, value pair. </summary>
         public SerializableDictionary<string, string> properties = new SerializableDictionary<string, string>();
 
         [Tooltip("the rdf graph object containing the original data")]
-        //<summary> the rdf graph object containing the original data </summary>
+        ///<summary> the rdf graph object containing the original data </summary>
         private RDFGraph graph;
 
         private string basePrefix = "GeoSharpi";
