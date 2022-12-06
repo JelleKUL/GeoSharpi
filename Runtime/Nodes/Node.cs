@@ -19,7 +19,7 @@ namespace GeoSharpi.Nodes
     [System.Serializable]
     public class Node
     {
-        // the Main identifier for the Node, used for serialisation
+        // <value> the Main identifier for the Node, used for serialisation </value>
         [Tooltip("The Identifier of the resource")]
         public string subject = "";
         [Tooltip("The path path of the desired Graph of the resource")]
@@ -28,27 +28,27 @@ namespace GeoSharpi.Nodes
 
         [Header("RDF Variables")]
 
-        // The 4x4 matrix that describes the resource's transform in space. using the e57 standard
+        //<value> The 4x4 matrix that describes the resource's transform in space. using the e57 standard </value>
         [Tooltip("The transform of the resource")]
         [RDFUri("e57", "http://libe57.org#")]
         public Matrix4x4 cartesianTransform = new Matrix4x4();
 
-        // The path to the resource, saved on disk as relative, in memory as absolute
+        //<value> The path to the resource, saved on disk as relative, in memory as absolute </value>
         [Tooltip("The path to the resource, saved on disk as relative, in memory as absolute")]
         [RDFUri("v4d", "https://w3id.org/v4d/core#", RDFModelEnums.RDFDatatypes.XSD_STRING)]
         public string path = "";
 
-        // The  moment the Asset was created, using the exif:datatime standard : "YYYY:MM:DD HH:MM:SS"
+        //<value> The  moment the Asset was created, using the exif:datatime standard : "YYYY:MM:DD HH:MM:SS" </value>
         [Tooltip("The moment the Asset was created")]
         [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_DATETIME)]
         public string dateTime = "";
 
-        // The remaining properties that have no predefined key in the classes. Formatted as a key, value pair.
+        //<value> The remaining properties that have no predefined key in the classes. Formatted as a key, value pair. </value>
         [Tooltip("A dictionary with the undefined properties")]
         public SerializableDictionary<string, string> properties = new SerializableDictionary<string, string>();
 
 
-        // "the rdf graph object containing the original data
+        //<value> the rdf graph object containing the original data </value>
         [Tooltip("the rdf graph object containing the original data")] 
         private RDFGraph graph;
 
