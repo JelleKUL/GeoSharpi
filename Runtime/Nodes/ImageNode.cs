@@ -15,7 +15,10 @@ namespace GeoSharpi.Nodes
     {
         [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_DOUBLE)]
         public float focalLengthIn35mmFilm = 0.0f;
-
+        [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_INT)]
+        public int imageHeight = 1 ;
+        [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_INT)]
+        public int imageWidth = 1 ;
         public Texture2D imageTexture;
 
         [Header("Visual Parameters")]

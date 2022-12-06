@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 namespace GeoSharpi.Utils
 {
@@ -63,14 +64,21 @@ namespace GeoSharpi.Utils
         /// <returns>a Matrix4x4</returns>
         public static Matrix4x4 Parse(this Matrix4x4 matrix, string value)
         {
-            string[] chars = value.Split(new char[3] { ' ', '\t', '\n'});
+            string outputString = Regex.Replace(value, @"[\s\[\]\t\n]+", " "); // remove all the brackets and newlines
+            outputString = Regex.Replace(outputString, @"\s+", " "); // remove all the double spaces
+            string[] chars = outputString.Trim().Split(' ');
 
             for (int i = 0; i < 16; i++)
             {
-                matrix[i] = float.Parse(chars[i]);
+                if (float.TryParse(chars[i], out float f))
+                {
+                    matrix[i] = f;
+                }
+                else Debug.Log("Value: " + chars[i] + "cannot be parsed to a float");
+                
             }
             
-            return matrix;
+            return matrix.transpose;
         }
     }
 }

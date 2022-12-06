@@ -29,6 +29,7 @@ namespace GeoSharpi.Capture
 
         [Header("Session Reconstruction")]
         [Tooltip("The location of the .ttl RDF grapg file")]
+        [TextArea]
         public string graphLoadPath = "";
         [Tooltip("Use the linked subjects to only add the referenced nodes in the sesison to the list")]
         public bool useLinkedSubjects = true;
@@ -150,7 +151,7 @@ namespace GeoSharpi.Capture
                 {
                     if (type.Contains("Node"))
                     {
-                        Debug.Log(triplesEnum.Current.Subject + " is a custom type or generic Node, will be parsed as a Node");
+                        Debug.Log(triplesEnum.Current.Subject + " is a custom type or generic Node with type: "+ type + ", it will be parsed as a Node");
                         Node newNode = new Node();
                         newNodes.Add(newNode);
                         newNode.FromGraph(graph, new RDFResource(triplesEnum.Current.Subject.ToString()));

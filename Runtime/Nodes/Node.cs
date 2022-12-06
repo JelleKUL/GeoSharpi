@@ -28,7 +28,7 @@ namespace GeoSharpi.Nodes
         [Header("RDF Variables")]
 
         [Tooltip("The transform of the resource")]
-        [RDFUri("v4d", "https://w3id.org/v4d/core#")]
+        [RDFUri("e57", "http://libe57.org#")]
         public Matrix4x4 cartesianTransform = new Matrix4x4();
 
         [Tooltip("The path to the resource, saved on disk as relative, in memory as absolute")]
@@ -168,7 +168,7 @@ namespace GeoSharpi.Nodes
 
                             Debug.Log("the matching variable will have a value of:" + val);
 
-                            object newValue = null;
+                            object newValue;
 
 
                             /*
