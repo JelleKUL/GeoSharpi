@@ -683,6 +683,12 @@ references:
   commentId: F:GeoSharpi.Nodes.Node.path
   fullName: GeoSharpi.Nodes.Node.path
   nameWithType: Node.path
+- uid: GeoSharpi.Nodes.Node.properties
+  name: properties
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_properties
+  commentId: F:GeoSharpi.Nodes.Node.properties
+  fullName: GeoSharpi.Nodes.Node.properties
+  nameWithType: Node.properties
 - uid: GeoSharpi.Nodes.Node.SaveResource(System.String)
   name: SaveResource(String)
   href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_SaveResource_System_String_
