@@ -24,7 +24,7 @@ namespace GeoSharpi.Nodes
         /// </summary>
         [Tooltip("The Identifier of the resource")]
         public string subject = "";
-        [Tooltip("The path path of the desired Graph of the resource")]
+        //[Tooltip("The path of the desired Graph of the resource")]
         /// <summary>Gets or sets the default value.</summary>
         /// <value>The default value.</value>
         public string graphPath = "";
