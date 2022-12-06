@@ -468,12 +468,24 @@ references:
   isSpec: "True"
   fullName: GeoSharpi.Nodes.ImageNode.GetResourceObject
   nameWithType: ImageNode.GetResourceObject
+- uid: GeoSharpi.Nodes.ImageNode.imageHeight
+  name: imageHeight
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_imageHeight
+  commentId: F:GeoSharpi.Nodes.ImageNode.imageHeight
+  fullName: GeoSharpi.Nodes.ImageNode.imageHeight
+  nameWithType: ImageNode.imageHeight
 - uid: GeoSharpi.Nodes.ImageNode.imageTexture
   name: imageTexture
   href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_imageTexture
   commentId: F:GeoSharpi.Nodes.ImageNode.imageTexture
   fullName: GeoSharpi.Nodes.ImageNode.imageTexture
   nameWithType: ImageNode.imageTexture
+- uid: GeoSharpi.Nodes.ImageNode.imageWidth
+  name: imageWidth
+  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_imageWidth
+  commentId: F:GeoSharpi.Nodes.ImageNode.imageWidth
+  fullName: GeoSharpi.Nodes.ImageNode.imageWidth
+  nameWithType: ImageNode.imageWidth
 - uid: GeoSharpi.Nodes.ImageNode.LoadResource(System.String)
   name: LoadResource(String)
   href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode_LoadResource_System_String_
@@ -512,6 +524,12 @@ references:
   commentId: F:GeoSharpi.Nodes.ImageNode.textureShader
   fullName: GeoSharpi.Nodes.ImageNode.textureShader
   nameWithType: ImageNode.textureShader
+- uid: GeoSharpi.Nodes.MeshNode
+  name: MeshNode
+  href: api/GeoSharpi.Nodes.MeshNode.html
+  commentId: T:GeoSharpi.Nodes.MeshNode
+  fullName: GeoSharpi.Nodes.MeshNode
+  nameWithType: MeshNode
 - uid: GeoSharpi.Nodes.Node
   name: Node
   href: api/GeoSharpi.Nodes.Node.html
