@@ -412,6 +412,9 @@ MonoBehaviour:
         e33: 0
       path: 
       dateTime: 2022-07-27T11:13:21
+      properties:
+        keys: []
+        values: []
       linkedSubjects: []
     nodes: []
     imageQuality: 75
@@ -677,6 +680,9 @@ MonoBehaviour:
         e33: 0
       path: 
       dateTime: 2022-07-27T11:13:21
+      properties:
+        keys: []
+        values: []
       linkedSubjects: []
     nodes: []
     imageQuality: 75

@@ -19,6 +19,7 @@ namespace GeoSharpi.Nodes
     [System.Serializable]
     public class Node
     {
+        // the Main identifier for the Node, used for serialisation
         [Tooltip("The Identifier of the resource")]
         public string subject = "";
         [Tooltip("The path path of the desired Graph of the resource")]
@@ -27,23 +28,31 @@ namespace GeoSharpi.Nodes
 
         [Header("RDF Variables")]
 
+        // The 4x4 matrix that describes the resource's transform in space. using the e57 standard
         [Tooltip("The transform of the resource")]
         [RDFUri("e57", "http://libe57.org#")]
         public Matrix4x4 cartesianTransform = new Matrix4x4();
 
+        // The path to the resource, saved on disk as relative, in memory as absolute
         [Tooltip("The path to the resource, saved on disk as relative, in memory as absolute")]
         [RDFUri("v4d", "https://w3id.org/v4d/core#", RDFModelEnums.RDFDatatypes.XSD_STRING)]
         public string path = "";
 
+        // The  moment the Asset was created, using the exif:datatime standard : "YYYY:MM:DD HH:MM:SS"
         [Tooltip("The moment the Asset was created")]
         [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_DATETIME)]
         public string dateTime = "";
 
+        // The remaining properties that have no predefined key in the classes. Formatted as a key, value pair.
         [Tooltip("A dictionary with the undefined properties")]
         public SerializableDictionary<string, string> properties = new SerializableDictionary<string, string>();
 
+
+        // "the rdf graph object containing the original data
         [Tooltip("the rdf graph object containing the original data")] 
         private RDFGraph graph;
+
+        private string basePrefix = "GeoSharpi";
 
         #region Constructors
 
@@ -94,12 +103,12 @@ namespace GeoSharpi.Nodes
         #endregion
 
         /// <summary>
-        /// Returns the Class of this Node
+        /// Returns the Class of this Node, formatted as 'v4d:"ClassName"'
         /// </summary>
         /// <returns>The Specific Class</returns>
         public RDFPlainLiteral GetClass()
         {
-            return new RDFPlainLiteral("v4d:" + this.GetType().Name);
+            return new RDFPlainLiteral(basePrefix + ":" + this.GetType().Name);
         }
 
         /// <summary>
@@ -225,7 +234,7 @@ namespace GeoSharpi.Nodes
             graph.AddTriple(new RDFTriple(
                 GetSubject(),
                 new RDFResource("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
-                new RDFPlainLiteral("GeoSharpi:" + this.GetType().Name)
+                GetClass()
                 )
             );
 
@@ -340,7 +349,7 @@ namespace GeoSharpi.Nodes
         /// <returns>the GameObject</returns>
         public virtual GameObject GetResourceObject()
         {
-            Debug.LogWarning("GetResource() called on base Node, Classed should override this fuction");
+            Debug.LogWarning("GetResource() called on base Node, Child classed should override this function");
             return new GameObject();
         }
 
@@ -350,7 +359,7 @@ namespace GeoSharpi.Nodes
         /// <param name="path">the path of the resource</param>
         public virtual void LoadResource(string path)
         {
-            Debug.LogWarning("LoadResource() called on base Node, Classed should override this fuction");
+            Debug.LogWarning("LoadResource() called on base Node, Child classed should override this function");
         }
 
         /// <summary>
@@ -359,7 +368,7 @@ namespace GeoSharpi.Nodes
         /// <param name="path">The path to save to</param>
         public virtual void SaveResource(string path)
         {
-            Debug.LogWarning("SaveResource() called on base Node, Classed should override this fuction");
+            Debug.LogWarning("SaveResource() called on base Node, Child classes should override this function");
         }
 
         
