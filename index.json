@@ -59,11 +59,6 @@
     "title": "Class CameraExtensions | GeoSharpi",
     "keywords": "Class CameraExtensions Camera Extensions to get more info from the camera Inheritance Object CameraExtensions Namespace : GeoSharpi.Utils Assembly : cs.temp.dll.dll Syntax public static class CameraExtensions Methods Get35MillimeterFocalLength(Camera) Returns the exif standard 35mmequivalent focal length of the camera Declaration public static float Get35MillimeterFocalLength(this Camera camera) Parameters Type Name Description Camera camera Returns Type Description Single the 35mm equivalent focal length"
   },
-  "api/GeoSharpi.Utils.CoordinateSystemChanger.html": {
-    "href": "api/GeoSharpi.Utils.CoordinateSystemChanger.html",
-    "title": "Class CoordinateSystemChanger | GeoSharpi",
-    "keywords": "Class CoordinateSystemChanger Converts Transforms to a new co�rdinate system Inheritance Object CoordinateSystemChanger Namespace : GeoSharpi.Utils Assembly : cs.temp.dll.dll Syntax public class CoordinateSystemChanger : MonoBehaviour Methods ChangeSystem() Applies the current defined transformation by the newAxis Declaration public void ChangeSystem()"
-  },
   "api/GeoSharpi.Utils.Events.GeometryNodeEvent.html": {
     "href": "api/GeoSharpi.Utils.Events.GeometryNodeEvent.html",
     "title": "Class GeometryNodeEvent | GeoSharpi",
@@ -92,7 +87,7 @@
   "api/GeoSharpi.Utils.html": {
     "href": "api/GeoSharpi.Utils.html",
     "title": "Namespace GeoSharpi.Utils | GeoSharpi",
-    "keywords": "Namespace GeoSharpi.Utils Classes CameraExtensions Camera Extensions to get more info from the camera CoordinateSystemChanger Converts Transforms to a new co�rdinate system ImageIO Methods to save and load jpegs MatrixExtensions Extensions to add functionalities to Matrix 4x4's MeshIO Methods for saving and loading obj Meshes RDFUriAttribute A Custom property to add to variables in a script, this enables them to be serialised to RDF and contain the Correct namespace ReflectiveEnumerator Methods to dynamically work with enumerators TransformExtensions Extensions to add functionalities to Transforms Enums NewAxis"
+    "keywords": "Namespace GeoSharpi.Utils Classes CameraExtensions Camera Extensions to get more info from the camera ImageIO Methods to save and load jpegs MatrixExtensions Extensions to add functionalities to Matrix 4x4's MeshIO Methods for saving and loading obj Meshes RDFUriAttribute A Custom property to add to variables in a script, this enables them to be serialised to RDF and contain the Correct namespace ReflectiveEnumerator Methods to dynamically work with enumerators TransformExtensions Extensions to add functionalities to Transforms Enums NewAxis"
   },
   "api/GeoSharpi.Utils.ImageIO.html": {
     "href": "api/GeoSharpi.Utils.ImageIO.html",
@@ -129,10 +124,15 @@
     "title": "Class TransformExtensions | GeoSharpi",
     "keywords": "Class TransformExtensions Extensions to add functionalities to Transforms Inheritance Object TransformExtensions Namespace : GeoSharpi.Utils Assembly : cs.temp.dll.dll Syntax public static class TransformExtensions Methods FromMatrix(Transform, Matrix4x4) Sets a transform to a Matrix4x4 Declaration public static void FromMatrix(this Transform transform, Matrix4x4 matrix) Parameters Type Name Description Transform transform the transform to change Matrix4x4 matrix The matrix4x4 to set the transform to"
   },
+  "api/GeoSharpi.Visualisation.CoordinateSystemChanger.html": {
+    "href": "api/GeoSharpi.Visualisation.CoordinateSystemChanger.html",
+    "title": "Class CoordinateSystemChanger | GeoSharpi",
+    "keywords": "Class CoordinateSystemChanger Converts Transforms to a new co�rdinate system Inheritance Object CoordinateSystemChanger Namespace : GeoSharpi.Visualisation Assembly : cs.temp.dll.dll Syntax public class CoordinateSystemChanger : MonoBehaviour Methods ChangeSystem() Applies the current defined transformation by the newAxis Declaration public void ChangeSystem()"
+  },
   "api/GeoSharpi.Visualisation.html": {
     "href": "api/GeoSharpi.Visualisation.html",
     "title": "Namespace GeoSharpi.Visualisation | GeoSharpi",
-    "keywords": "Namespace GeoSharpi.Visualisation Classes NodeVisualizer A class to visualise any type of node"
+    "keywords": "Namespace GeoSharpi.Visualisation Classes CoordinateSystemChanger Converts Transforms to a new co�rdinate system NodeVisualizer A class to visualise any type of node"
   },
   "api/GeoSharpi.Visualisation.NodeVisualizer.html": {
     "href": "api/GeoSharpi.Visualisation.NodeVisualizer.html",
@@ -147,7 +147,7 @@
   "articles/datareconstruction.html": {
     "href": "articles/datareconstruction.html",
     "title": "Data Visualization | GeoSharpi",
-    "keywords": "Data Visualization An big part of this package is the ability to display RDF based Sessions and Nodes. Node Visualizer All nodes can be visualised using the NodeVisualizer()"
+    "keywords": "Data Visualization An big part of this package is the ability to display RDF based Sessions and Nodes. Node Visualizer All nodes can be visualised using the NodeVisualizer() It will attempt to place the asset in the scene Coordinate System Converter Many fifferent softwares use a different coordinate system. This script can Easily solve this problme by allowing you to define the new axis for each of the original axis."
   },
   "articles/extending.html": {
     "href": "articles/extending.html",

@@ -817,25 +817,6 @@ references:
   isSpec: "True"
   fullName: GeoSharpi.Utils.CameraExtensions.Get35MillimeterFocalLength
   nameWithType: CameraExtensions.Get35MillimeterFocalLength
-- uid: GeoSharpi.Utils.CoordinateSystemChanger
-  name: CoordinateSystemChanger
-  href: api/GeoSharpi.Utils.CoordinateSystemChanger.html
-  commentId: T:GeoSharpi.Utils.CoordinateSystemChanger
-  fullName: GeoSharpi.Utils.CoordinateSystemChanger
-  nameWithType: CoordinateSystemChanger
-- uid: GeoSharpi.Utils.CoordinateSystemChanger.ChangeSystem
-  name: ChangeSystem()
-  href: api/GeoSharpi.Utils.CoordinateSystemChanger.html#GeoSharpi_Utils_CoordinateSystemChanger_ChangeSystem
-  commentId: M:GeoSharpi.Utils.CoordinateSystemChanger.ChangeSystem
-  fullName: GeoSharpi.Utils.CoordinateSystemChanger.ChangeSystem()
-  nameWithType: CoordinateSystemChanger.ChangeSystem()
-- uid: GeoSharpi.Utils.CoordinateSystemChanger.ChangeSystem*
-  name: ChangeSystem
-  href: api/GeoSharpi.Utils.CoordinateSystemChanger.html#GeoSharpi_Utils_CoordinateSystemChanger_ChangeSystem_
-  commentId: Overload:GeoSharpi.Utils.CoordinateSystemChanger.ChangeSystem
-  isSpec: "True"
-  fullName: GeoSharpi.Utils.CoordinateSystemChanger.ChangeSystem
-  nameWithType: CoordinateSystemChanger.ChangeSystem
 - uid: GeoSharpi.Utils.Events
   name: GeoSharpi.Utils.Events
   href: api/GeoSharpi.Utils.Events.html
@@ -1156,6 +1137,25 @@ references:
   commentId: N:GeoSharpi.Visualisation
   fullName: GeoSharpi.Visualisation
   nameWithType: GeoSharpi.Visualisation
+- uid: GeoSharpi.Visualisation.CoordinateSystemChanger
+  name: CoordinateSystemChanger
+  href: api/GeoSharpi.Visualisation.CoordinateSystemChanger.html
+  commentId: T:GeoSharpi.Visualisation.CoordinateSystemChanger
+  fullName: GeoSharpi.Visualisation.CoordinateSystemChanger
+  nameWithType: CoordinateSystemChanger
+- uid: GeoSharpi.Visualisation.CoordinateSystemChanger.ChangeSystem
+  name: ChangeSystem()
+  href: api/GeoSharpi.Visualisation.CoordinateSystemChanger.html#GeoSharpi_Visualisation_CoordinateSystemChanger_ChangeSystem
+  commentId: M:GeoSharpi.Visualisation.CoordinateSystemChanger.ChangeSystem
+  fullName: GeoSharpi.Visualisation.CoordinateSystemChanger.ChangeSystem()
+  nameWithType: CoordinateSystemChanger.ChangeSystem()
+- uid: GeoSharpi.Visualisation.CoordinateSystemChanger.ChangeSystem*
+  name: ChangeSystem
+  href: api/GeoSharpi.Visualisation.CoordinateSystemChanger.html#GeoSharpi_Visualisation_CoordinateSystemChanger_ChangeSystem_
+  commentId: Overload:GeoSharpi.Visualisation.CoordinateSystemChanger.ChangeSystem
+  isSpec: "True"
+  fullName: GeoSharpi.Visualisation.CoordinateSystemChanger.ChangeSystem
+  nameWithType: CoordinateSystemChanger.ChangeSystem
 - uid: GeoSharpi.Visualisation.NodeVisualizer
   name: NodeVisualizer
   href: api/GeoSharpi.Visualisation.NodeVisualizer.html
