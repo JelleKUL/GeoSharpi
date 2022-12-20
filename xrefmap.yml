@@ -680,7 +680,14 @@ references:
 - uid: GeoSharpi.Nodes.Node.path
   name: path
   href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_path
-  commentId: F:GeoSharpi.Nodes.Node.path
+  commentId: P:GeoSharpi.Nodes.Node.path
+  fullName: GeoSharpi.Nodes.Node.path
+  nameWithType: Node.path
+- uid: GeoSharpi.Nodes.Node.path*
+  name: path
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_path_
+  commentId: Overload:GeoSharpi.Nodes.Node.path
+  isSpec: "True"
   fullName: GeoSharpi.Nodes.Node.path
   nameWithType: Node.path
 - uid: GeoSharpi.Nodes.Node.properties
@@ -705,7 +712,14 @@ references:
 - uid: GeoSharpi.Nodes.Node.subject
   name: subject
   href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_subject
-  commentId: F:GeoSharpi.Nodes.Node.subject
+  commentId: P:GeoSharpi.Nodes.Node.subject
+  fullName: GeoSharpi.Nodes.Node.subject
+  nameWithType: Node.subject
+- uid: GeoSharpi.Nodes.Node.subject*
+  name: subject
+  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_subject_
+  commentId: Overload:GeoSharpi.Nodes.Node.subject
+  isSpec: "True"
   fullName: GeoSharpi.Nodes.Node.subject
   nameWithType: Node.subject
 - uid: GeoSharpi.Nodes.Node.ToGraph

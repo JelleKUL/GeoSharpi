@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Getting Started | GeoSharpi </title>
+    <title>Extending the nodes | GeoSharpi </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Getting Started | GeoSharpi ">
+    <meta name="title" content="Extending the nodes | GeoSharpi ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -89,8 +89,8 @@
                 <div class="toc" id="toc">
                   
                   <ul class="nav level1">
-                    <li class="active">
-                      <a href="intro.html" title="Getting Started" class="active">Getting Started</a>
+                    <li class="">
+                      <a href="intro.html" title="Getting Started" class="">Getting Started</a>
                     </li>
                     <li class="">
                       <a href="datacapture.html" title="Capturing Data" class="">Capturing Data</a>
@@ -98,8 +98,8 @@
                     <li class="">
                       <a href="datareconstruction.html" title="Visualizing Data" class="">Visualizing Data</a>
                     </li>
-                    <li class="">
-                      <a href="extending.html" title="Extending Functionality" class="">Extending Functionality</a>
+                    <li class="active">
+                      <a href="extending.html" title="Extending Functionality" class="active">Extending Functionality</a>
                     </li>
                   </ul>        </div>
               </div>
@@ -109,19 +109,44 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="getting-started">Getting Started</h1>
+<h1 id="extending-the-nodes">Extending the nodes</h1>
 
-<h2 id="main-goal">Main Goal</h2>
-<p>This Package makes it easy to create and visualize datacapture sessions.
-All resources are stored as an abstract dataclass <code>Node()</code>, containing its metadata and resource (image, mesh,...).</p>
-<h2 id="data-capture">Data Capture</h2>
-<p>This package contains functions to capture and save Images and meshes from either in game, or real life using XR devices.</p>
-<h2 id="data-reconstruction">Data Reconstruction</h2>
-<p>An big part of this package is the ability to display RDF based Sessions and Nodes.
-All nodes can be visualised using the <code>NodeVisualizer()</code> </p>
-<h2 id="extension">Extension</h2>
-<p>New nodes and Properties can be defined to suit your workflow</p>
-</article>
+<p>If you want to work with more Node types or fields</p>
+<h2 id="node-extension">Node Extension</h2>
+<p>Custom Nodes can be created by inheriting from <code>Node</code>.</p>
+<h2 id="serializing-fieldsproperties">Serializing Fields/properties</h2>
+<p>Extra fields that should be serialised should be decorated with <code>[RDFUri(prefix,uri,dataType)]</code>
+The datatypes need to be of type: <code>RDFModelEnums.RDFDatatypes</code> from the <code>RDFSharp.Model</code> namespace</p>
+<h2 id="example">Example</h2>
+<pre><code class="lang-cs">using GeoSharpi.Nodes;
+using RDFSharp.Model;
+
+[System.Serializable]
+public class CustomNode : Node
+{
+    // regular fields can be set with the RDFUri attribute
+    [RDFUri(prefix,uri,dataType)]
+    public var newVar;
+
+    // Prpoerties need to specify the field before they can be set with the RDFUri attribute
+    [field: RDFUri(prefix,uri,dataType)]
+    [field: SerializeField] //this also counts for making it show up in the inspector
+    public var newVar {get; private set;};
+
+    // The constructor can contain extra custom logic, but should use the base constructor.
+    public CustomNode(string _graphPath = &quot;&quot;, string _subject = &quot;&quot;)
+    {
+        CreateNode(_graphPath, _subject);
+
+        // custom logic here
+    }
+
+    // These functions should be oerriden to provide custom saving and loading functionality
+    public override GameObject GetResourceObject(){}
+    public override void LoadResource(string path){}
+    public override void SaveResource(string path){}
+}
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
@@ -129,7 +154,7 @@ All nodes can be visualised using the <code>NodeVisualizer()</code> </p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/JelleKUL/GeoSharpi/blob/main/Documentation~/DocFx/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/JelleKUL/GeoSharpi/blob/main/Documentation~/DocFx/articles/extending.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

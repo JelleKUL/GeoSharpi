@@ -124,7 +124,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Nodes.Node.html",
-          "hash": "TJ1ngp8oY6p1zucWa/vdiYJvbkZiZyqX3jw8oSpe/X0="
+          "hash": "cJjA6T35PTiD5J8dqn9AXO/QIp+QBoVm42Jj2eiHc5Y="
         }
       },
       "is_incremental": false,
@@ -360,11 +360,47 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/datacapture.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/datacapture.html",
+          "hash": "L5F5uH11yio32Wx0w/mHLhyO/au4506yWK27JAQtuEM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/datareconstruction.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/datareconstruction.html",
+          "hash": "u7sIoMdzXk6h7/xku2n+810oswF2w6K/j3FLeom8jvg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/extending.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/extending.html",
+          "hash": "pVzkMgT2sWTJxWdN66/yXCD2xcI/Hz4BxISinp9OSjE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "CeUtMzykSkkhkmgMfNdr/61a6E/giCIBk766ARaRG1I="
+          "hash": "ldNLnju3fw0IcHtjKyMvUyCBG3vEca7+RKuS4sQ9R44="
         }
       },
       "is_incremental": false,
@@ -408,7 +444,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 2,
+          "total_file_count": 5,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
