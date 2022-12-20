@@ -214,6 +214,11 @@ namespace GeoSharpi.Capture
             List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
             //formData.Add(new MultipartFormDataSection(assetSession.GetJsonString()));
 
+            foreach (Node node in assetSession.nodes)
+            {
+                formData.Add(new MultipartFormFileSection(node.GetName(), assetSession.sessionPath));
+            }
+
             UnityWebRequest www = UnityWebRequest.Post(dataPostUrl, formData);
             yield return www.SendWebRequest();
 

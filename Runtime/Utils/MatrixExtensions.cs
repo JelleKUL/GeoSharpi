@@ -3,6 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace GeoSharpi.Utils
 {
+    [System.Serializable]
+    public enum NewAxis { X, Y, Z, minX, minY, minZ };
+
     /// <summary>
     /// Extensions to add functionalities to Matrix 4x4's
     /// </summary>
@@ -75,10 +78,91 @@ namespace GeoSharpi.Utils
                     matrix[i] = f;
                 }
                 else Debug.Log("Value: " + chars[i] + "cannot be parsed to a float");
-                
+
             }
-            
+
             return matrix.transpose;
+        }
+
+        /// <summary>
+        /// Transforms a Matrix to another coördinate system by defining new axis
+        /// </summary>
+        /// <param name="matrix">the input matrix</param>
+        /// <param name="newX">the new axis you want the original x to be</param>
+        /// <param name="newY">the new axis you want the original y to be</param>
+        /// <param name="newZ">the new axis you want the original z to be</param>
+        /// <returns>the transformed matrix4x4</returns>
+        public static Matrix4x4 ChangeSystem(this Matrix4x4 matrix, NewAxis newX, NewAxis newY, NewAxis newZ)
+        {
+            Matrix4x4 transformation = Matrix4x4.zero;
+            transformation.m33 = 1;
+
+            switch (newX)
+            {
+                case NewAxis.X:
+                    transformation.m00 = 1;
+                    break;
+                case NewAxis.Y:
+                    transformation.m01 = 1;
+                    break;
+                case NewAxis.Z:
+                    transformation.m02 = 1;
+                    break;
+                case NewAxis.minX:
+                    transformation.m00 = -1;
+                    break;
+                case NewAxis.minY:
+                    transformation.m01 = -1;
+                    break;
+                case NewAxis.minZ:
+                    transformation.m02 = -1;
+                    break;
+            }
+
+            switch (newY)
+            {
+                case NewAxis.X:
+                    transformation.m10 = 1;
+                    break;
+                case NewAxis.Y:
+                    transformation.m11 = 1;
+                    break;
+                case NewAxis.Z:
+                    transformation.m12 = 1;
+                    break;
+                case NewAxis.minX:
+                    transformation.m10 = -1;
+                    break;
+                case NewAxis.minY:
+                    transformation.m11 = -1;
+                    break;
+                case NewAxis.minZ:
+                    transformation.m12 = -1;
+                    break;
+            }
+
+            switch (newZ)
+            {
+                case NewAxis.X:
+                    transformation.m20 = 1;
+                    break;
+                case NewAxis.Y:
+                    transformation.m21 = 1;
+                    break;
+                case NewAxis.Z:
+                    transformation.m22 = 1;
+                    break;
+                case NewAxis.minX:
+                    transformation.m20 = -1;
+                    break;
+                case NewAxis.minY:
+                    transformation.m21 = -1;
+                    break;
+                case NewAxis.minZ:
+                    transformation.m22 = -1;
+                    break;
+            }
+            return transformation.transpose * matrix * transformation;
         }
     }
 }
