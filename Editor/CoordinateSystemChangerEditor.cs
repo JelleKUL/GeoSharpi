@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using GeoSharpi.Utils;
+using GeoSharpi.Visualisation;
 
 [CustomEditor(typeof(CoordinateSystemChanger))]
 public class CoordinateSystemChangerEditor : Editor

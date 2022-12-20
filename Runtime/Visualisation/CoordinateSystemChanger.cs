@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GeoSharpi.Utils;
 
-namespace GeoSharpi.Utils
+namespace GeoSharpi.Visualisation
 {
     /// <summary>
     /// Converts Transforms to a new coördinate system
