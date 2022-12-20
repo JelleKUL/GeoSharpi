@@ -12,7 +12,7 @@ namespace GeoSharpi.Visualisation
     public class NodeVisualizer : MonoBehaviour
     {
         [SerializeReference]
-        public Node node;
+        public Node node = new Node();
 
         /// <summary>
         /// The constructor to instantiate the node in the scene

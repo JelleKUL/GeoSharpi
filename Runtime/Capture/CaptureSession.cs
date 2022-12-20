@@ -113,6 +113,8 @@ namespace GeoSharpi.Capture
         /// <param name="node">The Node to add</param>
         public void AddNode(Node node)
         {
+            if(nodes == null) nodes = new List<Node>();
+            Debug.Log(node);
             nodes.Add(node);
             sessionNode.AddSubject(node);
             node.SaveResource(sessionPath);

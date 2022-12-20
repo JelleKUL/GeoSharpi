@@ -21,13 +21,14 @@ namespace GeoSharpi.Nodes
     {
         /// <value>the Main identifier for the Node, used for serialisation</value>
         [Tooltip("The Identifier of the resource")]
-        public string subject = "";
+        [field: SerializeField]
+        public string subject { get; protected set; } = "";
         /// <value>The default value.</value>
         [Tooltip("The path of the desired Graph of the resource")]
         public string graphPath = "";
 
 
-        [Header("RDF Variables")]
+        [Header("RDF Properties")]
 
         /// <value>
         /// The 4x4 matrix that describes the resource's transform in space. using the e57 standard
@@ -40,8 +41,9 @@ namespace GeoSharpi.Nodes
         /// The path to the resource, saved on disk as relative, in memory as absolute 
         /// </value>
         [Tooltip("The path to the resource, saved on disk as relative, in memory as absolute")]
-        [RDFUri("v4d", "https://w3id.org/v4d/core#", RDFModelEnums.RDFDatatypes.XSD_STRING)]
-        public string path = "";
+        [field: RDFUri("v4d", "https://w3id.org/v4d/core#", RDFModelEnums.RDFDatatypes.XSD_STRING)]
+        [field: SerializeField]
+        public string path { get; protected set; } = "";
 
         /// <value> 
         /// The  moment the Asset was created, using the exif:datatime standard : "YYYY:MM:DD HH:MM:SS" 
@@ -49,6 +51,8 @@ namespace GeoSharpi.Nodes
         [Tooltip("The moment the Asset was created")]
         [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_DATETIME)]
         public string dateTime = "";
+
+        [Header("Extra RDF Properties")]
 
         /// <value> 
         /// The remaining properties that have no predefined key in the classes. Formatted as a key, value pair. 

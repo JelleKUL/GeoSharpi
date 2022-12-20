@@ -61,6 +61,11 @@ namespace GeoSharpi.Nodes
                     return imageChild;
                 }
             }
+            if (Mathf.Min(imageTexture.width, imageTexture.height) <= 0)
+            {
+                Debug.LogWarning("ImageTexture has no pixels, skipping placement");
+                return imageChild;
+            }
 
             float sensor35mmDiagonal = Mathf.Sqrt(36 * 36 + 24 * 24); // the actual diagonal of a 35mm sensor
             float ratio = imageTexture.width / (float)imageTexture.height; //the Width to height ration

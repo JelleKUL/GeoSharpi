@@ -1,2 +1,8 @@
 - name: Getting Started
   href: intro.md
+- name: Capturing Data
+  href: datacapture.md
+- name: Visualizing Data
+  href: datareconstruction.md
+- name: Extending Functionality
+  href: extending.md
