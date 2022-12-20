@@ -19,16 +19,16 @@ using RDFSharp.Model;
 [System.Serializable]
 public class CustomNode : Node
 {
-    // regular fields can be set with the RDFUri attribute
+    // Regular fields can be set with the RDFUri attribute
     [RDFUri(prefix,uri,dataType)]
     public var newVar;
 
-    // Prpoerties need to specify the field before they can be set with the RDFUri attribute
+    // Properties need to specify the field before they can be set with the RDFUri attribute
     [field: RDFUri(prefix,uri,dataType)]
-    [field: SerializeField] //this also counts for making it show up in the inspector
+    [field: SerializeField] // this also counts for making it show up in the inspector
     public var newVar {get; private set;};
 
-    // The constructor can contain extra custom logic, but should use the base constructor.
+    // The constructor can contain extra custom logic, but should use the base constructor
     public CustomNode(string _graphPath = "", string _subject = "")
     {
         CreateNode(_graphPath, _subject);
