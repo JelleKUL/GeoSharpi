@@ -803,6 +803,25 @@ references:
   isSpec: "True"
   fullName: GeoSharpi.Utils.CameraExtensions.Get35MillimeterFocalLength
   nameWithType: CameraExtensions.Get35MillimeterFocalLength
+- uid: GeoSharpi.Utils.CoordinateSystemChanger
+  name: CoordinateSystemChanger
+  href: api/GeoSharpi.Utils.CoordinateSystemChanger.html
+  commentId: T:GeoSharpi.Utils.CoordinateSystemChanger
+  fullName: GeoSharpi.Utils.CoordinateSystemChanger
+  nameWithType: CoordinateSystemChanger
+- uid: GeoSharpi.Utils.CoordinateSystemChanger.ChangeSystem
+  name: ChangeSystem()
+  href: api/GeoSharpi.Utils.CoordinateSystemChanger.html#GeoSharpi_Utils_CoordinateSystemChanger_ChangeSystem
+  commentId: M:GeoSharpi.Utils.CoordinateSystemChanger.ChangeSystem
+  fullName: GeoSharpi.Utils.CoordinateSystemChanger.ChangeSystem()
+  nameWithType: CoordinateSystemChanger.ChangeSystem()
+- uid: GeoSharpi.Utils.CoordinateSystemChanger.ChangeSystem*
+  name: ChangeSystem
+  href: api/GeoSharpi.Utils.CoordinateSystemChanger.html#GeoSharpi_Utils_CoordinateSystemChanger_ChangeSystem_
+  commentId: Overload:GeoSharpi.Utils.CoordinateSystemChanger.ChangeSystem
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.CoordinateSystemChanger.ChangeSystem
+  nameWithType: CoordinateSystemChanger.ChangeSystem
 - uid: GeoSharpi.Utils.Events
   name: GeoSharpi.Utils.Events
   href: api/GeoSharpi.Utils.Events.html
@@ -871,6 +890,19 @@ references:
   commentId: T:GeoSharpi.Utils.MatrixExtensions
   fullName: GeoSharpi.Utils.MatrixExtensions
   nameWithType: MatrixExtensions
+- uid: GeoSharpi.Utils.MatrixExtensions.ChangeSystem(Matrix4x4,GeoSharpi.Utils.NewAxis,GeoSharpi.Utils.NewAxis,GeoSharpi.Utils.NewAxis)
+  name: ChangeSystem(Matrix4x4, NewAxis, NewAxis, NewAxis)
+  href: api/GeoSharpi.Utils.MatrixExtensions.html#GeoSharpi_Utils_MatrixExtensions_ChangeSystem_Matrix4x4_GeoSharpi_Utils_NewAxis_GeoSharpi_Utils_NewAxis_GeoSharpi_Utils_NewAxis_
+  commentId: M:GeoSharpi.Utils.MatrixExtensions.ChangeSystem(Matrix4x4,GeoSharpi.Utils.NewAxis,GeoSharpi.Utils.NewAxis,GeoSharpi.Utils.NewAxis)
+  fullName: GeoSharpi.Utils.MatrixExtensions.ChangeSystem(Matrix4x4, GeoSharpi.Utils.NewAxis, GeoSharpi.Utils.NewAxis, GeoSharpi.Utils.NewAxis)
+  nameWithType: MatrixExtensions.ChangeSystem(Matrix4x4, NewAxis, NewAxis, NewAxis)
+- uid: GeoSharpi.Utils.MatrixExtensions.ChangeSystem*
+  name: ChangeSystem
+  href: api/GeoSharpi.Utils.MatrixExtensions.html#GeoSharpi_Utils_MatrixExtensions_ChangeSystem_
+  commentId: Overload:GeoSharpi.Utils.MatrixExtensions.ChangeSystem
+  isSpec: "True"
+  fullName: GeoSharpi.Utils.MatrixExtensions.ChangeSystem
+  nameWithType: MatrixExtensions.ChangeSystem
 - uid: GeoSharpi.Utils.MatrixExtensions.ExtractPosition(Matrix4x4)
   name: ExtractPosition(Matrix4x4)
   href: api/GeoSharpi.Utils.MatrixExtensions.html#GeoSharpi_Utils_MatrixExtensions_ExtractPosition_Matrix4x4_
@@ -968,6 +1000,48 @@ references:
   isSpec: "True"
   fullName: GeoSharpi.Utils.MeshIO.SaveMesh
   nameWithType: MeshIO.SaveMesh
+- uid: GeoSharpi.Utils.NewAxis
+  name: NewAxis
+  href: api/GeoSharpi.Utils.NewAxis.html
+  commentId: T:GeoSharpi.Utils.NewAxis
+  fullName: GeoSharpi.Utils.NewAxis
+  nameWithType: NewAxis
+- uid: GeoSharpi.Utils.NewAxis.minX
+  name: minX
+  href: api/GeoSharpi.Utils.NewAxis.html#GeoSharpi_Utils_NewAxis_minX
+  commentId: F:GeoSharpi.Utils.NewAxis.minX
+  fullName: GeoSharpi.Utils.NewAxis.minX
+  nameWithType: NewAxis.minX
+- uid: GeoSharpi.Utils.NewAxis.minY
+  name: minY
+  href: api/GeoSharpi.Utils.NewAxis.html#GeoSharpi_Utils_NewAxis_minY
+  commentId: F:GeoSharpi.Utils.NewAxis.minY
+  fullName: GeoSharpi.Utils.NewAxis.minY
+  nameWithType: NewAxis.minY
+- uid: GeoSharpi.Utils.NewAxis.minZ
+  name: minZ
+  href: api/GeoSharpi.Utils.NewAxis.html#GeoSharpi_Utils_NewAxis_minZ
+  commentId: F:GeoSharpi.Utils.NewAxis.minZ
+  fullName: GeoSharpi.Utils.NewAxis.minZ
+  nameWithType: NewAxis.minZ
+- uid: GeoSharpi.Utils.NewAxis.X
+  name: X
+  href: api/GeoSharpi.Utils.NewAxis.html#GeoSharpi_Utils_NewAxis_X
+  commentId: F:GeoSharpi.Utils.NewAxis.X
+  fullName: GeoSharpi.Utils.NewAxis.X
+  nameWithType: NewAxis.X
+- uid: GeoSharpi.Utils.NewAxis.Y
+  name: Y
+  href: api/GeoSharpi.Utils.NewAxis.html#GeoSharpi_Utils_NewAxis_Y
+  commentId: F:GeoSharpi.Utils.NewAxis.Y
+  fullName: GeoSharpi.Utils.NewAxis.Y
+  nameWithType: NewAxis.Y
+- uid: GeoSharpi.Utils.NewAxis.Z
+  name: Z
+  href: api/GeoSharpi.Utils.NewAxis.html#GeoSharpi_Utils_NewAxis_Z
+  commentId: F:GeoSharpi.Utils.NewAxis.Z
+  fullName: GeoSharpi.Utils.NewAxis.Z
+  nameWithType: NewAxis.Z
 - uid: GeoSharpi.Utils.RDFUriAttribute
   name: RDFUriAttribute
   href: api/GeoSharpi.Utils.RDFUriAttribute.html
