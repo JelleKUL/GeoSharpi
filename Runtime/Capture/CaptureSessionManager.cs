@@ -194,6 +194,7 @@ namespace GeoSharpi.Capture
         /// <summary>
         /// Sends the current session to the specified server
         /// </summary>
+        [ContextMenu("Send Session to server")]
         public void SendSessionToServer()
         {
             if (assetSession == null)
@@ -208,15 +209,13 @@ namespace GeoSharpi.Capture
         
         IEnumerator UploadSession()
         {
-            // todo compress the folder to send all the data at once
-            // for now we will send the json file as a test
-
-            List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
-            //formData.Add(new MultipartFormDataSection(assetSession.GetJsonString()));
-
-            foreach (Node node in assetSession.nodes)
+            WWWForm formData = new WWWForm();
+            formData.AddField("session", assetSession.sessionNode.GetName());
+            var info = new DirectoryInfo(assetSession.sessionPath);
+            FileInfo[] fileInfo = info.GetFiles();
+            foreach (FileInfo file in fileInfo)
             {
-                formData.Add(new MultipartFormFileSection(node.GetName(), assetSession.sessionPath));
+                formData.AddBinaryData("file", File.ReadAllBytes(file.FullName), file.Name);
             }
 
             UnityWebRequest www = UnityWebRequest.Post(dataPostUrl, formData);

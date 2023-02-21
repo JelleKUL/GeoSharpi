@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &93306753
 Transform:
   m_ObjectHideFlags: 0
@@ -149,6 +149,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1086624201}
   - {fileID: 1716038532}
@@ -246,6 +247,7 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -308,6 +310,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -356,6 +359,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.53, y: 0.57, z: -2.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -376,7 +380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &417319522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,7 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assetSession:
     sessionNode:
-      subject: SessionNode_2022-07-27_11-13-21-88
+      <subject>k__BackingField: SessionNode_2022-12-20_14-58-20-70
       graphPath: 
       cartesianTransform:
         e00: 0
@@ -410,7 +414,7 @@ MonoBehaviour:
         e31: 0
         e32: 0
         e33: 0
-      path: 
+      <path>k__BackingField: 
       dateTime: 2022-07-27T11:13:21
       properties:
         keys: []
@@ -420,7 +424,7 @@ MonoBehaviour:
     imageQuality: 75
     sessionPath: 
   savePath: 
-  dataPostUrl: 
+  dataPostUrl: http://nbfiiw41825.hubkaho.be:5000/add-session
   graphLoadPath: C:\Users\u0146408\AppData\LocalLow\JelleKUL\DataCollectionProject\sessionnode_2022-10-03_14-54-43-09\sessionnode_2022-10-03_14-54-43-09.ttl
   useLinkedSubjects: 1
 --- !u!4 &417319523
@@ -433,6 +437,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -466,6 +471,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.31, y: 0.9, z: -0.22000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 93306753}
   m_RootOrder: 2
@@ -495,6 +501,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -562,6 +569,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.09, y: 0.24, z: 0.77}
   m_LocalScale: {x: 2.3991, y: 0.67589843, z: 2.3991}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 93306753}
   m_RootOrder: 0
@@ -590,6 +598,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -644,7 +653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1124524871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,7 +668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assetSession:
     sessionNode:
-      subject: SessionNode_2022-07-27_11-13-21-88
+      <subject>k__BackingField: SessionNode_2022-12-20_14-58-20-70
       graphPath: 
       cartesianTransform:
         e00: 0
@@ -678,13 +687,37 @@ MonoBehaviour:
         e31: 0
         e32: 0
         e33: 0
-      path: 
+      <path>k__BackingField: 
       dateTime: 2022-07-27T11:13:21
       properties:
         keys: []
         values: []
       linkedSubjects: []
-    nodes: []
+    nodes:
+    - <subject>k__BackingField: 
+      graphPath: 
+      cartesianTransform:
+        e00: 0
+        e01: 0
+        e02: 0
+        e03: 0
+        e10: 0
+        e11: 0
+        e12: 0
+        e13: 0
+        e20: 0
+        e21: 0
+        e22: 0
+        e23: 0
+        e30: 0
+        e31: 0
+        e32: 0
+        e33: 0
+      <path>k__BackingField: 
+      dateTime: 
+      properties:
+        keys: []
+        values: []
     imageQuality: 75
     sessionPath: 
   savePath: 
@@ -701,6 +734,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -785,6 +819,7 @@ Transform:
   m_LocalRotation: {x: 0.2451801, y: -0, z: -0, w: 0.9694776}
   m_LocalPosition: {x: 0, y: 4.36, z: -7.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -846,6 +881,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.74408, y: 0.74408, z: 0.74408}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 93306753}
   m_RootOrder: 1
@@ -875,6 +911,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -942,6 +979,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.69, y: 0.52, z: -1.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 93306753}
   m_RootOrder: 3
@@ -970,6 +1008,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
