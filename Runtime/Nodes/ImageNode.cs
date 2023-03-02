@@ -29,13 +29,9 @@ namespace GeoSharpi.Nodes
         [HideInInspector]
         public int saveQuality = 75;
 
-        public ImageNode() { CreateEmptyNode(); }
-
         public ImageNode(string _graphPath = "", string _subject = "")
         {
             CreateNode(_graphPath, _subject);
-
-            
         }
 
         public ImageNode(Texture2D cameraTexture, Matrix4x4 cameraTransform, float focalLength35mm)

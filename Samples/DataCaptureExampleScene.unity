@@ -393,39 +393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8c53e1e65fc604c9c6665f83e046d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assetSession:
-    sessionNode:
-      <subject>k__BackingField: SessionNode_2022-12-20_14-58-20-70
-      graphPath: 
-      cartesianTransform:
-        e00: 0
-        e01: 0
-        e02: 0
-        e03: 0
-        e10: 0
-        e11: 0
-        e12: 0
-        e13: 0
-        e20: 0
-        e21: 0
-        e22: 0
-        e23: 0
-        e30: 0
-        e31: 0
-        e32: 0
-        e33: 0
-      <path>k__BackingField: 
-      dateTime: 2022-07-27T11:13:21
-      properties:
-        keys: []
-        values: []
-      linkedSubjects: []
-    nodes: []
-    imageQuality: 75
-    sessionPath: 
   savePath: 
-  dataPostUrl: http://nbfiiw41825.hubkaho.be:5000/add-session
-  graphLoadPath: C:\Users\u0146408\AppData\LocalLow\JelleKUL\DataCollectionProject\sessionnode_2022-10-03_14-54-43-09\sessionnode_2022-10-03_14-54-43-09.ttl
+  dataPostUrl: http://pcgent33506:5000/add-session
+  graphLoadPath: \\SRVGENTJKD98P2.hubkaho.be\GeomaticsProjects1\Projects\2025-03
+    Project FWO SB Jelle\7.Data\UploadedSessions\sessionnode_2023-03-02_11-06-19-38\sessionnode_2023-03-02_11-06-19-38.ttl
   useLinkedSubjects: 1
 --- !u!4 &417319523
 Transform:
@@ -666,60 +637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8c53e1e65fc604c9c6665f83e046d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assetSession:
-    sessionNode:
-      <subject>k__BackingField: SessionNode_2022-12-20_14-58-20-70
-      graphPath: 
-      cartesianTransform:
-        e00: 0
-        e01: 0
-        e02: 0
-        e03: 0
-        e10: 0
-        e11: 0
-        e12: 0
-        e13: 0
-        e20: 0
-        e21: 0
-        e22: 0
-        e23: 0
-        e30: 0
-        e31: 0
-        e32: 0
-        e33: 0
-      <path>k__BackingField: 
-      dateTime: 2022-07-27T11:13:21
-      properties:
-        keys: []
-        values: []
-      linkedSubjects: []
-    nodes:
-    - <subject>k__BackingField: 
-      graphPath: 
-      cartesianTransform:
-        e00: 0
-        e01: 0
-        e02: 0
-        e03: 0
-        e10: 0
-        e11: 0
-        e12: 0
-        e13: 0
-        e20: 0
-        e21: 0
-        e22: 0
-        e23: 0
-        e30: 0
-        e31: 0
-        e32: 0
-        e33: 0
-      <path>k__BackingField: 
-      dateTime: 
-      properties:
-        keys: []
-        values: []
-    imageQuality: 75
-    sessionPath: 
   savePath: 
   dataPostUrl: 
   graphLoadPath: C:\Users\u0146408\Documents\DoctoraatLocal\geomapi\test\testfiles\imgGraph.ttl

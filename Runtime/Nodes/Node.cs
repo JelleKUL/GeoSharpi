@@ -41,9 +41,9 @@ namespace GeoSharpi.Nodes
         /// The path to the resource, saved on disk as relative, in memory as absolute 
         /// </value>
         [Tooltip("The path to the resource, saved on disk as relative, in memory as absolute")]
-        [field: RDFUri("v4d", "https://w3id.org/v4d/core#", RDFModelEnums.RDFDatatypes.XSD_STRING)]
-        [field: SerializeField]
-        public string path { get; protected set; } = "";
+        [RDFUri("v4d", "https://w3id.org/v4d/core#", RDFModelEnums.RDFDatatypes.XSD_STRING)]
+        [SerializeField]
+        public string path  = "";
 
         /// <value> 
         /// The  moment the Asset was created, using the exif:datatime standard : "YYYY:MM:DD HH:MM:SS" 
@@ -71,11 +71,6 @@ namespace GeoSharpi.Nodes
         #region Constructors
 
         /// <summary>
-        /// Creates a new Empty Node
-        /// </summary>
-        public Node() { CreateEmptyNode(); }
-
-        /// <summary>
         /// Creates a new Node with a path and subject
         /// </summary>
         /// <param name="_graphPath">The path to create the node from</param>
@@ -92,7 +87,7 @@ namespace GeoSharpi.Nodes
         /// <param name="_subject">the name of the node in the graph</param>
         protected void CreateNode(string _graphPath = "", string _subject = "")
         {
-            if (graphPath != "") graph = RDFGraph.FromFile(RDFModelEnums.RDFFormats.Turtle, graphPath);
+            if (_graphPath != "") graph = RDFGraph.FromFile(RDFModelEnums.RDFFormats.Turtle, graphPath);
             if (_subject != "") subject = _subject;
 
             CreateEmptyNode();
@@ -103,9 +98,11 @@ namespace GeoSharpi.Nodes
         /// </summary>
         protected void CreateEmptyNode()
         {
+            
             graph = new RDFGraph();
-            dateTime = System.DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss");
+            dateTime = (System.DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")).ToString();
             // add the subject Type
+            Debug.Log("Creating new Empty Node " + subject + " at:" + dateTime);
 
             if (subject == null || subject == "")
             {
@@ -242,8 +239,8 @@ namespace GeoSharpi.Nodes
         {
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
-            //if (graph == null) 
-            CreateNode();
+            //if (graph == null)
+            graph = new RDFGraph();
 
             graph.AddTriple(new RDFTriple(
                 GetSubject(),
@@ -257,7 +254,7 @@ namespace GeoSharpi.Nodes
                 var att = field.GetCustomAttributes(typeof(RDFUriAttribute), true).FirstOrDefault() as RDFUriAttribute;
                 if (att == null)
                 {
-                    Debug.Log($"The field {field.Name} will not Be Seriazed");
+                    //Debug.Log($"The field {field.Name} will not Be Seriazed");
                     continue;
                 }
                 if (field.GetValue(this) == null) continue; //pass if the variable is null
@@ -265,13 +262,13 @@ namespace GeoSharpi.Nodes
                 {
                     if ((field.GetValue(this) as ICollection).Count == 0) continue;
                     string listedString = (field.GetValue(this) as ICollection<string>).ToStringList();
-                    Debug.Log("This is a generic Ienumerator and will be serialised as: " + listedString);
+                    //Debug.Log("This is a generic Ienumerator and will be serialised as: " + listedString);
                     AddToGraph(att, field.Name, listedString);
                 }
                 else if (field.GetType().IsArray) // this means its Array
                 {
                     if ((field.GetValue(this) as Array).Length == 0) continue;
-                    Debug.Log("This is a generic Array and will be serialised as: " + String.Join(", ", (field.GetValue(this) as Array)));
+                    //Debug.Log("This is a generic Array and will be serialised as: " + String.Join(", ", (field.GetValue(this) as Array)));
                     AddToGraph(att, field.Name, String.Join(", ", (field.GetValue(this) as Array)));
                 }
                 else
@@ -281,7 +278,7 @@ namespace GeoSharpi.Nodes
 
             }
 
-            Debug.Log(graph);
+            //Debug.Log(graph);
 
             return graph;
 
@@ -295,7 +292,7 @@ namespace GeoSharpi.Nodes
         /// <param name="fieldValue"> the value og the variable</param>
         void AddToGraph(RDFUriAttribute att, string fieldName, string fieldValue)
         {
-            Debug.Log($"The field {fieldName} will be serialized with namespace: {att.uri}");
+            //Debug.Log($"The field {fieldName} will be serialized with namespace: {att.uri}");
             RDFTriple newTriple;
             if (att.type != RDFModelEnums.RDFDatatypes.RDFS_LITERAL)
             {
@@ -306,7 +303,7 @@ namespace GeoSharpi.Nodes
 
             RDFNamespaceRegister.AddNamespace(new RDFNamespace(att.prefix, att.uri));
             graph.AddTriple(newTriple);
-            Debug.Log("Added Tripple: " + fieldName);
+            //Debug.Log("Added Tripple: " + fieldName);
         }
 
         /// <summary>
@@ -320,12 +317,12 @@ namespace GeoSharpi.Nodes
             try
             {
                 object val = Convert.ChangeType(value, type);
-                Debug.Log("Applied generic conversion");
+                //Debug.Log("Applied generic conversion");
                 return val;
             }
             catch
             {
-                Debug.Log("Using a specialised parser");
+                //Debug.Log("Using a specialised parser");
                 switch (type.ToString())
                 {
 

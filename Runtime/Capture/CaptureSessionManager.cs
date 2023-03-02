@@ -17,7 +17,7 @@ namespace GeoSharpi.Capture
     /// </summary>
     public class CaptureSessionManager : MonoBehaviour
     {
-        public CaptureSession assetSession = null;
+        private CaptureSession assetSession = null;
 
         [Header("Session Creation")]
         [SerializeField]
@@ -47,6 +47,7 @@ namespace GeoSharpi.Capture
         [ContextMenu("Save Graph")]
         public RDFGraph SaveGraph()
         {
+            CheckSession();
             return assetSession.UpdateGraph();
         }
 
@@ -114,63 +115,7 @@ namespace GeoSharpi.Capture
         /// <param name="path">The Path to load from</param>
         public void LoadSession(string path)
         {
-            RDFGraph graph = RDFGraph.FromFile(RDFModelEnums.RDFFormats.Turtle, path);
-            RDFGraph predicateGraph = graph.SelectTriplesByPredicate(new RDFResource("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"));
-            List<RDFTriple> predicateTriples = new List<RDFTriple>();
-            List<Node> newNodes = new List<Node>();
-            assetSession.sessionPath = Path.GetDirectoryName(path);
-
-            var triplesEnum = predicateGraph.TriplesEnumerator;
-            while (triplesEnum.MoveNext())
-            {
-                string type = triplesEnum.Current.Object.ToString();
-                bool found = false;
-
-                foreach (var ass in AppDomain.CurrentDomain.GetAssemblies())
-                {
-                    IEnumerable<Node> exporters =
-                    ass.GetTypes()
-                    .Where(t => t.IsSubclassOf(typeof(Node)) && !t.IsAbstract)
-                    .Select(t => (Node)Activator.CreateInstance(t));
-
-                    foreach (var item in exporters)
-                    {
-                        if (type.Contains(item.GetType().Name))
-                        {
-                            Debug.Log(triplesEnum.Current.Subject + " is of type: " + item.GetType());
-                            Node newNode = (Node)Activator.CreateInstance(item.GetType());
-                            if (newNode.GetType() == typeof(SessionNode)) assetSession.sessionNode = newNode as SessionNode;
-                            else newNodes.Add(newNode);
-                            newNode.FromGraph(graph, new RDFResource(triplesEnum.Current.Subject.ToString()));
-                            found = true;
-                        }
-                    }
-                }
-
-                if (!found)
-                {
-                    if (type.Contains("Node"))
-                    {
-                        Debug.Log(triplesEnum.Current.Subject + " is a custom type or generic Node with type: "+ type + ", it will be parsed as a Node");
-                        Node newNode = new Node();
-                        newNodes.Add(newNode);
-                        newNode.FromGraph(graph, new RDFResource(triplesEnum.Current.Subject.ToString()));
-                        found = true;
-                    }
-                    else Debug.Log(triplesEnum.Current.Subject + " is a not a Node type and will be skipped");
-
-                }
-
-            }
-            assetSession.nodes = new List<Node>();
-            if (useLinkedSubjects)
-            {
-                foreach (var item in newNodes)
-                {
-                    if (assetSession.sessionNode.linkedSubjects.Contains(item.GetSubject().ToString())) assetSession.nodes.Add(item);
-                }
-            }
-            else assetSession.nodes = newNodes;
+            assetSession = new CaptureSession(path, useLinkedSubjects);
         }
 
         /// <summary>
