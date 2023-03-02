@@ -120,6 +120,12 @@ references:
   commentId: M:GeoSharpi.Capture.CaptureSession.#ctor(System.String,Matrix4x4)
   fullName: GeoSharpi.Capture.CaptureSession.CaptureSession(System.String, Matrix4x4)
   nameWithType: CaptureSession.CaptureSession(String, Matrix4x4)
+- uid: GeoSharpi.Capture.CaptureSession.#ctor(System.String,System.Boolean)
+  name: CaptureSession(String, Boolean)
+  href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession__ctor_System_String_System_Boolean_
+  commentId: M:GeoSharpi.Capture.CaptureSession.#ctor(System.String,System.Boolean)
+  fullName: GeoSharpi.Capture.CaptureSession.CaptureSession(System.String, System.Boolean)
+  nameWithType: CaptureSession.CaptureSession(String, Boolean)
 - uid: GeoSharpi.Capture.CaptureSession.#ctor*
   name: CaptureSession
   href: api/GeoSharpi.Capture.CaptureSession.html#GeoSharpi_Capture_CaptureSession__ctor_
@@ -209,12 +215,6 @@ references:
   isSpec: "True"
   fullName: GeoSharpi.Capture.CaptureSessionManager.AddNode
   nameWithType: CaptureSessionManager.AddNode
-- uid: GeoSharpi.Capture.CaptureSessionManager.assetSession
-  name: assetSession
-  href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_assetSession
-  commentId: F:GeoSharpi.Capture.CaptureSessionManager.assetSession
-  fullName: GeoSharpi.Capture.CaptureSessionManager.assetSession
-  nameWithType: CaptureSessionManager.assetSession
 - uid: GeoSharpi.Capture.CaptureSessionManager.CreateNewSession
   name: CreateNewSession()
   href: api/GeoSharpi.Capture.CaptureSessionManager.html#GeoSharpi_Capture_CaptureSessionManager_CreateNewSession
@@ -418,12 +418,6 @@ references:
   commentId: T:GeoSharpi.Nodes.ImageNode
   fullName: GeoSharpi.Nodes.ImageNode
   nameWithType: ImageNode
-- uid: GeoSharpi.Nodes.ImageNode.#ctor
-  name: ImageNode()
-  href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode__ctor
-  commentId: M:GeoSharpi.Nodes.ImageNode.#ctor
-  fullName: GeoSharpi.Nodes.ImageNode.ImageNode()
-  nameWithType: ImageNode.ImageNode()
 - uid: GeoSharpi.Nodes.ImageNode.#ctor(System.String,System.String)
   name: ImageNode(String, String)
   href: api/GeoSharpi.Nodes.ImageNode.html#GeoSharpi_Nodes_ImageNode__ctor_System_String_System_String_
@@ -536,12 +530,6 @@ references:
   commentId: T:GeoSharpi.Nodes.Node
   fullName: GeoSharpi.Nodes.Node
   nameWithType: Node
-- uid: GeoSharpi.Nodes.Node.#ctor
-  name: Node()
-  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node__ctor
-  commentId: M:GeoSharpi.Nodes.Node.#ctor
-  fullName: GeoSharpi.Nodes.Node.Node()
-  nameWithType: Node.Node()
 - uid: GeoSharpi.Nodes.Node.#ctor(System.String,System.String)
   name: Node(String, String)
   href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node__ctor_System_String_System_String_
@@ -680,14 +668,7 @@ references:
 - uid: GeoSharpi.Nodes.Node.path
   name: path
   href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_path
-  commentId: P:GeoSharpi.Nodes.Node.path
-  fullName: GeoSharpi.Nodes.Node.path
-  nameWithType: Node.path
-- uid: GeoSharpi.Nodes.Node.path*
-  name: path
-  href: api/GeoSharpi.Nodes.Node.html#GeoSharpi_Nodes_Node_path_
-  commentId: Overload:GeoSharpi.Nodes.Node.path
-  isSpec: "True"
+  commentId: F:GeoSharpi.Nodes.Node.path
   fullName: GeoSharpi.Nodes.Node.path
   nameWithType: Node.path
 - uid: GeoSharpi.Nodes.Node.properties
@@ -741,12 +722,6 @@ references:
   commentId: T:GeoSharpi.Nodes.SessionNode
   fullName: GeoSharpi.Nodes.SessionNode
   nameWithType: SessionNode
-- uid: GeoSharpi.Nodes.SessionNode.#ctor
-  name: SessionNode()
-  href: api/GeoSharpi.Nodes.SessionNode.html#GeoSharpi_Nodes_SessionNode__ctor
-  commentId: M:GeoSharpi.Nodes.SessionNode.#ctor
-  fullName: GeoSharpi.Nodes.SessionNode.SessionNode()
-  nameWithType: SessionNode.SessionNode()
 - uid: GeoSharpi.Nodes.SessionNode.#ctor(System.String,System.String)
   name: SessionNode(String, String)
   href: api/GeoSharpi.Nodes.SessionNode.html#GeoSharpi_Nodes_SessionNode__ctor_System_String_System_String_
