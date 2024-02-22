@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class CoordinateSystemChanger
+    <title>Class VirtualScanner
    | GeoSharpi </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class CoordinateSystemChanger
+    <meta name="title" content="Class VirtualScanner
    | GeoSharpi ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -108,8 +108,8 @@
                           <li class="">
                             <a href="GeoSharpi.Capture.CaptureSessionManager.html" title="CaptureSessionManager" class="">CaptureSessionManager</a>
                           </li>
-                          <li class="">
-                            <a href="GeoSharpi.Capture.VirtualScanner.html" title="VirtualScanner" class="">VirtualScanner</a>
+                          <li class="active">
+                            <a href="GeoSharpi.Capture.VirtualScanner.html" title="VirtualScanner" class="active">VirtualScanner</a>
                           </li>
                         </ul>  </li>
                     <li class="">
@@ -186,8 +186,8 @@
                       <a href="GeoSharpi.Visualisation.html" title="GeoSharpi.Visualisation" class="">GeoSharpi.Visualisation</a>
                         
                         <ul class="nav level2">
-                          <li class="active">
-                            <a href="GeoSharpi.Visualisation.CoordinateSystemChanger.html" title="CoordinateSystemChanger" class="active">CoordinateSystemChanger</a>
+                          <li class="">
+                            <a href="GeoSharpi.Visualisation.CoordinateSystemChanger.html" title="CoordinateSystemChanger" class="">CoordinateSystemChanger</a>
                           </li>
                           <li class="">
                             <a href="GeoSharpi.Visualisation.NodeVisualizer.html" title="NodeVisualizer" class="">NodeVisualizer</a>
@@ -200,37 +200,102 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="GeoSharpi.Visualisation.CoordinateSystemChanger">
+            <article class="content wrap" id="_content" data-uid="GeoSharpi.Capture.VirtualScanner">
   
   
-  <h1 id="GeoSharpi_Visualisation_CoordinateSystemChanger" data-uid="GeoSharpi.Visualisation.CoordinateSystemChanger" class="text-break">Class CoordinateSystemChanger
+  <h1 id="GeoSharpi_Capture_VirtualScanner" data-uid="GeoSharpi.Capture.VirtualScanner" class="text-break">Class VirtualScanner
   </h1>
-  <div class="markdown level0 summary"><p>Converts Transforms to a new co�rdinate system</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">CoordinateSystemChanger</span></div>
+    <div class="level1"><span class="xref">VirtualScanner</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="GeoSharpi.Visualisation.html">GeoSharpi.Visualisation</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GeoSharpi.Capture.html">GeoSharpi.Capture</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="GeoSharpi_Visualisation_CoordinateSystemChanger_syntax">Syntax</h5>
+  <h5 id="GeoSharpi_Capture_VirtualScanner_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CoordinateSystemChanger : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class VirtualScanner : MonoBehaviour</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   
   
-  <a id="GeoSharpi_Visualisation_CoordinateSystemChanger_ChangeSystem_" data-uid="GeoSharpi.Visualisation.CoordinateSystemChanger.ChangeSystem*"></a>
-  <h4 id="GeoSharpi_Visualisation_CoordinateSystemChanger_ChangeSystem" data-uid="GeoSharpi.Visualisation.CoordinateSystemChanger.ChangeSystem">ChangeSystem()</h4>
-  <div class="markdown level1 summary"><p>Applies the current defined transformation by the newAxis</p>
-</div>
+  <a id="GeoSharpi_Capture_VirtualScanner_CreateSphereMesh_" data-uid="GeoSharpi.Capture.VirtualScanner.CreateSphereMesh*"></a>
+  <h4 id="GeoSharpi_Capture_VirtualScanner_CreateSphereMesh_Vector3_0__0___" data-uid="GeoSharpi.Capture.VirtualScanner.CreateSphereMesh(Vector3[0:,0:])">CreateSphereMesh(Vector3[,])</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ChangeSystem()</code></pre>
+    <pre><code class="lang-csharp hljs">public async Task&lt;Mesh&gt; CreateSphereMesh(Vector3[, ] points)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[,]</td>
+        <td><span class="parametername">points</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">Mesh</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="GeoSharpi_Capture_VirtualScanner_GetScanDirections_" data-uid="GeoSharpi.Capture.VirtualScanner.GetScanDirections*"></a>
+  <h4 id="GeoSharpi_Capture_VirtualScanner_GetScanDirections" data-uid="GeoSharpi.Capture.VirtualScanner.GetScanDirections">GetScanDirections()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Vector3&gt; GetScanDirections()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="GeoSharpi_Capture_VirtualScanner_UpdateMesh_" data-uid="GeoSharpi.Capture.VirtualScanner.UpdateMesh*"></a>
+  <h4 id="GeoSharpi_Capture_VirtualScanner_UpdateMesh" data-uid="GeoSharpi.Capture.VirtualScanner.UpdateMesh">UpdateMesh()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async void UpdateMesh()</code></pre>
   </div>
 </article>
           </div>

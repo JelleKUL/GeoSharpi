@@ -318,6 +318,54 @@ references:
   isSpec: "True"
   fullName: GeoSharpi.Capture.CaptureSessionManager.VisualiseSession
   nameWithType: CaptureSessionManager.VisualiseSession
+- uid: GeoSharpi.Capture.VirtualScanner
+  name: VirtualScanner
+  href: api/GeoSharpi.Capture.VirtualScanner.html
+  commentId: T:GeoSharpi.Capture.VirtualScanner
+  fullName: GeoSharpi.Capture.VirtualScanner
+  nameWithType: VirtualScanner
+- uid: GeoSharpi.Capture.VirtualScanner.CreateSphereMesh(Vector3[0:,0:])
+  name: CreateSphereMesh(Vector3[,])
+  href: api/GeoSharpi.Capture.VirtualScanner.html#GeoSharpi_Capture_VirtualScanner_CreateSphereMesh_Vector3_0__0___
+  commentId: M:GeoSharpi.Capture.VirtualScanner.CreateSphereMesh(Vector3[0:,0:])
+  name.vb: CreateSphereMesh(Vector3(,))
+  fullName: GeoSharpi.Capture.VirtualScanner.CreateSphereMesh(Vector3[,])
+  fullName.vb: GeoSharpi.Capture.VirtualScanner.CreateSphereMesh(Vector3(,))
+  nameWithType: VirtualScanner.CreateSphereMesh(Vector3[,])
+  nameWithType.vb: VirtualScanner.CreateSphereMesh(Vector3(,))
+- uid: GeoSharpi.Capture.VirtualScanner.CreateSphereMesh*
+  name: CreateSphereMesh
+  href: api/GeoSharpi.Capture.VirtualScanner.html#GeoSharpi_Capture_VirtualScanner_CreateSphereMesh_
+  commentId: Overload:GeoSharpi.Capture.VirtualScanner.CreateSphereMesh
+  isSpec: "True"
+  fullName: GeoSharpi.Capture.VirtualScanner.CreateSphereMesh
+  nameWithType: VirtualScanner.CreateSphereMesh
+- uid: GeoSharpi.Capture.VirtualScanner.GetScanDirections
+  name: GetScanDirections()
+  href: api/GeoSharpi.Capture.VirtualScanner.html#GeoSharpi_Capture_VirtualScanner_GetScanDirections
+  commentId: M:GeoSharpi.Capture.VirtualScanner.GetScanDirections
+  fullName: GeoSharpi.Capture.VirtualScanner.GetScanDirections()
+  nameWithType: VirtualScanner.GetScanDirections()
+- uid: GeoSharpi.Capture.VirtualScanner.GetScanDirections*
+  name: GetScanDirections
+  href: api/GeoSharpi.Capture.VirtualScanner.html#GeoSharpi_Capture_VirtualScanner_GetScanDirections_
+  commentId: Overload:GeoSharpi.Capture.VirtualScanner.GetScanDirections
+  isSpec: "True"
+  fullName: GeoSharpi.Capture.VirtualScanner.GetScanDirections
+  nameWithType: VirtualScanner.GetScanDirections
+- uid: GeoSharpi.Capture.VirtualScanner.UpdateMesh
+  name: UpdateMesh()
+  href: api/GeoSharpi.Capture.VirtualScanner.html#GeoSharpi_Capture_VirtualScanner_UpdateMesh
+  commentId: M:GeoSharpi.Capture.VirtualScanner.UpdateMesh
+  fullName: GeoSharpi.Capture.VirtualScanner.UpdateMesh()
+  nameWithType: VirtualScanner.UpdateMesh()
+- uid: GeoSharpi.Capture.VirtualScanner.UpdateMesh*
+  name: UpdateMesh
+  href: api/GeoSharpi.Capture.VirtualScanner.html#GeoSharpi_Capture_VirtualScanner_UpdateMesh_
+  commentId: Overload:GeoSharpi.Capture.VirtualScanner.UpdateMesh
+  isSpec: "True"
+  fullName: GeoSharpi.Capture.VirtualScanner.UpdateMesh
+  nameWithType: VirtualScanner.UpdateMesh
 - uid: GeoSharpi.Nodes
   name: GeoSharpi.Nodes
   href: api/GeoSharpi.Nodes.html

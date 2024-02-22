@@ -28,7 +28,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Capture.BaseCameraCapture.html",
-          "hash": "uTX+huoeHjrJGTRZnXU7d/mIYAdj5oo3hr5FSZteOcM="
+          "hash": "afKYaBvp4RjwZ5KTBbg4/lSCM5Skjpa7Tl8zXpfX1dE="
         }
       },
       "is_incremental": false,
@@ -40,7 +40,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Capture.BaseMeshingController.html",
-          "hash": "lDr8TOZSJdsutmBzWtf+X5AE1jaBEt150j5oqfWNOGk="
+          "hash": "R56BklO5c9fTT0ZuViruf74WjhMbD31ruUYnF/a9vd0="
         }
       },
       "is_incremental": false,
@@ -52,7 +52,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Capture.CaptureSession.html",
-          "hash": "erX+/inhPOUgrOvUQNy5Cch53CAZqX5XieGQjpmldfM="
+          "hash": "jGwEDtuB7MRSGOm57k1aMZBlQPZq9C8ObP6Pe/mXjwc="
         }
       },
       "is_incremental": false,
@@ -64,7 +64,19 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Capture.CaptureSessionManager.html",
-          "hash": "1WiC0Jwuy4LihWuZPV8LpVPS1U6UZzArNzLak/elLy4="
+          "hash": "3AxZ0taUtQlKuSVGyl22IP25h59dYEbTz+0UXs5wac8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GeoSharpi.Capture.VirtualScanner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GeoSharpi.Capture.VirtualScanner.html",
+          "hash": "Tfvsm7qQVZgCnYoI/Vco4Ofc9b+rP/jtLEGHt9/uNbU="
         }
       },
       "is_incremental": false,
@@ -76,7 +88,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Capture.html",
-          "hash": "Ibc+kHEp5kU6y36hP2O7WwjHjCIX6tLkaWb3uhu/k9k="
+          "hash": "rpFpWImHfgYEJA0CpAa/liPO+BzrFJgbrW1wKvFXfro="
         }
       },
       "is_incremental": false,
@@ -88,7 +100,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Nodes.GeometryNode.html",
-          "hash": "uj2BxtYw4uK/0EMlNzpJMMpJqUQOX3CKt7uQQ5T/qsM="
+          "hash": "UvfYbFdg9M90VoYaMCIOSxGl9+SoWncATP1NdbWOwuI="
         }
       },
       "is_incremental": false,
@@ -100,7 +112,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Nodes.ImageNode.html",
-          "hash": "y8gJmZDsgenASP9iQrBPPlE6uOS3ceh/oKIHxpZdK84="
+          "hash": "Wgrxuf0qig1jAIZAUjq88z3v93qSJQsPtFKd48fATjc="
         }
       },
       "is_incremental": false,
@@ -112,7 +124,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Nodes.MeshNode.html",
-          "hash": "LFbT3q/8454rTbqFVp63ZNi+YVyYT+5whzGvDNTpPLE="
+          "hash": "2KGf2nI1pdg64t4/j08iga7oC3cj2wGpz7CHbwXJ96M="
         }
       },
       "is_incremental": false,
@@ -124,7 +136,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Nodes.Node.html",
-          "hash": "tDHQmCiLHoKttQ/mQyCmh0lEe8gF45xkivL7foZHn7o="
+          "hash": "BrXyUVXz4rsiasVTJX7S5ZYZoKvcwWTU6TyYMP5xMVQ="
         }
       },
       "is_incremental": false,
@@ -136,7 +148,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Nodes.SessionNode.html",
-          "hash": "ZPlbZ2yjG2tmfXtgIKhJS52336K77Jewpg50l8WNjy4="
+          "hash": "GA1qlgxm+FhqaVrSAZdMdLx1CwdQCnAiTiiGVYD3+v0="
         }
       },
       "is_incremental": false,
@@ -148,7 +160,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Nodes.html",
-          "hash": "HKmAtdbm7nIak/AzQILvmNKscdCYdN8B2Ba58T2AIhI="
+          "hash": "cnf3iWx/YA6+GBfX2N4lU/DawTYl9SsxLzk0lWeDuOo="
         }
       },
       "is_incremental": false,
@@ -160,7 +172,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.CameraExtensions.html",
-          "hash": "db6uI8SdZ5CNb6AUgqFH0yUQAMRdAQcZ5p09jz80lFA="
+          "hash": "UJUL4v9SoyQXfVXqnpd8v8bi0Vi7jyI7j5UWXQ9C/XU="
         }
       },
       "is_incremental": false,
@@ -172,7 +184,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.Events.GeometryNodeEvent.html",
-          "hash": "aoX9M0muRfcSZASWyvSu/L1WbiYWIx05MjY/EG7qlPc="
+          "hash": "chTbSsN8ySNgWAN+4imk9kzJ80pnx7pfKOyenF/zRpY="
         }
       },
       "is_incremental": false,
@@ -184,7 +196,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.Events.ImageNodeEvent.html",
-          "hash": "It0CYwWQmnBAekRM+bSo2EnZke5K+LgO/e7+OmyBSJI="
+          "hash": "uO+z3JaXEzW7m+xjPvStyf/oxEzxwOt4ZmpAjRsv5qY="
         }
       },
       "is_incremental": false,
@@ -196,7 +208,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.Events.NodeEvent.html",
-          "hash": "8JODoDQgRIeMWeR90KsH2/eEUjCowzeFVqeNsA+xbKE="
+          "hash": "3FiWRq7Eae5x+wgtuz3Z3ekU/2XgH96qDm80BQoLYuk="
         }
       },
       "is_incremental": false,
@@ -208,7 +220,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.Events.SessionNodeEvent.html",
-          "hash": "VVFIO6Vb6MqEbKwkFmqB7tRbDoRuH1oYsvsZ87vHAsM="
+          "hash": "2Z1X/2/En6peV/3ZTzTruFV4+TZcOl82KE8c3KSrCcU="
         }
       },
       "is_incremental": false,
@@ -220,7 +232,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.Events.html",
-          "hash": "PYMPoQpILout9pBmQNM2aj0uQnl4E5gg4y3yzzd9PBE="
+          "hash": "jjzgG2BA0jdT3+muk0oDEehIH1J1JpZ5SnhO3Z//DZ4="
         }
       },
       "is_incremental": false,
@@ -232,7 +244,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.ImageIO.html",
-          "hash": "qr2rWJKbVRf0DuOZ2KqsziPgSWI7JiQF98p5BMpOPhQ="
+          "hash": "6b4IEW64G8trGFzAMpEPyd+rNtnLLtnX1RBU0lFQZYM="
         }
       },
       "is_incremental": false,
@@ -244,7 +256,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.MatrixExtensions.html",
-          "hash": "7I2aQz/WTKjUAFfoNL8kiO99feTazWAWlUXleECwgUI="
+          "hash": "cKScpIvOqBiEwaJ9UBBJDYQYjTmW2zSedzRXNTBnUFo="
         }
       },
       "is_incremental": false,
@@ -256,7 +268,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.MeshIO.html",
-          "hash": "iAWsSmvkP8t0Th2RuLOS+r9SrXUf+bavsN1RncmlFnE="
+          "hash": "oz//Ast8IQn61HMfgTmBTZGHk3YYttMZ03FmE8fLonk="
         }
       },
       "is_incremental": false,
@@ -268,7 +280,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.NewAxis.html",
-          "hash": "ehWctU53iePqW82eO+Nta+CG+luV1AqEym7oUObxwP0="
+          "hash": "1spc1DYvYUAmCjjQChLbK72g/8tHqJg+CUsS0rM4+2Q="
         }
       },
       "is_incremental": false,
@@ -280,7 +292,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.RDFUriAttribute.html",
-          "hash": "5Ea7rPMrCrg9Sy5YuVG/99qmS4xdRByk9C12+b2PZ4o="
+          "hash": "OQaatN/9WFHzuzyNzZcOSY+llZq6EU4KM7fNd2yZ2DM="
         }
       },
       "is_incremental": false,
@@ -292,7 +304,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.ReflectiveEnumerator.html",
-          "hash": "KJJS5H+Tmsa+nglLx6Clxykz9GcgCjAUWwyRE8d7xhE="
+          "hash": "dYE1HMkLOx7w8bKpliEg0je4oIcHrVn217Lpwx3eHW4="
         }
       },
       "is_incremental": false,
@@ -304,7 +316,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.TransformExtensions.html",
-          "hash": "d+rso4Jgc3QPi5oFgXWXNj+iyJaVrqvG1JXpxjYv9jc="
+          "hash": "2WmsstnmuGKEHFUixjyfmMEQ60Ag6FnzN1ST16NJtCc="
         }
       },
       "is_incremental": false,
@@ -316,7 +328,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Utils.html",
-          "hash": "LCiNkEiiibChgelHyzsyLHYq+2Wk/IGAvpRheOMH4b8="
+          "hash": "k0aM8Ak49J9GpLpTbHvMEV/ZzDSQRrpZ5SZ7dRmPJJw="
         }
       },
       "is_incremental": false,
@@ -328,7 +340,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Visualisation.CoordinateSystemChanger.html",
-          "hash": "NTuNuvXqKSkRvZpXNihEGJEvVrTw/GeiVYQTelM9LYg="
+          "hash": "SVLyu0oxfv5gxFMiltHWBPAFSwUiAfGAGKjFAfO8c+M="
         }
       },
       "is_incremental": false,
@@ -340,7 +352,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Visualisation.NodeVisualizer.html",
-          "hash": "0yymKCaEeJWf7drBcil+PasYS1Qn2iLdruh2rAqxyno="
+          "hash": "MI9juYTMOIb+GDEOgR/HlfEtjeq9paeO4A71hpWlizQ="
         }
       },
       "is_incremental": false,
@@ -352,7 +364,7 @@
       "output": {
         ".html": {
           "relative_path": "api/GeoSharpi.Visualisation.html",
-          "hash": "geYYU4U541u/JQUZDEMcWP9OHBFrsQZBmFox/OCMh08="
+          "hash": "N0ycI1+FvvB0oLubc1vOgpIZHWtNEgJJ5yCtB+BhQxg="
         }
       },
       "is_incremental": false,
@@ -450,7 +462,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 28,
+          "total_file_count": 29,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
