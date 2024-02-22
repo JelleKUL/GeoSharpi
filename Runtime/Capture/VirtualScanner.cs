@@ -37,6 +37,7 @@ namespace GeoSharpi.Capture
         private MeshFilter filter;
         private MeshRenderer renderer;
         private Vector3[,] spherePoints;
+        private Vector2[,] sphereUvs;
 
         private bool updatingMesh = false;
 
@@ -111,42 +112,33 @@ namespace GeoSharpi.Capture
         {
             List<Vector3> scanVectors = new List<Vector3>();
 
-            float scanAngle = scanDensity;
-            int pointsPerDisc = Mathf.CeilToInt(Mathf.PI * 2 / scanDensity);
-            int nrOfDiscs = Mathf.CeilToInt(Mathf.PI / scanDensity);
+            int pointsPerDisc = Mathf.CeilToInt(Mathf.PI * 2 / scanDensity); // the number of horizonontal captured points
+            int nrOfDiscs = Mathf.CeilToInt(Mathf.PI / scanDensity); // the number of vertical rows
             spherePoints = new Vector3[nrOfDiscs, pointsPerDisc];
+            sphereUvs = new Vector2[nrOfDiscs, pointsPerDisc];
 
-            Vector3 vector0 = Vector3.forward;
+            Vector3 vector0 = Vector3.forward; // the starting vector
 
             for (int i = 0; i < nrOfDiscs; i++)
             {
                 for (int j = 0; j < pointsPerDisc; j++)
                 {
-                    if ((i * scanDensity * Mathf.Rad2Deg) > (360 - VerticalScanRange) / 2)
+                    if ((i * scanDensity * Mathf.Rad2Deg) > (360 - VerticalScanRange) / 2) // filter out the bottom unscannable rows
                     {
                         Vector3 newVector = Quaternion.Euler(0, j * scanDensity * Mathf.Rad2Deg, 0) * Quaternion.Euler(90 - i * scanDensity * Mathf.Rad2Deg, 0, 0) * vector0;
                         scanVectors.Add(newVector);
 
-
+                        // use a raycast to determine the distance to the mesh
                         RaycastHit hit;
                         if (Physics.Raycast(transform.position, transform.TransformDirection(newVector), out hit, range))
                         {
                             //float color = hit.distance / range;
                             spherePoints[i, j] = hit.point;
-
+                            sphereUvs[i, j] = new Vector2((j * scanDensity * Mathf.Rad2Deg) / 360, 1 - ((180 - i * scanDensity * Mathf.Rad2Deg) / 180));
                         }
                         else spherePoints[i, j] = Vector3.negativeInfinity;
                     }
                     else spherePoints[i, j] = Vector3.negativeInfinity;
-                    /*
-                    if (i > 0)
-                    {
-                        Vector3 newVectorUp = Quaternion.Euler(0, j * scanDensity * Mathf.Rad2Deg, 0) * Quaternion.Euler( - i * scanDensity * Mathf.Rad2Deg, 0, 0) * vector0;
-                        scanVectors.Add(newVectorUp);
-                    }
-                    */
-
-
                 }
             }
 
@@ -196,10 +188,13 @@ namespace GeoSharpi.Capture
                             Vector3.SqrMagnitude(points[upperPointIndex, j] - points[upperPointIndex, nextPointIndex]) < maxTraingleLength * maxTraingleLength)
                         {
                             verts.Add(transform.InverseTransformPoint(points[i, j]));
+                            uvs.Add(sphereUvs[i, j]);
                             tris.Add(verts.Count - 1);
                             verts.Add(transform.InverseTransformPoint(points[upperPointIndex, j]));
+                            uvs.Add(sphereUvs[upperPointIndex, j]);
                             tris.Add(verts.Count - 1);
                             verts.Add(transform.InverseTransformPoint(points[upperPointIndex, nextPointIndex]));
+                            uvs.Add(sphereUvs[upperPointIndex, nextPointIndex]);
                             tris.Add(verts.Count - 1);
                         }
 
@@ -214,17 +209,17 @@ namespace GeoSharpi.Capture
                             Vector3.SqrMagnitude(points[upperPointIndex, nextPointIndex] - points[i, nextPointIndex]) < maxTraingleLength * maxTraingleLength)
                         {
                             verts.Add(transform.InverseTransformPoint(points[i, j]));
+                            uvs.Add(sphereUvs[i, j]);
                             tris.Add(verts.Count - 1);
                             verts.Add(transform.InverseTransformPoint(points[upperPointIndex, nextPointIndex]));
+                            uvs.Add(sphereUvs[upperPointIndex, nextPointIndex]);
                             tris.Add(verts.Count - 1);
                             verts.Add(transform.InverseTransformPoint(points[i, nextPointIndex]));
+                            uvs.Add(sphereUvs[i, nextPointIndex]);
                             tris.Add(verts.Count - 1);
                         }
                     }
-
                 }
-
-                //Debug.DrawLine(points[i].Pos(), points[i].Pos() + left * points[i].roadWidth * 1.5f, Color.green);
             }
 
             mesh = new Mesh();
