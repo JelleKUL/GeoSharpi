@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class SphericalImageCapture : MonoBehaviour
@@ -11,7 +12,8 @@ public class SphericalImageCapture : MonoBehaviour
     [SerializeField]
     private RenderTexture equiTexture;
     [SerializeField]
-    private bool UpdateTexture = true;
+    private bool updateTexture = true;
+    private bool updatingTexture = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +23,29 @@ public class SphericalImageCapture : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (UpdateTexture) RenderToTexture();
+        if (updateTexture) UpdateTexture();
     }
 
-    [ContextMenu("Render To Texture")]
-    public void RenderToTexture()
+    private void OnDrawGizmosSelected()
+    {
+        if (!Application.isPlaying) UpdateTexture(); // Update the scan outside of play mode
+    }
+
+    [ContextMenu("Update Texture")]
+    public async void UpdateTexture()
+    {
+        if (!updateTexture) return;
+
+        if (updateTexture && !updatingTexture)
+        {
+            updatingTexture = true;
+            await RenderToTexture();
+            updatingTexture = false;
+        }
+
+    }
+
+    public async Task<bool> RenderToTexture()
     {
         if(targetCam && targetTexture)
         {
@@ -36,5 +56,6 @@ public class SphericalImageCapture : MonoBehaviour
             //targetCam.RenderToCubemap(targetTexture);
             //targetTexture.ConvertToEquirect(equiTexture);
         }
+        return true;
     }
 }

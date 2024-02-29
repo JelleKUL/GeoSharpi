@@ -49,7 +49,6 @@ namespace GeoSharpi.Capture
         private MeshFilter filter;
         private Vector3[,] spherePoints;
         private Vector2[,] sphereUvs;
-
         private bool updatingMesh = false;
 
         // Start is called before the first frame update
