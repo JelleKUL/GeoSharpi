@@ -366,6 +366,19 @@ references:
   isSpec: "True"
   fullName: GeoSharpi.Capture.VirtualScanner.UpdateMesh
   nameWithType: VirtualScanner.UpdateMesh
+- uid: GeoSharpi.Capture.VirtualScanner.UpdateScan
+  name: UpdateScan()
+  href: api/GeoSharpi.Capture.VirtualScanner.html#GeoSharpi_Capture_VirtualScanner_UpdateScan
+  commentId: M:GeoSharpi.Capture.VirtualScanner.UpdateScan
+  fullName: GeoSharpi.Capture.VirtualScanner.UpdateScan()
+  nameWithType: VirtualScanner.UpdateScan()
+- uid: GeoSharpi.Capture.VirtualScanner.UpdateScan*
+  name: UpdateScan
+  href: api/GeoSharpi.Capture.VirtualScanner.html#GeoSharpi_Capture_VirtualScanner_UpdateScan_
+  commentId: Overload:GeoSharpi.Capture.VirtualScanner.UpdateScan
+  isSpec: "True"
+  fullName: GeoSharpi.Capture.VirtualScanner.UpdateScan
+  nameWithType: VirtualScanner.UpdateScan
 - uid: GeoSharpi.Nodes
   name: GeoSharpi.Nodes
   href: api/GeoSharpi.Nodes.html

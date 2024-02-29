@@ -27,7 +27,7 @@
   "api/GeoSharpi.Capture.VirtualScanner.html": {
     "href": "api/GeoSharpi.Capture.VirtualScanner.html",
     "title": "Class VirtualScanner | GeoSharpi",
-    "keywords": "Class VirtualScanner Inheritance Object VirtualScanner Namespace : GeoSharpi.Capture Assembly : cs.temp.dll.dll Syntax public class VirtualScanner : MonoBehaviour Methods CreateSphereMesh(Vector3[,]) Declaration public async Task<Mesh> CreateSphereMesh(Vector3[, ] points) Parameters Type Name Description Vector3 [,] points Returns Type Description Task < Mesh > GetScanDirections() Declaration public List<Vector3> GetScanDirections() Returns Type Description List < Vector3 > UpdateMesh() Declaration public async void UpdateMesh()"
+    "keywords": "Class VirtualScanner Inheritance Object VirtualScanner Namespace : GeoSharpi.Capture Assembly : cs.temp.dll.dll Syntax public class VirtualScanner : MonoBehaviour Methods CreateSphereMesh(Vector3[,]) Declaration public async Task<Mesh> CreateSphereMesh(Vector3[, ] points) Parameters Type Name Description Vector3 [,] points Returns Type Description Task < Mesh > GetScanDirections() Declaration public List<Vector3> GetScanDirections() Returns Type Description List < Vector3 > UpdateMesh() Declaration public async void UpdateMesh() UpdateScan() Declaration public void UpdateScan()"
   },
   "api/GeoSharpi.Nodes.GeometryNode.html": {
     "href": "api/GeoSharpi.Nodes.GeometryNode.html",
