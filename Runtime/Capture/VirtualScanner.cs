@@ -9,33 +9,44 @@ namespace GeoSharpi.Capture
     [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public class VirtualScanner : MonoBehaviour
     {
+        [Header("Scanning")]
+        [SerializeField]
+        [Tooltip("Update the scan continuously at runtime and onGizmoSelected")]
+        private bool updateScan = true;
         [SerializeField]
         [Tooltip("the ratio between the point distance at a given radius")]
+        [Min(0)]
         private float scanDensity = 0.01f;
         [SerializeField]
+        [Tooltip("The max range of the scanner")]
+        [Min(0f)]
         private float range = 10;
         [SerializeField]
+        [Tooltip("The total degrees the vertical axis can cover")]
+        [Range(0f,360f)]
         private float VerticalScanRange = 290;
-
+        
+        [Header("Meshing")]
         [SerializeField]
+        [Tooltip("Update the mesh continuously at runtime and onGizmoSelected")]
         private bool updateMesh = true;
         [SerializeField]
+        [Tooltip("The max circumference of a single triangle before being skipped")]
+        [Min(0)]
         private float maxTraingleLength = 1;
 
-        [SerializeField]
-        bool showNoHits = false;
+        [Header("Visualisation")]
         [SerializeField]
         bool drawRays = true;
+        [SerializeField]
+        bool showNoHits = false;
         [SerializeField]
         bool drawPoints = false;
         [SerializeField]
         float pointSize = 0.01f;
-        [SerializeField]
-        bool useObjectColor = true;
 
         private Mesh mesh;
         private MeshFilter filter;
-        private MeshRenderer renderer;
         private Vector3[,] spherePoints;
         private Vector2[,] sphereUvs;
 
@@ -50,62 +61,43 @@ namespace GeoSharpi.Capture
         // Update is called once per frame
         void Update()
         {
+            UpdateScan();
+        }
+
+        [ContextMenu("Update Scan")]
+        public void UpdateScan()
+        {
+            if (!updateScan) return;
+
             if (updateMesh && !updatingMesh)
             {
+                GetScanDirections();
                 updatingMesh = true;
                 UpdateMesh();
+            }
+            else if (!updatingMesh)
+            {
+                GetScanDirections();
             }
         }
 
         private void OnDrawGizmosSelected()
         {
-            if (updateMesh && !updatingMesh)
-            {
-                updatingMesh = true;
-                UpdateMesh();
-            }
+            if (!Application.isPlaying) UpdateScan(); // Update the scan outside of play mode
 
-            if (!drawPoints) return;
-            if (spherePoints == null) return;
-            foreach (var point in spherePoints)
+            if (!updateScan) return;
+
+            if (drawPoints && spherePoints != null)
             {
-                if (point != null)
+                foreach (var point in spherePoints)
                 {
-                    Gizmos.DrawSphere(point, pointSize);
-                }
-            }
-
-            /*
-            List<Vector3> vectors = GetScanDirections();
-
-            foreach (var item in vectors)
-            {
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.TransformDirection(item), out hit, range))
-                {
-                    float color = hit.distance / range;
-                    if(drawRays) Debug.DrawRay(transform.position, transform.TransformDirection(item) * hit.distance, new Color(0,color,1- color));
-                    if (drawPoints)
+                    if (point != Vector3.negativeInfinity)
                     {
-                        if (useObjectColor)
-                        {
-                            Gizmos.color = hit.transform.GetComponent<MeshRenderer>().sharedMaterial.color;
-                        }
-                        else
-                        {
-                            Gizmos.color = new Color(0, color, 1 - color);
-                        }
-
-                        Gizmos.DrawSphere(hit.point, pointSize);
+                        Gizmos.DrawSphere(point, pointSize);
                     }
                 }
-                else if(showNoHits)
-                {
-                    Debug.DrawRay(transform.position, transform.TransformDirection(item) * range, Color.red);
-                }
-
             }
-            */
+            
         }
 
         public List<Vector3> GetScanDirections()
@@ -115,7 +107,7 @@ namespace GeoSharpi.Capture
             int pointsPerDisc = Mathf.CeilToInt(Mathf.PI * 2 / scanDensity); // the number of horizonontal captured points
             int nrOfDiscs = Mathf.CeilToInt(Mathf.PI / scanDensity); // the number of vertical rows
             spherePoints = new Vector3[nrOfDiscs, pointsPerDisc];
-            sphereUvs = new Vector2[nrOfDiscs, pointsPerDisc];
+            sphereUvs = new Vector2[nrOfDiscs, pointsPerDisc+1];
 
             Vector3 vector0 = Vector3.forward; // the starting vector
 
@@ -135,8 +127,24 @@ namespace GeoSharpi.Capture
                             //float color = hit.distance / range;
                             spherePoints[i, j] = hit.point;
                             sphereUvs[i, j] = new Vector2((j * scanDensity * Mathf.Rad2Deg) / 360, 1 - ((180 - i * scanDensity * Mathf.Rad2Deg) / 180));
+                            if (j == 0)
+                            {
+                                sphereUvs[i, pointsPerDisc] = new Vector2(1,sphereUvs[i, j].y);
+                            }
+
+                            // draw the debug rays
+                            if (drawRays)
+                            {
+                                float color = hit.distance / range;
+                                Debug.DrawRay(transform.position, transform.TransformDirection(newVector) * hit.distance, new Color(0, color, 1 - color));
+                            }
+
                         }
-                        else spherePoints[i, j] = Vector3.negativeInfinity;
+                        else
+                        {
+                            spherePoints[i, j] = Vector3.negativeInfinity;
+                            if (showNoHits) Debug.DrawRay(transform.position, transform.TransformDirection(newVector) * range, Color.red);
+                        }
                     }
                     else spherePoints[i, j] = Vector3.negativeInfinity;
                 }
@@ -144,16 +152,12 @@ namespace GeoSharpi.Capture
 
             return scanVectors;
         }
-
-        [ContextMenu("Update mesh")]
         public async void UpdateMesh()
         {
-            GetScanDirections();
             await CreateSphereMesh(spherePoints);
             if (!filter) filter = GetComponent<MeshFilter>();
             filter.mesh = mesh;
             filter.sharedMesh.RecalculateBounds();
-            //if (!renderer) renderer = GetComponent<MeshRenderer>();
             updatingMesh = false;
         }
 
@@ -194,7 +198,7 @@ namespace GeoSharpi.Capture
                             uvs.Add(sphereUvs[upperPointIndex, j]);
                             tris.Add(verts.Count - 1);
                             verts.Add(transform.InverseTransformPoint(points[upperPointIndex, nextPointIndex]));
-                            uvs.Add(sphereUvs[upperPointIndex, nextPointIndex]);
+                            uvs.Add(sphereUvs[upperPointIndex, j+1]);
                             tris.Add(verts.Count - 1);
                         }
 
@@ -212,10 +216,10 @@ namespace GeoSharpi.Capture
                             uvs.Add(sphereUvs[i, j]);
                             tris.Add(verts.Count - 1);
                             verts.Add(transform.InverseTransformPoint(points[upperPointIndex, nextPointIndex]));
-                            uvs.Add(sphereUvs[upperPointIndex, nextPointIndex]);
+                            uvs.Add(sphereUvs[upperPointIndex, j+1]);
                             tris.Add(verts.Count - 1);
                             verts.Add(transform.InverseTransformPoint(points[i, nextPointIndex]));
-                            uvs.Add(sphereUvs[i, nextPointIndex]);
+                            uvs.Add(sphereUvs[i, j+1]);
                             tris.Add(verts.Count - 1);
                         }
                     }
