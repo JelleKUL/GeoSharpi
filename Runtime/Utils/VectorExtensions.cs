@@ -14,6 +14,11 @@ namespace GeoSharpi.Utils
             return roundedVector/ Mathf.Pow(10,nrDecimals);
         }
 
+        public static float Max(this Vector3 vector){
+            	return Mathf.Max(Mathf.Max(vector.x, vector.y), vector.z);
+        }
+
+
         public static Vector3 RoundToGrid(this Vector3 vector, float gridSize)
         {
 

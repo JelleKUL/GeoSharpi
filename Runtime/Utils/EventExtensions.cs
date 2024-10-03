@@ -10,6 +10,14 @@ namespace GeoSharpi.Utils.Events
     /// An event which passes a Geosharpi Node
     /// </summary>
     [System.Serializable]
+    public class IntEvent : UnityEvent<int>
+    {
+    }
+    
+    /// <summary>
+    /// An event which passes a Geosharpi Node
+    /// </summary>
+    [System.Serializable]
     public class NodeEvent : UnityEvent<Node>
     {
     }

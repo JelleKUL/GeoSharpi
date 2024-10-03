@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using System.IO;
+using GeoSharpi.Utils.Events;
+using UnityEditor;
 
 namespace GeoSharpi.Utils
 {
@@ -15,6 +17,12 @@ public class VoxelDrawer : MonoBehaviour
     [SerializeField]
     private int voxelDimension = 8;
     private int[,,] voxelGrid = new int[100, 100, 100];
+    private GameObject[,,] voxelObjects = new GameObject[100, 100, 100];
+    
+    [SerializeField]
+    private bool useGizmos = false;
+    [SerializeField]
+    private Material importMat;
     [SerializeField]
     private bool fillCorners = true;
     [SerializeField]
@@ -24,6 +32,7 @@ public class VoxelDrawer : MonoBehaviour
     private float cameraMoveSpeed = 10;
     [SerializeField]
     private Transform cameraNull;
+    public IntEvent onGridSizeChanged = new IntEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +57,7 @@ public class VoxelDrawer : MonoBehaviour
             voxelGrid[idx,0,idx] = 1;
             voxelGrid[idx,idx,idx] = 1;
         }
-        
+        onGridSizeChanged.Invoke(voxelDimension-1);
 
         //Debug.Log(voxelGrid[0,0,0]);
     }
@@ -73,34 +82,64 @@ public class VoxelDrawer : MonoBehaviour
 
             if (Input.GetMouseButton(0)) voxelGrid[x,y,z] = 1;
             if (Input.GetMouseButton(1)) voxelGrid[x,y,z] = 0;
+
+            if(!useGizmos) UpdateVoxelGrid();
         }
     }
 
     void RotateCamera(){
         if(Input.GetMouseButton(0)) {
-            Debug.Log(Input.GetAxis("Mouse Y"));
-			cameraNull.Rotate(new Vector3(Input.GetAxis("Mouse Y") * cameraMoveSpeed, -Input.GetAxis("Mouse X") * cameraMoveSpeed, 0) * Time.deltaTime);
-			float X = transform.rotation.eulerAngles.x;
-			float Y = transform.rotation.eulerAngles.y;
+            float horizontalInput = Input.GetAxis("Mouse X");
+            float verticalInput = Input.GetAxis("Mouse Y");
+            cameraNull.Rotate(Vector3.up, horizontalInput * cameraMoveSpeed * Time.deltaTime, Space.World);
+            cameraNull.Rotate(Vector3.right, -verticalInput * cameraMoveSpeed * Time.deltaTime, Space.Self);
+			float X = cameraNull.rotation.eulerAngles.x;
+			float Y = cameraNull.rotation.eulerAngles.y;
 			cameraNull.rotation = Quaternion.Euler(X, Y, 0);
 		}
     }
 
+    void UpdateVoxelGrid(){
+        for (int i = 0; i < voxelDimension; i++){
+                for (int j = 0; j < voxelDimension; j++){
+                    Gizmos.color = Color.Lerp(Color.green, Color.blue, j/(float)voxelDimension);
+                    for (int k = 0; k < voxelDimension; k++){
+                        //Debug.Log(i + ", " + j + ", " + k + "= " + voxelGrid[i,j,k]);
+                        if(voxelGrid[i,j,k] ==1){
+                            if(voxelObjects[i,j,k] == null){
+                                GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                                cube.transform.localScale = voxelSize * Vector3.one;
+                                cube.transform.position = (Vector3.one * 0.5f + new Vector3(i,j,k)) * voxelSize;
+                                voxelObjects[i,j,k] = cube;
+                            } 
+                        }
+                        else if(voxelObjects[i,j,k] != null){
+                            GameObject cube = voxelObjects[i,j,k];
+                            voxelObjects[i,j,k] = null;
+                            Destroy(cube);
+                        }
+                    }
+                }
+            }
+    }
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        // init a zero array
-        for (int i = 0; i < voxelDimension; i++){
-            for (int j = 0; j < voxelDimension; j++){
-                Gizmos.color = Color.Lerp(Color.green, Color.blue, j/(float)voxelDimension);
-                for (int k = 0; k < voxelDimension; k++){
-                    //Debug.Log(i + ", " + j + ", " + k + "= " + voxelGrid[i,j,k]);
-                    if(voxelGrid[i,j,k] ==1){
-                        Gizmos.DrawCube((Vector3.one * 0.5f + new Vector3(i,j,k)) * voxelSize, Vector3.one*voxelSize);
+        if(useGizmos){
+            // init a zero array
+            for (int i = 0; i < voxelDimension; i++){
+                for (int j = 0; j < voxelDimension; j++){
+                    Gizmos.color = Color.Lerp(Color.green, Color.blue, j/(float)voxelDimension);
+                    for (int k = 0; k < voxelDimension; k++){
+                        //Debug.Log(i + ", " + j + ", " + k + "= " + voxelGrid[i,j,k]);
+                        if(voxelGrid[i,j,k] ==1){
+                            Gizmos.DrawCube((Vector3.one * 0.5f + new Vector3(i,j,k)) * voxelSize, Vector3.one*voxelSize);
+                        }
                     }
                 }
             }
         }
+        
         if(RayInVoxelLayer())
         {
             Gizmos.color = Color.red;
@@ -117,6 +156,11 @@ public class VoxelDrawer : MonoBehaviour
         //Debug.Log(RayInVoxelGrid());
     }
     [ContextMenu("LogJson")]
+    
+    public void ChangeGroundPlaneHeight(System.Single val){
+        groundPlaneHeightIndex = (int)val;
+    }
+    
     public void LogJson(){
         Debug.Log(GetVoxelGrid());
     }
@@ -165,8 +209,18 @@ public class VoxelDrawer : MonoBehaviour
         }
     }
 
+    public void PlaceMesh(string meshPath){
+        GameObject newObj = MeshIO.LoadMesh(meshPath);
+        MeshFilter mesh = newObj.GetComponentInChildren<MeshFilter>();
+        Vector3 center = mesh.mesh.bounds.center;
+        Vector3 extends = mesh.mesh.bounds.extents;
+        mesh.GetComponent<MeshRenderer>().material = importMat;
 
-    bool RayInVoxelGrid(){
+        newObj.transform.localScale /= extends.Max()* 0.5f;
+        newObj.transform.position = Vector3.one * voxelDimension/2f * voxelSize - center;
+    }
+
+    public bool RayInVoxelGrid(){
         Ray ray = Camera.current.ScreenPointToRay(Input.mousePosition);
         Bounds voxelBounds = new Bounds( Vector3.one * voxelSize*voxelDimension/2, Vector3.one * voxelSize*voxelDimension);
         return voxelBounds.IntersectRay(ray);
