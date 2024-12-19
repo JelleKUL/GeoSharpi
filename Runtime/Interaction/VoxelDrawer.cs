@@ -1,26 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using System.IO;
+using GeoSharpi.Utils;
 using GeoSharpi.Utils.Events;
-using UnityEditor;
+using UnityEngine.Events;
 
-namespace GeoSharpi.Utils
+namespace GeoSharpi.Interaction
 {
 public class VoxelDrawer : MonoBehaviour
 {
     [SerializeField]
     private int groundPlaneHeightIndex = 0;
     [SerializeField]
-    private float voxelSize = 0.1f;
+    public float voxelSize = 0.1f;
     [SerializeField]
-    private int voxelDimension = 8;
-    private int[,,] voxelGrid = new int[100, 100, 100];
+    public int voxelDimension = 8;
+    [HideInInspector]
+    public int[,,] voxelGrid = new int[100, 100, 100];
     private GameObject[,,] voxelObjects = new GameObject[100, 100, 100];
     
     [SerializeField]
     private bool useGizmos = false;
+    [SerializeField]
+    private bool showVoxelGizmos = false;
     [SerializeField]
     private Material importMat;
     [SerializeField]
@@ -33,6 +36,7 @@ public class VoxelDrawer : MonoBehaviour
     [SerializeField]
     private Transform cameraNull;
     public IntEvent onGridSizeChanged = new IntEvent();
+    public UnityEvent OnVoxelsChanged = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +88,7 @@ public class VoxelDrawer : MonoBehaviour
             if (Input.GetMouseButton(1)) voxelGrid[x,y,z] = 0;
 
             if(!useGizmos) UpdateVoxelGrid();
+            OnVoxelsChanged.Invoke();
         }
     }
 
@@ -121,11 +126,12 @@ public class VoxelDrawer : MonoBehaviour
                     }
                 }
             }
+        
     }
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        if(useGizmos){
+        if(useGizmos && showVoxelGizmos){
             // init a zero array
             for (int i = 0; i < voxelDimension; i++){
                 for (int j = 0; j < voxelDimension; j++){
@@ -143,7 +149,7 @@ public class VoxelDrawer : MonoBehaviour
         if(RayInVoxelLayer())
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawCube((GetMousePos().RoundToGridIndex(voxelSize) + Vector3.one * 0.5f) * voxelSize, Vector3.one*voxelSize);
+            Gizmos.DrawWireCube((GetMousePos().RoundToGridIndex(voxelSize) + Vector3.one * 0.5f) * voxelSize, Vector3.one*voxelSize);
         }
         
         //Gizmos.DrawSphere(GetMousePos(), 0.1f);
@@ -187,11 +193,19 @@ public class VoxelDrawer : MonoBehaviour
     {
         File.WriteAllText(filePath, GetVoxelGrid());
     }
+
+    public void WriteDataToFile(string path)
+    {
+        File.WriteAllText(path, GetVoxelGrid());
+    }
   
     [ContextMenu("Read Data")]
-    public void ReadData()
+    public void ReadData(){
+        ReadDataFromFile(filePath);
+    }
+    public void ReadDataFromFile(string path)
     {
-        string json = File.ReadAllText(filePath);
+        string json = File.ReadAllText(path);
         VoxelGrid newGrid = JsonUtility.FromJson<VoxelGrid>(json);
         voxelSize = newGrid.voxelSize;
         // init a zero array
@@ -207,6 +221,7 @@ public class VoxelDrawer : MonoBehaviour
         for (int i = 0; i<newGrid.voxels.Count; i++){
             voxelGrid[newGrid.voxels[i].gridIndex.x, newGrid.voxels[i].gridIndex.y, newGrid.voxels[i].gridIndex.z] = 1;
         }
+        UpdateVoxelGrid();
     }
 
     public void PlaceMesh(string meshPath){
