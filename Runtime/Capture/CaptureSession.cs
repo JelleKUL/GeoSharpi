@@ -14,7 +14,7 @@ namespace GeoSharpi.Capture
     [System.Serializable]
     public class CaptureSession
     {
-        public SessionNode sessionNode = null;
+        public SetNode sessionNode = null;
         public List<Node> nodes = new List<Node>();
 
         public int imageQuality = 75;
@@ -29,7 +29,7 @@ namespace GeoSharpi.Capture
         /// <param name="origin">The origin transform as a Matrix4x4</param>
         public CaptureSession(string path, Matrix4x4 origin)
         {
-            sessionNode = new SessionNode();
+            sessionNode = new SetNode();
             sessionNode.cartesianTransform = origin;
             if (path == "" || path == null) path = Application.persistentDataPath;
             sessionPath = Path.Combine(path, sessionNode.GetName() + Path.DirectorySeparatorChar);
@@ -64,18 +64,16 @@ namespace GeoSharpi.Capture
 
                 foreach (var ass in AppDomain.CurrentDomain.GetAssemblies())
                 {
-                    IEnumerable<Node> exporters =
-                    ass.GetTypes()
-                    .Where(t => t.IsSubclassOf(typeof(Node)) && !t.IsAbstract)
-                    .Select(t => (Node)Activator.CreateInstance(t));
+                    IEnumerable<Type> nodeTypes = ass.GetTypes()
+                        .Where(t => t.IsSubclassOf(typeof(Node)) && !t.IsAbstract);
 
-                    foreach (var item in exporters)
+                    foreach (Type item in nodeTypes)
                     {
-                        if (type.Contains(item.GetType().Name))
+                        if (type.Contains(item.Name))
                         {
                             //Debug.Log(triplesEnum.Current.Subject + " is of type: " + item.GetType());
-                            Node newNode = (Node)Activator.CreateInstance(item.GetType());
-                            if (newNode.GetType() == typeof(SessionNode)) sessionNode = newNode as SessionNode;
+                            Node newNode = (Node)Activator.CreateInstance(item);
+                            if (newNode.GetType() == typeof(SetNode)) sessionNode = newNode as SetNode;
                             else newNodes.Add(newNode);
                             newNode.FromGraph(graph, new RDFResource(triplesEnum.Current.Subject.ToString()));
                             found = true;

@@ -26,7 +26,7 @@ namespace GeoSharpi.Capture
         {
             Mesh mesh = GetCurrentMesh();
             
-            GeometryNode newGeometry = new GeometryNode(
+            MeshNode newGeometry = new MeshNode(
                 mesh,
                 pos ? pos.localToWorldMatrix : transform.localToWorldMatrix
                 ) ;

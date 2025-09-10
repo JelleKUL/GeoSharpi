@@ -9,6 +9,7 @@ using System.IO;
 using GeoSharpi.Nodes;
 using GeoSharpi.Visualisation;
 using UnityEngine.Networking;
+using System.Threading.Tasks;
 
 namespace GeoSharpi.Capture
 {
@@ -28,10 +29,10 @@ namespace GeoSharpi.Capture
         private string dataPostUrl = "";
 
         [Header("Session Reconstruction")]
-        [Tooltip("The location of the .ttl RDF grapg file")]
+        [Tooltip("The location of the .ttl RDF graph file")]
         [TextArea]
         public string graphLoadPath = "";
-        [Tooltip("Use the linked subjects to only add the referenced nodes in the sesison to the list")]
+        [Tooltip("Use the linked subjects to only add the referenced nodes in the session to the list")]
         public bool useLinkedSubjects = true;
 
         private void Start()
@@ -59,15 +60,12 @@ namespace GeoSharpi.Capture
         {
             foreach (var ass in AppDomain.CurrentDomain.GetAssemblies())
             {
-                IEnumerable<Node> exporters =
-                ass.GetTypes()
-                //ass.GetAssembly(typeof(Node)).GetTypes()
-                .Where(t => t.IsSubclassOf(typeof(Node)) && !t.IsAbstract)
-                .Select(t => (Node)Activator.CreateInstance(t));
+                IEnumerable<Type> nodeTypes = ass.GetTypes()
+                    .Where(t => t.IsSubclassOf(typeof(Node)) && !t.IsAbstract);
 
-                foreach (var item in exporters)
+                foreach (var type in nodeTypes)
                 {
-                    Debug.Log(item.GetType().Name);
+                    Debug.Log(type.Name);
                 }
             }
         }
@@ -126,7 +124,7 @@ namespace GeoSharpi.Capture
         {
             GameObject nodeVisualiser = new GameObject();
             NodeVisualizer nodeVis = nodeVisualiser.AddComponent<NodeVisualizer>();
-            nodeVis.SetUpNode(assetSession.sessionNode);
+            if(assetSession.sessionNode != null) nodeVis.SetUpNode(assetSession.sessionNode);
 
             foreach (Node node in assetSession.nodes)
             {
@@ -135,6 +133,44 @@ namespace GeoSharpi.Capture
                 node.LoadResource(assetSession.sessionPath);
                 newNodeVis.SetUpNode(node, nodeVisualiser.transform);
             }
+        }
+        /// <summary>
+        /// Spawn the current CaptureSession in the scene asynchronously
+        /// </summary>
+        [ContextMenu("Visualise session Async")]
+        public void VisualiseSessionAsync()
+        {
+            StartCoroutine(VisualiseSessionCoroutine());
+        }
+        /// <summary>
+        /// Spawn the current CaptureSession in the scene asynchronously
+        /// </summary>
+        IEnumerator VisualiseSessionCoroutine()
+        {
+            GameObject nodeVisualiser = new GameObject();
+            NodeVisualizer nodeVis = nodeVisualiser.AddComponent<NodeVisualizer>();
+
+            if (assetSession.sessionNode != null)
+            {
+                nodeVis.SetUpNode(assetSession.sessionNode);
+            }
+
+            foreach (Node node in assetSession.nodes)
+            {
+                GameObject newNodeVisualiser = new GameObject();
+                NodeVisualizer newNodeVis = newNodeVisualiser.AddComponent<NodeVisualizer>();
+                node.LoadResource(assetSession.sessionPath);
+                newNodeVis.SetUpNode(node, nodeVisualiser.transform);
+                yield return null;
+            }
+        }
+
+        private async Task SpawnNode(Node node, Transform parent)
+        {
+            GameObject newNodeVisualiser = new GameObject();
+            NodeVisualizer newNodeVis = newNodeVisualiser.AddComponent<NodeVisualizer>();
+            node.LoadResource(assetSession.sessionPath);
+            newNodeVis.SetUpNode(node, parent);
         }
         /// <summary>
         /// Sends the current session to the specified server

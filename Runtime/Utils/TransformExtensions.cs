@@ -18,5 +18,15 @@ namespace GeoSharpi.Utils
             transform.rotation = matrix.ExtractRotation();
             transform.position = matrix.ExtractPosition();
         }
+
+        /// <summary>
+        /// Sets a transform to a Matrix4x4
+        /// </summary>
+        /// <param name="transform">the transform to change</param>
+        /// <param name="matrix">The matrix4x4 to set the transform to</param>
+        public static Matrix4x4 ToMatrix(this Transform transform)
+        {
+            return Matrix4x4.TRS(transform.position, transform.rotation,transform.localScale);
+        }
     }
 }

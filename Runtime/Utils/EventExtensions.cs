@@ -34,7 +34,7 @@ namespace GeoSharpi.Utils.Events
     /// An event which passes a Geosharpi GeometryNode
     /// </summary>
     [System.Serializable]
-    public class GeometryNodeEvent : UnityEvent<GeometryNode>
+    public class GeometryNodeEvent : UnityEvent<MeshNode>
     {
     }
 
@@ -42,7 +42,7 @@ namespace GeoSharpi.Utils.Events
     /// An event which passes a Geosharpi SessionNode
     /// </summary>
     [System.Serializable]
-    public class SessionNodeEvent : UnityEvent<SessionNode>
+    public class SessionNodeEvent : UnityEvent<SetNode>
     {
     }
 }

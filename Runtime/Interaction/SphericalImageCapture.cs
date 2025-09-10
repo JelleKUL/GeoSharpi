@@ -5,14 +5,17 @@ using UnityEngine;
 
 public class SphericalImageCapture : MonoBehaviour
 {
+    [Header("Parameters")]
+    [SerializeField]
+    private bool updateTexture = true;
+    [Header("Prefabs")]
     [SerializeField]
     private Camera targetCam;
     [SerializeField]
     private RenderTexture targetTexture;
     [SerializeField]
     private RenderTexture equiTexture;
-    [SerializeField]
-    private bool updateTexture = true;
+
     private bool updatingTexture = false;
 
     // Start is called before the first frame update
@@ -26,23 +29,15 @@ public class SphericalImageCapture : MonoBehaviour
         if (updateTexture) UpdateTexture();
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        if (!Application.isPlaying) UpdateTexture(); // Update the scan outside of play mode
-    }
-
     [ContextMenu("Update Texture")]
     public async void UpdateTexture()
     {
-        if (!updateTexture) return;
-
-        if (updateTexture && !updatingTexture)
+        if (!updatingTexture)
         {
             updatingTexture = true;
             await RenderToTexture();
             updatingTexture = false;
         }
-
     }
 
     public async Task<bool> RenderToTexture()
@@ -50,11 +45,8 @@ public class SphericalImageCapture : MonoBehaviour
         if(targetCam && targetTexture)
         {
             targetCam.stereoSeparation = 0f;
-            targetCam.RenderToCubemap(targetTexture, 63, Camera.MonoOrStereoscopicEye.Left); //or right, its the same
+            targetCam.RenderToCubemap(targetTexture, 63, Camera.MonoOrStereoscopicEye.Left);
             targetTexture.ConvertToEquirect(equiTexture, Camera.MonoOrStereoscopicEye.Mono);
-
-            //targetCam.RenderToCubemap(targetTexture);
-            //targetTexture.ConvertToEquirect(equiTexture);
         }
         return true;
     }

@@ -1,18 +1,18 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.IO;
 using UnityEngine;
+using Unity.Jobs;
+using Unity.Collections;
+using UnityEngine.Events;
 
 namespace GeoSharpi.Capture
 {
-
-    [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public class VirtualScanner : MonoBehaviour
     {
-        [Header("Scanning")]
+        [Header("Scan Parameters")]
         [SerializeField]
-        [Tooltip("Update the scan continuously at runtime and onGizmoSelected")]
-        private bool updateScan = true;
+        [Tooltip("Update the scan continuously at runtime")]
+        private bool scanContinuous = true;
         [SerializeField]
         [Tooltip("the ratio between the point distance at a given radius")]
         [Min(0)]
@@ -20,22 +20,18 @@ namespace GeoSharpi.Capture
         [SerializeField]
         [Tooltip("The max range of the scanner")]
         [Min(0f)]
-        private float range = 10;
+        private float scanRange = 10;
         [SerializeField]
         [Tooltip("The total degrees the vertical axis can cover")]
-        [Range(0f,360f)]
+        [Range(0f, 360f)]
         private float VerticalScanRange = 290;
-        
-        [Header("Meshing")]
-        [SerializeField]
-        [Tooltip("Update the mesh continuously at runtime and onGizmoSelected")]
-        private bool updateMesh = true;
-        [SerializeField]
-        [Tooltip("The max circumference of a single triangle before being skipped")]
-        [Min(0)]
-        private float maxTraingleLength = 1;
 
-        [Header("Visualisation")]
+
+
+        [Header("Coloring")]
+        public RenderTexture colorTexture;
+
+        [Header("Debug Visualisation")]
         [SerializeField]
         bool drawRays = true;
         [SerializeField]
@@ -45,11 +41,20 @@ namespace GeoSharpi.Capture
         [SerializeField]
         float pointSize = 0.01f;
 
-        private Mesh mesh;
-        private MeshFilter filter;
-        private Vector3[,] spherePoints;
-        private Vector2[,] sphereUvs;
-        private bool updatingMesh = false;
+        [HideInInspector]
+        public string pointSavePath = "";
+
+
+
+        private List<Transform> scannedObjects = new List<Transform>();
+
+        // Private Properties new scan system
+        private float lastDensity = -1;
+        private List<ScanParameter> scanParameters = new List<ScanParameter>();
+        [HideInInspector]
+        public List<ScannedPoint> scannedPoints = new List<ScannedPoint>();
+
+        
 
         // Start is called before the first frame update
         void Start()
@@ -57,184 +62,269 @@ namespace GeoSharpi.Capture
 
         }
 
-        // Update is called once per frame
         void Update()
         {
-            UpdateScan();
+            if (scanContinuous) ScanEnvironment();
         }
 
-        [ContextMenu("Update Scan")]
-        public void UpdateScan()
-        {
-            if (!updateScan) return;
 
-            if (updateMesh && !updatingMesh)
-            {
-                GetScanDirections();
-                updatingMesh = true;
-                UpdateMesh();
-            }
-            else if (!updatingMesh)
-            {
-                GetScanDirections();
-            }
-        }
 
         private void OnDrawGizmosSelected()
         {
-            if (!Application.isPlaying) UpdateScan(); // Update the scan outside of play mode
+            if (!Application.isPlaying) return;
 
-            if (!updateScan) return;
-
-            if (drawPoints && spherePoints != null)
+            if (drawPoints && scannedPoints.Count > 0)
             {
-                foreach (var point in spherePoints)
+                foreach (var point in scannedPoints)
                 {
-                    if (point != Vector3.negativeInfinity)
-                    {
-                        Gizmos.DrawSphere(point, pointSize);
-                    }
+                    Gizmos.color = point.color;
+                    Gizmos.DrawSphere(point.position, pointSize);
                 }
             }
-            
+
         }
 
-        public List<Vector3> GetScanDirections()
+        public void ScanEnvironment()
         {
-            List<Vector3> scanVectors = new List<Vector3>();
+            //check if the transform has changed, then update scan directions
+            if (lastDensity != scanDensity)
+            {
+                lastDensity = scanDensity;
+                UpdateScanParameters(scanDensity);
+            }
+            print("Casting " + scanParameters.Count + " rays");
+            // perform the scan job
+            CastRaysJob(transform.position, scanParameters);
+            print("Found " + scannedPoints.Count + " points");
+            // perform the color job
+            if (colorTexture)
+            {
+                GetPointColorsJob();
+                print("Points colored");
+            }
 
-            int pointsPerDisc = Mathf.CeilToInt(Mathf.PI * 2 / scanDensity); // the number of horizonontal captured points
-            int nrOfDiscs = Mathf.CeilToInt(Mathf.PI / scanDensity); // the number of vertical rows
-            spherePoints = new Vector3[nrOfDiscs, pointsPerDisc];
-            sphereUvs = new Vector2[nrOfDiscs, pointsPerDisc+1];
+        }
 
+        // creates a list of scan directions and corresponding UV coordinates
+        // This should only be updated if the Scanner moves
+        private void UpdateScanParameters(float density)
+        {
+            scanParameters = new List<ScanParameter>();
+            int pointsPerDisc = Mathf.CeilToInt(Mathf.PI * 2 / density); // the number of horizonontal captured points
+            int nrOfDiscs = Mathf.CeilToInt(Mathf.PI / density); // the number of vertical rows
             Vector3 vector0 = Vector3.forward; // the starting vector
 
             for (int i = 0; i < nrOfDiscs; i++)
             {
                 for (int j = 0; j < pointsPerDisc; j++)
                 {
-                    if ((i * scanDensity * Mathf.Rad2Deg) > (360 - VerticalScanRange) / 2) // filter out the bottom unscannable rows
+                    if ((i * density * Mathf.Rad2Deg) > (360 - VerticalScanRange) / 2) // filter out the bottom unscannable rows
                     {
-                        Vector3 newVector = Quaternion.Euler(0, j * scanDensity * Mathf.Rad2Deg, 0) * Quaternion.Euler(90 - i * scanDensity * Mathf.Rad2Deg, 0, 0) * vector0;
-                        scanVectors.Add(newVector);
-
-                        // use a raycast to determine the distance to the mesh
-                        RaycastHit hit;
-                        if (Physics.Raycast(transform.position, transform.TransformDirection(newVector), out hit, range))
-                        {
-                            //float color = hit.distance / range;
-                            spherePoints[i, j] = hit.point;
-                            sphereUvs[i, j] = new Vector2((j * scanDensity * Mathf.Rad2Deg) / 360, 1 - ((180 - i * scanDensity * Mathf.Rad2Deg) / 180));
-                            if (j == 0)
-                            {
-                                sphereUvs[i, pointsPerDisc] = new Vector2(1,sphereUvs[i, j].y);
-                            }
-
-                            // draw the debug rays
-                            if (drawRays)
-                            {
-                                float color = hit.distance / range;
-                                Debug.DrawRay(transform.position, transform.TransformDirection(newVector) * hit.distance, new Color(0, color, 1 - color));
-                            }
-
-                        }
-                        else
-                        {
-                            spherePoints[i, j] = Vector3.negativeInfinity;
-                            if (showNoHits) Debug.DrawRay(transform.position, transform.TransformDirection(newVector) * range, Color.red);
-                        }
+                        Vector3 dir = Quaternion.Euler(0, j * density * Mathf.Rad2Deg, 0) * Quaternion.Euler(90 - i * density * Mathf.Rad2Deg, 0, 0) * vector0;
+                        Vector2 uv = new Vector2(j * density * Mathf.Rad2Deg / 360, 1 - ((180 - i * density * Mathf.Rad2Deg) / 180));
+                        scanParameters.Add(new ScanParameter(dir, uv, new Vector2Int(i,j)));
                     }
-                    else spherePoints[i, j] = Vector3.negativeInfinity;
                 }
             }
-
-            return scanVectors;
-        }
-        public async void UpdateMesh()
-        {
-            await CreateSphereMesh(spherePoints);
-            if (!filter) filter = GetComponent<MeshFilter>();
-            filter.mesh = mesh;
-            filter.sharedMesh.RecalculateBounds();
-            updatingMesh = false;
         }
 
-        //generates a mesh
-        public async Task<Mesh> CreateSphereMesh(Vector3[,] points)
+        // Casts the rays in parallel and update the hits list
+        private void CastRaysJob(Vector3 origin, List<ScanParameter> scanParams)
         {
+            // reset the points
+            scannedPoints = new List<ScannedPoint>();
+            int rayCount = scanParams.Count;
+            NativeArray<RaycastCommand> commands = new NativeArray<RaycastCommand>(rayCount, Allocator.TempJob);
+            NativeArray<RaycastHit> results = new NativeArray<RaycastHit>(rayCount, Allocator.TempJob);
 
-            List<Vector3> verts = new List<Vector3>();
-            List<Vector2> uvs = new List<Vector2>();
-            List<int> tris = new List<int>();
-
-            // go over every point in a single ring
-            // get the next point in the ring and the point in the above ring
-            //Debug.Log(points.Length);
-
-            for (int i = 0; i < points.GetLength(0) - 1; i++)
+            for (int i = 0; i < rayCount; i++)
             {
-                for (int j = 0; j < points.GetLength(1); j++)
+                commands[i] = new RaycastCommand(origin, scanParams[i].direction, QueryParameters.Default, scanRange);
+            }
+            // Schedule batch of raycasts
+            JobHandle handle = RaycastCommand.ScheduleBatch(commands, results, 32);
+            // Complete the job
+            handle.Complete();
+
+            // Process results
+            for (int i = 0; i < rayCount; i++)
+            {
+                if (results[i].collider != null)
                 {
-                    if (points[i, j] == Vector3.zero) Debug.Log((i, j, "Point is zero"));
-                    if (points[i, j] == Vector3.negativeInfinity) continue; // if the point itself is Null skip
-                    int nextPointIndex = (j + 1) % points.GetLength(1);
-                    int upperPointIndex = (i + 1);
+                    scannedPoints.Add(new ScannedPoint(
+                        results[i].point,
+                        results[i].normal,
+                        scanParams[i].uv,
+                        Color.white,
+                        scanParams[i].pointIdx));
+                }
+            }
+            // Dispose arrays
+            commands.Dispose();
+            results.Dispose();
+        }
 
-                    // create the first triangle 
-                    // [1,2]
-                    // [0,x]
-                    if (points[upperPointIndex, nextPointIndex] != Vector3.negativeInfinity && points[upperPointIndex, j] != Vector3.negativeInfinity) // the three target points are defined
-                    {
-                        if (Vector3.SqrMagnitude(points[i, j] - points[upperPointIndex, j]) +
-                            Vector3.SqrMagnitude(points[i, j] - points[upperPointIndex, nextPointIndex]) +
-                            Vector3.SqrMagnitude(points[upperPointIndex, j] - points[upperPointIndex, nextPointIndex]) < maxTraingleLength * maxTraingleLength)
-                        {
-                            verts.Add(transform.InverseTransformPoint(points[i, j]));
-                            uvs.Add(sphereUvs[i, j]);
-                            tris.Add(verts.Count - 1);
-                            verts.Add(transform.InverseTransformPoint(points[upperPointIndex, j]));
-                            uvs.Add(sphereUvs[upperPointIndex, j]);
-                            tris.Add(verts.Count - 1);
-                            verts.Add(transform.InverseTransformPoint(points[upperPointIndex, nextPointIndex]));
-                            uvs.Add(sphereUvs[upperPointIndex, j+1]);
-                            tris.Add(verts.Count - 1);
-                        }
+        private void GetPointColorsJob()
+        {
+            // keep track of the current rendertexture
+            RenderTexture current = RenderTexture.active;
+            RenderTexture.active = colorTexture;
+            // Create a Texture2D with same size and format
+            Texture2D tex = new Texture2D(colorTexture.width, colorTexture.height, TextureFormat.RGBA32, false);
+            // Copy pixels from GPU -> CPU
+            tex.ReadPixels(new Rect(0, 0, colorTexture.width, colorTexture.height), 0, 0);
+            tex.Apply();
+            //reset rendertexture
+            RenderTexture.active = current;
+            //convert to native array for job
+            NativeArray<Color32> pixels = tex.GetRawTextureData<Color32>();
+            // convert scannedPoints to a native array
+            NativeArray<ScannedPoint> nativePoints = new NativeArray<ScannedPoint>(scannedPoints.Count, Allocator.TempJob);
+            for (int i = 0; i < scannedPoints.Count; i++)
+            {
+                nativePoints[i] = scannedPoints[i];
+            }
+            Debug.Log(pixels.Length + ", " + tex.width + " " + tex.height + " " + tex.width * tex.height);
 
-                    }
-                    // create the second triangle 
-                    // [x,1]
-                    // [0,2]
-                    if (points[i, nextPointIndex] != Vector3.negativeInfinity && points[upperPointIndex, nextPointIndex] != Vector3.negativeInfinity) // the three target points are defined
-                    {
-                        if (Vector3.SqrMagnitude(points[i, j] - points[upperPointIndex, nextPointIndex]) +
-                            Vector3.SqrMagnitude(points[i, j] - points[i, nextPointIndex]) +
-                            Vector3.SqrMagnitude(points[upperPointIndex, nextPointIndex] - points[i, nextPointIndex]) < maxTraingleLength * maxTraingleLength)
-                        {
-                            verts.Add(transform.InverseTransformPoint(points[i, j]));
-                            uvs.Add(sphereUvs[i, j]);
-                            tris.Add(verts.Count - 1);
-                            verts.Add(transform.InverseTransformPoint(points[upperPointIndex, nextPointIndex]));
-                            uvs.Add(sphereUvs[upperPointIndex, j+1]);
-                            tris.Add(verts.Count - 1);
-                            verts.Add(transform.InverseTransformPoint(points[i, nextPointIndex]));
-                            uvs.Add(sphereUvs[i, j+1]);
-                            tris.Add(verts.Count - 1);
-                        }
-                    }
+            // Run job
+            var job = new SampleUVJob
+            {
+                pixels = pixels,
+                points = nativePoints,
+                texWidth = tex.width,
+                texHeight = tex.height
+            };
+
+            JobHandle handle = job.Schedule(nativePoints.Length, 64);
+            handle.Complete();
+            // convert back to list
+            for (int i = 0; i < scannedPoints.Count; i++)
+            {
+                scannedPoints[i] = nativePoints[i];
+            }
+
+            nativePoints.Dispose();
+            Destroy(tex);
+        }
+
+        //MESHING
+
+
+
+        public void SaveToCloudCompareTXT(Vector3[,] points, string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                foreach (var p in points)
+                {
+                    if (p.sqrMagnitude > scanRange * scanRange) continue;
+                    // Use InvariantCulture to avoid commas instead of dots in some locales
+                    writer.WriteLine(
+                        string.Format(
+                            System.Globalization.CultureInfo.InvariantCulture,
+                            "{0} {1} {2}",
+                            p.x, p.y, p.z
+                        )
+                    );
                 }
             }
 
-            mesh = new Mesh();
-            mesh.vertices = verts.ToArray();
-            mesh.triangles = tris.ToArray();
-            mesh.uv = uvs.ToArray();
-            mesh.RecalculateNormals();
-            mesh.name = "scannedSphere";
+            Debug.Log($"Saved {points.Length} points to {filePath}");
+        }
+        [ContextMenu("Save Points")]
+        public void SavePoints()
+        {
+            ExportPointCloud(scannedPoints, pointSavePath);
+        }
+        /// <summary>
+        /// Saves a 2D array of points with normals to a .txt file in CloudCompare-compatible format.
+        /// Each line will be: x y z nx ny nz r g b
+        /// </summary>
+        /// <param name="points">2D array of 3D positions</param>
+        /// <param name="normals">2D array of normals (must match points dimensions)</param>
+        /// <param name="filePath">Full path of the output .txt file</param>
+        public void ExportPointCloud(List<ScannedPoint>points, string filePath)
+        {
 
-            return mesh;
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                foreach (ScannedPoint point in points)
+                {
+                    Vector3 p = point.position;
+                    Vector3 n = point.normal;
+                    Color32 c = point.color;
 
+                    writer.WriteLine(
+                                string.Format(
+                                    System.Globalization.CultureInfo.InvariantCulture,
+                                    "{0} {1} {2} {3} {4} {5} {6} {7} {8}",
+                                    p.x, p.y, p.z,
+                                    n.x, n.y, n.z,
+                                    c.r, c.g, c.b
+                                )
+                            );
+                }
+
+            }
+
+            Debug.Log($"Saved {points.Count} scan samples (with normals & colors) to {filePath}");
         }
 
+    }
+    [System.Serializable]
+    public struct ScanParameter
+    {
+        public Vector3 direction;
+        public Vector2 uv;
+        public Vector2Int pointIdx;
+
+        public ScanParameter(Vector3 direction, Vector2 uv, Vector2Int pointIdx)
+        {
+            this.direction = direction;
+            this.uv = uv;
+            this.pointIdx = pointIdx;
+        }
+    }
+    [System.Serializable]
+    public struct ScannedPoint
+    {
+        public Vector3 position;
+        public Vector3 normal;
+        public Vector2 uv;
+        public Color32 color;
+        public Vector2Int pointIdx;
+
+        public ScannedPoint(Vector3 position, Vector3 normal, Vector2 uv, Color32 color, Vector2Int pointIdx)
+        {
+            this.position = position;
+            this.normal = normal;
+            this.uv = uv;
+            this.color = color;
+            this.pointIdx = pointIdx;
+        }
+    }
+
+    public struct SampleUVJob : IJobParallelFor
+    {
+        [ReadOnly] public NativeArray<Color32> pixels;
+        public NativeArray<ScannedPoint> points; // job will write into this
+        public int texWidth;
+        public int texHeight;
+
+        public float density;
+
+        public void Execute(int index)
+        {
+            ScannedPoint point = points[index];
+
+            int x = Mathf.Clamp((int)(point.uv.x * texWidth), 0, texWidth - 1);
+            int y = Mathf.Clamp((int)(point.uv.y * texHeight), 0, texHeight - 1);
+
+            int pixelIndex = y * texWidth + x;
+            point.color = pixels[pixelIndex];
+            point.color.a = 255;
+
+            points[index] = point; // write back
+        }
     }
 }

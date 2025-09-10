@@ -17,7 +17,7 @@ namespace GeoSharpi.Nodes
     /// The Base node object that provides data to a resource
     /// </summary>s
     [System.Serializable]
-    public class Node
+    public class NodeOld
     {
         /// <value>the Main identifier for the Node, used for serialization</value>
         [Tooltip("The Identifier of the resource")]
@@ -49,7 +49,7 @@ namespace GeoSharpi.Nodes
         /// The  moment the Asset was created, using the exif:datatime standard : "YYYY:MM:DD HH:MM:SS" 
         /// </value>
         [Tooltip("The moment the Asset was created")]
-        [RDFUri("dcterms", "http://purl.org/dc/terms/","created", RDFModelEnums.RDFDatatypes.XSD_DATETIME)]
+        [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", _type:RDFModelEnums.RDFDatatypes.XSD_DATETIME)]
         public string dateTime = "";
 
         [Header("Extra RDF Properties")]
@@ -66,9 +66,10 @@ namespace GeoSharpi.Nodes
         [Tooltip("the rdf graph object containing the original data")]
         private RDFGraph graph;
 
+        private string basePrefix = "GeoSharpi";
+
         #region Constructors
-        public Node()
-        {
+        public NodeOld(){
             CreateEmptyNode();
         }
         /// <summary>
@@ -76,7 +77,7 @@ namespace GeoSharpi.Nodes
         /// </summary>
         /// <param name="_graphPath">The path to create the node from</param>
         /// <param name="_subject">The subject to parse the graph with</param>
-        public Node(string _graphPath = "", string _subject = "")
+        public NodeOld(string _graphPath = "", string _subject = "")
         {
             CreateNode(_graphPath, _subject);
         }
@@ -101,7 +102,7 @@ namespace GeoSharpi.Nodes
         {
             
             graph = new RDFGraph();
-            dateTime = (System.DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")).ToString();
+            dateTime = System.DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss");
             // add the subject Type
             //Debug.Log("Creating new Empty Node " + subject + " at:" + dateTime);
 
@@ -115,18 +116,18 @@ namespace GeoSharpi.Nodes
         #endregion
 
         /// <summary>
-        /// Returns the Class of this Node, formatted as 'geomapi:"ClassName"'
+        /// Returns the Class of this Node, formatted as 'v4d:"ClassName"'
         /// </summary>
         /// <returns>The Specific Class</returns>
-        public RDFResource GetClass()
+        public RDFPlainLiteral GetClass()
         {
-            return new RDFResource("https://w3id.org/geomapi#" + this.GetType().Name);
+            return new RDFPlainLiteral(basePrefix + ":" + this.GetType().Name);
         }
 
         /// <summary>
         /// Returns the Subject of this node
         /// </summary>
-        /// <returns>The Url formatted subject</returns>
+        /// <returns>The Url foratted subject</returns>
         public RDFResource GetSubject()
         {
             Uri uriResult;
@@ -182,11 +183,10 @@ namespace GeoSharpi.Nodes
                     var att = field.GetCustomAttributes(typeof(RDFUriAttribute), true).FirstOrDefault() as RDFUriAttribute;
                     if (att != null)
                     {
-
+                    
                         //Debug.Log("checking: " + new RDFResource(att.uri + field.Name) + " against " + triplesEnum.Current.Predicate);
-                        // combine the prefix with the name of the property, if a separate name is defined, use that.
-                        RDFResource sharpPredicate = att.name == "" ? new RDFResource(att.uri + field.Name) : new RDFResource(att.uri + att.name);
-                        if (sharpPredicate.ToString() == triplesEnum.Current.Predicate.ToString())
+
+                        if (new RDFResource(att.uri + field.Name).ToString() == triplesEnum.Current.Predicate.ToString())
                         {
                             Debug.Log("Found a matching variable: " + field.Name + " With type: " + field.FieldType);
 
@@ -227,9 +227,8 @@ namespace GeoSharpi.Nodes
                     {
                         val = triplesEnum.Current.Object.ToString().Substring(0, triplesEnum.Current.Object.ToString().IndexOf("^^"));
                     }
-                    if (properties.ContainsKey(triplesEnum.Current.Predicate.ToString()))
-                        properties[triplesEnum.Current.Predicate.ToString()] += ", " + val;
-                    else properties.Add(triplesEnum.Current.Predicate.ToString(), val);
+
+                    properties.Add(triplesEnum.Current.Predicate.ToString(), val);
                     Debug.Log(val + " was not found, putting it in the dictionary");
 
                 }
@@ -260,7 +259,7 @@ namespace GeoSharpi.Nodes
                 var att = field.GetCustomAttributes(typeof(RDFUriAttribute), true).FirstOrDefault() as RDFUriAttribute;
                 if (att == null)
                 {
-                    Debug.Log($"The field {field.Name} will not Be Serialized");
+                    //Debug.Log($"The field {field.Name} will not Be Serialized");
                     continue;
                 }
                 if (field.GetValue(this) == null) continue; //pass if the variable is null
@@ -268,24 +267,23 @@ namespace GeoSharpi.Nodes
                 {
                     if ((field.GetValue(this) as ICollection).Count == 0) continue;
                     string listedString = (field.GetValue(this) as ICollection<string>).ToStringList();
-                    Debug.Log("This is a generic Ienumerator and will be serialised as: " + listedString);
+                    //Debug.Log("This is a generic Ienumerator and will be serialised as: " + listedString);
                     AddToGraph(att, field.Name, listedString);
                 }
                 else if (field.GetType().IsArray) // this means its Array
                 {
                     if ((field.GetValue(this) as Array).Length == 0) continue;
-                    Debug.Log("This is a generic Array and will be serialised as: " + String.Join(", ", (field.GetValue(this) as Array)));
+                    //Debug.Log("This is a generic Array and will be serialised as: " + String.Join(", ", (field.GetValue(this) as Array)));
                     AddToGraph(att, field.Name, String.Join(", ", (field.GetValue(this) as Array)));
                 }
                 else
-                    Debug.Log(att + ", " + field.Name+", "+ field.GetValue(this).ToString());
                     AddToGraph(att, field.Name, field.GetValue(this).ToString());
 
 
 
             }
 
-            Debug.Log(graph);
+            //Debug.Log(graph);
 
             return graph;
 
@@ -300,14 +298,13 @@ namespace GeoSharpi.Nodes
         void AddToGraph(RDFUriAttribute att, string fieldName, string fieldValue)
         {
             //Debug.Log($"The field {fieldName} will be serialized with namespace: {att.uri}");
-            string name = att.name == "" ? fieldName : att.name;
             RDFTriple newTriple;
             if (att.type != RDFModelEnums.RDFDatatypes.RDFS_LITERAL)
             {
-                newTriple = new RDFTriple(GetSubject(), new RDFResource(att.uri + name), new RDFTypedLiteral(fieldValue, att.type));
+                newTriple = new RDFTriple(GetSubject(), new RDFResource(att.uri + fieldName), new RDFTypedLiteral(fieldValue, att.type));
             }
             else
-                newTriple = new RDFTriple(GetSubject(), new RDFResource(att.uri + name), new RDFPlainLiteral(fieldValue));
+                newTriple = new RDFTriple(GetSubject(), new RDFResource(att.uri + fieldName), new RDFPlainLiteral(fieldValue));
 
             RDFNamespaceRegister.AddNamespace(new RDFNamespace(att.prefix, att.uri));
             graph.AddTriple(newTriple);

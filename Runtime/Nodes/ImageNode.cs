@@ -13,11 +13,11 @@ namespace GeoSharpi.Nodes
     [System.Serializable]
     public class ImageNode : Node
     {
-        [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_DOUBLE)]
+        [RDFUri(_name : "focalLength35mm", _type:RDFModelEnums.RDFDatatypes.XSD_DOUBLE)]
         public float focalLengthIn35mmFilm = 0.0f;
-        [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_INT)]
+        [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#","imageLength", _type:RDFModelEnums.RDFDatatypes.XSD_INT)]
         public int imageHeight = 1 ;
-        [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", RDFModelEnums.RDFDatatypes.XSD_INT)]
+        [RDFUri("exif", "http://www.w3.org/2003/12/exif/ns#", _type:RDFModelEnums.RDFDatatypes.XSD_INT)]
         public int imageWidth = 1 ;
         public Texture2D imageTexture;
 
@@ -29,6 +29,10 @@ namespace GeoSharpi.Nodes
         [HideInInspector]
         public int saveQuality = 75;
 
+        public ImageNode()
+        {
+            CreateEmptyNode();
+        }
         public ImageNode(string _graphPath = "", string _subject = "")
         {
             CreateNode(_graphPath, _subject);
@@ -63,6 +67,8 @@ namespace GeoSharpi.Nodes
                 return imageChild;
             }
 
+            imageWidth = imageTexture.width;
+            imageHeight = imageTexture.height; 
             float sensor35mmDiagonal = Mathf.Sqrt(36 * 36 + 24 * 24); // the actual diagonal of a 35mm sensor
             float ratio = imageTexture.width / (float)imageTexture.height; //the Width to height ration
             float aspectAngle = Mathf.Atan(1 / ratio); //The angle of the diagonal to the horizon
@@ -71,7 +77,7 @@ namespace GeoSharpi.Nodes
             imageChild.transform.localScale = new Vector3(ratio, 1, 1) * height;
 
             Renderer quadRenderer = imageChild.GetComponent<Renderer>();
-            if (!textureShader) textureShader = Shader.Find("Standard"); //uses the default shader
+            if (!textureShader) textureShader = Shader.Find("Unlit/Texture"); //uses the default shader
             quadRenderer.material = new Material(textureShader);
             quadRenderer.sharedMaterial.SetTexture("_MainTex", imageTexture);
 
