@@ -23,6 +23,8 @@ namespace GeoSharpi.Marching
         /// </summary>
         protected int[] WindingOrder { get; private set; }
 
+        protected Color[] EdgeColor = new Color[12];
+
         /// <summary>
         /// 
         /// </summary>
@@ -40,9 +42,8 @@ namespace GeoSharpi.Marching
         /// <param name="voxels"></param>
         /// <param name="verts"></param>
         /// <param name="indices"></param>
-        public virtual void Generate(float[,,] voxels, IList<Vector3> verts, IList<int> indices)
+        public virtual void Generate(float[,,] voxels, Color[,,] colors, IList<Vector3> verts, IList<int> indices, IList<Color> vertColors)
         {
-
             int width = voxels.GetLength(0);
             int height = voxels.GetLength(1);
             int depth = voxels.GetLength(2);
@@ -51,13 +52,14 @@ namespace GeoSharpi.Marching
 
             int x, y, z, i;
             int ix, iy, iz;
+
             for (x = 0; x < width - 1; x++)
             {
                 for (y = 0; y < height - 1; y++)
                 {
                     for (z = 0; z < depth - 1; z++)
                     {
-                        //Get the values in the 8 neighbours which make up a cube
+                        // Get cube voxel values
                         for (i = 0; i < 8; i++)
                         {
                             ix = x + VertexOffset[i, 0];
@@ -67,12 +69,11 @@ namespace GeoSharpi.Marching
                             Cube[i] = voxels[ix, iy, iz];
                         }
 
-                        //Perform algorithm
-                        March(x, y, z, Cube, verts, indices);
+                        // Call marching with color support
+                        March(x, y, z, Cube, verts, indices, colors, vertColors);
                     }
                 }
             }
-
         }
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace GeoSharpi.Marching
         /// <param name="depth"></param>
         /// <param name="verts"></param>
         /// <param name="indices"></param>
-        public virtual void Generate(IList<float> voxels, int width, int height, int depth, IList<Vector3> verts, IList<int> indices)
+        public virtual void Generate(IList<float> voxels, int width, int height, int depth,Color[,,] colors, IList<Vector3> verts, IList<int> indices,  IList<Color> vertColors)
         {
 
             UpdateWindingOrder();
@@ -108,7 +109,7 @@ namespace GeoSharpi.Marching
                         }
 
                         //Perform algorithm
-                        March(x, y, z, Cube, verts, indices);
+                        March(x, y, z, Cube, verts, indices, colors, vertColors);
                     }
                 }
             }
@@ -138,8 +139,17 @@ namespace GeoSharpi.Marching
          /// <summary>
         /// MarchCube performs the Marching algorithm on a single cube
         /// </summary>
-        protected abstract void March(float x, float y, float z, float[] cube, IList<Vector3> vertList, IList<int> indexList);
-
+        /// <summary>
+        /// Marching function for a single cube with color support
+        /// </summary>
+        protected abstract void March(
+            float x, float y, float z,
+            float[] cube,
+            IList<Vector3> vertList,
+            IList<int> indexList,
+            Color[,,] colors,        // voxel colors
+            IList<Color> vertColors   // vertex color list
+        );
         /// <summary>
         /// GetOffset finds the approximate point of intersection of the surface
         /// between two points with the values v1 and v2

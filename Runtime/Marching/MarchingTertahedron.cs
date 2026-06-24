@@ -29,8 +29,13 @@ namespace GeoSharpi.Marching
         /// <summary>
         /// MarchCubeTetrahedron performs the Marching Tetrahedrons algorithm on a single cube
         /// </summary>
-        protected override void March(float x, float y, float z, float[] cube, IList<Vector3> vertList, IList<int> indexList)
-        {
+        protected override void March(float x, float y, float z,
+            float[] cube,
+            IList<Vector3> vertList,
+            IList<int> indexList,
+            Color[,,] colors,        // voxel colors
+            IList<Color> vertColors   // vertex color list)
+        ){
             int i, j, vertexInACube;
 
             //Make a local copy of the cube's corner positions

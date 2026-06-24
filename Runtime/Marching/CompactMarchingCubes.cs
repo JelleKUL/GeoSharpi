@@ -38,7 +38,13 @@ namespace GeoSharpi.Marching
         /// <summary>
         /// March performs the Marching Cubes with Mesh Displacement algorithm on a single cube.
         /// </summary>
-        protected override void March(float x, float y, float z, float[] cube, IList<Vector3> vertList, IList<int> indexList)
+        protected override void March(float x, float y, float z,
+            float[] cube,
+            IList<Vector3> vertList,
+            IList<int> indexList,
+            Color[,,] colors,        // voxel colors
+            IList<Color> vertColors   // vertex color list
+            )
         {
             int flagIndex = 0;
             float offset = 0.0f;
@@ -126,9 +132,9 @@ namespace GeoSharpi.Marching
             }
         }
 
-        public override void Generate(float[,,] voxels, IList<Vector3> verts, IList<int> indices)
+        public override void Generate(float[,,] voxels, Color[,,] colors, IList<Vector3> verts, IList<int> indices, IList<Color> vertColors)
         {
-            base.Generate(voxels, verts, indices);
+            base.Generate(voxels,colors, verts, indices, vertColors);
 
             //For each vertex data entry, calculate the vertex position as an average
             //of the positions of the satellites belonging to that lattice point

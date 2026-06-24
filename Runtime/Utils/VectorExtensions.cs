@@ -37,8 +37,17 @@ namespace GeoSharpi.Utils
             return roundedVector;
             
         }
-        private static int FloorToGrid(float val){
-            return Mathf.FloorToInt(val>=0? val:val+1);
+
+        public static Vector3 RandomVector3(Vector3 minVector, Vector3 maxVector)
+        {
+            return new Vector3(
+                Random.Range(minVector.x, maxVector.x),
+                Random.Range(minVector.y, maxVector.y),
+                Random.Range(minVector.z, maxVector.z));
+        }
+        private static int FloorToGrid(float val)
+        {
+            return Mathf.FloorToInt(val >= 0 ? val : val + 1);
         }
     }
 }

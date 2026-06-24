@@ -9,6 +9,8 @@ namespace GeoSharpi.Marching
     /// </summary>
     public class VoxelArray
     {
+        public enum VoxelAxis { X, Y, Z }
+        
         /// <summary>
         /// Create a new voxel array.
         /// </summary>
@@ -18,8 +20,17 @@ namespace GeoSharpi.Marching
         public VoxelArray(int width, int height, int depth)
         {
             Voxels = new float[width, height, depth];
+            colors = new Color[width, height, depth];
             FlipNormals = true;
         }
+        public VoxelArray(float[,,] voxels, Color[,,] colors)
+        {
+            Voxels = voxels;
+            this.colors = colors;
+            FlipNormals = true;
+        }
+
+        public Color[,,] colors;
 
         /// <summary>
         /// The size of the voxels on the x axis.
@@ -230,6 +241,106 @@ namespace GeoSharpi.Marching
         private static float BLerp(float v00, float v10, float v01, float v11, float tx, float ty)
         {
             return Lerp(Lerp(v00, v10, tx), Lerp(v01, v11, tx), ty);
+        }
+
+        public void InterpolateValueRange(VoxelAxis axis, (int start, int end) idxRange, float scalingFactor, bool repeat = false)
+        {            
+            int startIdx = idxRange.start;
+            int endIdx = idxRange.end;
+            int oldRange = endIdx - startIdx;
+            if (oldRange <= 1) return;
+
+            // when repeat is on, find the 
+            int repeatAmount = repeat ? Mathf.Max(1, Mathf.RoundToInt(scalingFactor)) : 1;
+            int newRange = Mathf.RoundToInt(oldRange * scalingFactor);
+            int finalRange = repeat
+                ? Mathf.RoundToInt(oldRange * scalingFactor)   // total scaled space
+                : newRange;
+
+            //int newRange = Mathf.RoundToInt(oldRange * scalingFactor);
+            //int finalRange = repeat ? Mathf.RoundToInt(newRange * scalingFactor) : newRange;
+            int addedVoxels = finalRange - oldRange;
+
+            //increase the sizes of the arrays
+            int newWidth = axis == VoxelAxis.X? Width - oldRange + finalRange : Width;
+            int newHeight = axis == VoxelAxis.Y? Height - oldRange + finalRange : Height;
+            int newDepth = axis == VoxelAxis.Z? Depth - oldRange + finalRange : Depth;
+
+            float[,,] newVoxels = new float[newWidth, newHeight, newDepth];
+            Color[,,] newColors = new Color[newWidth, newHeight, newDepth];
+
+            // Copy the voxels/colors before the interpolated range and move the voxel after the range to the back
+            for (int x = 0; x < newWidth; x++)
+                for (int y = 0; y < newHeight; y++)
+                    for (int z = 0; z < newDepth; z++)
+                    {
+                        bool beforeRange = (axis == VoxelAxis.X && x < startIdx )
+                                        || (axis == VoxelAxis.Y && y < startIdx )
+                                        || (axis == VoxelAxis.Z && z < startIdx);
+                        bool betweenRange =(axis == VoxelAxis.X && x >= startIdx && x <= endIdx + addedVoxels)
+                                        || (axis == VoxelAxis.Y && y >= startIdx && y <= endIdx + addedVoxels)
+                                        || (axis == VoxelAxis.Z && z >= startIdx && z <= endIdx + addedVoxels);
+                        bool afterRange =  (axis == VoxelAxis.X && x > endIdx && x < Width)
+                                        || (axis == VoxelAxis.Y && y > endIdx && y < Height)
+                                        || (axis == VoxelAxis.Z && z > endIdx && z < Depth);
+
+                        if (beforeRange)
+                        {
+                            newVoxels[x, y, z] = Voxels[x, y, z];
+                            newColors[x, y, z] = colors[x, y, z];
+                        }
+                        else if (afterRange)
+                        {
+                            newVoxels[x + newWidth - Width, y + newHeight - Height, z + newDepth - Depth] = Voxels[x, y, z];
+                            newColors[x + newWidth - Width, y + newHeight - Height, z + newDepth - Depth] = colors[x, y, z];
+                        }
+                        if (betweenRange)
+                        {
+                            int rangeIdx = axis == VoxelAxis.X ? x - startIdx
+                                        : axis == VoxelAxis.Y ? y - startIdx
+                                        : z - startIdx;
+
+                            float t;
+
+                            if (repeat)
+                            {
+                                int segmentLength = finalRange / repeatAmount;
+
+                                int localIdx = rangeIdx % segmentLength;
+                                t = (float)localIdx / (segmentLength - 1);
+                            }
+                            else
+                            {
+                                t = (float)rangeIdx / (finalRange - 1);
+                            }
+
+                            float oldPos = t * oldRange;
+
+                            int oldIdx0 = startIdx + Mathf.FloorToInt(oldPos);
+                            int oldIdx1 = Mathf.Min(startIdx + Mathf.CeilToInt(oldPos), endIdx);
+
+                            float lerpT = oldPos - Mathf.Floor(oldPos);
+
+                            if (axis == VoxelAxis.X)
+                            {
+                                newVoxels[x, y, z] = Lerp(Voxels[oldIdx0, y, z], Voxels[oldIdx1, y, z], lerpT);
+                                newColors[x, y, z] = Color.Lerp(colors[oldIdx0, y, z], colors[oldIdx1, y, z], lerpT);
+                            }
+                            else if (axis == VoxelAxis.Y)
+                            {
+                                newVoxels[x, y, z] = Lerp(Voxels[x, oldIdx0, z], Voxels[x, oldIdx1, z], lerpT);
+                                newColors[x, y, z] = Color.Lerp(colors[x, oldIdx0, z], colors[x, oldIdx1, z], lerpT);
+                            }
+                            else
+                            {
+                                newVoxels[x, y, z] = Lerp(Voxels[x, y, oldIdx0], Voxels[x, y, oldIdx1], lerpT);
+                                newColors[x, y, z] = Color.Lerp(colors[x, y, oldIdx0], colors[x, y, oldIdx1], lerpT);
+                            }
+                        }
+                    }
+
+            Voxels = newVoxels;
+            colors = newColors;
         }
 
     }
