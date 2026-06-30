@@ -19,6 +19,9 @@ namespace GeoSharpi.Marching
         [Header("Voxel Settings")]
         public float voxelSize = 1f;  // Size of each voxel in world units
 
+        [Tooltip("Set each component to 1 or -1 to flip the voxel array read order along that axis. Useful when a 3D texture/JSON loads upside down or mirrored.")]
+        public Vector3Int axisFlip = Vector3Int.one;
+
         [Header("Rendering")]
         public Material material;
 
@@ -31,6 +34,7 @@ namespace GeoSharpi.Marching
         public bool updateContinuous = true;
         private Texture3D _voxelTexture;
         private TextAsset _jsonText;
+        private Vector3Int _axisFlip;
 
         void Start()
         {
@@ -71,10 +75,20 @@ namespace GeoSharpi.Marching
             // 4. Generate mesh with color support
             marching.Generate(array.Voxels, array.colors, verts, indices, vertColors);
 
-            // 5. Scale vertices to voxel size
+            // 5. Scale vertices to voxel size, then shift so the mesh origin
+            // sits at the bottom-center of the voxel grid rather than a
+            // corner: X and Z are centered, Y is left at the bottom (0).
+            // Grid spans index [0, dim-1] per axis, so half-extent is
+            // (dim - 1) * 0.5 * voxelSize.
+            float halfWidth = (array.Width - 1) * 0.5f * voxelSize;
+            float halfDepth = (array.Depth - 1) * 0.5f * voxelSize;
+
             for (int i = 0; i < verts.Count; i++)
             {
-                verts[i] *= voxelSize;
+                Vector3 v = verts[i] * voxelSize;
+                v.x -= halfWidth;
+                v.z -= halfDepth;
+                verts[i] = v;
             }
 
             // 6. Create the mesh with colors
@@ -82,13 +96,39 @@ namespace GeoSharpi.Marching
         }
 
         /// <summary>
-        /// Converts a Texture3D to a VoxelArray (with values + colors)
+        /// Resolves an axisFlip component (expected to be 1 or -1) to a safe sign,
+        /// defaulting to +1 (no flip) for 0 or any other unexpected value.
+        /// </summary>
+        private static int FlipSign(int flipComponent)
+        {
+            return flipComponent < 0 ? -1 : 1;
+        }
+
+        /// <summary>
+        /// Maps a destination index along one axis to the corresponding source
+        /// index, given that axis's flip sign. When flip is +1, source == dest.
+        /// When flip is -1, the axis is read back-to-front (dim-1-dest).
+        /// </summary>
+        private static int FlippedSourceIndex(int destIndex, int dim, int flipSign)
+        {
+            return flipSign == 1 ? destIndex : (dim - 1 - destIndex);
+        }
+
+        /// <summary>
+        /// Converts a Texture3D to a VoxelArray (with values + colors).
+        /// Texture3D.GetPixels() returns a flat, randomly-addressable array, so the
+        /// flip is applied by choosing which source index to read from for each
+        /// destination voxel, per the axisFlip setting.
         /// </summary>
         private VoxelArray Texture3DToVoxelArray(Texture3D tex)
         {
             int width = tex.width;
             int height = tex.height;
             int depth = tex.depth;
+
+            int flipX = FlipSign(axisFlip.x);
+            int flipY = FlipSign(axisFlip.y);
+            int flipZ = FlipSign(axisFlip.z);
 
             VoxelArray voxels = new VoxelArray(width, height, depth);
             Color[] colors = tex.GetPixels();
@@ -99,7 +139,11 @@ namespace GeoSharpi.Marching
                 {
                     for (int z = 0; z < depth; z++)
                     {
-                        int idx = x + y * width + z * width * height;
+                        int sx = FlippedSourceIndex(x, width, flipX);
+                        int sy = FlippedSourceIndex(y, height, flipY);
+                        int sz = FlippedSourceIndex(z, depth, flipZ);
+
+                        int idx = sx + sy * width + sz * width * height;
 
                         // Use alpha or grayscale for marching surface value
                         voxels[x, y, z] = colors[idx].a;
@@ -122,11 +166,23 @@ namespace GeoSharpi.Marching
             public float[] voxels;
             public float[] colors;
         }
+        /// <summary>
+        /// Converts JSON voxel data to a VoxelArray.
+        /// Unlike the Texture3D path, this source is a sequential stream
+        /// (consumed via i++/c++ in fixed x,y,z loop order), so it cannot be
+        /// read out of order. Instead, the flip is applied to the destination
+        /// index: values are still consumed in original stream order, but each
+        /// one is written into its flipped position in the output array.
+        /// </summary>
         private VoxelArray JsonToVoxelArray(TextAsset jsonText)
         {
             var data = JsonUtility.FromJson<VoxelData>(jsonText.text);
             float[,,] voxels = new float[data.width, data.height, data.depth];
             Color[,,] colors = new Color[data.width, data.height, data.depth];
+
+            int flipX = FlipSign(axisFlip.x);
+            int flipY = FlipSign(axisFlip.y);
+            int flipZ = FlipSign(axisFlip.z);
 
             int i = 0;
             int c = 0;
@@ -135,9 +191,13 @@ namespace GeoSharpi.Marching
                 for (int y = 0; y < data.height; y++)
                     for (int z = 0; z < data.depth; z++)
                     {
-                        voxels[x, y, z] = -data.voxels[i++];
+                        int dx = FlippedSourceIndex(x, data.width, flipX);
+                        int dy = FlippedSourceIndex(y, data.height, flipY);
+                        int dz = FlippedSourceIndex(z, data.depth, flipZ);
 
-                        colors[x, y, z] = new Color(
+                        voxels[dx, dy, dz] = -data.voxels[i++];
+
+                        colors[dx, dy, dz] = new Color(
                             data.colors[c++],
                             data.colors[c++],
                             data.colors[c++],
@@ -183,20 +243,25 @@ namespace GeoSharpi.Marching
         {
             if (!updateContinuous) return;
 
-            if (_voxelTexture != voxelTexture && voxelTexture != null)
+            bool flipChanged = _axisFlip != axisFlip;
+            bool textureChanged = _voxelTexture != voxelTexture;
+            bool jsonChanged = _jsonText != jsonText;
+
+            if (voxelTexture != null && (textureChanged || flipChanged))
             {
                 print("Updating Texture3d voxelarray");
                 // 1. Convert Texture3D to VoxelArray (values + colors)
                 voxelArray = Texture3DToVoxelArray(voxelTexture);
                 _voxelTexture = voxelTexture;
             }
-            else if (_jsonText != jsonText && jsonText != null)
+            else if (jsonText != null && (jsonChanged || flipChanged))
             {
                 print("Updating jsonVoxelArray");
                 // 1. Convert Texture3D to VoxelArray (values + colors)
                 voxelArray = JsonToVoxelArray(jsonText);
                 _jsonText = jsonText;
             }
+            _axisFlip = axisFlip;
             if (voxelTexture != null || jsonText != null) UpdateMeshFromVoxelArray(voxelArray);
 
         }
